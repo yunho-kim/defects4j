@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/plot/XYPlot.java b/source/org/jfree/chart/plot/XYPlot.java
+index 243f94b..ed4e09d 100644
+--- a/source/org/jfree/chart/plot/XYPlot.java
++++ b/source/org/jfree/chart/plot/XYPlot.java
+@@ -2530,7 +2530,7 @@ public class XYPlot extends Plot implements ValueAxisPlot, Zoomable,
+                     index));
+         }
+         if (markers == null) {
+-            return false;
++            return true;
+         }
+         boolean removed = markers.remove(marker);
+         if (removed && notify) {

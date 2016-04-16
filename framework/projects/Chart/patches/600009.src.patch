@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/util/ShapeList.java b/source/org/jfree/chart/util/ShapeList.java
+index 73ece1c..f704735 100644
+--- a/source/org/jfree/chart/util/ShapeList.java
++++ b/source/org/jfree/chart/util/ShapeList.java
+@@ -112,7 +112,7 @@ public class ShapeList extends AbstractObjectList {
+         int listSize = size();
+         for (int i = 0; i < listSize; i++) {
+            if (!ShapeUtilities.equal((Shape) get(i), (Shape) that.get(i))) {
+-               return false;
++               return true;
+            }
+         }
+         return true;

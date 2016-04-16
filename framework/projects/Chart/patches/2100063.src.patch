@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+index a973da9..bcb3468 100644
+--- a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
++++ b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+@@ -746,7 +746,7 @@ public class DefaultBoxAndWhiskerCategoryDataset extends AbstractDataset
+         this.maximumRangeValueRow = -1;
+         this.maximumRangeValueColumn = -1;
+         int rowCount = getRowCount();
+-        int columnCount = getColumnCount();
++        int columnCount = 0;
+         for (int r = 0; r < rowCount; r++) {
+             for (int c = 0; c < columnCount; c++) {
+                 BoxAndWhiskerItem item = getItem(r, c);

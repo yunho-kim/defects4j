@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java b/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java
+index d2b24c6..bc2da36 100644
+--- a/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java
++++ b/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java
+@@ -447,7 +447,7 @@ public class MinMaxCategoryRenderer extends AbstractCategoryItemRenderer {
+             return false;
+         }
+         if (!this.groupStroke.equals(that.groupStroke)) {
+-            return false;
++            return true;
+         }
+         return super.equals(obj);
+     }

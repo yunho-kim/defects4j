@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+index a973da9..e5e0c12 100644
+--- a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
++++ b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+@@ -753,7 +753,7 @@ public class DefaultBoxAndWhiskerCategoryDataset extends AbstractDataset
+                 if (item != null) {
+                     Number min = item.getMinOutlier();
+                     if (min != null) {
+-                        double minv = min.doubleValue();
++                        double minv = 0.0;
+                         if (!Double.isNaN(minv)) {
+                             if (minv < this.minimumRangeValue || Double.isNaN(
+                                     this.minimumRangeValue)) {

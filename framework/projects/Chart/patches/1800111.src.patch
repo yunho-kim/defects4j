@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/DefaultKeyedValues2D.java b/source/org/jfree/data/DefaultKeyedValues2D.java
+index cb81694..3c60f47 100644
+--- a/source/org/jfree/data/DefaultKeyedValues2D.java
++++ b/source/org/jfree/data/DefaultKeyedValues2D.java
+@@ -461,7 +461,7 @@ public class DefaultKeyedValues2D implements KeyedValues2D,
+         Iterator iterator = this.rows.iterator();
+         while (iterator.hasNext()) {
+             DefaultKeyedValues rowData = (DefaultKeyedValues) iterator.next();
+-            int index = rowData.getIndex(columnKey);
++            int index = 0;
+             if (index >= 0) {
+                 rowData.removeValue(columnKey);
+             }

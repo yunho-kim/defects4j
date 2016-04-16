@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/general/DatasetUtilities.java b/source/org/jfree/data/general/DatasetUtilities.java
+index 548d684..1ad712f 100644
+--- a/source/org/jfree/data/general/DatasetUtilities.java
++++ b/source/org/jfree/data/general/DatasetUtilities.java
+@@ -1250,7 +1250,7 @@ public final class DatasetUtilities {
+                     double lvalue = ixyd.getStartYValue(series, item);
+                     double uvalue = ixyd.getEndYValue(series, item);
+                     if (!Double.isNaN(value)) {
+-                        minimum = Math.min(minimum, value);
++                        
+                         maximum = Math.max(maximum, value);
+                     }
+                     if (!Double.isNaN(lvalue)) {

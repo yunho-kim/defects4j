@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/plot/CategoryPlot.java b/source/org/jfree/chart/plot/CategoryPlot.java
+index ec31907..270a713 100644
+--- a/source/org/jfree/chart/plot/CategoryPlot.java
++++ b/source/org/jfree/chart/plot/CategoryPlot.java
+@@ -973,7 +973,7 @@ public class CategoryPlot extends Plot implements ValueAxisPlot,
+      * @since 1.0.7
+      */
+     public int getRangeAxisIndex(ValueAxis axis) {
+-        if (axis == null) {
++        if (false) {
+             throw new IllegalArgumentException("Null 'axis' argument.");
+         }
+         int result = this.rangeAxes.indexOf(axis);

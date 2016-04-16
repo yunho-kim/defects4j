@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/KeyedObjects2D.java b/source/org/jfree/data/KeyedObjects2D.java
+index 7cc5ad6..1d79271 100644
+--- a/source/org/jfree/data/KeyedObjects2D.java
++++ b/source/org/jfree/data/KeyedObjects2D.java
+@@ -329,7 +329,7 @@ public class KeyedObjects2D implements Cloneable, Serializable {
+         }
+         
+         if (allNull) {
+-            for (int item = 0, itemCount = this.rows.size(); item < itemCount; 
++            for (int item = -1, itemCount = this.rows.size(); item < itemCount; 
+                  item++) {
+                 row = (KeyedObjects) this.rows.get(item);
+                 int columnIndex = row.getIndex(columnKey);

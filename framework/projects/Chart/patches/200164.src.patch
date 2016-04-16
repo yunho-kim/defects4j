@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/general/DatasetUtilities.java b/source/org/jfree/data/general/DatasetUtilities.java
+index 548d684..eb34a44 100644
+--- a/source/org/jfree/data/general/DatasetUtilities.java
++++ b/source/org/jfree/data/general/DatasetUtilities.java
+@@ -761,7 +761,7 @@ public final class DatasetUtilities {
+                     }
+                     if (!Double.isNaN(lvalue)) {
+                         minimum = Math.min(minimum, lvalue);
+-                        maximum = Math.max(maximum, lvalue);
++                        
+                     }
+                     if (!Double.isNaN(uvalue)) {
+                         minimum = Math.min(minimum, uvalue);

@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/general/DatasetUtilities.java b/source/org/jfree/data/general/DatasetUtilities.java
+index 548d684..86ef139 100644
+--- a/source/org/jfree/data/general/DatasetUtilities.java
++++ b/source/org/jfree/data/general/DatasetUtilities.java
+@@ -1246,7 +1246,7 @@ public final class DatasetUtilities {
+             for (int series = 0; series < seriesCount; series++) {
+                 int itemCount = dataset.getItemCount(series);
+                 for (int item = 0; item < itemCount; item++) {
+-                    double value = ixyd.getYValue(series, item);
++                    double value = 0.0;
+                     double lvalue = ixyd.getStartYValue(series, item);
+                     double uvalue = ixyd.getEndYValue(series, item);
+                     if (!Double.isNaN(value)) {

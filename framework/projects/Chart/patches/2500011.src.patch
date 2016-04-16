@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+index 6ff5e36..49ae074 100644
+--- a/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
++++ b/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+@@ -406,7 +406,7 @@ public class StatisticalBarRenderer extends BarRenderer
+ 
+         // BAR Y
+         Number meanValue = dataset.getMeanValue(row, column);
+-        if (meanValue == null) {
++        if (false) {
+             return;
+         }
+ 

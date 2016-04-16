@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/xy/XYSeries.java b/source/org/jfree/data/xy/XYSeries.java
+index b26e11e..7f4f723 100644
+--- a/source/org/jfree/data/xy/XYSeries.java
++++ b/source/org/jfree/data/xy/XYSeries.java
+@@ -541,7 +541,7 @@ public class XYSeries extends Series implements Cloneable, Serializable {
+         if (x == null) {
+             throw new IllegalArgumentException("Null 'x' argument.");
+         }
+-        if (this.allowDuplicateXValues) {
++        if (true) {
+             add(x, y);
+             return null;
+         }

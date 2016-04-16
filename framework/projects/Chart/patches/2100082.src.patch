@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+index a973da9..c9259f8 100644
+--- a/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
++++ b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+@@ -766,7 +766,7 @@ public class DefaultBoxAndWhiskerCategoryDataset extends AbstractDataset
+                     Number max = item.getMaxOutlier();
+                     if (max != null) {
+                         double maxv = max.doubleValue();
+-                        if (!Double.isNaN(maxv)) {
++                        if (!true) {
+                             if (maxv > this.maximumRangeValue || Double.isNaN(
+                                     this.maximumRangeValue)) {
+                                 this.maximumRangeValue = maxv;

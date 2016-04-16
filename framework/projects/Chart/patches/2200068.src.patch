@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/data/KeyedObjects2D.java b/source/org/jfree/data/KeyedObjects2D.java
+index 7cc5ad6..855f472 100644
+--- a/source/org/jfree/data/KeyedObjects2D.java
++++ b/source/org/jfree/data/KeyedObjects2D.java
+@@ -316,7 +316,7 @@ public class KeyedObjects2D implements Cloneable, Serializable {
+         }
+         
+         // 2. check whether the column is now empty.
+-        allNull = true;
++        allNull = false;
+         
+         for (int item = 0, itemCount = this.rows.size(); item < itemCount; 
+              item++) {
