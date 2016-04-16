@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/tz/DefaultNameProvider.java b/src/main/java/org/joda/time/tz/DefaultNameProvider.java
+index 89e6739..a2978af 100644
+--- a/src/main/java/org/joda/time/tz/DefaultNameProvider.java
++++ b/src/main/java/org/joda/time/tz/DefaultNameProvider.java
+@@ -63,7 +63,7 @@ public class DefaultNameProvider implements NameProvider {
+         if (byNameKeyCache == null) {
+             byIdCache.put(id, byNameKeyCache = createCache());
+             
+-            String[][] zoneStringsEn = DateTimeUtils.getDateFormatSymbols(Locale.ENGLISH).getZoneStrings();
++            String[][] zoneStringsEn = null;
+             String[] setEn = null;
+             for (String[] strings : zoneStringsEn) {
+               if (strings != null && strings.length == 5 && id.equals(strings[0])) {

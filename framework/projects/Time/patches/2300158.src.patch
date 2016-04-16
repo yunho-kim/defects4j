@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 855cad0..24b1be6 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -574,7 +574,7 @@ public abstract class DateTimeZone implements Serializable {
+             map.put("PNT", "America/Phoenix");
+             map.put("CST", "America/Chicago");
+             map.put("EST", "America/New_York");  // JDK 1.1 compatible
+-            map.put("IET", "America/Indiana/Indianapolis");
++            
+             map.put("PRT", "America/Puerto_Rico");
+             map.put("CNT", "America/St_Johns");
+             map.put("AGT", "America/Argentina/Buenos_Aires");

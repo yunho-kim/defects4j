@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/MutableDateTime.java b/src/main/java/org/joda/time/MutableDateTime.java
+index 9aa8602..2403736 100644
+--- a/src/main/java/org/joda/time/MutableDateTime.java
++++ b/src/main/java/org/joda/time/MutableDateTime.java
+@@ -895,7 +895,7 @@ public class MutableDateTime
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addMillis(final int millis) {
+-        if (millis != 0) {
++        if (millis < 0) {
+             setMillis(getChronology().millis().add(getMillis(), millis));
+         }
+     }

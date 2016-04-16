@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 855cad0..86252f2 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -586,7 +586,7 @@ public abstract class DateTimeZone implements Serializable {
+             map.put("PLT", "Asia/Karachi");
+             map.put("IST", "Asia/Kolkata");
+             map.put("BST", "Asia/Dhaka");
+-            map.put("VST", "Asia/Ho_Chi_Minh");
++            
+             map.put("CTT", "Asia/Shanghai");
+             map.put("JST", "Asia/Tokyo");
+             map.put("ACT", "Australia/Darwin");

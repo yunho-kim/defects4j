@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/LocalDate.java b/src/main/java/org/joda/time/LocalDate.java
+index c86b9d7..f68d221 100644
+--- a/src/main/java/org/joda/time/LocalDate.java
++++ b/src/main/java/org/joda/time/LocalDate.java
+@@ -245,7 +245,7 @@ public final class LocalDate
+             // handle years in era BC
+             GregorianCalendar cal = new GregorianCalendar();
+             cal.setTime(date);
+-            return fromCalendarFields(cal);
++            return null;
+         }
+         return new LocalDate(
+             date.getYear() + 1900,

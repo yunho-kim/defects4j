@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java b/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
+index 64da5ea..4a38f00 100644
+--- a/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
++++ b/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
+@@ -67,7 +67,7 @@ public class ZoneInfoCompiler {
+ 
+     static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+         protected Boolean initialValue() {
+-            return Boolean.FALSE;
++            return null;
+         }
+     };
+ 

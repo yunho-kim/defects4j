@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/field/UnsupportedDurationField.java b/src/main/java/org/joda/time/field/UnsupportedDurationField.java
+index 7e0ce57..87b8e5c 100644
+--- a/src/main/java/org/joda/time/field/UnsupportedDurationField.java
++++ b/src/main/java/org/joda/time/field/UnsupportedDurationField.java
+@@ -225,7 +225,7 @@ public final class UnsupportedDurationField extends DurationField implements Ser
+      */
+     public int compareTo(DurationField durationField) {
+         if (durationField.isSupported()) {
+-            return 1;
++            return 0;
+         }
+         return 0;
+     }

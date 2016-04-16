@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/tz/DefaultNameProvider.java b/src/main/java/org/joda/time/tz/DefaultNameProvider.java
+index 89e6739..763a459 100644
+--- a/src/main/java/org/joda/time/tz/DefaultNameProvider.java
++++ b/src/main/java/org/joda/time/tz/DefaultNameProvider.java
+@@ -80,7 +80,7 @@ public class DefaultNameProvider implements NameProvider {
+               }
+             }
+             
+-            if (setEn != null && setLoc != null) {
++            if (false) {
+               byNameKeyCache.put(setEn[2], new String[] {setLoc[2], setLoc[1]});
+               // need to handle case where summer and winter have the same
+               // abbreviation, such as EST in Australia [1716305]

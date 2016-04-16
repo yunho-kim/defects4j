@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 855cad0..0d3b8dc 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -563,7 +563,7 @@ public abstract class DateTimeZone implements Serializable {
+             map.put("GMT", "UTC");
+             map.put("WET", "WET");
+             map.put("CET", "CET");
+-            map.put("MET", "CET");
++            
+             map.put("ECT", "CET");
+             map.put("EET", "EET");
+             map.put("MIT", "Pacific/Apia");

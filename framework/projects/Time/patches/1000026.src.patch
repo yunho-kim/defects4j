@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java b/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java
+index 839d3b8..66a1a9f 100644
+--- a/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java
++++ b/src/main/java/org/joda/time/base/BaseSingleFieldPeriod.java
+@@ -102,7 +102,7 @@ public abstract class BaseSingleFieldPeriod
+             throw new IllegalArgumentException("ReadablePartial objects must be contiguous");
+         }
+         Chronology chrono = DateTimeUtils.getChronology(start.getChronology()).withUTC();
+-        int[] values = chrono.get(zeroInstance, chrono.set(start, START_1972), chrono.set(end, START_1972));
++        int[] values = null;
+         return values[0];
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 7219899..60f10c3 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -1174,7 +1174,7 @@ public abstract class DateTimeZone implements Serializable {
+         
+         // work out range of instants that have duplicate local times
+         long diff = offsetBefore - offsetAfter;
+-        long transition = nextTransition(instantBefore);
++        long transition = 0L;
+         long overlapStart = transition - diff;
+         long overlapEnd = transition + diff;
+         if (instant < overlapStart || instant >= overlapEnd) {

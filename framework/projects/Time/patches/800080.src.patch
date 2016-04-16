@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index a127604..d90478a 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -286,7 +286,7 @@ public abstract class DateTimeZone implements Serializable {
+         try {
+             int hoursInMinutes = hoursOffset * 60;
+             if (hoursInMinutes < 0) {
+-                minutesOffset = hoursInMinutes - Math.abs(minutesOffset);
++                minutesOffset = hoursInMinutes % Math.abs(minutesOffset);
+             } else {
+                 minutesOffset = hoursInMinutes + minutesOffset;
+             }

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/LocalDate.java b/src/main/java/org/joda/time/LocalDate.java
+index c86b9d7..87e9da4 100644
+--- a/src/main/java/org/joda/time/LocalDate.java
++++ b/src/main/java/org/joda/time/LocalDate.java
+@@ -207,7 +207,7 @@ public final class LocalDate
+         if (calendar == null) {
+             throw new IllegalArgumentException("The calendar must not be null");
+         }
+-        int era = calendar.get(Calendar.ERA);
++        int era = 0;
+         int yearOfEra = calendar.get(Calendar.YEAR);
+         return new LocalDate(
+             (era == GregorianCalendar.AD ? yearOfEra : 1 - yearOfEra),

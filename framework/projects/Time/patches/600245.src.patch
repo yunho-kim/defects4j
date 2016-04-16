@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/chrono/GJChronology.java b/src/main/java/org/joda/time/chrono/GJChronology.java
+index d1556f5..6dc39e8 100644
+--- a/src/main/java/org/joda/time/chrono/GJChronology.java
++++ b/src/main/java/org/joda/time/chrono/GJChronology.java
+@@ -983,7 +983,7 @@ public final class GJChronology extends AssembledChronology {
+                         if (iConvertByWeekyear) {
+                             int wyear = iGregorianChronology.weekyear().get(instant);
+                             if (wyear <= 0) {
+-                                instant = iGregorianChronology.weekyear().add(instant, -1);
++                                instant = iGregorianChronology.weekyear().add(instant, 1);
+                             }
+                         } else {
+                             int year = iGregorianChronology.year().get(instant);

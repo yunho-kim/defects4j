@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+index ebb4b08..ff29242 100644
+--- a/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
++++ b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+@@ -2542,7 +2542,7 @@ public class DateTimeFormatterBuilder {
+             String best = null;
+             for (String id : ALL_IDS) {
+                 if (str.startsWith(id)) {
+-                	if (best == null || id.length() > best.length()) {
++                	if (best == null) {
+                 		best = id;
+                 	}
+                 }

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 7219899..5beb435 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -1183,7 +1183,7 @@ public abstract class DateTimeZone implements Serializable {
+         
+         // calculate result
+         long afterStart = instant - overlapStart;
+-        if (afterStart >= diff) {
++        if (afterStart == diff) {
+           // currently in later offset
+           return earlierOrLater ? instant : instant - diff;
+         } else {

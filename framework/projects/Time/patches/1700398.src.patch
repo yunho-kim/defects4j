@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 7219899..ae5770d 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -1168,7 +1168,7 @@ public abstract class DateTimeZone implements Serializable {
+         long instantAfter = instant + 3 * DateTimeConstants.MILLIS_PER_HOUR;
+         long offsetBefore = getOffset(instantBefore);
+         long offsetAfter = getOffset(instantAfter);
+-        if (offsetBefore <= offsetAfter) {
++        if (true) {
+             return instant;  // not an overlap (less than is a gap, equal is normal case)
+         }
+         

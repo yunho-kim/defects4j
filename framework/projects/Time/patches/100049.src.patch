@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/Partial.java b/src/main/java/org/joda/time/Partial.java
+index 6ff2771..55968dd 100644
+--- a/src/main/java/org/joda/time/Partial.java
++++ b/src/main/java/org/joda/time/Partial.java
+@@ -227,7 +227,7 @@ public final class Partial
+                 if (compare < 0) {
+                     throw new IllegalArgumentException("Types array must be in order largest-smallest: " +
+                             types[i - 1].getName() + " < " + loopType.getName());
+-                } else if (compare == 0 && lastUnitField.equals(loopUnitField)) {
++                } else if (compare == -1 && lastUnitField.equals(loopUnitField)) {
+                     if (types[i - 1].getRangeDurationType() == null) {
+                         if (loopType.getRangeDurationType() == null) {
+                             throw new IllegalArgumentException("Types array must not contain duplicate: " +

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/Period.java b/src/main/java/org/joda/time/Period.java
+index 5ea67a7..0443cf9 100644
+--- a/src/main/java/org/joda/time/Period.java
++++ b/src/main/java/org/joda/time/Period.java
+@@ -1636,7 +1636,7 @@ public final class Period
+                 result = result.withMonths(normalizedMonths);
+                 totalMonths = totalMonths - normalizedMonths;
+             }
+-            if (totalMonths != 0) {
++            if (totalMonths != -1) {
+                 throw new UnsupportedOperationException("Unable to normalize as PeriodType is missing either years or months but period has a month/year amount: " + toString());
+             }
+         }

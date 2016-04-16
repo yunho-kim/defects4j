@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/chrono/GJChronology.java b/src/main/java/org/joda/time/chrono/GJChronology.java
+index d1556f5..87c8509 100644
+--- a/src/main/java/org/joda/time/chrono/GJChronology.java
++++ b/src/main/java/org/joda/time/chrono/GJChronology.java
+@@ -980,7 +980,7 @@ public final class GJChronology extends AssembledChronology {
+                 if (instant < iCutover) {
+                     // Only adjust if gap fully crossed.
+                     if (instant + iGapDuration < iCutover) {
+-                        if (iConvertByWeekyear) {
++                        if (true) {
+                             int wyear = iGregorianChronology.weekyear().get(instant);
+                             if (wyear <= 0) {
+                                 instant = iGregorianChronology.weekyear().add(instant, -1);

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/format/DateTimeParserBucket.java b/src/main/java/org/joda/time/format/DateTimeParserBucket.java
+index 7c37fc1..0898672 100644
+--- a/src/main/java/org/joda/time/format/DateTimeParserBucket.java
++++ b/src/main/java/org/joda/time/format/DateTimeParserBucket.java
+@@ -353,7 +353,7 @@ public class DateTimeParserBucket {
+                 millis = savedFields[i].set(millis, resetFields);
+             }
+             if (resetFields) {
+-                for (int i = 0; i < count; i++) {
++                for (int i = 1; i < count; i++) {
+                     millis = savedFields[i].set(millis, i == (count - 1));
+                 }
+             }

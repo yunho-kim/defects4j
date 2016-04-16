@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/LocalDateTime.java b/src/main/java/org/joda/time/LocalDateTime.java
+index e75deca..886df18 100644
+--- a/src/main/java/org/joda/time/LocalDateTime.java
++++ b/src/main/java/org/joda/time/LocalDateTime.java
+@@ -236,7 +236,7 @@ public final class LocalDateTime
+         }
+         if (date.getTime() < 0) {
+             // handle years in era BC
+-            GregorianCalendar cal = new GregorianCalendar();
++            GregorianCalendar cal = null;
+             cal.setTime(date);
+             return fromCalendarFields(cal);
+         }

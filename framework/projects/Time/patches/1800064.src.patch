@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/chrono/GJChronology.java b/src/main/java/org/joda/time/chrono/GJChronology.java
+index 0a19aa6..234b796 100644
+--- a/src/main/java/org/joda/time/chrono/GJChronology.java
++++ b/src/main/java/org/joda/time/chrono/GJChronology.java
+@@ -366,7 +366,7 @@ public final class GJChronology extends AssembledChronology {
+                 (year, monthOfYear, dayOfMonth,
+                  hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
+         } catch (IllegalFieldValueException ex) {
+-            if (monthOfYear != 2 || dayOfMonth != 29) {
++            if (monthOfYear != -2 || dayOfMonth != 29) {
+                 throw ex;
+             }
+             instant = iGregorianChronology.getDateTimeMillis

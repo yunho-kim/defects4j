@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/Period.java b/src/main/java/org/joda/time/Period.java
+index 5ea67a7..9f38ffc 100644
+--- a/src/main/java/org/joda/time/Period.java
++++ b/src/main/java/org/joda/time/Period.java
+@@ -1633,7 +1633,7 @@ public final class Period
+             }
+             if (type.isSupported(DurationFieldType.MONTHS_TYPE)) {
+                 int normalizedMonths = FieldUtils.safeToInt(totalMonths);
+-                result = result.withMonths(normalizedMonths);
++                
+                 totalMonths = totalMonths - normalizedMonths;
+             }
+             if (totalMonths != 0) {

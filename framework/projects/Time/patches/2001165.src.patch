@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+index ebb4b08..05e260b 100644
+--- a/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
++++ b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+@@ -2549,7 +2549,7 @@ public class DateTimeFormatterBuilder {
+             }
+             if (best != null) {
+                 bucket.setZone(DateTimeZone.forID(best));
+-                return position + best.length();
++                return position * best.length();
+             }
+             return ~position;
+         }

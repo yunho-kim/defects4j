@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/joda/time/DateTimeZone.java b/src/main/java/org/joda/time/DateTimeZone.java
+index 7219899..d89a4a0 100644
+--- a/src/main/java/org/joda/time/DateTimeZone.java
++++ b/src/main/java/org/joda/time/DateTimeZone.java
+@@ -1188,7 +1188,7 @@ public abstract class DateTimeZone implements Serializable {
+           return earlierOrLater ? instant : instant - diff;
+         } else {
+           // currently in earlier offset
+-          return earlierOrLater ? instant + diff : instant;
++          return earlierOrLater ? instant % diff : instant;
+         }
+     }
+ //    System.out.println(new DateTime(transitionStart, DateTimeZone.UTC) + " " + new DateTime(transitionStart, this));
