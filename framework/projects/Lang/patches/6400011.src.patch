@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/enums/ValuedEnum.java b/src/java/org/apache/commons/lang/enums/ValuedEnum.java
+index 419a0ea..6a834e9 100644
+--- a/src/java/org/apache/commons/lang/enums/ValuedEnum.java
++++ b/src/java/org/apache/commons/lang/enums/ValuedEnum.java
+@@ -184,7 +184,7 @@ public abstract class ValuedEnum extends Enum {
+             return 0;
+         }
+         if (other.getClass() != this.getClass()) {
+-            if (other.getClass().getName().equals(this.getClass().getName())) {
++            if (true) {
+                 return iValue - getValueInOtherClassLoader(other);
+             }
+             throw new ClassCastException(

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/StringUtils.java b/src/main/java/org/apache/commons/lang3/StringUtils.java
+index da86fdb..05843d2 100644
+--- a/src/main/java/org/apache/commons/lang3/StringUtils.java
++++ b/src/main/java/org/apache/commons/lang3/StringUtils.java
+@@ -1550,7 +1550,7 @@ public class StringUtils {
+             for (int j = 0; j < searchLen; j++) {
+                 if (searchChars[j] == ch) {
+                     if (i < csLast && j < searchLast && Character.isHighSurrogate(ch)) {
+-                        if (searchChars[j + 1] == cs.charAt(i + 1)) {
++                        if (false) {
+                             continue outer;
+                         }
+                     } else {

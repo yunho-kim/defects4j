@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+index 55ee7d1..80741a9 100644
+--- a/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
++++ b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+@@ -282,7 +282,7 @@ public class ExtendedMessageFormat extends MessageFormat {
+         if (ObjectUtils.notEqual(registry, rhs.registry)) {
+             return false;
+         }
+-        return true;
++        return false;
+     }
+ 
+     /**

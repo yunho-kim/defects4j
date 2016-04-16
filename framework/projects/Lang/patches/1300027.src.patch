@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/SerializationUtils.java b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+index 7c89b61..9b031e4 100644
+--- a/src/main/java/org/apache/commons/lang3/SerializationUtils.java
++++ b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+@@ -255,7 +255,7 @@ public class SerializationUtils {
+             primitiveTypes.put("short", short.class);
+             primitiveTypes.put("int", int.class);
+             primitiveTypes.put("long", long.class);
+-            primitiveTypes.put("float", float.class);
++            
+             primitiveTypes.put("double", double.class);
+             primitiveTypes.put("boolean", boolean.class);
+             primitiveTypes.put("char", char.class);

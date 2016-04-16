@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+index 9f7e890..26e27a9 100644
+--- a/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
++++ b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+@@ -538,7 +538,7 @@ public class HashCodeBuilder {
+     static void unregister(Object value) {
+         Set<IDKey> s = getRegistry();
+         if (s != null) {
+-            s.remove(new IDKey(value));
++            
+             synchronized (HashCodeBuilder.class) {
+                 if (s.isEmpty()) {
+                     REGISTRY.remove();

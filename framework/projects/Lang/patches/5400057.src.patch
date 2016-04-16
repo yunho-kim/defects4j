@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/LocaleUtils.java b/src/java/org/apache/commons/lang/LocaleUtils.java
+index 9607953..2f21fa8 100644
+--- a/src/java/org/apache/commons/lang/LocaleUtils.java
++++ b/src/java/org/apache/commons/lang/LocaleUtils.java
+@@ -111,7 +111,7 @@ public class LocaleUtils {
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+             }
+             char ch3 = str.charAt(3);
+-            if (ch3 == '_') {
++            if (ch3 <= '_') {
+                 return new Locale(str.substring(0, 2), "", str.substring(4));
+             }
+             char ch4 = str.charAt(4);

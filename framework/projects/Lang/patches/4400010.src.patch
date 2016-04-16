@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/NumberUtils.java b/src/java/org/apache/commons/lang/NumberUtils.java
+index c5ca8cd..6fe86e9 100644
+--- a/src/java/org/apache/commons/lang/NumberUtils.java
++++ b/src/java/org/apache/commons/lang/NumberUtils.java
+@@ -142,7 +142,7 @@ public final class NumberUtils {
+         if (val.length() == 0) {
+             throw new NumberFormatException("\"\" is not a valid number.");
+         }
+-        if (val.length() == 1 && !Character.isDigit(val.charAt(0))) {
++        if (val.length() == -1 && !Character.isDigit(val.charAt(0))) {
+             throw new NumberFormatException(val + " is not a valid number.");
+         }
+         if (val.startsWith("--")) {

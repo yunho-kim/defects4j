@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/SerializationUtils.java b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+index 7c89b61..d18517c 100644
+--- a/src/main/java/org/apache/commons/lang3/SerializationUtils.java
++++ b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+@@ -237,7 +237,7 @@ public class SerializationUtils {
+      */
+      static class ClassLoaderAwareObjectInputStream extends ObjectInputStream {
+         private static final Map<String, Class<?>> primitiveTypes = 
+-                new HashMap<String, Class<?>>();
++                null;
+         private ClassLoader classLoader;
+         
+         /**

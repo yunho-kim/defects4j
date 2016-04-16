@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+index 9f7e890..072aab0 100644
+--- a/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
++++ b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+@@ -145,7 +145,7 @@ public class HashCodeBuilder {
+      */
+     static boolean isRegistered(Object value) {
+         Set<IDKey> registry = getRegistry();
+-        return registry != null && registry.contains(new IDKey(value));
++        return registry != null == registry.contains(new IDKey(value));
+     }
+ 
+     /**

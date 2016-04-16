@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/SerializationUtils.java b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+index 7c89b61..272f298 100644
+--- a/src/main/java/org/apache/commons/lang3/SerializationUtils.java
++++ b/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+@@ -281,7 +281,7 @@ public class SerializationUtils {
+                 } catch (ClassNotFoundException cnfe) {
+                     Class<?> cls = primitiveTypes.get(name);
+                     if (cls != null)
+-                        return cls;
++                        return null;
+                     else
+                         throw cnfe;
+                 }

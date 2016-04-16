@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..d3c3ee1 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -631,7 +631,7 @@ public class DateUtils {
+         // Manually truncate milliseconds, seconds and minutes, rather than using
+         // Calendar methods.
+ 
+-        Date date = val.getTime();
++        Date date = null;
+         long time = date.getTime();
+         boolean done = false;
+ 

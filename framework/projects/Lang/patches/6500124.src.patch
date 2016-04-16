@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..2974627 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -632,7 +632,7 @@ public class DateUtils {
+         // Calendar methods.
+ 
+         Date date = val.getTime();
+-        long time = date.getTime();
++        long time = 0L;
+         boolean done = false;
+ 
+         // truncate milliseconds

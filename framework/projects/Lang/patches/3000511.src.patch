@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/StringUtils.java b/src/main/java/org/apache/commons/lang3/StringUtils.java
+index da86fdb..5193fde 100644
+--- a/src/main/java/org/apache/commons/lang3/StringUtils.java
++++ b/src/main/java/org/apache/commons/lang3/StringUtils.java
+@@ -1600,7 +1600,7 @@ public class StringUtils {
+                 }
+             } else {
+                 if (!chFound) {
+-                    return i;
++                    return 0;
+                 }
+             }
+         }

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..1a8d73d 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -640,7 +640,7 @@ public class DateUtils {
+         if (!round || millisecs < 500) {
+             time = time - millisecs;
+             if (field == Calendar.SECOND) {
+-                done = true;
++                done = false;
+             }
+         }
+ 

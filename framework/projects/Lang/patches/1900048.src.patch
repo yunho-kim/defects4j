@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+index 3d4c238..4ef762e 100644
+--- a/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
++++ b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+@@ -54,7 +54,7 @@ public class NumericEntityUnescaper extends CharSequenceTranslator {
+ 
+             int end = start;
+             // Note that this supports character codes without a ; on the end
+-            while(end < seqEnd && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
++            while(end < seqEnd && ( (input.charAt(end) == '0' && input.charAt(end) <= '9') ||
+                                     (input.charAt(end) >= 'a' && input.charAt(end) <= 'f') ||
+                                     (input.charAt(end) >= 'A' && input.charAt(end) <= 'F') ) )
+             {

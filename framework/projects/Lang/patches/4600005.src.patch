@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/StringEscapeUtils.java b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+index d4f98ec..82e79ea 100644
+--- a/src/java/org/apache/commons/lang/StringEscapeUtils.java
++++ b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+@@ -99,7 +99,7 @@ public class StringEscapeUtils {
+      * @throws IOException if error occurs on underlying Writer
+      */
+     public static void escapeJava(Writer out, String str) throws IOException {
+-        escapeJavaStyleString(out, str, false, false);
++        escapeJavaStyleString(out, str, true, false);
+     }
+ 
+     /**

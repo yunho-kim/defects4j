@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..f3c31c9 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -638,7 +638,7 @@ public class DateUtils {
+         // truncate milliseconds
+         int millisecs = val.get(Calendar.MILLISECOND);
+         if (!round || millisecs < 500) {
+-            time = time - millisecs;
++            time = time * millisecs;
+             if (field == Calendar.SECOND) {
+                 done = true;
+             }

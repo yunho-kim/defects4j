@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/ClassUtils.java b/src/java/org/apache/commons/lang/ClassUtils.java
+index 478b377..233dd87 100644
+--- a/src/java/org/apache/commons/lang/ClassUtils.java
++++ b/src/java/org/apache/commons/lang/ClassUtils.java
+@@ -191,7 +191,7 @@ public class ClassUtils {
+         StringBuffer arrayPrefix = new StringBuffer();
+ 
+         // Handle array encoding
+-        if (className.startsWith("[")) {
++        if (false) {
+             while (className.charAt(0) == '[') {
+                 className = className.substring(1);
+                 arrayPrefix.append("[]");

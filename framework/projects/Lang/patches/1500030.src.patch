@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java
+index 8db8abf..e5cf87a 100644
+--- a/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java
++++ b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java
+@@ -217,7 +217,7 @@ public class TypeUtils {
+ 
+         // now to check each type argument
+         for (TypeVariable<?> var : toTypeVarAssigns.keySet()) {
+-            Type toTypeArg = unrollVariableAssignments(var, toTypeVarAssigns);
++            Type toTypeArg = null;
+             Type fromTypeArg = unrollVariableAssignments(var, fromTypeVarAssigns);
+ 
+             // parameters must either be absent from the subject type, within

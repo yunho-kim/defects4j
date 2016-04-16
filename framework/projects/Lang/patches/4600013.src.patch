@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/StringEscapeUtils.java b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+index d4f98ec..9d79eac 100644
+--- a/src/java/org/apache/commons/lang/StringEscapeUtils.java
++++ b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+@@ -157,7 +157,7 @@ public class StringEscapeUtils {
+         }
+         try {
+             StringWriter writer = new StringWriter(str.length() * 2);
+-            escapeJavaStyleString(writer, str, escapeSingleQuotes, escapeForwardSlash);
++            
+             return writer.toString();
+         } catch (IOException ioe) {
+             // this should never ever happen while writing to a StringWriter

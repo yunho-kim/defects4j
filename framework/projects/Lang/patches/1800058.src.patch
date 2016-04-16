@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+index 51da48e..0f6d9a0 100644
+--- a/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
++++ b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+@@ -493,7 +493,7 @@ public class FastDateFormat extends Format {
+                 break;
+             case 'y': // year (number)
+                 if (tokenLen == 2) {
+-                    rule = TwoDigitYearField.INSTANCE;
++                    rule = null;
+                 } else {
+                     rule = selectNumberRule(Calendar.YEAR, tokenLen < 4 ? 4 : tokenLen);
+                 }

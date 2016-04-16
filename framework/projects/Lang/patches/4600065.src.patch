@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/StringEscapeUtils.java b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+index d4f98ec..132b658 100644
+--- a/src/java/org/apache/commons/lang/StringEscapeUtils.java
++++ b/src/java/org/apache/commons/lang/StringEscapeUtils.java
+@@ -242,7 +242,7 @@ public class StringEscapeUtils {
+                         out.write('\\');
+                         break;
+                     case '/' :
+-                        if (escapeForwardSlash) {
++                        if (false) {
+                             out.write('\\');
+                         }
+                         out.write('/');

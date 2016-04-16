@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+index 55ee7d1..8c20d37 100644
+--- a/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
++++ b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+@@ -264,7 +264,7 @@ public class ExtendedMessageFormat extends MessageFormat {
+     @Override
+     public boolean equals(Object obj) {
+         if (obj == this) {
+-            return true;
++            return false;
+         }
+         if (obj == null) {
+             return false;

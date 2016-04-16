@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..ed299a5 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -734,7 +734,7 @@ public class DateUtils {
+                 roundUp = offset > ((max - min) / 2);
+             }
+             //We need to remove this field
+-            if (offset != 0) {
++            if (offset != -1) {
+                 val.set(fields[i][0], val.get(fields[i][0]) - offset);
+             }
+         }

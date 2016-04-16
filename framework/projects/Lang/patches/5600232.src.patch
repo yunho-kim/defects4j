@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/FastDateFormat.java b/src/java/org/apache/commons/lang/time/FastDateFormat.java
+index 756290f..c97df1f 100644
+--- a/src/java/org/apache/commons/lang/time/FastDateFormat.java
++++ b/src/java/org/apache/commons/lang/time/FastDateFormat.java
+@@ -1020,7 +1020,7 @@ public class FastDateFormat extends Format {
+     // Serializing
+     //-----------------------------------------------------------------------
+     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+-        in.defaultReadObject();
++        
+         init();
+     }
+     

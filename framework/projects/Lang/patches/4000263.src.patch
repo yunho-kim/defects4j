@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/StringUtils.java b/src/java/org/apache/commons/lang/StringUtils.java
+index 8351b3e..6ce26eb 100644
+--- a/src/java/org/apache/commons/lang/StringUtils.java
++++ b/src/java/org/apache/commons/lang/StringUtils.java
+@@ -1047,7 +1047,7 @@ public class StringUtils {
+         }
+         int len = searchStr.length();
+         int max = str.length() - len;
+-        for (int i = 0; i <= max; i++) {
++        for (int i = 1; i <= max; i++) {
+             if (str.regionMatches(true, i, searchStr, 0, len)) {
+                 return true;
+             }

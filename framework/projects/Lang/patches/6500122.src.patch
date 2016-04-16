@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang/time/DateUtils.java b/src/java/org/apache/commons/lang/time/DateUtils.java
+index 79c13f0..8248b19 100644
+--- a/src/java/org/apache/commons/lang/time/DateUtils.java
++++ b/src/java/org/apache/commons/lang/time/DateUtils.java
+@@ -622,7 +622,7 @@ public class DateUtils {
+         }
+         
+         if (field == Calendar.MILLISECOND) {
+-            return;
++            
+         }
+ 
+         // ----------------- Fix for LANG-59 ---------------------- START ---------------

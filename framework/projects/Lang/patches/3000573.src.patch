@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/lang3/StringUtils.java b/src/main/java/org/apache/commons/lang3/StringUtils.java
+index da86fdb..e5b3363 100644
+--- a/src/main/java/org/apache/commons/lang3/StringUtils.java
++++ b/src/main/java/org/apache/commons/lang3/StringUtils.java
+@@ -1714,7 +1714,7 @@ public class StringUtils {
+                             // missing low surrogate, fine, like String.indexOf(String)
+                             return false;
+                         }
+-                        if (i < csLast && searchChars[j + 1] == cs.charAt(i + 1)) {
++                        if (i <= csLast && searchChars[j + 1] == cs.charAt(i + 1)) {
+                             return false;
+                         }
+                     } else {

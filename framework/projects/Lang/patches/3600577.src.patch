@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/lang3/math/NumberUtils.java b/src/java/org/apache/commons/lang3/math/NumberUtils.java
+index 0d30b22..c9ce90f 100644
+--- a/src/java/org/apache/commons/lang3/math/NumberUtils.java
++++ b/src/java/org/apache/commons/lang3/math/NumberUtils.java
+@@ -1391,7 +1391,7 @@ public class NumberUtils {
+                     return false;
+                 }
+                 // single trailing decimal point after non-exponent is ok
+-                return foundDigit;
++                return false;
+             }
+             if (!allowSigns
+                 && (chars[i] == 'd'
