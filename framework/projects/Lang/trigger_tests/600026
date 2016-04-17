@@ -1,1 +1,190 @@
-# Mutant id: 34
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeJava
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:415)
+	at java.lang.StringBuffer.append(StringBuffer.java:237)
+	at java.io.StringWriter.write(StringWriter.java:101)
+	at org.apache.commons.lang3.text.translate.LookupTranslator.translate(LookupTranslator.java:74)
+	at org.apache.commons.lang3.text.translate.AggregateTranslator.translate(AggregateTranslator.java:52)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:85)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:59)
+	at org.apache.commons.lang3.StringEscapeUtils.unescapeJava(StringEscapeUtils.java:383)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.assertUnescapeJava(StringEscapeUtilsTest.java:164)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.assertUnescapeJava(StringEscapeUtilsTest.java:159)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.testUnescapeJava(StringEscapeUtilsTest.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testStandaloneAmphersand
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:415)
+	at java.lang.StringBuffer.append(StringBuffer.java:237)
+	at java.io.StringWriter.write(StringWriter.java:101)
+	at org.apache.commons.lang3.text.translate.LookupTranslator.translate(LookupTranslator.java:74)
+	at org.apache.commons.lang3.text.translate.AggregateTranslator.translate(AggregateTranslator.java:52)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:85)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:59)
+	at org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(StringEscapeUtils.java:468)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.testStandaloneAmphersand(StringEscapeUtilsTest.java:368)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeHtml4
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:415)
+	at java.lang.StringBuffer.append(StringBuffer.java:237)
+	at java.io.StringWriter.write(StringWriter.java:101)
+	at org.apache.commons.lang3.text.translate.LookupTranslator.translate(LookupTranslator.java:74)
+	at org.apache.commons.lang3.text.translate.AggregateTranslator.translate(AggregateTranslator.java:52)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:85)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:59)
+	at org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(StringEscapeUtils.java:468)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.testUnescapeHtml4(StringEscapeUtilsTest.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeHtml
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:415)
+	at java.lang.StringBuffer.append(StringBuffer.java:237)
+	at java.io.StringWriter.write(StringWriter.java:101)
+	at org.apache.commons.lang3.text.translate.LookupTranslator.translate(LookupTranslator.java:74)
+	at org.apache.commons.lang3.text.translate.AggregateTranslator.translate(AggregateTranslator.java:52)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:85)
+	at org.apache.commons.lang3.text.translate.CharSequenceTranslator.translate(CharSequenceTranslator.java:59)
+	at org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(StringEscapeUtils.java:433)
+	at org.apache.commons.lang3.StringEscapeUtilsTest.testEscapeHtml(StringEscapeUtilsTest.java:226)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:38)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeJava
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeXmlSupplementaryCharacters
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testLang313
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testLang708
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeEcmaScript
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeCsvString
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeCsvWriter
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeHexCharsHtml
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeXmlSupplementaryCharacters
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeCsvString
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeCsvWriter
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeHtmlVersions
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeXml
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.StringUtilsTest::testEscapeSurrogatePairs
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.reflect.TypeUtilsTest::testIsAssignable
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityEscaperTest::testAbove
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityEscaperTest::testBelow
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityEscaperTest::testBetween
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityEscaperTest::testSupplementary
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testSupplementaryUnescaping
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest::testUnfinishedEntity
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.OctalUnescaperTest::testBetween
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.UnicodeEscaperTest::testAbove
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.UnicodeEscaperTest::testBelow
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.UnicodeEscaperTest::testBetween
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.UnicodeUnescaperTest::testUPlus
+java.lang.OutOfMemoryError: Java heap space
+--- org.apache.commons.lang3.text.translate.UnicodeUnescaperTest::testUuuuu
+java.lang.OutOfMemoryError: Java heap space
