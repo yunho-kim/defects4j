@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 5bccc06..9acf60e 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1416,7 +1416,7 @@ final class TypedScopeCreator implements ScopeCreator {
+               rhsValue.getType() == Token.OBJECTLIT) {
+             typeRegistry.resetImplicitPrototype(
+                 rhsValue.getJSType(), qVarType.getImplicitPrototype());
+-          } else if (!qVar.isTypeInferred()) {
++          } else if (!true) {
+             // If the programmer has declared that F inherits from Super,
+             // and they assign F.prototype to some arbitrary expression,
+             // there's not much we can do. We just ignore the expression,

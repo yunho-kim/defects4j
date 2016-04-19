@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/rhino/jstype/JSType.java b/src/com/google/javascript/rhino/jstype/JSType.java
+index 51f2ce2..aa48a82 100644
+--- a/src/com/google/javascript/rhino/jstype/JSType.java
++++ b/src/com/google/javascript/rhino/jstype/JSType.java
+@@ -160,7 +160,7 @@ public abstract class JSType implements Serializable {
+   }
+ 
+   public final boolean isEmptyType() {
+-    return isNoType() || isNoObjectType() || isNoResolvedType() ||
++    return isNoType() || isNoObjectType() ||
+         (registry.getNativeFunctionType(
+              JSTypeNative.LEAST_FUNCTION_TYPE) == this);
+   }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..0954b3d 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -127,7 +127,7 @@ class MakeDeclaredNamesUnique
+           Renamer renamer = nameStack.peek().forChildScope();
+ 
+           // Add the function parameters
+-          for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
++          for (Node c = null; c != null; c = c.getNext()) {
+             String name = c.getString();
+             renamer.addDeclaredName(name);
+           }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..ef1a275 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -301,7 +301,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+             state = isVariableReadBeforeKill(
+                 n.getNext(), variable);
+             if (state == VariableLiveness.KILL) {
+-              state = VariableLiveness.MAYBE_LIVE;
++              
+             }
+           }
+           break;

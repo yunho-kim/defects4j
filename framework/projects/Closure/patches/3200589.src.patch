@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index cfdccbe..22a2ebf 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1389,7 +1389,7 @@ public final class JsDocInfoParser {
+           ignoreStar = false;
+           state = State.SEARCHING_ANNOTATION;
+ 
+-          boolean isEOC = token == JsDocToken.EOC;
++          boolean isEOC = false;
+           if (!isEOC) {
+             if (lineStartChar != -1 && option == WhitespaceOption.PRESERVE) {
+               int numSpaces = stream.getCharno() - lineStartChar;

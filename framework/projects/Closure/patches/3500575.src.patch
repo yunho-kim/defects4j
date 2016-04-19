@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeInference.java b/src/com/google/javascript/jscomp/TypeInference.java
+index fb6be1e..4adf150 100644
+--- a/src/com/google/javascript/jscomp/TypeInference.java
++++ b/src/com/google/javascript/jscomp/TypeInference.java
+@@ -1119,7 +1119,7 @@ class TypeInference
+     ObjectType constraintObj =
+         ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+     if (constraintObj != null) {
+-      type.matchConstraint(constraintObj);
++      
+     }
+   }
+ 

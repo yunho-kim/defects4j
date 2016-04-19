@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..ce88a27 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -419,7 +419,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+             NodeUtil.setDebugInformation(
+                 newDecl.getFirstChild().getFirstChild(), n, name);
+ 
+-            if (isHoisted) {
++            if (true) {
+               grandparent.addChildToFront(newDecl);
+             } else {
+               grandparent.addChildBefore(newDecl, varNode);

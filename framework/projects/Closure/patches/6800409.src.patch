@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index 167e2cb..3b7a561 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -868,7 +868,7 @@ public final class JsDocInfoParser {
+                   }
+ 
+                   token = eatTokensUntilEOL();
+-                  continue retry;
++                  
+               }
+             }
+           }

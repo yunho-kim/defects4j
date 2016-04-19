@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index d2a4e5d..a06e672 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -828,7 +828,7 @@ public class IRFactory {
+         case Token.GETELEM:
+           return true;
+       }
+-      return false;
++      return true;
+     }
+ 
+     @Override

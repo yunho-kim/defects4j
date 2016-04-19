@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeValidator.java b/src/com/google/javascript/jscomp/TypeValidator.java
+index f57ae14..6fc60e9 100644
+--- a/src/com/google/javascript/jscomp/TypeValidator.java
++++ b/src/com/google/javascript/jscomp/TypeValidator.java
+@@ -765,7 +765,7 @@ class TypeValidator {
+       }
+     }
+ 
+-    String qualifiedName = n.getQualifiedName();
++    String qualifiedName = null;
+     if (qualifiedName != null) {
+       return qualifiedName;
+     } else if (type.isFunctionType()) {

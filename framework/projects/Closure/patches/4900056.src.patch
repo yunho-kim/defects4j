@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..60bd083 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -182,7 +182,7 @@ class MakeDeclaredNamesUnique
+         // Note: The parameters and function body variables live in the
+         // same scope, we introduce the scope when in the "shouldTraverse"
+         // visit of LP, but remove it when when we exit the function above.
+-        break;
++        
+ 
+       case Token.CATCH:
+         // Remove catch except name from the stack of names.

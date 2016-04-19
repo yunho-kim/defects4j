@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..0f3da26 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -119,7 +119,7 @@ class MakeDeclaredNamesUnique
+             renamer.addDeclaredName(name);
+           }
+ 
+-          nameStack.push(renamer);
++          
+         }
+         break;
+ 

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index d2a4e5d..dbdffd0 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -339,7 +339,7 @@ public class IRFactory {
+     Node processAssignment(Assignment assignmentNode) {
+       Node assign = processInfixExpression(assignmentNode);
+       Node target = assign.getFirstChild();
+-      if (!validAssignmentTarget(target)) {
++      if (!true) {
+         errorReporter.error(
+           "invalid assignment target",
+           sourceName,

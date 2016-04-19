@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+index 589f673..139f63c 100644
+--- a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
++++ b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+@@ -433,7 +433,7 @@ final class MustBeReachingVariableDef extends
+     FlowState<MustDef> state = n.getAnnotation();
+     Definition def = state.getIn().reachingDef.get(jsScope.getVar(name));
+     if (def.unknownDependencies) {
+-      return true;
++      return false;
+     }
+ 
+     for (Var s : def.depends) {

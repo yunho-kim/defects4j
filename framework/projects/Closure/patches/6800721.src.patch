@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index 167e2cb..aaa85bb 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1706,7 +1706,7 @@ public final class JsDocInfoParser {
+       }
+     }
+ 
+-    restoreLookAhead(token);
++    
+     return reportGenericTypeSyntaxWarning();
+   }
+ 

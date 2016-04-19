@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DisambiguateProperties.java b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index ca5edbd..589a324 100644
+--- a/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -760,7 +760,7 @@ class DisambiguateProperties<T> implements CompilerPass {
+       }
+       // If the property does not exist on the referenced type but the original
+       // type is an object type, see if any subtype has the property.
+-      if (foundType == null) {
++      if (false) {
+         ObjectType maybeType = ObjectType.cast(
+             registry.getGreatestSubtypeWithProperty(type, field));
+         // getGreatestSubtypeWithProperty does not guarantee that the property

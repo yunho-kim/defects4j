@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FoldConstants.java b/src/com/google/javascript/jscomp/FoldConstants.java
+index 657ee0a..590be44 100644
+--- a/src/com/google/javascript/jscomp/FoldConstants.java
++++ b/src/com/google/javascript/jscomp/FoldConstants.java
+@@ -1481,7 +1481,7 @@ class FoldConstants extends AbstractPostOrderCallback
+     while (elem != null) {
+       if (NodeUtil.isImmutableValue(elem)) {
+         if (sb == null) {
+-          sb = new StringBuilder();
++          
+         } else {
+           sb.append(joinString);
+         }

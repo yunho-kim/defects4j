@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeValidator.java b/src/com/google/javascript/jscomp/TypeValidator.java
+index f57ae14..27c19c8 100644
+--- a/src/com/google/javascript/jscomp/TypeValidator.java
++++ b/src/com/google/javascript/jscomp/TypeValidator.java
+@@ -734,7 +734,7 @@ class TypeValidator {
+     if (type.isFunctionPrototypeType() ||
+         (type.toObjectType() != null &&
+          type.toObjectType().getConstructor() != null)) {
+-      return type.toString();
++      return null;
+     }
+ 
+     // If we're analyzing a GETPROP, the property may be inherited by the

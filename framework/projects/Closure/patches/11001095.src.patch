@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..ac5efad 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -384,7 +384,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+           // to be used in another expression.
+           if (isFunctionDecl) {
+             // Replace "function NAME() { ... }" with "var NAME;".
+-            Node existingName = v.getNameNode();
++            Node existingName = null;
+ 
+             // We can't keep the local name on the function expression,
+             // because IE is buggy and will leak the name into the global

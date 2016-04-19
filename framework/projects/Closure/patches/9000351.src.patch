@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/rhino/jstype/FunctionType.java b/src/com/google/javascript/rhino/jstype/FunctionType.java
+index de1d1c2..c947a02 100644
+--- a/src/com/google/javascript/rhino/jstype/FunctionType.java
++++ b/src/com/google/javascript/rhino/jstype/FunctionType.java
+@@ -878,7 +878,7 @@ public class FunctionType extends PrototypeObjectType {
+     // the name for them.
+     JSType maybeTypeOfThis = safeResolve(typeOfThis, t, scope);
+     if (maybeTypeOfThis != null) {
+-      maybeTypeOfThis = maybeTypeOfThis.restrictByNotNullOrUndefined();
++      
+     }
+     if (maybeTypeOfThis instanceof ObjectType) {
+       typeOfThis = (ObjectType) maybeTypeOfThis;

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index f9943a1..0664cf0 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -585,7 +585,7 @@ final class TypedScopeCreator implements ScopeCreator {
+           break;
+ 
+         case Token.OBJECTLIT:
+-          JSDocInfo info = n.getJSDocInfo();
++          JSDocInfo info = null;
+           if (info != null &&
+               info.getLendsName() != null) {
+             if (lentObjectLiterals == null) {

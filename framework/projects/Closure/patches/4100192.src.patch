@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FunctionTypeBuilder.java b/src/com/google/javascript/jscomp/FunctionTypeBuilder.java
+index e20d788..afe61bf 100644
+--- a/src/com/google/javascript/jscomp/FunctionTypeBuilder.java
++++ b/src/com/google/javascript/jscomp/FunctionTypeBuilder.java
+@@ -486,7 +486,7 @@ final class FunctionTypeBuilder {
+     if (!isVarArgs) {
+       while (oldParameterType != null && !isVarArgs) {
+         builder.newParameterFromNode(oldParameterType);
+-        oldParameterType = oldParameterType.getNext();
++        
+       }
+     }
+ 

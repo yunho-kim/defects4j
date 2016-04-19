@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/GlobalNamespace.java b/src/com/google/javascript/jscomp/GlobalNamespace.java
+index 8268339..9964d9e 100644
+--- a/src/com/google/javascript/jscomp/GlobalNamespace.java
++++ b/src/com/google/javascript/jscomp/GlobalNamespace.java
+@@ -917,7 +917,7 @@ class GlobalNamespace {
+       }
+ 
+       // If this is aliased, then its properties can't be collapsed either.
+-      if (aliasingGets > 0) {
++      if (aliasingGets > 1) {
+         return false;
+       }
+ 

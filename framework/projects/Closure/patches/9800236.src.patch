@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+index da4ed3e..cbb339e 100644
+--- a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
++++ b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+@@ -574,7 +574,7 @@ class ReferenceCollectingCallback implements ScopedCallback, CompilerPass {
+         int pType = root.getParent().getType();
+         this.isLoop = pType == Token.DO ||
+             pType == Token.WHILE ||
+-            pType == Token.FOR;
++            false;
+       } else {
+         this.isLoop = false;
+       }

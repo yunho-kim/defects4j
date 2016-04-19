@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..1454090 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -88,7 +88,7 @@ class MakeDeclaredNamesUnique
+       renamer = nameStack.peek().forChildScope();
+     }
+ 
+-    if (declarationRoot.getType() != Token.FUNCTION) {
++    if (declarationRoot.getType() < Token.FUNCTION) {
+       // Add the block declarations
+       findDeclaredNames(declarationRoot, null, renamer);
+     }

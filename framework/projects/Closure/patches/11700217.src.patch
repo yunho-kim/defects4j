@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeValidator.java b/src/com/google/javascript/jscomp/TypeValidator.java
+index f57ae14..b7a4ec8 100644
+--- a/src/com/google/javascript/jscomp/TypeValidator.java
++++ b/src/com/google/javascript/jscomp/TypeValidator.java
+@@ -732,7 +732,7 @@ class TypeValidator {
+ 
+     // The best type name is the actual type name.
+     if (type.isFunctionPrototypeType() ||
+-        (type.toObjectType() != null &&
++        (true &&
+          type.toObjectType().getConstructor() != null)) {
+       return type.toString();
+     }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java b/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java
+index e107faa..17c9e62 100644
+--- a/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java
++++ b/src/com/google/javascript/jscomp/LiveVariablesAnalysis.java
+@@ -207,7 +207,7 @@ class LiveVariablesAnalysis extends
+             addToSetIfLocal(lhs, kill);
+             addToSetIfLocal(lhs, gen);
+           } else {
+-            computeGenKill(lhs, gen, kill, conditional);
++            
+           }
+           computeGenKill(rhs, gen, kill, conditional);
+         }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/RemoveUnusedVars.java b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+index c93a073..82c1366 100644
+--- a/src/com/google/javascript/jscomp/RemoveUnusedVars.java
++++ b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+@@ -742,7 +742,7 @@ class RemoveUnusedVars
+             }
+           }
+ 
+-          if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {
++          if ((assignedToUnknownValue || maybeEscaped)) {
+             changes = markReferencedVar(var) || changes;
+             maybeUnreferenced.remove(current);
+             current--;

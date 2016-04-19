@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/NodeUtil.java b/src/com/google/javascript/jscomp/NodeUtil.java
+index f9ce42e..10af713 100644
+--- a/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -958,7 +958,7 @@ public final class NodeUtil {
+       if (nameNode.getFirstChild().getType() == Token.NAME) {
+         String namespaceName = nameNode.getFirstChild().getString();
+         if (namespaceName.equals("Math")) {
+-          return false;
++          return true;
+         }
+       }
+ 

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeValidator.java b/src/com/google/javascript/jscomp/TypeValidator.java
+index 12ce5b3..aee40b0 100644
+--- a/src/com/google/javascript/jscomp/TypeValidator.java
++++ b/src/com/google/javascript/jscomp/TypeValidator.java
+@@ -379,7 +379,7 @@ class TypeValidator {
+           "assignment to property " + propName + " of " +
+           getReadableJSTypeName(owner, true),
+           rightType, leftType);
+-      return false;
++      return true;
+     }
+     return true;
+   }

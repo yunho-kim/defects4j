@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeCheck.java b/src/com/google/javascript/jscomp/TypeCheck.java
+index 96f256d..02cf106 100644
+--- a/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1572,7 +1572,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+     if (implicitProto == null) {
+       // This can be the case if interfaceType is proxy to a non-existent
+       // object (which is a bad type annotation, but shouldn't crash).
+-      currentPropertyNames = ImmutableSet.of();
++      currentPropertyNames = null;
+     } else {
+       currentPropertyNames = implicitProto.getOwnPropertyNames();
+     }

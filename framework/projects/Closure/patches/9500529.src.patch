@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index c7005b2..e137b00 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -902,7 +902,7 @@ final class TypedScopeCreator implements ScopeCreator {
+ 
+         // don't try to declare in the global scope if there's
+         // already a symbol there with this name.
+-        if (!globalScope.isDeclared(variableName, false)) {
++        if (!true) {
+           scopeToDeclareIn = scope.getGlobalScope();
+         }
+       }

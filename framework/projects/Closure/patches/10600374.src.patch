@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/GlobalNamespace.java b/src/com/google/javascript/jscomp/GlobalNamespace.java
+index 47ea27a..f5c8415 100644
+--- a/src/com/google/javascript/jscomp/GlobalNamespace.java
++++ b/src/com/google/javascript/jscomp/GlobalNamespace.java
+@@ -905,7 +905,7 @@ class GlobalNamespace {
+       // We could theoretically handle this case in CollapseProperties, but
+       // it's probably not worth the effort.
+       Preconditions.checkNotNull(declaration);
+-      if (declaration.getTwin() != null) {
++      if (true) {
+         return false;
+       }
+ 

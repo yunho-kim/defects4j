@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckGlobalThis.java b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+index 91008e4..bda5833 100644
+--- a/src/com/google/javascript/jscomp/CheckGlobalThis.java
++++ b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+@@ -113,7 +113,7 @@ final class CheckGlobalThis implements Callback {
+ 
+       // Don't traverse functions that are getting lent to a prototype.
+       Node gramps = parent.getParent();
+-      if (NodeUtil.isObjectLitKey(parent, gramps)) {
++      if (false) {
+         JSDocInfo maybeLends = gramps.getJSDocInfo();
+         if (maybeLends != null &&
+             maybeLends.getLendsName() != null &&

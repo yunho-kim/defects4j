@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index c6b70c5..f03ad1c 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -565,7 +565,7 @@ class IRFactory {
+ 
+     @Override
+     Node processForInLoop(ForInLoop loopNode) {
+-      if (loopNode.isForEach()) {
++      if (false) {
+         errorReporter.error(
+             "unsupported language extension: for each",
+             sourceName,

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+index 7a0313c..bf87fe7 100644
+--- a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
++++ b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+@@ -1450,7 +1450,7 @@ class PeepholeFoldConstants extends AbstractPeepholeOptimization {
+     Node elem = null;
+     for (int i = 0; current != null; i++) {
+       if (i != intIndex) {
+-        if (mayHaveSideEffects(current)) {
++        if (true) {
+           return n;
+         }
+       } else {

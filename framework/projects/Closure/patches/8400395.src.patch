@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index d2a4e5d..5683f77 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -826,7 +826,7 @@ public class IRFactory {
+         case Token.NAME:
+         case Token.GETPROP:
+         case Token.GETELEM:
+-          return true;
++          return false;
+       }
+       return false;
+     }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index d2a4e5d..312df6d 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -801,7 +801,7 @@ public class IRFactory {
+         operand.setDouble(-operand.getDouble());
+         return operand;
+       } else {
+-        if (type == Token.INC || type == Token.DEC) {
++        if (type == Token.INC || type <= Token.DEC) {
+           if (!validAssignmentTarget(operand)) {
+             String msg = (type == Token.INC)
+                 ? "invalid increment target"

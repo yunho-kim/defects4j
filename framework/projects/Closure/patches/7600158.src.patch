@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..bbc3c84 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -383,7 +383,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+         // With a AND/OR the first branch always runs, but the second is
+         // may not.
+         if (v1 != VariableLiveness.MAYBE_LIVE) {
+-          return v1;
++          return null;
+         } else if (v2 == VariableLiveness.READ) {
+           return VariableLiveness.READ;
+         } else {

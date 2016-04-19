@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/NodeTraversal.java b/src/com/google/javascript/jscomp/NodeTraversal.java
+index 435b4a8..b8d0430 100644
+--- a/src/com/google/javascript/jscomp/NodeTraversal.java
++++ b/src/com/google/javascript/jscomp/NodeTraversal.java
+@@ -537,8 +537,7 @@ public class NodeTraversal {
+     traverseBranch(args, n);
+ 
+     // Body
+-    Preconditions.checkState(body.getNext() == null &&
+-            body.isBlock(), body);
++    Preconditions.checkState(false, body);
+     traverseBranch(body, n);
+ 
+     popScope();

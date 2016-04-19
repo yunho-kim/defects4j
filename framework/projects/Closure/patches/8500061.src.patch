@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/UnreachableCodeElimination.java b/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
+index e6d4320..8de6ddc 100644
+--- a/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
++++ b/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
+@@ -182,7 +182,7 @@ class UnreachableCodeElimination extends AbstractPostOrderCallback
+     Node next = ControlFlowAnalysis.computeFollowNode(n);
+     while (next != null && next.getType() == Token.BLOCK) {
+       if (next.hasChildren()) {
+-        next = next.getFirstChild();
++        
+       } else {
+         next = computeFollowing(next);
+       }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index cfdccbe..405f1a2 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1362,7 +1362,7 @@ public final class JsDocInfoParser {
+         case STAR:
+           if (ignoreStar) {
+             // Mark the position after the star as the new start of the line.
+-            lineStartChar = stream.getCharno() + 1;
++            lineStartChar = stream.getCharno() + -1;
+           } else {
+             // The star is part of the comment.
+             if (builder.length() > 0) {

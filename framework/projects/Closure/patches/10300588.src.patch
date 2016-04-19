@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DisambiguateProperties.java b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index ca5edbd..ca1bf1e 100644
+--- a/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -767,7 +767,7 @@ class DisambiguateProperties<T> implements CompilerPass {
+         // is defined on the returned type, it just indicates that it might be,
+         // so we have to double check.
+         if (maybeType != null && maybeType.hasOwnProperty(field)) {
+-          foundType = maybeType;
++          
+         }
+       }
+       return foundType;

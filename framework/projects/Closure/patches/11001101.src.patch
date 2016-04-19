@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..f47bfc1 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -404,7 +404,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+               // the tree will still be valid.
+               value.detachFromParent();
+             }
+-            varNode = parent;
++            
+           }
+ 
+           // Add $jscomp.scope.name = EXPR;

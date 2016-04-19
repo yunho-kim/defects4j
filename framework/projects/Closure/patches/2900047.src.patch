@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/InlineObjectLiterals.java b/src/com/google/javascript/jscomp/InlineObjectLiterals.java
+index 8c3159d..21ad249 100644
+--- a/src/com/google/javascript/jscomp/InlineObjectLiterals.java
++++ b/src/com/google/javascript/jscomp/InlineObjectLiterals.java
+@@ -184,7 +184,7 @@ class InlineObjectLiterals implements CompilerPass {
+             if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {
+               validProperties.add(propName);
+             } else {
+-              return false;
++              return true;
+             }
+           }
+           continue;

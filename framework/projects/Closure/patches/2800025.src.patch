@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/InlineCostEstimator.java b/src/com/google/javascript/jscomp/InlineCostEstimator.java
+index 65694ab..f4eb52a 100644
+--- a/src/com/google/javascript/jscomp/InlineCostEstimator.java
++++ b/src/com/google/javascript/jscomp/InlineCostEstimator.java
+@@ -101,7 +101,7 @@ class InlineCostEstimator {
+      */
+     @Override
+     void addConstant(String newcode) {
+-      add("0");
++      
+     }
+   }
+ }

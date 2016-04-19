@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index e2f0538..ba58e68 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -173,7 +173,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+     AliasedTypeNode(Node typeReference, Node aliasDefinition,
+         String aliasName) {
+       this.typeReference = typeReference;
+-      this.aliasDefinition = aliasDefinition;
++      this.aliasDefinition = null;
+       this.aliasName = aliasName;
+     }
+ 

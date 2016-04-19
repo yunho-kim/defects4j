@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java b/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java
+index e0466ea..6d530bd 100644
+--- a/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java
++++ b/src/com/google/javascript/jscomp/CollapseVariableDeclarations.java
+@@ -199,7 +199,7 @@ class CollapseVariableDeclarations implements CompilerPass {
+       }
+ 
+       Var var = s.getVar(lhs.getString());
+-      return var != null
++      return true
+           && var.getScope() == s
+           && !isNamedParameter(var)
+           && !blacklistedVars.contains(var);

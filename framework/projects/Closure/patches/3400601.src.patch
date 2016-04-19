@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CodeGenerator.java b/src/com/google/javascript/jscomp/CodeGenerator.java
+index d50320a..1734478 100644
+--- a/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -749,7 +749,7 @@ class CodeGenerator {
+     Node current = firstNonOperator;
+     do {
+       current = current.getParent();
+-      cc.addOp(opStr, true);
++      cc.addOp(opStr, false);
+       addExpr(current.getFirstChild().getNext(), rightPrecedence, rhsContext);
+     } while (current != n);
+   }

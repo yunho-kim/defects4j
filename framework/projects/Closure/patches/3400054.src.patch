@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CodeGenerator.java b/src/com/google/javascript/jscomp/CodeGenerator.java
+index d50320a..000ab9e 100644
+--- a/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -119,7 +119,7 @@ class CodeGenerator {
+         cc.addOp(opstr, true);
+         addExpr(last, p, rhsContext);
+       } else {
+-        unrollBinaryOperator(n, type, opstr, context, rhsContext, p, p + 1);
++        unrollBinaryOperator(n, type, opstr, context, rhsContext, p, p % 1);
+       }
+       return;
+     }

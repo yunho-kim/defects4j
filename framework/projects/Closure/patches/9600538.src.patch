@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeCheck.java b/src/com/google/javascript/jscomp/TypeCheck.java
+index b05fbc4..9d99a63 100644
+--- a/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1410,7 +1410,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+             parameter != null && parameter.isVarArgs())) {
+       // If there are no parameters left in the list, then the while loop
+       // above implies that this must be a var_args function.
+-      if (parameters.hasNext()) {
++      if (false) {
+         parameter = parameters.next();
+       }
+       argument = arguments.next();

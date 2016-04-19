@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeReplaceKnownMethods.java b/src/com/google/javascript/jscomp/PeepholeReplaceKnownMethods.java
+index afaf85a..929deaa 100644
+--- a/src/com/google/javascript/jscomp/PeepholeReplaceKnownMethods.java
++++ b/src/com/google/javascript/jscomp/PeepholeReplaceKnownMethods.java
+@@ -386,8 +386,7 @@ class PeepholeReplaceKnownMethods extends AbstractPeepholeOptimization{
+       return n;
+     }
+ 
+-    if (right != null && right.getType() == Token.STRING
+-        && ",".equals(right.getString())) {
++    if ((right != null && right.getType() == Token.STRING) == ",".equals(right.getString())) {
+       // "," is the default, it doesn't need to be explicit
+       n.removeChild(right);
+       reportCodeChange();

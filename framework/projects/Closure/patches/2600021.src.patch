@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ProcessCommonJSModules.java b/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
+index fa01cd9..a24db84 100644
+--- a/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
++++ b/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
+@@ -125,7 +125,7 @@ public class ProcessCommonJSModules implements CompilerPass {
+       AbstractPostOrderCallback {
+ 
+     private int scriptNodeCount = 0;
+-    private Set<String> modulesWithExports = Sets.newHashSet();
++    private Set<String> modulesWithExports = null;
+ 
+     @Override
+     public void visit(NodeTraversal t, Node n, Node parent) {

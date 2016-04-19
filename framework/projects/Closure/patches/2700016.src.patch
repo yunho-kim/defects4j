@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/rhino/IR.java b/src/com/google/javascript/rhino/IR.java
+index 002acd6..6d34dd6 100644
+--- a/src/com/google/javascript/rhino/IR.java
++++ b/src/com/google/javascript/rhino/IR.java
+@@ -109,7 +109,7 @@ public class IR {
+   }
+ 
+   private static Node blockUnchecked(Node stmt) {
+-    return new Node(Token.BLOCK, stmt);
++    return null;
+   }
+ 
+   public static Node script(Node ... stmts) {

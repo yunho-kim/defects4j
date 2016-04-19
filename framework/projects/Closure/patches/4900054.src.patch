@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..e0534e6 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -173,7 +173,7 @@ class MakeDeclaredNamesUnique
+ 
+       case Token.FUNCTION:
+         // Remove the function body scope
+-        nameStack.pop();
++        
+         // Remove function recursive name (if any).
+         nameStack.pop();
+         break;

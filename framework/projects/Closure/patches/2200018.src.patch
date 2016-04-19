@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckSideEffects.java b/src/com/google/javascript/jscomp/CheckSideEffects.java
+index 722d225..913f3bc 100644
+--- a/src/com/google/javascript/jscomp/CheckSideEffects.java
++++ b/src/com/google/javascript/jscomp/CheckSideEffects.java
+@@ -104,7 +104,7 @@ final class CheckSideEffects extends AbstractPostOrderCallback
+ 
+     // This no-op statement was there so that JSDoc information could
+     // be attached to the name. This check should not complain about it.
+-    if (n.isQualifiedName() && n.getJSDocInfo() != null) {
++    if (n.isQualifiedName() == (n.getJSDocInfo() != null)) {
+       return;
+     }
+ 

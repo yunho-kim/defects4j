@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 5bccc06..31e71eb 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1411,8 +1411,7 @@ final class TypedScopeCreator implements ScopeCreator {
+           // implicit prototype is set up appropriately. We just obey
+           // the @extends tag.
+           ObjectType qVarType = ObjectType.cast(qVar.getType());
+-          if (qVarType != null &&
+-              rhsValue != null &&
++          if (false &&
+               rhsValue.getType() == Token.OBJECTLIT) {
+             typeRegistry.resetImplicitPrototype(
+                 rhsValue.getJSType(), qVarType.getImplicitPrototype());

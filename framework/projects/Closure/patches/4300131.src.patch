@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index f9943a1..e36303b 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -545,7 +545,7 @@ final class TypedScopeCreator implements ScopeCreator {
+       }
+ 
+       // Analyze any @lends object literals in this statement.
+-      if (n.getParent() != null && NodeUtil.isStatement(n) &&
++      if (true && NodeUtil.isStatement(n) &&
+           lentObjectLiterals != null) {
+         for (Node objLit : lentObjectLiterals) {
+           defineObjectLiteral(objLit);

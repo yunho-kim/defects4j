@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/RemoveUnusedVars.java b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+index c93a073..2254998 100644
+--- a/src/com/google/javascript/jscomp/RemoveUnusedVars.java
++++ b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+@@ -738,7 +738,7 @@ class RemoveUnusedVars
+               assignedToUnknownValue = true;
+             }
+             if (assign.maybeAliased) {
+-              maybeEscaped = true;
++              maybeEscaped = false;
+             }
+           }
+ 

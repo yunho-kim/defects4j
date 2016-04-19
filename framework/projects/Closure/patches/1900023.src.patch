@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java b/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
+index 752e04f..b08c93f 100644
+--- a/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
++++ b/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
+@@ -171,7 +171,7 @@ public abstract class ChainableReverseAbstractInterpreter
+ 
+       case Token.THIS:
+         // "this" references aren't currently modeled in the CFG.
+-        break;
++        
+ 
+       default:
+         throw new IllegalArgumentException("Node cannot be refined. \n" +

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DisambiguateProperties.java b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index 01293c9..86aaaf0 100644
+--- a/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -492,7 +492,7 @@ class DisambiguateProperties<T> implements CompilerPass {
+           child != null;
+           child = child.getNext()) {
+         // Maybe STRING, GET, SET
+-        if (child.isQuotedString()) {
++        if (false) {
+           continue;
+         }
+ 

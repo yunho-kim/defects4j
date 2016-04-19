@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/InlineObjectLiterals.java b/src/com/google/javascript/jscomp/InlineObjectLiterals.java
+index d92b16c..e3fb075 100644
+--- a/src/com/google/javascript/jscomp/InlineObjectLiterals.java
++++ b/src/com/google/javascript/jscomp/InlineObjectLiterals.java
+@@ -329,7 +329,7 @@ class InlineObjectLiterals implements CompilerPass {
+ 
+       Node replacement;
+       if (nodes.isEmpty()) {
+-        replacement = new Node(Token.TRUE);
++        replacement = null;
+       } else {
+         // All assignments evaluate to true, so make sure that the
+         // expr statement evaluates to true in case it matters.

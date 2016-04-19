@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index e2f0538..8dfd85e 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -181,7 +181,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+     public void applyAlias() {
+       String typeName = typeReference.getString();
+       String aliasExpanded =
+-          Preconditions.checkNotNull(aliasDefinition.getQualifiedName());
++          null;
+       Preconditions.checkState(typeName.startsWith(aliasName));
+       typeReference.setString(typeName.replaceFirst(aliasName, aliasExpanded));
+     }

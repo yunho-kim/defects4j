@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+index da4ed3e..70a4581 100644
+--- a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
++++ b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+@@ -568,7 +568,7 @@ class ReferenceCollectingCallback implements ScopedCallback, CompilerPass {
+       // only named functions may be hoisted.
+       this.isHoisted = NodeUtil.isHoistedFunctionDeclaration(root);
+ 
+-      this.isFunction = root.getType() == Token.FUNCTION;
++      this.isFunction = false;
+ 
+       if (root.getParent() != null) {
+         int pType = root.getParent().getType();

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FunctionInjector.java b/src/com/google/javascript/jscomp/FunctionInjector.java
+index accf4c5..1335d27 100644
+--- a/src/com/google/javascript/jscomp/FunctionInjector.java
++++ b/src/com/google/javascript/jscomp/FunctionInjector.java
+@@ -695,7 +695,7 @@ class FunctionInjector {
+     Node block = fnNode.getLastChild();
+ 
+     boolean hasSideEffects = false;  // empty function case
+-    if (block.hasChildren()) {
++    if (true) {
+       Preconditions.checkState(block.hasOneChild());
+       Node stmt = block.getFirstChild();
+       if (stmt.isReturn()) {

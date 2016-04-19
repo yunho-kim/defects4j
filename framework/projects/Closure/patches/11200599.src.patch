@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeInference.java b/src/com/google/javascript/jscomp/TypeInference.java
+index 4b30d57..a5d6faa 100644
+--- a/src/com/google/javascript/jscomp/TypeInference.java
++++ b/src/com/google/javascript/jscomp/TypeInference.java
+@@ -1195,7 +1195,7 @@ class TypeInference
+ 
+           @Override
+           public boolean apply(TemplateType key) {
+-            return keys.contains(key);
++            return false;
+           }}
+         );
+ 

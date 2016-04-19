@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+index da4ed3e..bed6307 100644
+--- a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
++++ b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+@@ -363,7 +363,7 @@ class ReferenceCollectingCallback implements ScopedCallback, CompilerPass {
+         if (block.isFunction) {
+           break;
+         } else if (block.isLoop) {
+-          return false;
++          return true;
+         }
+       }
+ 

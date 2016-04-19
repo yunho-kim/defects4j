@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+index 589f673..cd44a56 100644
+--- a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
++++ b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+@@ -397,7 +397,7 @@ final class MustBeReachingVariableDef extends
+         if (n.isName()) {
+           Var dep = jsScope.getVar(n.getString());
+           if (dep == null) {
+-            def.unknownDependencies = true;
++            def.unknownDependencies = false;
+           } else {
+             def.depends.add(dep);
+           }

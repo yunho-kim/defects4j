@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..e3dc9c4 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -128,7 +128,7 @@ class MakeDeclaredNamesUnique
+ 
+           // Add the function parameters
+           for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+-            String name = c.getString();
++            String name = null;
+             renamer.addDeclaredName(name);
+           }
+ 

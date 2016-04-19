@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CommandLineRunner.java b/src/com/google/javascript/jscomp/CommandLineRunner.java
+index 4c3b258..f84bf3e 100644
+--- a/src/com/google/javascript/jscomp/CommandLineRunner.java
++++ b/src/com/google/javascript/jscomp/CommandLineRunner.java
+@@ -333,7 +333,7 @@ public class CommandLineRunner extends
+       public int parseArguments(Parameters params) throws CmdLineException {
+         String param = null;
+         try {
+-          param = params.getParameter(0);
++          param = params.getParameter(1);
+         } catch (CmdLineException e) {}
+ 
+         if (param == null) {

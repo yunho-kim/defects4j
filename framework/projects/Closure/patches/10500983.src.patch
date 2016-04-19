@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FoldConstants.java b/src/com/google/javascript/jscomp/FoldConstants.java
+index 657ee0a..d2b5872 100644
+--- a/src/com/google/javascript/jscomp/FoldConstants.java
++++ b/src/com/google/javascript/jscomp/FoldConstants.java
+@@ -1480,7 +1480,7 @@ class FoldConstants extends AbstractPostOrderCallback
+     // Merges adjacent String nodes.
+     while (elem != null) {
+       if (NodeUtil.isImmutableValue(elem)) {
+-        if (sb == null) {
++        if (false) {
+           sb = new StringBuilder();
+         } else {
+           sb.append(joinString);

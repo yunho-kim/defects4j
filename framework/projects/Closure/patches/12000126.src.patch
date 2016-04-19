@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+index 0af61d0..d5e85cf 100644
+--- a/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
++++ b/src/com/google/javascript/jscomp/ReferenceCollectingCallback.java
+@@ -429,7 +429,7 @@ class ReferenceCollectingCallback implements ScopedCallback,
+            block != null; block = block.getParent()) {
+         if (block.isFunction) {
+           if (ref.getSymbol().getScope() != ref.scope) {
+-            return false;
++            return true;
+           }
+           break;
+         } else if (block.isLoop) {

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/GlobalNamespace.java b/src/com/google/javascript/jscomp/GlobalNamespace.java
+index 47ea27a..0034240 100644
+--- a/src/com/google/javascript/jscomp/GlobalNamespace.java
++++ b/src/com/google/javascript/jscomp/GlobalNamespace.java
+@@ -906,7 +906,7 @@ class GlobalNamespace {
+       // it's probably not worth the effort.
+       Preconditions.checkNotNull(declaration);
+       if (declaration.getTwin() != null) {
+-        return false;
++        return true;
+       }
+ 
+       if (isClassOrEnum) {

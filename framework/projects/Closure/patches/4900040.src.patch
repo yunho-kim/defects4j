@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+index 0fcb778..4947c9e 100644
+--- a/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
++++ b/src/com/google/javascript/jscomp/MakeDeclaredNamesUnique.java
+@@ -134,7 +134,7 @@ class MakeDeclaredNamesUnique
+ 
+           // Add the function body declarations
+           Node functionBody = n.getNext();
+-          findDeclaredNames(functionBody, null, renamer);
++          
+ 
+           nameStack.push(renamer);
+         }

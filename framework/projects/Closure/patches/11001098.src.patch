@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..20f2847 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -397,7 +397,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+             value.replaceChild(existingName, newName);
+ 
+             varNode = IR.var(existingName).useSourceInfoFrom(existingName);
+-            grandparent.replaceChild(parent, varNode);
++            
+           } else {
+             if (value != null) {
+               // If this is a VAR, we can just detach the expression and

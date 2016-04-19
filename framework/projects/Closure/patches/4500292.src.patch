@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/RemoveUnusedVars.java b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+index c93a073..6867d7e 100644
+--- a/src/com/google/javascript/jscomp/RemoveUnusedVars.java
++++ b/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+@@ -729,7 +729,7 @@ class RemoveUnusedVars
+             assignedToUnknownValue = true;
+           }
+ 
+-          boolean maybeEscaped = false;
++          boolean maybeEscaped = true;
+           for (Assign assign : assignsByVar.get(var)) {
+             if (assign.isPropertyAssign) {
+               hasPropertyAssign = true;

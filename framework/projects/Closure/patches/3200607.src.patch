@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index cfdccbe..fa310a6 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1399,7 +1399,7 @@ public final class JsDocInfoParser {
+               lineStartChar = -1;
+             } else if (builder.length() > 0) {
+               // All tokens must be separated by a space.
+-              builder.append(' ');
++              
+             }
+           }
+ 

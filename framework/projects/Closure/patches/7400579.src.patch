@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+index 9d2f97a..84c0a78 100644
+--- a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
++++ b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+@@ -1082,7 +1082,7 @@ class PeepholeFoldConstants extends AbstractPeepholeOptimization {
+           return Token.FALSE;
+       }
+     }
+-    return type;
++    return 0;
+   }
+ 
+   /**

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java b/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
+index c46ee7d..9e09df7 100644
+--- a/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
++++ b/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
+@@ -152,7 +152,7 @@ class FlowSensitiveInlineVariables extends AbstractPostOrderCallback
+     reachingUses = new MaybeReachingVariableUse(cfg, t.getScope(), compiler);
+     reachingUses.analyze();
+     for (Candidate c : candidates) {
+-      if (c.canInline(t.getScope())) {
++      if (false) {
+         c.inlineVariable();
+ 
+         // If definition c has dependencies, then inlining it may have

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/UnreachableCodeElimination.java b/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
+index e6d88a8..d4f2969 100644
+--- a/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
++++ b/src/com/google/javascript/jscomp/UnreachableCodeElimination.java
+@@ -178,7 +178,7 @@ class UnreachableCodeElimination implements CompilerPass {
+       if (parent == null || parent.isFunction()) {
+         return false;
+       } else if (NodeUtil.isTryFinallyNode(parent, child)) {
+-        return true;
++        return false;
+       } else {
+         return inFinally(parent.getParent(), parent);
+       }

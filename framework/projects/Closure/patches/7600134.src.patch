@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..276ad84 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -314,7 +314,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+             state = checkHookBranchReadBeforeKill(
+                 n.getNext(), n.getNext().getNext(), variable);
+           }
+-          break;
++          
+ 
+         default:
+           for(Node sibling = n.getNext(); sibling != null;

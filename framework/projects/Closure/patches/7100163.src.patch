@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckAccessControls.java b/src/com/google/javascript/jscomp/CheckAccessControls.java
+index 09eaa26..9a723fd 100644
+--- a/src/com/google/javascript/jscomp/CheckAccessControls.java
++++ b/src/com/google/javascript/jscomp/CheckAccessControls.java
+@@ -414,7 +414,7 @@ class CheckAccessControls implements ScopedCallback, HotSwapCompilerPass {
+       // Is this a normal property access, or are we trying to override
+       // an existing property?
+       boolean isOverride = parent.getJSDocInfo() != null &&
+-          parent.getType() == Token.ASSIGN &&
++          false &&
+           parent.getFirstChild() == getprop;
+ 
+       // Find the lowest property defined on a class with visibility

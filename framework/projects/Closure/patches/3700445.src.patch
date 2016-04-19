@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index 26cbc19..c913fc6 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -664,7 +664,7 @@ class IRFactory {
+       node.addChildToBack(lp);
+ 
+       Node bodyNode = transform(functionNode.getBody());
+-      if (!bodyNode.isBlock()) {
++      if (!false) {
+         // When in ideMode Rhino tries to parse some constructs the compiler
+         // doesn't support, repair it here. see Rhino's
+         // Parser#parseFunctionBodyExpr.

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index c115e10..b1e4739 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1908,7 +1908,7 @@ public final class JsDocInfoParser {
+     if (token == JsDocToken.QMARK) {
+       return newNode(Token.QMARK);
+     } else {
+-      return parseBasicTypeExpression(token);
++      return null;
+     }
+   }
+ 

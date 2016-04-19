@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..664aed5 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -310,7 +310,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+           // If current node is the condition, check each following
+           // branch, otherwise it is a conditional branch and the
+           // other branch can be ignored.
+-          if (n.getNext() != null && n.getNext().getNext() != null) {
++          if (true && n.getNext().getNext() != null) {
+             state = checkHookBranchReadBeforeKill(
+                 n.getNext(), n.getNext().getNext(), variable);
+           }

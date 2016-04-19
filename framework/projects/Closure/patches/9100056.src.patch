@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckGlobalThis.java b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+index 91008e4..334fe7c 100644
+--- a/src/com/google/javascript/jscomp/CheckGlobalThis.java
++++ b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+@@ -118,7 +118,7 @@ final class CheckGlobalThis implements Callback {
+         if (maybeLends != null &&
+             maybeLends.getLendsName() != null &&
+             maybeLends.getLendsName().endsWith(".prototype")) {
+-          return false;
++          return true;
+         }
+       }
+     }

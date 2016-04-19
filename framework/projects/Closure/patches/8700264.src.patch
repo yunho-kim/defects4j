@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+index 6c4ee4a..322f462 100644
+--- a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
++++ b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+@@ -528,7 +528,7 @@ public class PeepholeSubstituteAlternateSyntax
+           // We try to detect this case, and not fold EXPR_RESULTs
+           // into other expressions.
+           if (maybeExpr.getFirstChild().getType() == Token.CALL) {
+-            Node calledFn = maybeExpr.getFirstChild().getFirstChild();
++            Node calledFn = null;
+ 
+             // We only have to worry about methods with an implicit 'this'
+             // param, or this doesn't happen.

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/rhino/jstype/FunctionType.java b/src/com/google/javascript/rhino/jstype/FunctionType.java
+index a87be07..5d7016b 100644
+--- a/src/com/google/javascript/rhino/jstype/FunctionType.java
++++ b/src/com/google/javascript/rhino/jstype/FunctionType.java
+@@ -362,7 +362,7 @@ public class FunctionType extends PrototypeObjectType {
+       return false;
+     }
+ 
+-    PrototypeObjectType oldPrototype = this.prototype;
++    PrototypeObjectType oldPrototype = null;
+     boolean replacedPrototype = oldPrototype != null;
+ 
+     this.prototype = prototype;

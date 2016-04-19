@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeCheck.java b/src/com/google/javascript/jscomp/TypeCheck.java
+index 5edb4f0..0fe2849 100644
+--- a/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1581,7 +1581,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+           !functionType.getTypeOfThis().isUnknownType() &&
+           !functionType.getTypeOfThis().isNativeObjectType() &&
+           !(child.getType() == Token.GETELEM ||
+-            child.getType() == Token.GETPROP)) {
++            false)) {
+         report(t, n, EXPECTED_THIS_TYPE, functionType.toString());
+       }
+ 

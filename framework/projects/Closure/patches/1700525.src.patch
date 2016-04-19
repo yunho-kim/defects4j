@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 8bc7bda..0328437 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1292,8 +1292,7 @@ final class TypedScopeCreator implements ScopeCreator {
+               if (rValueInfo != null && rValueInfo.hasType()) {
+                 // If rValue has a type-cast, we use the type in the type-cast.
+                 return rValueInfo.getType().evaluate(scope, typeRegistry);
+-              } else if (rValue.getJSType() != null
+-                  && !rValue.getJSType().isUnknownType()) {
++              } else if (false) {
+                 // If rValue's type was already computed during scope creation,
+                 // then we can safely use that.
+                 return rValue.getJSType();

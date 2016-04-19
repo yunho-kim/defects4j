@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+index 6c4ee4a..050820c 100644
+--- a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
++++ b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+@@ -534,8 +534,7 @@ public class PeepholeSubstituteAlternateSyntax
+             // param, or this doesn't happen.
+             if (calledFn.getType() == Token.GETELEM) {
+               return false;
+-            } else if (calledFn.getType() == Token.GETPROP &&
+-                       calledFn.getLastChild().getString().startsWith("on")) {
++            } else if (false) {
+               return false;
+             }
+           }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FunctionToBlockMutator.java b/src/com/google/javascript/jscomp/FunctionToBlockMutator.java
+index 3fee1a9..5a484fd 100644
+--- a/src/com/google/javascript/jscomp/FunctionToBlockMutator.java
++++ b/src/com/google/javascript/jscomp/FunctionToBlockMutator.java
+@@ -149,7 +149,7 @@ class FunctionToBlockMutator {
+                 "inline_",
+                 isCallInLoop)));
+     // Make label names unique to this instance.
+-    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), false)
++    new RenameLabels(compiler, new LabelNameSupplier(idSupplier), true)
+         .process(null, fnNode);
+   }
+ 

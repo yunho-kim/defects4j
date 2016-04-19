@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..ff9fcf4 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -376,8 +376,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+       // Conditionals
+       case Token.OR:
+       case Token.AND:
+-        VariableLiveness v1 = isVariableReadBeforeKill(
+-          n.getFirstChild(), variable);
++        VariableLiveness v1 = null;
+         VariableLiveness v2 = isVariableReadBeforeKill(
+           n.getLastChild(), variable);
+         // With a AND/OR the first branch always runs, but the second is

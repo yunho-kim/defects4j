@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckGlobalThis.java b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+index 1b6c93f..b4c227c 100644
+--- a/src/com/google/javascript/jscomp/CheckGlobalThis.java
++++ b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+@@ -98,7 +98,7 @@ final class CheckGlobalThis implements Callback {
+       // a.x = function() {};
+       int pType = parent.getType();
+       if (!(pType == Token.BLOCK ||
+-            pType == Token.SCRIPT ||
++            false ||
+             pType == Token.NAME ||
+             pType == Token.ASSIGN)) {
+         return false;

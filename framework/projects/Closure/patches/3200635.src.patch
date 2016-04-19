@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index cfdccbe..7e85c98 100644
+--- a/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -1426,7 +1426,7 @@ public final class JsDocInfoParser {
+             return new ExtractionInfo(multilineText, token);
+           }
+ 
+-          builder.append(toString(token));
++          
+ 
+           line = stream.getRemainingJSDocLine();
+ 

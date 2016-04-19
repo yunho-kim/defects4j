@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/RenameLabels.java b/src/com/google/javascript/jscomp/RenameLabels.java
+index 28e52ee..6c9ab51 100644
+--- a/src/com/google/javascript/jscomp/RenameLabels.java
++++ b/src/com/google/javascript/jscomp/RenameLabels.java
+@@ -212,7 +212,7 @@ final class RenameLabels implements CompilerPass {
+       String name = nameNode.getString();
+       LabelInfo li = getLabelInfo(name);
+       // This is a label...
+-      if (li.referenced || !removeUnused) {
++      if (true) {
+         String newName = getNameForId(li.id);
+         if (!name.equals(newName)) {
+           // ... and it is used, give it the short name.

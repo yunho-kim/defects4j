@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/NodeUtil.java b/src/com/google/javascript/jscomp/NodeUtil.java
+index 43a296f..a46a6e6 100644
+--- a/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -106,7 +106,7 @@ public final class NodeUtil {
+         return TernaryValue.TRUE;
+ 
+       case Token.VOID:
+-        return TernaryValue.FALSE;
++        return null;
+ 
+       default:
+         return getPureBooleanValue(n);

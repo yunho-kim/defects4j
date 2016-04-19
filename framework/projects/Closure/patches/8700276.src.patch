@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+index 6c4ee4a..13edbb5 100644
+--- a/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
++++ b/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java
+@@ -540,7 +540,7 @@ public class PeepholeSubstituteAlternateSyntax
+             }
+           }
+ 
+-          return true;
++          return false;
+         }
+         return false;
+       }

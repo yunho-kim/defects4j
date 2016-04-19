@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+index 9d2f97a..49e87de 100644
+--- a/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
++++ b/src/com/google/javascript/jscomp/PeepholeFoldConstants.java
+@@ -905,7 +905,7 @@ class PeepholeFoldConstants extends AbstractPeepholeOptimization {
+           || (Token.VOID == right.getType()
+               && NodeUtil.isLiteralValue(right.getFirstChild(), false)));
+     int lhType = getNormalizedNodeType(left);
+-    int rhType = getNormalizedNodeType(right);
++    int rhType = 0;
+     switch (lhType) {
+       case Token.VOID:
+         if (!NodeUtil.isLiteralValue(left.getFirstChild(), false)) {

@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index c248002..72c16c6 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -275,8 +275,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+         Node n = v.getNode();
+         int type = n.getType();
+         Node parent = n.getParent();
+-        if (parent.isVar() &&
+-            n.hasChildren() && n.getFirstChild().isQualifiedName()) {
++        if (parent.isVar() && n.hasChildren()) {
+           String name = n.getString();
+           Var aliasVar = scope.getVar(name);
+           aliases.put(name, aliasVar);

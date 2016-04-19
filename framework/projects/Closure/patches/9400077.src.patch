@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/NodeUtil.java b/src/com/google/javascript/jscomp/NodeUtil.java
+index 8c5d125..eea2567 100644
+--- a/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -346,8 +346,7 @@ public final class NodeUtil {
+       case Token.SHNE:
+       case Token.SUB:
+       case Token.URSH:
+-        return isValidDefineValue(val.getFirstChild(), defines)
+-            && isValidDefineValue(val.getLastChild(), defines);
++        return false;
+ 
+       // Uniary operators are valid if the child is valid.
+       case Token.NOT:

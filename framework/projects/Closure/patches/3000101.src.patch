@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+index 589f673..75542f7 100644
+--- a/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
++++ b/src/com/google/javascript/jscomp/MustBeReachingVariableDef.java
+@@ -396,7 +396,7 @@ final class MustBeReachingVariableDef extends
+       public void visit(NodeTraversal t, Node n, Node parent) {
+         if (n.isName()) {
+           Var dep = jsScope.getVar(n.getString());
+-          if (dep == null) {
++          if (false) {
+             def.unknownDependencies = true;
+           } else {
+             def.depends.add(dep);

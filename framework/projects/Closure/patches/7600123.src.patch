@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+index aaab0d6..44b4d1b 100644
+--- a/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
++++ b/src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+@@ -297,7 +297,7 @@ class DeadAssignmentsElimination extends AbstractPostOrderCallback implements
+           // If the currently node is the first child of
+           // AND/OR, be conservative only consider the READs
+           // of the second operand.
+-          if (n.getNext() != null) {
++          if (true) {
+             state = isVariableReadBeforeKill(
+                 n.getNext(), variable);
+             if (state == VariableLiveness.KILL) {

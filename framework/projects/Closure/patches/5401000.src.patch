@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 5bccc06..28768da 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1413,7 +1413,7 @@ final class TypedScopeCreator implements ScopeCreator {
+           ObjectType qVarType = ObjectType.cast(qVar.getType());
+           if (qVarType != null &&
+               rhsValue != null &&
+-              rhsValue.getType() == Token.OBJECTLIT) {
++              false) {
+             typeRegistry.resetImplicitPrototype(
+                 rhsValue.getJSType(), qVarType.getImplicitPrototype());
+           } else if (!qVar.isTypeInferred()) {

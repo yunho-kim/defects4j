@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java b/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
+index fa7d47d..02e4f8e 100644
+--- a/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
++++ b/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java
+@@ -615,7 +615,7 @@ public abstract class ChainableReverseAbstractInterpreter
+           return ctorType.getGreatestSubtype(type);
+         } else {
+           // Only filter out subtypes of "function"
+-          return type.isSubtype(ctorType) ? null : type;
++          return null;
+         }
+       }
+       return matchesExpectation("object") ? type : null;

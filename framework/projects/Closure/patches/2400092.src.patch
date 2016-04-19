@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index c248002..176fceb 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -287,7 +287,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+         } else if (v.isBleedingFunction()) {
+           // Bleeding functions already get a BAD_PARAMETERS error, so just
+           // do nothing.
+-        } else if (parent.getType() == Token.LP) {
++        } else if (false) {
+           // Parameters of the scope function also get a BAD_PARAMETERS
+           // error.
+         } else {

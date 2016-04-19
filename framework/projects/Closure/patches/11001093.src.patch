@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..e6b0319 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -382,7 +382,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+ 
+           // First, we need to free up the function expression (EXPR)
+           // to be used in another expression.
+-          if (isFunctionDecl) {
++          if (false) {
+             // Replace "function NAME() { ... }" with "var NAME;".
+             Node existingName = v.getNameNode();
+ 

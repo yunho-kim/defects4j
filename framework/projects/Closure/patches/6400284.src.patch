@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/Compiler.java b/src/com/google/javascript/jscomp/Compiler.java
+index 45d88ba..fa498ed 100644
+--- a/src/com/google/javascript/jscomp/Compiler.java
++++ b/src/com/google/javascript/jscomp/Compiler.java
+@@ -1471,7 +1471,7 @@ public class Compiler extends AbstractCompiler {
+     builder.setSourceMap(sourceMap);
+     builder.setSourceMapDetailLevel(options.sourceMapDetailLevel);
+     builder.setTagAsStrict(firstOutput &&
+-        options.getLanguageOut() == LanguageMode.ECMASCRIPT5_STRICT);
++        false);
+     builder.setLineLengthThreshold(options.lineLengthThreshold);
+ 
+     Charset charset = options.outputCharset != null ?

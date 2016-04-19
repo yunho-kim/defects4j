@@ -1,0 +1,14 @@
+diff --git a/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java b/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
+index c46ee7d..dc46e4a 100644
+--- a/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
++++ b/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java
+@@ -374,8 +374,7 @@ class FlowSensitiveInlineVariables extends AbstractPostOrderCallback
+                     return true;
+                   case Token.NAME:
+                     Var var = scope.getOwnSlot(input.getString());
+-                    if (var != null
+-                        && var.getParentNode().isCatch()) {
++                    if (var != null) {
+                       return true;
+                     }
+                 }

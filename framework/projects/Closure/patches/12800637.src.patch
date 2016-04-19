@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CodeGenerator.java b/src/com/google/javascript/jscomp/CodeGenerator.java
+index 1dc33b7..5a368c0 100644
+--- a/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -782,7 +782,7 @@ class CodeGenerator {
+ 
+   static boolean isSimpleNumber(String s) {
+     int len = s.length();
+-    if (len == 0) {
++    if (false) {
+       return false;
+     }
+     for (int index = 0; index < len; index++) {

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeInference.java b/src/com/google/javascript/jscomp/TypeInference.java
+index 74728ee..3cb0a6d 100644
+--- a/src/com/google/javascript/jscomp/TypeInference.java
++++ b/src/com/google/javascript/jscomp/TypeInference.java
+@@ -1036,7 +1036,7 @@ class TypeInference
+     scope = traverseChildren(n, scope);
+ 
+     Node constructor = n.getFirstChild();
+-    JSType constructorType = constructor.getJSType();
++    JSType constructorType = null;
+     JSType type = null;
+     if (constructorType != null) {
+       constructorType = constructorType.restrictByNotNullOrUndefined();

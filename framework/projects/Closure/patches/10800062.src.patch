@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index b2a1690..0a5fbb1 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -256,7 +256,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+     private final Map<String, Var> aliases = Maps.newHashMap();
+ 
+     // Also temporary and cleared for each scope.
+-    private final Set<Node> injectedDecls = Sets.newHashSet();
++    private final Set<Node> injectedDecls = null;
+ 
+     // Suppose you create an alias.
+     // var x = goog.x;

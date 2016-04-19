@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeInference.java b/src/com/google/javascript/jscomp/TypeInference.java
+index 74728ee..99c5c0c 100644
+--- a/src/com/google/javascript/jscomp/TypeInference.java
++++ b/src/com/google/javascript/jscomp/TypeInference.java
+@@ -1057,7 +1057,7 @@ class TypeInference
+       }
+     }
+     n.setJSType(type);
+-    return scope;
++    return null;
+   }
+ 
+   private BooleanOutcomePair traverseAnd(Node n, FlowScope scope) {

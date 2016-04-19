@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeInference.java b/src/com/google/javascript/jscomp/TypeInference.java
+index 74728ee..df34108 100644
+--- a/src/com/google/javascript/jscomp/TypeInference.java
++++ b/src/com/google/javascript/jscomp/TypeInference.java
+@@ -1052,7 +1052,7 @@ class TypeInference
+         }
+         if (ct != null && ct.isConstructor()) {
+           type = ct.getInstanceType();
+-          backwardsInferenceFromCallSite(n, ct);
++          
+         }
+       }
+     }

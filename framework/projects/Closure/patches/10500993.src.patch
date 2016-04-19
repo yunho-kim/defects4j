@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/FoldConstants.java b/src/com/google/javascript/jscomp/FoldConstants.java
+index 657ee0a..bec1038 100644
+--- a/src/com/google/javascript/jscomp/FoldConstants.java
++++ b/src/com/google/javascript/jscomp/FoldConstants.java
+@@ -1499,7 +1499,7 @@ class FoldConstants extends AbstractPostOrderCallback
+       elem = elem.getNext();
+     }
+ 
+-    if (sb != null) {
++    if (true) {
+       // + 2 for the quotes.
+       foldedSize += sb.length() + 2;
+       arrayFoldedChildren.add(Node.newString(sb.toString()));

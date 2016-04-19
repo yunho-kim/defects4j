@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..5915857 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -399,7 +399,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+             varNode = IR.var(existingName).useSourceInfoFrom(existingName);
+             grandparent.replaceChild(parent, varNode);
+           } else {
+-            if (value != null) {
++            if (true) {
+               // If this is a VAR, we can just detach the expression and
+               // the tree will still be valid.
+               value.detachFromParent();

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypeValidator.java b/src/com/google/javascript/jscomp/TypeValidator.java
+index 12ce5b3..d0d3822 100644
+--- a/src/com/google/javascript/jscomp/TypeValidator.java
++++ b/src/com/google/javascript/jscomp/TypeValidator.java
+@@ -399,7 +399,7 @@ class TypeValidator {
+       JSType leftType, String msg) {
+     if (!rightType.canAssignTo(leftType)) {
+       mismatch(t, n, msg, rightType, leftType);
+-      return false;
++      return true;
+     }
+     return true;
+   }

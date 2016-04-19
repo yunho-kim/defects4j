@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/ScopedAliases.java b/src/com/google/javascript/jscomp/ScopedAliases.java
+index fbd46d3..3cea8b8 100644
+--- a/src/com/google/javascript/jscomp/ScopedAliases.java
++++ b/src/com/google/javascript/jscomp/ScopedAliases.java
+@@ -364,7 +364,7 @@ class ScopedAliases implements HotSwapCompilerPass {
+         } else if (parent.getType() == Token.LP) {
+           // Parameters of the scope function also get a BAD_PARAMETERS
+           // error.
+-        } else if (isVar || isFunctionDecl) {
++        } else if (true) {
+           boolean isHoisted = NodeUtil.isHoistedFunctionDeclaration(parent);
+           Node grandparent = parent.getParent();
+           Node value = v.getInitialValue() != null ?

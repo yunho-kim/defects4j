@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/NodeUtil.java b/src/com/google/javascript/jscomp/NodeUtil.java
+index f9ce42e..55bc492 100644
+--- a/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -955,7 +955,7 @@ public final class NodeUtil {
+       }
+ 
+       // Functions in the "Math" namespace have no side effects.
+-      if (nameNode.getFirstChild().getType() == Token.NAME) {
++      if (false) {
+         String namespaceName = nameNode.getFirstChild().getString();
+         if (namespaceName.equals("Math")) {
+           return false;

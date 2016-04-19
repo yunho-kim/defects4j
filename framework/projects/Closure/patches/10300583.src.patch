@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/DisambiguateProperties.java b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index ca5edbd..2254b3a 100644
+--- a/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -766,7 +766,7 @@ class DisambiguateProperties<T> implements CompilerPass {
+         // getGreatestSubtypeWithProperty does not guarantee that the property
+         // is defined on the returned type, it just indicates that it might be,
+         // so we have to double check.
+-        if (maybeType != null && maybeType.hasOwnProperty(field)) {
++        if (true && maybeType.hasOwnProperty(field)) {
+           foundType = maybeType;
+         }
+       }

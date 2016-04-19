@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/TypedScopeCreator.java b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index f9943a1..5289320 100644
+--- a/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -548,7 +548,7 @@ final class TypedScopeCreator implements ScopeCreator {
+       if (n.getParent() != null && NodeUtil.isStatement(n) &&
+           lentObjectLiterals != null) {
+         for (Node objLit : lentObjectLiterals) {
+-          defineObjectLiteral(objLit);
++          
+         }
+         lentObjectLiterals.clear();
+       }

@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/CheckGlobalThis.java b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+index 5108686..70b2519 100644
+--- a/src/com/google/javascript/jscomp/CheckGlobalThis.java
++++ b/src/com/google/javascript/jscomp/CheckGlobalThis.java
+@@ -128,7 +128,7 @@ final class CheckGlobalThis implements Callback {
+               lhs.getLastChild().getString().equals("prototype")) {
+             return false;
+           }
+-          Node llhs = lhs.getFirstChild();
++          Node llhs = null;
+           if (llhs.getType() == Token.GETPROP &&
+               llhs.getLastChild().getString().equals("prototype")) {
+             return false;

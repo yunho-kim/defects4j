@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/jscomp/parsing/IRFactory.java b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+index 26cbc19..eff1147 100644
+--- a/src/com/google/javascript/jscomp/parsing/IRFactory.java
++++ b/src/com/google/javascript/jscomp/parsing/IRFactory.java
+@@ -669,7 +669,7 @@ class IRFactory {
+         // doesn't support, repair it here. see Rhino's
+         // Parser#parseFunctionBodyExpr.
+         Preconditions.checkState(config.isIdeMode);
+-        bodyNode = IR.block();
++        
+       }
+       parseDirectives(bodyNode);
+       node.addChildToBack(bodyNode);

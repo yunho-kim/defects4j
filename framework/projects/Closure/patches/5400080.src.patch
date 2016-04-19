@@ -1,0 +1,15 @@
+diff --git a/src/com/google/javascript/rhino/jstype/FunctionType.java b/src/com/google/javascript/rhino/jstype/FunctionType.java
+index a87be07..c8f0f48 100644
+--- a/src/com/google/javascript/rhino/jstype/FunctionType.java
++++ b/src/com/google/javascript/rhino/jstype/FunctionType.java
+@@ -337,9 +337,7 @@ public class FunctionType extends PrototypeObjectType {
+     // later assigned to Bar will get inherited properly.
+     //
+     // In the second case, we just use the anonymous object as the prototype.
+-    if (baseType.hasReferenceName() ||
+-        isNativeObjectType() ||
+-        baseType.isFunctionPrototypeType() ||
++    if ((baseType.hasReferenceName() || isNativeObjectType()) != baseType.isFunctionPrototypeType() ||
+         !(baseType instanceof PrototypeObjectType)) {
+ 
+       baseType = new PrototypeObjectType(
