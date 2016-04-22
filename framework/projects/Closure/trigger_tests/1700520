@@ -1,1 +1,1948 @@
-# Mutant id: 708
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(EXPR_RESULT): :1:48
+[source unknown]
+  Parent(BLOCK): :1:33
+[source unknown]
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.access$1600(TypedScopeCreator.java:394)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.maybeCollectMember(TypedScopeCreator.java:1742)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(TypedScopeCreator.java:1718)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:228)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty1(CheckAccessControlsTest.java:685)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 50 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): testcode:1:51
+/** @constructor */ function Foo() {}/** @const */ Foo.prototype.prop = 2;var foo = new Foo();foo.prop = 3;
+  Parent(EXPR_RESULT): testcode:1:51
+/** @constructor */ function Foo() {}/** @const */ Foo.prototype.prop = 2;var foo = new Foo();foo.prop = 3;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty2(CheckAccessControlsTest.java:693)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 54 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty3
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(OBJECTLIT): testcode:1:8
+var o = { /** @const */ x: 1 };o.x = 2;
+  Parent(NAME o): testcode:1:4
+var o = { /** @const */ x: 1 };o.x = 2;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.processObjectLitProperties(TypedScopeCreator.java:665)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineObjectLiteral(TypedScopeCreator.java:645)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.attachLiteralTypes(TypedScopeCreator.java:593)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:501)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty3(CheckAccessControlsTest.java:701)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 58 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty4
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): testcode:1:55
+/** @constructor */ function cat(name) {}/** @const */ cat.test = 1;cat.test *= 2;
+  Parent(EXPR_RESULT): testcode:1:55
+/** @constructor */ function cat(name) {}/** @const */ cat.test = 1;cat.test *= 2;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty4(CheckAccessControlsTest.java:706)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 54 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty6
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): testcode:1:66
+/** @constructor */ function Foo() { this.prop = 1;}/** @const */ Foo.prototype.prop = 2;
+  Parent(EXPR_RESULT): testcode:1:66
+/** @constructor */ function Foo() { this.prop = 1;}/** @const */ Foo.prototype.prop = 2;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty6(CheckAccessControlsTest.java:720)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 54 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty8
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(OBJECTLIT): testcode:1:8
+var o = { /** @const */ x: 1 };var y = o.x;
+  Parent(NAME o): testcode:1:4
+var o = { /** @const */ x: 1 };var y = o.x;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.processObjectLitProperties(TypedScopeCreator.java:665)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineObjectLiteral(TypedScopeCreator.java:645)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.attachLiteralTypes(TypedScopeCreator.java:593)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:501)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty8(CheckAccessControlsTest.java:735)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 58 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty9
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(EXPR_RESULT): :1:48
+[source unknown]
+  Parent(BLOCK): :1:33
+[source unknown]
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.access$1600(TypedScopeCreator.java:394)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.maybeCollectMember(TypedScopeCreator.java:1742)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(TypedScopeCreator.java:1718)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:228)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty9(CheckAccessControlsTest.java:740)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 52 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty14
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(EXPR_RESULT): :1:50
+[source unknown]
+  Parent(BLOCK): :1:35
+[source unknown]
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.access$1600(TypedScopeCreator.java:394)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.maybeCollectMember(TypedScopeCreator.java:1742)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(TypedScopeCreator.java:1718)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:228)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testConstantProperty14(CheckAccessControlsTest.java:789)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 50 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testSuppressConstantProperty2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(EXPR_RESULT): :1:48
+[source unknown]
+  Parent(BLOCK): :1:33
+[source unknown]
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.access$1600(TypedScopeCreator.java:394)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.maybeCollectMember(TypedScopeCreator.java:1742)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(TypedScopeCreator.java:1718)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:228)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testSuppressConstantProperty2(CheckAccessControlsTest.java:805)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 52 more
+--- com.google.javascript.jscomp.CheckAccessControlsTest::testSuppressConstantProperty
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(EXPR_RESULT): :1:48
+[source unknown]
+  Parent(BLOCK): :1:33
+[source unknown]
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.access$1600(TypedScopeCreator.java:394)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.maybeCollectMember(TypedScopeCreator.java:1742)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder$CollectProperties.visit(TypedScopeCreator.java:1718)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:228)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:780)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.CheckAccessControlsTest.testSuppressConstantProperty(CheckAccessControlsTest.java:795)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 52 more
+--- com.google.javascript.jscomp.CodePrinterTest::testEnumAnnotation2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): [testcode]:1:91
+var goog = goog || {};/** @enum {string} */ goog.Enum = {FOO: 'x', BAR: 'y'};/** @const */ goog.Enum2 = goog.x ? {} : goog.Enum;
+  Parent(EXPR_RESULT): [testcode]:1:91
+var goog = goog || {};/** @enum {string} */ goog.Enum = {FOO: 'x', BAR: 'y'};/** @const */ goog.Enum2 = goog.x ? {} : goog.Enum;
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.CodePrinterTest.parse(CodePrinterTest.java:50)
+	at com.google.javascript.jscomp.CodePrinterTest.parsePrint(CodePrinterTest.java:95)
+	at com.google.javascript.jscomp.CodePrinterTest.assertTypeAnnotations(CodePrinterTest.java:950)
+	at com.google.javascript.jscomp.CodePrinterTest.testEnumAnnotation2(CodePrinterTest.java:934)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 53 more
+--- com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn8
+junit.framework.AssertionFailedError: 
+Expected: var scotch={},x=externVar
+Result: var scotch={};var x=externVar
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: input0] [input_id: InputId: input0]
+        VAR 1 [source_file: input0]
+            NAME scotch 1 [source_file: input0]
+                OBJECTLIT 1 [source_file: input0]
+            NAME x 1 [source_file: input0]
+                NAME externVar 1 [source_file: input0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: input1] [input_id: InputId: input1]
+        VAR 1 [is_namespace: 1] [source_file: input1]
+            NAME scotch 1 [jsdoc_info: JSDocInfo] [source_file: input1]
+                OBJECTLIT 1 [source_file: input1] : {}
+        VAR 1 [source_file: input1]
+            NAME x 1 [source_file: input1]
+                NAME externVar 1 [source_file: input1]
+
+
+Subtree1: SCRIPT 1 [synthetic: 1] [source_file: input0] [input_id: InputId: input0]
+    VAR 1 [source_file: input0]
+        NAME scotch 1 [source_file: input0]
+            OBJECTLIT 1 [source_file: input0]
+        NAME x 1 [source_file: input0]
+            NAME externVar 1 [source_file: input0]
+
+
+Subtree2: SCRIPT 1 [synthetic: 1] [source_file: input1] [input_id: InputId: input1]
+    VAR 1 [is_namespace: 1] [source_file: input1]
+        NAME scotch 1 [jsdoc_info: JSDocInfo] [source_file: input1]
+            OBJECTLIT 1 [source_file: input1] : {}
+    VAR 1 [source_file: input1]
+        NAME x 1 [source_file: input1]
+            NAME externVar 1 [source_file: input1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:1125)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:1096)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.testSourcePruningOn8(CommandLineRunnerTest.java:694)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+junit.framework.AssertionFailedError: 
+Expected: var beer={};function f(){}
+Result: var beer={};function f(x){}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: input0] [input_id: InputId: input0]
+        VAR 1 [source_file: input0]
+            NAME beer 1 [source_file: input0]
+                OBJECTLIT 1 [source_file: input0]
+        FUNCTION f 1 [source_file: input0]
+            NAME f 1 [source_file: input0]
+            PARAM_LIST 1 [source_file: input0]
+            BLOCK 1 [source_file: input0]
+    SCRIPT 1 [synthetic: 1] [source_file: input1] [input_id: InputId: input1]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: input1] [input_id: InputId: input1]
+        VAR 1 [is_namespace: 1] [source_file: input1]
+            NAME beer 1 [jsdoc_info: JSDocInfo] [source_file: input1]
+                OBJECTLIT 1 [source_file: input1] : {}
+        FUNCTION f 1 [jsdoc_info: JSDocInfo] [source_file: input1] : function ((Scotch|null)): undefined
+            NAME f 1 [source_file: input1] : function ((Scotch|null)): undefined
+            PARAM_LIST 1 [source_file: input1]
+                NAME x 1 [source_file: input1]
+            BLOCK 1 [source_file: input1]
+    SCRIPT 1 [synthetic: 1] [source_file: input0] [input_id: InputId: input0]
+
+
+Subtree1: PARAM_LIST 1 [source_file: input0]
+
+
+Subtree2: PARAM_LIST 1 [source_file: input1]
+    NAME x 1 [source_file: input1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:1125)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:1096)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.testForwardDeclareDroppedTypes(CommandLineRunnerTest.java:736)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.SymbolTableTest::testNaturalSymbolOrdering
+java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var a = {};/** @const */ a.b = {};/** @param {number} x */ function f(x) {}
+  Parent(SCRIPT): in1:1:0
+/** @const */ var a = {};/** @const */ a.b = {};/** @param {number} x */ function f(x) {}
+
+	at com.google.javascript.jscomp.Compiler.runCallable(Compiler.java:658)
+	at com.google.javascript.jscomp.Compiler.runInCompilerThread(Compiler.java:603)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:544)
+	at com.google.javascript.jscomp.SymbolTableTest.createSymbolTable(SymbolTableTest.java:931)
+	at com.google.javascript.jscomp.SymbolTableTest.testNaturalSymbolOrdering(SymbolTableTest.java:614)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var a = {};/** @const */ a.b = {};/** @param {number} x */ function f(x) {}
+  Parent(SCRIPT): in1:1:0
+/** @const */ var a = {};/** @const */ a.b = {};/** @param {number} x */ function f(x) {}
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal(PhaseOptimizer.java:296)
+	at com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process(PhaseOptimizer.java:273)
+	at com.google.javascript.jscomp.PhaseOptimizer.process(PhaseOptimizer.java:187)
+	at com.google.javascript.jscomp.Compiler.check(Compiler.java:770)
+	at com.google.javascript.jscomp.Compiler.compileInternal(Compiler.java:685)
+	at com.google.javascript.jscomp.Compiler.access$000(Compiler.java:78)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:588)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler$2.run(Compiler.java:630)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	... 25 more
+--- com.google.javascript.jscomp.SymbolTableTest::testMultipleExtends
+java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = goog || {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = goog || {};
+
+	at com.google.javascript.jscomp.Compiler.runCallable(Compiler.java:658)
+	at com.google.javascript.jscomp.Compiler.runInCompilerThread(Compiler.java:603)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:544)
+	at com.google.javascript.jscomp.SymbolTableTest.createSymbolTable(SymbolTableTest.java:931)
+	at com.google.javascript.jscomp.SymbolTableTest.testMultipleExtends(SymbolTableTest.java:649)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = goog || {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = goog || {};
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal(PhaseOptimizer.java:296)
+	at com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process(PhaseOptimizer.java:273)
+	at com.google.javascript.jscomp.PhaseOptimizer.process(PhaseOptimizer.java:187)
+	at com.google.javascript.jscomp.Compiler.check(Compiler.java:770)
+	at com.google.javascript.jscomp.Compiler.compileInternal(Compiler.java:685)
+	at com.google.javascript.jscomp.Compiler.access$000(Compiler.java:78)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:588)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler$2.run(Compiler.java:630)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	... 25 more
+--- com.google.javascript.jscomp.SymbolTableTest::testNamespaceDefinitionOrder
+java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = {};
+
+	at com.google.javascript.jscomp.Compiler.runCallable(Compiler.java:658)
+	at com.google.javascript.jscomp.Compiler.runInCompilerThread(Compiler.java:603)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:544)
+	at com.google.javascript.jscomp.SymbolTableTest.createSymbolTable(SymbolTableTest.java:931)
+	at com.google.javascript.jscomp.SymbolTableTest.testNamespaceDefinitionOrder(SymbolTableTest.java:848)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = {};
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal(PhaseOptimizer.java:296)
+	at com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process(PhaseOptimizer.java:273)
+	at com.google.javascript.jscomp.PhaseOptimizer.process(PhaseOptimizer.java:187)
+	at com.google.javascript.jscomp.Compiler.check(Compiler.java:770)
+	at com.google.javascript.jscomp.Compiler.compileInternal(Compiler.java:685)
+	at com.google.javascript.jscomp.Compiler.access$000(Compiler.java:78)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:588)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler$2.run(Compiler.java:630)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	... 25 more
+--- com.google.javascript.jscomp.SymbolTableTest::testDeclarationDisagreement
+java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = goog || {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = goog || {};
+
+	at com.google.javascript.jscomp.Compiler.runCallable(Compiler.java:658)
+	at com.google.javascript.jscomp.Compiler.runInCompilerThread(Compiler.java:603)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:544)
+	at com.google.javascript.jscomp.SymbolTableTest.createSymbolTable(SymbolTableTest.java:931)
+	at com.google.javascript.jscomp.SymbolTableTest.testDeclarationDisagreement(SymbolTableTest.java:630)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): in1:1:14
+/** @const */ var goog = goog || {};
+  Parent(SCRIPT): in1:1:0
+/** @const */ var goog = goog || {};
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal(PhaseOptimizer.java:296)
+	at com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process(PhaseOptimizer.java:273)
+	at com.google.javascript.jscomp.PhaseOptimizer.process(PhaseOptimizer.java:187)
+	at com.google.javascript.jscomp.Compiler.check(Compiler.java:770)
+	at com.google.javascript.jscomp.Compiler.compileInternal(Compiler.java:685)
+	at com.google.javascript.jscomp.Compiler.access$000(Compiler.java:78)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:588)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler$2.run(Compiler.java:630)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	... 25 more
+--- com.google.javascript.jscomp.SymbolTableTest::testGoogRequireReferences
+java.lang.RuntimeException: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): in1:1:91
+var goog = {};goog.provide = function() {};goog.require = function() {};goog.provide('goog.dom');goog.require('goog.dom');
+  Parent(EXPR_RESULT): in1:1:91
+var goog = {};goog.provide = function() {};goog.require = function() {};goog.provide('goog.dom');goog.require('goog.dom');
+
+	at com.google.javascript.jscomp.Compiler.runCallable(Compiler.java:658)
+	at com.google.javascript.jscomp.Compiler.runInCompilerThread(Compiler.java:603)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler.compile(Compiler.java:544)
+	at com.google.javascript.jscomp.SymbolTableTest.createSymbolTable(SymbolTableTest.java:931)
+	at com.google.javascript.jscomp.SymbolTableTest.testGoogRequireReferences(SymbolTableTest.java:265)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): in1:1:91
+var goog = {};goog.provide = function() {};goog.require = function() {};goog.provide('goog.dom');goog.require('goog.dom');
+  Parent(EXPR_RESULT): in1:1:91
+var goog = {};goog.provide = function() {};goog.require = function() {};goog.provide('goog.dom');goog.require('goog.dom');
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.PassConfig.regenerateGlobalTypedScope(PassConfig.java:68)
+	at com.google.javascript.jscomp.DefaultPassConfig$GlobalTypeResolver.process(DefaultPassConfig.java:1232)
+	at com.google.javascript.jscomp.PhaseOptimizer$PassFactoryDelegate.processInternal(PhaseOptimizer.java:296)
+	at com.google.javascript.jscomp.PhaseOptimizer$NamedPass.process(PhaseOptimizer.java:273)
+	at com.google.javascript.jscomp.PhaseOptimizer.process(PhaseOptimizer.java:187)
+	at com.google.javascript.jscomp.Compiler.check(Compiler.java:770)
+	at com.google.javascript.jscomp.Compiler.compileInternal(Compiler.java:685)
+	at com.google.javascript.jscomp.Compiler.access$000(Compiler.java:78)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:588)
+	at com.google.javascript.jscomp.Compiler$1.call(Compiler.java:585)
+	at com.google.javascript.jscomp.Compiler$2.run(Compiler.java:630)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	... 26 more
+--- com.google.javascript.jscomp.TypeCheckTest::testUndeclaredGlobalProperty1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): [testcode]:1:14
+/** @const */ var x = {}; x.y = null;function f(a) { x.y = a; }/** @param {string} a */ function g(a) { }function h() { g(x.y); }
+  Parent(SCRIPT): [testcode]:1:0
+/** @const */ var x = {}; x.y = null;function f(a) { x.y = a; }/** @param {string} a */ function g(a) { }function h() { g(x.y); }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheckWithScope(TypeCheckTest.java:10269)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheck(TypeCheckTest.java:10241)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10208)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10203)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10141)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10137)
+	at com.google.javascript.jscomp.TypeCheckTest.testUndeclaredGlobalProperty1(TypeCheckTest.java:857)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 54 more
+--- com.google.javascript.jscomp.TypeCheckTest::testUndeclaredGlobalProperty2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): [testcode]:1:14
+/** @const */ var x = {}; x.y = null;function f() { x.y = 3; }/** @param {string} a */ function g(a) { }function h() { g(x.y); }
+  Parent(SCRIPT): [testcode]:1:0
+/** @const */ var x = {}; x.y = null;function f() { x.y = 3; }/** @param {string} a */ function g(a) { }function h() { g(x.y); }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheckWithScope(TypeCheckTest.java:10269)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheck(TypeCheckTest.java:10241)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10208)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10203)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10141)
+	at com.google.javascript.jscomp.TypeCheckTest.testUndeclaredGlobalProperty2(TypeCheckTest.java:864)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 53 more
+--- com.google.javascript.jscomp.TypeCheckTest::testEnum41
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(OBJECTLIT): [testcode]:1:35
+/** @enum {number} */ var MyEnum = {/** @const */ FOO: 1};/** @return {string} */function f() { return MyEnum.FOO; }
+  Parent(NAME MyEnum): [testcode]:1:26
+/** @enum {number} */ var MyEnum = {/** @const */ FOO: 1};/** @return {string} */function f() { return MyEnum.FOO; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.processObjectLitProperties(TypedScopeCreator.java:665)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineObjectLiteral(TypedScopeCreator.java:645)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.attachLiteralTypes(TypedScopeCreator.java:593)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:501)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheckWithScope(TypeCheckTest.java:10269)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheck(TypeCheckTest.java:10241)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10208)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10203)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10141)
+	at com.google.javascript.jscomp.TypeCheckTest.testEnum41(TypeCheckTest.java:3082)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 56 more
+--- com.google.javascript.jscomp.TypeCheckTest::testLocallyInferredGlobalProperty1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): [testcode]:1:85
+/** @constructor */ function F() {}/** @type {number} */ F.prototype.z;/** @const */ var x = {}; /** @type {F} */ x.y;function f() { x.y.z = 'abc'; }/** @param {number} x */ function g(x) {}function h() { g(x.y.z); }
+  Parent(SCRIPT): [testcode]:1:0
+/** @constructor */ function F() {}/** @type {number} */ F.prototype.z;/** @const */ var x = {}; /** @type {F} */ x.y;function f() { x.y.z = 'abc'; }/** @param {number} x */ function g(x) {}function h() { g(x.y.z); }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypeCheck.processForTesting(TypeCheck.java:371)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheckWithScope(TypeCheckTest.java:10269)
+	at com.google.javascript.jscomp.TypeCheckTest.parseAndTypeCheck(TypeCheckTest.java:10241)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10208)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10203)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:10141)
+	at com.google.javascript.jscomp.TypeCheckTest.testLocallyInferredGlobalProperty1(TypeCheckTest.java:875)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 53 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testDeclaredConstType1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): testcode:1:14
+/** @const */ var x = 3;function f() { var y = x; }
+  Parent(SCRIPT): testcode:1:0
+/** @const */ var x = 3;function f() { var y = x; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType1(TypedScopeCreatorTest.java:1373)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testDeclaredConstType2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): testcode:1:14
+/** @const */ var x = {};function f() { var y = x; }
+  Parent(SCRIPT): testcode:1:0
+/** @const */ var x = {};function f() { var y = x; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType2(TypedScopeCreatorTest.java:1381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testDeclaredConstType3
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): testcode:1:14
+/** @const */ var x = {};/** @const */ x.z = 'hi';function f() { var y = x.z; }
+  Parent(SCRIPT): testcode:1:0
+/** @const */ var x = {};/** @const */ x.z = 'hi';function f() { var y = x.z; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType3(TypedScopeCreatorTest.java:1389)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testDeclaredConstType4
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(ASSIGN): testcode:1:51
+/** @constructor */ function Foo() {}/** @const */ Foo.prototype.z = 'hi';function f() { var y = (new Foo()).z; }
+  Parent(EXPR_RESULT): testcode:1:51
+/** @constructor */ function Foo() {}/** @const */ Foo.prototype.z = 'hi';function f() { var y = (new Foo()).z; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1490)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.maybeDeclareQualifiedName(TypedScopeCreator.java:1807)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:525)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType4(TypedScopeCreatorTest.java:1398)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 56 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testDeclaredConstType5
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): testcode:1:14
+/** @const */ var goog = goog || {};/** @const */ var foo = goog || {};function f() { var y = goog; var z = foo; }
+  Parent(SCRIPT): testcode:1:0
+/** @const */ var goog = goog || {};/** @const */ var foo = goog || {};function f() { var y = goog; var z = foo; }
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testDeclaredConstType5(TypedScopeCreatorTest.java:1411)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testBogusPrototypeInit
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(VAR): testcode:1:14
+/** @const */ var goog = {}; goog.F = {}; /** @const */ goog.F.prototype = {};/** @constructor */ goog.F = function() {};
+  Parent(SCRIPT): testcode:1:0
+/** @const */ var goog = {}; goog.F = {}; /** @const */ goog.F.prototype = {};/** @constructor */ goog.F = function() {};
+
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.getDeclaredType(TypedScopeCreator.java:1292)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineName(TypedScopeCreator.java:791)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.defineVar(TypedScopeCreator.java:748)
+	at com.google.javascript.jscomp.TypedScopeCreator$AbstractScopeBuilder.visit(TypedScopeCreator.java:535)
+	at com.google.javascript.jscomp.TypedScopeCreator$GlobalScopeBuilder.visit(TypedScopeCreator.java:1789)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.TypedScopeCreator.createScope(TypedScopeCreator.java:208)
+	at com.google.javascript.jscomp.MemoizedScopeCreator.createScope(MemoizedScopeCreator.java:82)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest$2.process(TypedScopeCreatorTest.java:80)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:795)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:445)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:371)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:340)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:328)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:560)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testBogusPrototypeInit(TypedScopeCreatorTest.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more

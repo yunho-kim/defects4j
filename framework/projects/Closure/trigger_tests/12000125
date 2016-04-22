@@ -1,1 +1,2584 @@
-# Mutant id: 142
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAliasOfEnumWithInstanceofCheck
+junit.framework.AssertionFailedError: 
+Expected: var Enums=function(){};var Enums$Fruit$APPLE=1;var Enums$Fruit$BANANA=2;function foo(f){if(f instanceof Enums){alert("what?");return}var Fruit=null;if(f==Enums$Fruit$APPLE)alert("apple");if(f==Enums$Fruit$BANANA)alert("banana")}
+Result: var Enums=function(){};var Enums$Fruit$APPLE=1;var Enums$Fruit$BANANA=2;var Enums$Fruit={APPLE:Enums$Fruit$APPLE,BANANA:Enums$Fruit$BANANA};function foo(f){if(f instanceof Enums){alert("what?");return}var Fruit=Enums$Fruit;if(f==Fruit.APPLE)alert("apple");if(f==Fruit.BANANA)alert("banana")}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME Enums 1 [source_file: expected0]
+                FUNCTION  1 [source_file: expected0]
+                    NAME  1 [source_file: expected0]
+                    PARAM_LIST 1 [source_file: expected0]
+                    BLOCK 1 [source_file: expected0]
+        VAR 2 [source_file: expected0]
+            NAME Enums$Fruit$APPLE 2 [is_constant_name: 1] [source_file: expected0]
+                NUMBER 1.0 2 [source_file: expected0]
+        VAR 3 [source_file: expected0]
+            NAME Enums$Fruit$BANANA 3 [is_constant_name: 1] [source_file: expected0]
+                NUMBER 2.0 3 [source_file: expected0]
+        FUNCTION foo 4 [source_file: expected0]
+            NAME foo 4 [source_file: expected0]
+            PARAM_LIST 4 [source_file: expected0]
+                NAME f 4 [source_file: expected0]
+            BLOCK 4 [source_file: expected0]
+                IF 5 [source_file: expected0]
+                    INSTANCEOF 5 [source_file: expected0]
+                        NAME f 5 [source_file: expected0]
+                        NAME Enums 5 [source_file: expected0]
+                    BLOCK 5 [source_file: expected0]
+                        EXPR_RESULT 5 [source_file: expected0]
+                            CALL 5 [free_call: 1] [source_file: expected0]
+                                NAME alert 5 [source_file: expected0]
+                                STRING what? 5 [source_file: expected0]
+                        RETURN 5 [source_file: expected0]
+                VAR 6 [source_file: expected0]
+                    NAME Fruit 6 [source_file: expected0]
+                        NULL 6 [source_file: expected0]
+                IF 7 [source_file: expected0]
+                    EQ 7 [source_file: expected0]
+                        NAME f 7 [source_file: expected0]
+                        NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: expected0]
+                    BLOCK 7 [source_file: expected0]
+                        EXPR_RESULT 7 [source_file: expected0]
+                            CALL 7 [free_call: 1] [source_file: expected0]
+                                NAME alert 7 [source_file: expected0]
+                                STRING apple 7 [source_file: expected0]
+                IF 8 [source_file: expected0]
+                    EQ 8 [source_file: expected0]
+                        NAME f 8 [source_file: expected0]
+                        NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: expected0]
+                    BLOCK 8 [source_file: expected0]
+                        EXPR_RESULT 8 [source_file: expected0]
+                            CALL 8 [free_call: 1] [source_file: expected0]
+                                NAME alert 8 [source_file: expected0]
+                                STRING banana 8 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 2 [jsdoc_info: JSDocInfo] [source_file: testcode]
+            NAME Enums 2 [source_file: testcode]
+                FUNCTION  2 [source_file: testcode]
+                    NAME  2 [source_file: testcode]
+                    PARAM_LIST 2 [source_file: testcode]
+                    BLOCK 2 [source_file: testcode]
+        VAR 7 [source_file: testcode]
+            NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: testcode]
+                NUMBER 1.0 7 [source_file: testcode]
+        VAR 8 [source_file: testcode]
+            NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: testcode]
+                NUMBER 2.0 8 [source_file: testcode]
+        VAR 6 [jsdoc_info: JSDocInfo] [source_file: testcode]
+            NAME Enums$Fruit 6 [originalname: Enums.Fruit] [source_file: testcode]
+                OBJECTLIT 6 [source_file: testcode]
+                    STRING_KEY APPLE 7 [is_constant_name: 1] [source_file: testcode]
+                        NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: testcode]
+                    STRING_KEY BANANA 8 [is_constant_name: 1] [source_file: testcode]
+                        NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: testcode]
+        FUNCTION foo 11 [source_file: testcode]
+            NAME foo 11 [source_file: testcode]
+            PARAM_LIST 11 [source_file: testcode]
+                NAME f 11 [source_file: testcode]
+            BLOCK 11 [source_file: testcode]
+                IF 12 [source_file: testcode]
+                    INSTANCEOF 12 [source_file: testcode]
+                        NAME f 12 [source_file: testcode]
+                        NAME Enums 12 [source_file: testcode]
+                    BLOCK 12 [source_file: testcode]
+                        EXPR_RESULT 12 [source_file: testcode]
+                            CALL 12 [free_call: 1] [source_file: testcode]
+                                NAME alert 12 [source_file: testcode]
+                                STRING what? 12 [source_file: testcode]
+                        RETURN 12 [source_file: testcode]
+                VAR 14 [source_file: testcode]
+                    NAME Fruit 14 [source_file: testcode]
+                        NAME Enums$Fruit 14 [originalname: Enums.Fruit] [source_file: testcode]
+                IF 15 [source_file: testcode]
+                    EQ 15 [source_file: testcode]
+                        NAME f 15 [source_file: testcode]
+                        GETPROP 15 [source_file: testcode]
+                            NAME Fruit 15 [source_file: testcode]
+                            STRING APPLE 15 [is_constant_name: 1] [source_file: testcode]
+                    BLOCK 15 [source_file: testcode]
+                        EXPR_RESULT 15 [source_file: testcode]
+                            CALL 15 [free_call: 1] [source_file: testcode]
+                                NAME alert 15 [source_file: testcode]
+                                STRING apple 15 [source_file: testcode]
+                IF 16 [source_file: testcode]
+                    EQ 16 [source_file: testcode]
+                        NAME f 16 [source_file: testcode]
+                        GETPROP 16 [source_file: testcode]
+                            NAME Fruit 16 [source_file: testcode]
+                            STRING BANANA 16 [is_constant_name: 1] [source_file: testcode]
+                    BLOCK 16 [source_file: testcode]
+                        EXPR_RESULT 16 [source_file: testcode]
+                            CALL 16 [free_call: 1] [source_file: testcode]
+                                NAME alert 16 [source_file: testcode]
+                                STRING banana 16 [source_file: testcode]
+
+
+Subtree1: SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+    VAR 1 [source_file: expected0]
+        NAME Enums 1 [source_file: expected0]
+            FUNCTION  1 [source_file: expected0]
+                NAME  1 [source_file: expected0]
+                PARAM_LIST 1 [source_file: expected0]
+                BLOCK 1 [source_file: expected0]
+    VAR 2 [source_file: expected0]
+        NAME Enums$Fruit$APPLE 2 [is_constant_name: 1] [source_file: expected0]
+            NUMBER 1.0 2 [source_file: expected0]
+    VAR 3 [source_file: expected0]
+        NAME Enums$Fruit$BANANA 3 [is_constant_name: 1] [source_file: expected0]
+            NUMBER 2.0 3 [source_file: expected0]
+    FUNCTION foo 4 [source_file: expected0]
+        NAME foo 4 [source_file: expected0]
+        PARAM_LIST 4 [source_file: expected0]
+            NAME f 4 [source_file: expected0]
+        BLOCK 4 [source_file: expected0]
+            IF 5 [source_file: expected0]
+                INSTANCEOF 5 [source_file: expected0]
+                    NAME f 5 [source_file: expected0]
+                    NAME Enums 5 [source_file: expected0]
+                BLOCK 5 [source_file: expected0]
+                    EXPR_RESULT 5 [source_file: expected0]
+                        CALL 5 [free_call: 1] [source_file: expected0]
+                            NAME alert 5 [source_file: expected0]
+                            STRING what? 5 [source_file: expected0]
+                    RETURN 5 [source_file: expected0]
+            VAR 6 [source_file: expected0]
+                NAME Fruit 6 [source_file: expected0]
+                    NULL 6 [source_file: expected0]
+            IF 7 [source_file: expected0]
+                EQ 7 [source_file: expected0]
+                    NAME f 7 [source_file: expected0]
+                    NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: expected0]
+                BLOCK 7 [source_file: expected0]
+                    EXPR_RESULT 7 [source_file: expected0]
+                        CALL 7 [free_call: 1] [source_file: expected0]
+                            NAME alert 7 [source_file: expected0]
+                            STRING apple 7 [source_file: expected0]
+            IF 8 [source_file: expected0]
+                EQ 8 [source_file: expected0]
+                    NAME f 8 [source_file: expected0]
+                    NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: expected0]
+                BLOCK 8 [source_file: expected0]
+                    EXPR_RESULT 8 [source_file: expected0]
+                        CALL 8 [free_call: 1] [source_file: expected0]
+                            NAME alert 8 [source_file: expected0]
+                            STRING banana 8 [source_file: expected0]
+
+
+Subtree2: SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+    VAR 2 [jsdoc_info: JSDocInfo] [source_file: testcode]
+        NAME Enums 2 [source_file: testcode]
+            FUNCTION  2 [source_file: testcode]
+                NAME  2 [source_file: testcode]
+                PARAM_LIST 2 [source_file: testcode]
+                BLOCK 2 [source_file: testcode]
+    VAR 7 [source_file: testcode]
+        NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: testcode]
+            NUMBER 1.0 7 [source_file: testcode]
+    VAR 8 [source_file: testcode]
+        NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: testcode]
+            NUMBER 2.0 8 [source_file: testcode]
+    VAR 6 [jsdoc_info: JSDocInfo] [source_file: testcode]
+        NAME Enums$Fruit 6 [originalname: Enums.Fruit] [source_file: testcode]
+            OBJECTLIT 6 [source_file: testcode]
+                STRING_KEY APPLE 7 [is_constant_name: 1] [source_file: testcode]
+                    NAME Enums$Fruit$APPLE 7 [is_constant_name: 1] [source_file: testcode]
+                STRING_KEY BANANA 8 [is_constant_name: 1] [source_file: testcode]
+                    NAME Enums$Fruit$BANANA 8 [is_constant_name: 1] [source_file: testcode]
+    FUNCTION foo 11 [source_file: testcode]
+        NAME foo 11 [source_file: testcode]
+        PARAM_LIST 11 [source_file: testcode]
+            NAME f 11 [source_file: testcode]
+        BLOCK 11 [source_file: testcode]
+            IF 12 [source_file: testcode]
+                INSTANCEOF 12 [source_file: testcode]
+                    NAME f 12 [source_file: testcode]
+                    NAME Enums 12 [source_file: testcode]
+                BLOCK 12 [source_file: testcode]
+                    EXPR_RESULT 12 [source_file: testcode]
+                        CALL 12 [free_call: 1] [source_file: testcode]
+                            NAME alert 12 [source_file: testcode]
+                            STRING what? 12 [source_file: testcode]
+                    RETURN 12 [source_file: testcode]
+            VAR 14 [source_file: testcode]
+                NAME Fruit 14 [source_file: testcode]
+                    NAME Enums$Fruit 14 [originalname: Enums.Fruit] [source_file: testcode]
+            IF 15 [source_file: testcode]
+                EQ 15 [source_file: testcode]
+                    NAME f 15 [source_file: testcode]
+                    GETPROP 15 [source_file: testcode]
+                        NAME Fruit 15 [source_file: testcode]
+                        STRING APPLE 15 [is_constant_name: 1] [source_file: testcode]
+                BLOCK 15 [source_file: testcode]
+                    EXPR_RESULT 15 [source_file: testcode]
+                        CALL 15 [free_call: 1] [source_file: testcode]
+                            NAME alert 15 [source_file: testcode]
+                            STRING apple 15 [source_file: testcode]
+            IF 16 [source_file: testcode]
+                EQ 16 [source_file: testcode]
+                    NAME f 16 [source_file: testcode]
+                    GETPROP 16 [source_file: testcode]
+                        NAME Fruit 16 [source_file: testcode]
+                        STRING BANANA 16 [is_constant_name: 1] [source_file: testcode]
+                BLOCK 16 [source_file: testcode]
+                    EXPR_RESULT 16 [source_file: testcode]
+                        CALL 16 [free_call: 1] [source_file: testcode]
+                            NAME alert 16 [source_file: testcode]
+                            STRING banana 16 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAliasOfEnumWithInstanceofCheck(CollapsePropertiesTest.java:1625)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testCollapsePropertiesOfClass1
+junit.framework.AssertionFailedError: 
+Expected: var namespace=function(){};goog.inherits(namespace,Object);var namespace$includeExtraParam=true;var namespace$Param$param1=1;var namespace$Param$param2=2;if(namespace$includeExtraParam)var namespace$Param$optParam=3;function f(){var Param=null;log(namespace$Param$optParam);log(namespace$Param$optParam)}
+Result: var namespace=function(){};goog.inherits(namespace,Object);var namespace$includeExtraParam=true;var namespace$Param$param1=1;var namespace$Param$param2=2;var namespace$Param={param1:namespace$Param$param1,param2:namespace$Param$param2};if(namespace$includeExtraParam)var namespace$Param$optParam=3;function f(){var Param=namespace$Param;log(namespace$Param$optParam);log(Param.optParam)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME namespace 1 [source_file: expected0]
+                FUNCTION  1 [source_file: expected0]
+                    NAME  1 [source_file: expected0]
+                    PARAM_LIST 1 [source_file: expected0]
+                    BLOCK 1 [source_file: expected0]
+        EXPR_RESULT 2 [source_file: expected0]
+            CALL 2 [source_file: expected0]
+                GETPROP 2 [source_file: expected0]
+                    NAME goog 2 [source_file: expected0]
+                    STRING inherits 2 [source_file: expected0]
+                NAME namespace 2 [source_file: expected0]
+                NAME Object 2 [source_file: expected0]
+        VAR 3 [source_file: expected0]
+            NAME namespace$includeExtraParam 3 [source_file: expected0]
+                TRUE 3 [source_file: expected0]
+        VAR 4 [source_file: expected0]
+            NAME namespace$Param$param1 4 [source_file: expected0]
+                NUMBER 1.0 4 [source_file: expected0]
+        VAR 5 [source_file: expected0]
+            NAME namespace$Param$param2 5 [source_file: expected0]
+                NUMBER 2.0 5 [source_file: expected0]
+        IF 6 [source_file: expected0]
+            NAME namespace$includeExtraParam 6 [source_file: expected0]
+            BLOCK 6 [source_file: expected0]
+                VAR 7 [source_file: expected0]
+                    NAME namespace$Param$optParam 7 [source_file: expected0]
+                        NUMBER 3.0 7 [source_file: expected0]
+        FUNCTION f 9 [source_file: expected0]
+            NAME f 9 [source_file: expected0]
+            PARAM_LIST 9 [source_file: expected0]
+            BLOCK 9 [source_file: expected0]
+                VAR 10 [source_file: expected0]
+                    NAME Param 10 [source_file: expected0]
+                        NULL 10 [source_file: expected0]
+                EXPR_RESULT 11 [source_file: expected0]
+                    CALL 11 [free_call: 1] [source_file: expected0]
+                        NAME log 11 [source_file: expected0]
+                        NAME namespace$Param$optParam 11 [source_file: expected0]
+                EXPR_RESULT 12 [source_file: expected0]
+                    CALL 12 [free_call: 1] [source_file: expected0]
+                        NAME log 12 [source_file: expected0]
+                        NAME namespace$Param$optParam 12 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 2 [jsdoc_info: JSDocInfo] [source_file: testcode]
+            NAME namespace 2 [source_file: testcode]
+                FUNCTION  2 [source_file: testcode]
+                    NAME  2 [source_file: testcode]
+                    PARAM_LIST 2 [source_file: testcode]
+                    BLOCK 2 [source_file: testcode]
+        EXPR_RESULT 3 [source_file: testcode]
+            CALL 3 [source_file: testcode]
+                GETPROP 3 [source_file: testcode]
+                    NAME goog 3 [source_file: testcode]
+                    STRING inherits 3 [source_file: testcode]
+                NAME namespace 3 [source_file: testcode]
+                NAME Object 3 [source_file: testcode]
+        VAR 5 [source_file: testcode]
+            NAME namespace$includeExtraParam 5 [originalname: namespace.includeExtraParam] [source_file: testcode]
+                TRUE 5 [source_file: testcode]
+        VAR 9 [source_file: testcode]
+            NAME namespace$Param$param1 9 [source_file: testcode]
+                NUMBER 1.0 9 [source_file: testcode]
+        VAR 10 [source_file: testcode]
+            NAME namespace$Param$param2 10 [source_file: testcode]
+                NUMBER 2.0 10 [source_file: testcode]
+        VAR 8 [jsdoc_info: JSDocInfo] [source_file: testcode]
+            NAME namespace$Param 8 [originalname: namespace.Param] [source_file: testcode]
+                OBJECTLIT 8 [source_file: testcode]
+                    STRING_KEY param1 9 [source_file: testcode]
+                        NAME namespace$Param$param1 9 [source_file: testcode]
+                    STRING_KEY param2 10 [source_file: testcode]
+                        NAME namespace$Param$param2 10 [source_file: testcode]
+        IF 13 [source_file: testcode]
+            NAME namespace$includeExtraParam 13 [originalname: namespace.includeExtraParam] [source_file: testcode]
+            BLOCK 13 [source_file: testcode]
+                VAR 14 [source_file: testcode]
+                    NAME namespace$Param$optParam 14 [originalname: namespace.Param.optParam] [source_file: testcode]
+                        NUMBER 3.0 14 [source_file: testcode]
+        FUNCTION f 17 [source_file: testcode]
+            NAME f 17 [source_file: testcode]
+            PARAM_LIST 17 [source_file: testcode]
+            BLOCK 17 [source_file: testcode]
+                VAR 18 [source_file: testcode]
+                    NAME Param 18 [source_file: testcode]
+                        NAME namespace$Param 18 [originalname: namespace.Param] [source_file: testcode]
+                EXPR_RESULT 19 [source_file: testcode]
+                    CALL 19 [free_call: 1] [source_file: testcode]
+                        NAME log 19 [source_file: testcode]
+                        NAME namespace$Param$optParam 19 [originalname: namespace.Param.optParam] [source_file: testcode]
+                EXPR_RESULT 20 [source_file: testcode]
+                    CALL 20 [free_call: 1] [source_file: testcode]
+                        NAME log 20 [source_file: testcode]
+                        GETPROP 20 [source_file: testcode]
+                            NAME Param 20 [source_file: testcode]
+                            STRING optParam 20 [source_file: testcode]
+
+
+Subtree1: SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+    VAR 1 [source_file: expected0]
+        NAME namespace 1 [source_file: expected0]
+            FUNCTION  1 [source_file: expected0]
+                NAME  1 [source_file: expected0]
+                PARAM_LIST 1 [source_file: expected0]
+                BLOCK 1 [source_file: expected0]
+    EXPR_RESULT 2 [source_file: expected0]
+        CALL 2 [source_file: expected0]
+            GETPROP 2 [source_file: expected0]
+                NAME goog 2 [source_file: expected0]
+                STRING inherits 2 [source_file: expected0]
+            NAME namespace 2 [source_file: expected0]
+            NAME Object 2 [source_file: expected0]
+    VAR 3 [source_file: expected0]
+        NAME namespace$includeExtraParam 3 [source_file: expected0]
+            TRUE 3 [source_file: expected0]
+    VAR 4 [source_file: expected0]
+        NAME namespace$Param$param1 4 [source_file: expected0]
+            NUMBER 1.0 4 [source_file: expected0]
+    VAR 5 [source_file: expected0]
+        NAME namespace$Param$param2 5 [source_file: expected0]
+            NUMBER 2.0 5 [source_file: expected0]
+    IF 6 [source_file: expected0]
+        NAME namespace$includeExtraParam 6 [source_file: expected0]
+        BLOCK 6 [source_file: expected0]
+            VAR 7 [source_file: expected0]
+                NAME namespace$Param$optParam 7 [source_file: expected0]
+                    NUMBER 3.0 7 [source_file: expected0]
+    FUNCTION f 9 [source_file: expected0]
+        NAME f 9 [source_file: expected0]
+        PARAM_LIST 9 [source_file: expected0]
+        BLOCK 9 [source_file: expected0]
+            VAR 10 [source_file: expected0]
+                NAME Param 10 [source_file: expected0]
+                    NULL 10 [source_file: expected0]
+            EXPR_RESULT 11 [source_file: expected0]
+                CALL 11 [free_call: 1] [source_file: expected0]
+                    NAME log 11 [source_file: expected0]
+                    NAME namespace$Param$optParam 11 [source_file: expected0]
+            EXPR_RESULT 12 [source_file: expected0]
+                CALL 12 [free_call: 1] [source_file: expected0]
+                    NAME log 12 [source_file: expected0]
+                    NAME namespace$Param$optParam 12 [source_file: expected0]
+
+
+Subtree2: SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+    VAR 2 [jsdoc_info: JSDocInfo] [source_file: testcode]
+        NAME namespace 2 [source_file: testcode]
+            FUNCTION  2 [source_file: testcode]
+                NAME  2 [source_file: testcode]
+                PARAM_LIST 2 [source_file: testcode]
+                BLOCK 2 [source_file: testcode]
+    EXPR_RESULT 3 [source_file: testcode]
+        CALL 3 [source_file: testcode]
+            GETPROP 3 [source_file: testcode]
+                NAME goog 3 [source_file: testcode]
+                STRING inherits 3 [source_file: testcode]
+            NAME namespace 3 [source_file: testcode]
+            NAME Object 3 [source_file: testcode]
+    VAR 5 [source_file: testcode]
+        NAME namespace$includeExtraParam 5 [originalname: namespace.includeExtraParam] [source_file: testcode]
+            TRUE 5 [source_file: testcode]
+    VAR 9 [source_file: testcode]
+        NAME namespace$Param$param1 9 [source_file: testcode]
+            NUMBER 1.0 9 [source_file: testcode]
+    VAR 10 [source_file: testcode]
+        NAME namespace$Param$param2 10 [source_file: testcode]
+            NUMBER 2.0 10 [source_file: testcode]
+    VAR 8 [jsdoc_info: JSDocInfo] [source_file: testcode]
+        NAME namespace$Param 8 [originalname: namespace.Param] [source_file: testcode]
+            OBJECTLIT 8 [source_file: testcode]
+                STRING_KEY param1 9 [source_file: testcode]
+                    NAME namespace$Param$param1 9 [source_file: testcode]
+                STRING_KEY param2 10 [source_file: testcode]
+                    NAME namespace$Param$param2 10 [source_file: testcode]
+    IF 13 [source_file: testcode]
+        NAME namespace$includeExtraParam 13 [originalname: namespace.includeExtraParam] [source_file: testcode]
+        BLOCK 13 [source_file: testcode]
+            VAR 14 [source_file: testcode]
+                NAME namespace$Param$optParam 14 [originalname: namespace.Param.optParam] [source_file: testcode]
+                    NUMBER 3.0 14 [source_file: testcode]
+    FUNCTION f 17 [source_file: testcode]
+        NAME f 17 [source_file: testcode]
+        PARAM_LIST 17 [source_file: testcode]
+        BLOCK 17 [source_file: testcode]
+            VAR 18 [source_file: testcode]
+                NAME Param 18 [source_file: testcode]
+                    NAME namespace$Param 18 [originalname: namespace.Param] [source_file: testcode]
+            EXPR_RESULT 19 [source_file: testcode]
+                CALL 19 [free_call: 1] [source_file: testcode]
+                    NAME log 19 [source_file: testcode]
+                    NAME namespace$Param$optParam 19 [originalname: namespace.Param.optParam] [source_file: testcode]
+            EXPR_RESULT 20 [source_file: testcode]
+                CALL 20 [free_call: 1] [source_file: testcode]
+                    NAME log 20 [source_file: testcode]
+                    GETPROP 20 [source_file: testcode]
+                        NAME Param 20 [source_file: testcode]
+                        STRING optParam 20 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testCollapsePropertiesOfClass1(CollapsePropertiesTest.java:1656)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testGlobalWriteToNonAncestor
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;function f(){var x=null;f(a$b)}a$b=5
+Result: var a={b:3};function f(){var x=a;f(a.b)}a.b=5
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                NAME a$b 1 [source_file: expected0]
+                NUMBER 5.0 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME a 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+        EXPR_RESULT 1 [source_file: testcode]
+            ASSIGN 1 [source_file: testcode]
+                GETPROP 1 [source_file: testcode]
+                    NAME a 1 [source_file: testcode]
+                    STRING b 1 [source_file: testcode]
+                NUMBER 5.0 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b 1 [source_file: expected0]
+    NUMBER 3.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            NUMBER 3.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testGlobalWriteToNonAncestor(CollapsePropertiesTest.java:1014)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAliasOfFunction
+junit.framework.AssertionFailedError: 
+Expected: var a=function(){};var a$b=5;function f(){var x=null;f(a$b)}
+Result: var a=function(){};var a$b=5;function f(){var x=a$b;f(x)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a 1 [source_file: expected0]
+                FUNCTION  1 [source_file: expected0]
+                    NAME  1 [source_file: expected0]
+                    PARAM_LIST 1 [source_file: expected0]
+                    BLOCK 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 5.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                FUNCTION  1 [source_file: testcode]
+                    NAME  1 [source_file: testcode]
+                    PARAM_LIST 1 [source_file: testcode]
+                    BLOCK 1 [source_file: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a$b 1 [originalname: a.b] [source_file: testcode]
+                NUMBER 5.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a$b 1 [originalname: a.b] [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+
+
+Subtree1: NULL 1 [source_file: expected0]
+
+
+Subtree2: NAME a$b 1 [originalname: a.b] [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAliasOfFunction(CollapsePropertiesTest.java:1054)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias1
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;function f(){var x=null;f(a$b)}
+Result: var a={b:3};function f(){var x=a;f(x.b)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b 1 [source_file: expected0]
+    NUMBER 3.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            NUMBER 3.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias1(CollapsePropertiesTest.java:968)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias2
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;var a$c=4;function f(){var x=null;f(a$b);f(a$c)}
+Result: var a={b:3,c:4};function f(){var x=a;f(x.b);f(x.c)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$c 1 [source_file: expected0]
+                NUMBER 4.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$c 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+                    STRING_KEY c 1 [source_file: testcode]
+                        NUMBER 4.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+
+
+Subtree1: SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+    VAR 1 [source_file: expected0]
+        NAME a$b 1 [source_file: expected0]
+            NUMBER 3.0 1 [source_file: expected0]
+    VAR 1 [source_file: expected0]
+        NAME a$c 1 [source_file: expected0]
+            NUMBER 4.0 1 [source_file: expected0]
+    FUNCTION f 1 [source_file: expected0]
+        NAME f 1 [source_file: expected0]
+        PARAM_LIST 1 [source_file: expected0]
+        BLOCK 1 [source_file: expected0]
+            VAR 1 [source_file: expected0]
+                NAME x 1 [source_file: expected0]
+                    NULL 1 [source_file: expected0]
+            EXPR_RESULT 1 [source_file: expected0]
+                CALL 1 [free_call: 1] [source_file: expected0]
+                    NAME f 1 [source_file: expected0]
+                    NAME a$b 1 [source_file: expected0]
+            EXPR_RESULT 1 [source_file: expected0]
+                CALL 1 [free_call: 1] [source_file: expected0]
+                    NAME f 1 [source_file: expected0]
+                    NAME a$c 1 [source_file: expected0]
+
+
+Subtree2: SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+    VAR 1 [source_file: testcode]
+        NAME a 1 [source_file: testcode]
+            OBJECTLIT 1 [source_file: testcode]
+                STRING_KEY b 1 [source_file: testcode]
+                    NUMBER 3.0 1 [source_file: testcode]
+                STRING_KEY c 1 [source_file: testcode]
+                    NUMBER 4.0 1 [source_file: testcode]
+    FUNCTION f 1 [source_file: testcode]
+        NAME f 1 [source_file: testcode]
+        PARAM_LIST 1 [source_file: testcode]
+        BLOCK 1 [source_file: testcode]
+            VAR 1 [source_file: testcode]
+                NAME x 1 [source_file: testcode]
+                    NAME a 1 [source_file: testcode]
+            EXPR_RESULT 1 [source_file: testcode]
+                CALL 1 [free_call: 1] [source_file: testcode]
+                    NAME f 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                        STRING b 1 [source_file: testcode]
+            EXPR_RESULT 1 [source_file: testcode]
+                CALL 1 [free_call: 1] [source_file: testcode]
+                    NAME f 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                        STRING c 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias2(CollapsePropertiesTest.java:973)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias3
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;var a$c={d:5};function f(){var x=null;f(a$b);f(a$c);f(a$c.d)}
+Result: var a={b:3,c:{d:5}};function f(){var x=a;f(x.b);f(x.c);f(x.c.d)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$c 1 [source_file: expected0]
+                OBJECTLIT 1 [source_file: expected0]
+                    STRING_KEY d 1 [source_file: expected0]
+                        NUMBER 5.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$c 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        GETPROP 1 [source_file: expected0]
+                            NAME a$c 1 [source_file: expected0]
+                            STRING d 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+                    STRING_KEY c 1 [source_file: testcode]
+                        OBJECTLIT 1 [source_file: testcode]
+                            STRING_KEY d 1 [source_file: testcode]
+                                NUMBER 5.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            GETPROP 1 [source_file: testcode]
+                                NAME x 1 [source_file: testcode]
+                                STRING c 1 [source_file: testcode]
+                            STRING d 1 [source_file: testcode]
+
+
+Subtree1: SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+    VAR 1 [source_file: expected0]
+        NAME a$b 1 [source_file: expected0]
+            NUMBER 3.0 1 [source_file: expected0]
+    VAR 1 [source_file: expected0]
+        NAME a$c 1 [source_file: expected0]
+            OBJECTLIT 1 [source_file: expected0]
+                STRING_KEY d 1 [source_file: expected0]
+                    NUMBER 5.0 1 [source_file: expected0]
+    FUNCTION f 1 [source_file: expected0]
+        NAME f 1 [source_file: expected0]
+        PARAM_LIST 1 [source_file: expected0]
+        BLOCK 1 [source_file: expected0]
+            VAR 1 [source_file: expected0]
+                NAME x 1 [source_file: expected0]
+                    NULL 1 [source_file: expected0]
+            EXPR_RESULT 1 [source_file: expected0]
+                CALL 1 [free_call: 1] [source_file: expected0]
+                    NAME f 1 [source_file: expected0]
+                    NAME a$b 1 [source_file: expected0]
+            EXPR_RESULT 1 [source_file: expected0]
+                CALL 1 [free_call: 1] [source_file: expected0]
+                    NAME f 1 [source_file: expected0]
+                    NAME a$c 1 [source_file: expected0]
+            EXPR_RESULT 1 [source_file: expected0]
+                CALL 1 [free_call: 1] [source_file: expected0]
+                    NAME f 1 [source_file: expected0]
+                    GETPROP 1 [source_file: expected0]
+                        NAME a$c 1 [source_file: expected0]
+                        STRING d 1 [source_file: expected0]
+
+
+Subtree2: SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+    VAR 1 [source_file: testcode]
+        NAME a 1 [source_file: testcode]
+            OBJECTLIT 1 [source_file: testcode]
+                STRING_KEY b 1 [source_file: testcode]
+                    NUMBER 3.0 1 [source_file: testcode]
+                STRING_KEY c 1 [source_file: testcode]
+                    OBJECTLIT 1 [source_file: testcode]
+                        STRING_KEY d 1 [source_file: testcode]
+                            NUMBER 5.0 1 [source_file: testcode]
+    FUNCTION f 1 [source_file: testcode]
+        NAME f 1 [source_file: testcode]
+        PARAM_LIST 1 [source_file: testcode]
+        BLOCK 1 [source_file: testcode]
+            VAR 1 [source_file: testcode]
+                NAME x 1 [source_file: testcode]
+                    NAME a 1 [source_file: testcode]
+            EXPR_RESULT 1 [source_file: testcode]
+                CALL 1 [free_call: 1] [source_file: testcode]
+                    NAME f 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                        STRING b 1 [source_file: testcode]
+            EXPR_RESULT 1 [source_file: testcode]
+                CALL 1 [free_call: 1] [source_file: testcode]
+                    NAME f 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                        STRING c 1 [source_file: testcode]
+            EXPR_RESULT 1 [source_file: testcode]
+                CALL 1 [free_call: 1] [source_file: testcode]
+                    NAME f 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+                        STRING d 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias3(CollapsePropertiesTest.java:979)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias4
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;var c$d=5;function f(){var x=null;var y=null;f(a$b);f(c$d)}
+Result: var a={b:3};var c={d:5};function f(){var x=a;var y=c;f(x.b);f(y.d)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME c$d 1 [source_file: expected0]
+                NUMBER 5.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME y 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME c$d 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+        VAR 1 [source_file: testcode]
+            NAME c 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY d 1 [source_file: testcode]
+                        NUMBER 5.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                        NAME c 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME y 1 [source_file: testcode]
+                            STRING d 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b 1 [source_file: expected0]
+    NUMBER 3.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            NUMBER 3.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias4(CollapsePropertiesTest.java:986)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias5
+junit.framework.AssertionFailedError: 
+Expected: var a$b$c=5;function f(){var x=null;var y=null;f(a$b$c);f(a$b$c)}
+Result: var a={b:{c:5}};function f(){var x=a;var y=x.b;f(a.b.c);f(y.c)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b$c 1 [source_file: expected0]
+                NUMBER 5.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME y 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b$c 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b$c 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        OBJECTLIT 1 [source_file: testcode]
+                            STRING_KEY c 1 [source_file: testcode]
+                                NUMBER 5.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            GETPROP 1 [source_file: testcode]
+                                NAME a 1 [source_file: testcode]
+                                STRING b 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME y 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b$c 1 [source_file: expected0]
+    NUMBER 5.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            OBJECTLIT 1 [source_file: testcode]
+                STRING_KEY c 1 [source_file: testcode]
+                    NUMBER 5.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias5(CollapsePropertiesTest.java:993)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias6
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;function f(){var x=null;if(a$b)f(a$b)}
+Result: var a={b:3};function f(){var x=a;if(x.b)f(x.b)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                IF 1 [source_file: expected0]
+                    NAME a$b 1 [source_file: expected0]
+                    BLOCK 1 [source_file: expected0]
+                        EXPR_RESULT 1 [source_file: expected0]
+                            CALL 1 [free_call: 1] [source_file: expected0]
+                                NAME f 1 [source_file: expected0]
+                                NAME a$b 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                IF 1 [source_file: testcode]
+                    GETPROP 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                        STRING b 1 [source_file: testcode]
+                    BLOCK 1 [source_file: testcode]
+                        EXPR_RESULT 1 [source_file: testcode]
+                            CALL 1 [free_call: 1] [source_file: testcode]
+                                NAME f 1 [source_file: testcode]
+                                GETPROP 1 [source_file: testcode]
+                                    NAME x 1 [source_file: testcode]
+                                    STRING b 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b 1 [source_file: expected0]
+    NUMBER 3.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            NUMBER 3.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias6(CollapsePropertiesTest.java:1000)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias7
+junit.framework.AssertionFailedError: 
+Expected: var a$b$c=5;function f(){var x=null;f(a$b$c)}
+Result: var a$b={c:5};function f(){var x=a$b;f(x.c)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b$c 1 [source_file: expected0]
+                NUMBER 5.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b$c 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a$b 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY c 1 [source_file: testcode]
+                        NUMBER 5.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a$b 1 [originalname: a.b] [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME x 1 [source_file: testcode]
+                            STRING c 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b$c 1 [source_file: expected0]
+    NUMBER 5.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a$b 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY c 1 [source_file: testcode]
+            NUMBER 5.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalAlias7(CollapsePropertiesTest.java:1005)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testNoInlineGetpropIntoCall
+junit.framework.AssertionFailedError: 
+Expected: var b=x;function f(){var a=null;b()}
+Result: var b=x;function f(){var a=b;a()}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME b 1 [source_file: expected0]
+                NAME x 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME a 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME b 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME b 1 [source_file: testcode]
+                NAME x 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME a 1 [source_file: testcode]
+                        NAME b 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+
+
+Subtree1: NULL 1 [source_file: expected0]
+
+
+Subtree2: NAME b 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testNoInlineGetpropIntoCall(CollapsePropertiesTest.java:1061)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CollapsePropertiesTest::testLocalWriteToNonAncestor
+junit.framework.AssertionFailedError: 
+Expected: var a$b=3;function f(){a$b=5;var x=null;f(a$b)}
+Result: var a={b:3};function f(){a.b=5;var x=a;f(a.b)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        VAR 1 [source_file: expected0]
+            NAME a$b 1 [source_file: expected0]
+                NUMBER 3.0 1 [source_file: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    ASSIGN 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+                        NUMBER 5.0 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        NULL 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME f 1 [source_file: expected0]
+                        NAME a$b 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        VAR 1 [source_file: testcode]
+            NAME a 1 [source_file: testcode]
+                OBJECTLIT 1 [source_file: testcode]
+                    STRING_KEY b 1 [source_file: testcode]
+                        NUMBER 3.0 1 [source_file: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    ASSIGN 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME a 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+                        NUMBER 5.0 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        NAME a 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME f 1 [source_file: testcode]
+                        GETPROP 1 [source_file: testcode]
+                            NAME a 1 [source_file: testcode]
+                            STRING b 1 [source_file: testcode]
+
+
+Subtree1: NAME a$b 1 [source_file: expected0]
+    NUMBER 3.0 1 [source_file: expected0]
+
+
+Subtree2: NAME a 1 [source_file: testcode]
+    OBJECTLIT 1 [source_file: testcode]
+        STRING_KEY b 1 [source_file: testcode]
+            NUMBER 3.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CollapsePropertiesTest.testLocalWriteToNonAncestor(CollapsePropertiesTest.java:1023)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineParameterAlias1
+junit.framework.AssertionFailedError: 
+Expected: function f(x){g();x;x}
+Result: function f(x){var y=x;g();y;y}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+                NAME x 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME g 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+                NAME x 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME g 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+
+
+Subtree1: BLOCK 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        CALL 1 [free_call: 1] [source_file: expected0]
+            NAME g 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        NAME x 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        NAME x 1 [source_file: expected0]
+
+
+Subtree2: BLOCK 1 [source_file: testcode]
+    VAR 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+            NAME x 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        CALL 1 [free_call: 1] [source_file: testcode]
+            NAME g 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineParameterAlias1(InlineVariablesTest.java:738)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineParameterAlias2
+junit.framework.AssertionFailedError: 
+Expected: function f(x){x;g();x;x}
+Result: function f(x){var y;y=x;g();y;y}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+                NAME x 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    CALL 1 [free_call: 1] [source_file: expected0]
+                        NAME g 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                EXPR_RESULT 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+                NAME x 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    ASSIGN 1 [source_file: testcode]
+                        NAME y 1 [source_file: testcode]
+                        NAME x 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    CALL 1 [free_call: 1] [source_file: testcode]
+                        NAME g 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+                EXPR_RESULT 1 [source_file: testcode]
+                    NAME y 1 [source_file: testcode]
+
+
+Subtree1: BLOCK 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        NAME x 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        CALL 1 [free_call: 1] [source_file: expected0]
+            NAME g 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        NAME x 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        NAME x 1 [source_file: expected0]
+
+
+Subtree2: BLOCK 1 [source_file: testcode]
+    VAR 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        ASSIGN 1 [source_file: testcode]
+            NAME y 1 [source_file: testcode]
+            NAME x 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        CALL 1 [free_call: 1] [source_file: testcode]
+            NAME g 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineParameterAlias2(InlineVariablesTest.java:752)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineAliasesInLoop
+junit.framework.AssertionFailedError: 
+Expected: function f(){var x=extern();var i=0;for(;i<5;i++)(function(){window.setTimeout(function(){extern(x)},0)})()}
+Result: function f(){var x=extern();var i=0;for(;i<5;i++)(function(){var y=x;window.setTimeout(function(){extern(y)},0)})()}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION f 1 [source_file: expected0]
+            NAME f 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME x 1 [source_file: expected0]
+                        CALL 1 [free_call: 1] [source_file: expected0]
+                            NAME extern 1 [source_file: expected0]
+                VAR 1 [source_file: expected0]
+                    NAME i 1 [source_file: expected0]
+                        NUMBER 0.0 1 [source_file: expected0]
+                FOR 1 [source_file: expected0]
+                    EMPTY 1 [source_file: expected0]
+                    LT 1 [source_file: expected0]
+                        NAME i 1 [source_file: expected0]
+                        NUMBER 5.0 1 [source_file: expected0]
+                    INC 1 [incrdecr: 1] [source_file: expected0]
+                        NAME i 1 [source_file: expected0]
+                    BLOCK 1 [source_file: expected0]
+                        EXPR_RESULT 1 [source_file: expected0]
+                            CALL 1 [free_call: 1] [source_file: expected0]
+                                FUNCTION  1 [source_file: expected0]
+                                    NAME  1 [source_file: expected0]
+                                    PARAM_LIST 1 [source_file: expected0]
+                                    BLOCK 1 [source_file: expected0]
+                                        EXPR_RESULT 1 [source_file: expected0]
+                                            CALL 1 [source_file: expected0]
+                                                GETPROP 1 [source_file: expected0]
+                                                    NAME window 1 [source_file: expected0]
+                                                    STRING setTimeout 1 [source_file: expected0]
+                                                FUNCTION  1 [source_file: expected0]
+                                                    NAME  1 [source_file: expected0]
+                                                    PARAM_LIST 1 [source_file: expected0]
+                                                    BLOCK 1 [source_file: expected0]
+                                                        EXPR_RESULT 1 [source_file: expected0]
+                                                            CALL 1 [free_call: 1] [source_file: expected0]
+                                                                NAME extern 1 [source_file: expected0]
+                                                                NAME x 1 [source_file: expected0]
+                                                NUMBER 0.0 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION f 1 [source_file: testcode]
+            NAME f 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME x 1 [source_file: testcode]
+                        CALL 1 [free_call: 1] [source_file: testcode]
+                            NAME extern 1 [source_file: testcode]
+                VAR 1 [source_file: testcode]
+                    NAME i 1 [source_file: testcode]
+                        NUMBER 0.0 1 [source_file: testcode]
+                FOR 1 [source_file: testcode]
+                    EMPTY 1 [source_file: testcode]
+                    LT 1 [source_file: testcode]
+                        NAME i 1 [source_file: testcode]
+                        NUMBER 5.0 1 [source_file: testcode]
+                    INC 1 [incrdecr: 1] [source_file: testcode]
+                        NAME i 1 [source_file: testcode]
+                    BLOCK 1 [source_file: testcode]
+                        EXPR_RESULT 1 [source_file: testcode]
+                            CALL 1 [free_call: 1] [source_file: testcode]
+                                FUNCTION  1 [source_file: testcode]
+                                    NAME  1 [source_file: testcode]
+                                    PARAM_LIST 1 [source_file: testcode]
+                                    BLOCK 1 [source_file: testcode]
+                                        VAR 1 [source_file: testcode]
+                                            NAME y 1 [source_file: testcode]
+                                                NAME x 1 [source_file: testcode]
+                                        EXPR_RESULT 1 [source_file: testcode]
+                                            CALL 1 [source_file: testcode]
+                                                GETPROP 1 [source_file: testcode]
+                                                    NAME window 1 [source_file: testcode]
+                                                    STRING setTimeout 1 [source_file: testcode]
+                                                FUNCTION  1 [source_file: testcode]
+                                                    NAME  1 [source_file: testcode]
+                                                    PARAM_LIST 1 [source_file: testcode]
+                                                    BLOCK 1 [source_file: testcode]
+                                                        EXPR_RESULT 1 [source_file: testcode]
+                                                            CALL 1 [free_call: 1] [source_file: testcode]
+                                                                NAME extern 1 [source_file: testcode]
+                                                                NAME y 1 [source_file: testcode]
+                                                NUMBER 0.0 1 [source_file: testcode]
+
+
+Subtree1: BLOCK 1 [source_file: expected0]
+    EXPR_RESULT 1 [source_file: expected0]
+        CALL 1 [source_file: expected0]
+            GETPROP 1 [source_file: expected0]
+                NAME window 1 [source_file: expected0]
+                STRING setTimeout 1 [source_file: expected0]
+            FUNCTION  1 [source_file: expected0]
+                NAME  1 [source_file: expected0]
+                PARAM_LIST 1 [source_file: expected0]
+                BLOCK 1 [source_file: expected0]
+                    EXPR_RESULT 1 [source_file: expected0]
+                        CALL 1 [free_call: 1] [source_file: expected0]
+                            NAME extern 1 [source_file: expected0]
+                            NAME x 1 [source_file: expected0]
+            NUMBER 0.0 1 [source_file: expected0]
+
+
+Subtree2: BLOCK 1 [source_file: testcode]
+    VAR 1 [source_file: testcode]
+        NAME y 1 [source_file: testcode]
+            NAME x 1 [source_file: testcode]
+    EXPR_RESULT 1 [source_file: testcode]
+        CALL 1 [source_file: testcode]
+            GETPROP 1 [source_file: testcode]
+                NAME window 1 [source_file: testcode]
+                STRING setTimeout 1 [source_file: testcode]
+            FUNCTION  1 [source_file: testcode]
+                NAME  1 [source_file: testcode]
+                PARAM_LIST 1 [source_file: testcode]
+                BLOCK 1 [source_file: testcode]
+                    EXPR_RESULT 1 [source_file: testcode]
+                        CALL 1 [free_call: 1] [source_file: testcode]
+                            NAME extern 1 [source_file: testcode]
+                            NAME y 1 [source_file: testcode]
+            NUMBER 0.0 1 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineAliasesInLoop(InlineVariablesTest.java:602)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testIssue378ArgumentsRead2
+junit.framework.AssertionFailedError: 
+Expected: function g(callback){h(arguments[0],this);callback.apply(this,arguments[0])}function h(a,b){a[0]=b}
+Result: function g(callback){var f=callback;h(arguments[0],this);f.apply(this,arguments[0])}function h(a,b){a[0]=b}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION g 1 [source_file: expected0]
+            NAME g 1 [source_file: expected0]
+            PARAM_LIST 1 [source_file: expected0]
+                NAME callback 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+                EXPR_RESULT 2 [source_file: expected0]
+                    CALL 2 [free_call: 1] [source_file: expected0]
+                        NAME h 2 [source_file: expected0]
+                        GETELEM 2 [source_file: expected0]
+                            NAME arguments 2 [source_file: expected0]
+                            NUMBER 0.0 2 [source_file: expected0]
+                        THIS 2 [source_file: expected0]
+                EXPR_RESULT 3 [source_file: expected0]
+                    CALL 3 [source_file: expected0]
+                        GETPROP 3 [source_file: expected0]
+                            NAME callback 3 [source_file: expected0]
+                            STRING apply 3 [source_file: expected0]
+                        THIS 3 [source_file: expected0]
+                        GETELEM 3 [source_file: expected0]
+                            NAME arguments 3 [source_file: expected0]
+                            NUMBER 0.0 3 [source_file: expected0]
+        FUNCTION h 5 [source_file: expected0]
+            NAME h 5 [source_file: expected0]
+            PARAM_LIST 5 [source_file: expected0]
+                NAME a 5 [source_file: expected0]
+                NAME b 5 [source_file: expected0]
+            BLOCK 5 [source_file: expected0]
+                EXPR_RESULT 6 [source_file: expected0]
+                    ASSIGN 6 [source_file: expected0]
+                        GETELEM 6 [source_file: expected0]
+                            NAME a 6 [source_file: expected0]
+                            NUMBER 0.0 6 [source_file: expected0]
+                        NAME b 6 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION g 1 [source_file: testcode]
+            NAME g 1 [source_file: testcode]
+            PARAM_LIST 1 [source_file: testcode]
+                NAME callback 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+                VAR 2 [source_file: testcode]
+                    NAME f 2 [source_file: testcode]
+                        NAME callback 2 [source_file: testcode]
+                EXPR_RESULT 3 [source_file: testcode]
+                    CALL 3 [free_call: 1] [source_file: testcode]
+                        NAME h 3 [source_file: testcode]
+                        GETELEM 3 [source_file: testcode]
+                            NAME arguments 3 [source_file: testcode]
+                            NUMBER 0.0 3 [source_file: testcode]
+                        THIS 3 [source_file: testcode]
+                EXPR_RESULT 4 [source_file: testcode]
+                    CALL 4 [source_file: testcode]
+                        GETPROP 4 [source_file: testcode]
+                            NAME f 4 [source_file: testcode]
+                            STRING apply 4 [source_file: testcode]
+                        THIS 4 [source_file: testcode]
+                        GETELEM 4 [source_file: testcode]
+                            NAME arguments 4 [source_file: testcode]
+                            NUMBER 0.0 4 [source_file: testcode]
+        FUNCTION h 6 [source_file: testcode]
+            NAME h 6 [source_file: testcode]
+            PARAM_LIST 6 [source_file: testcode]
+                NAME a 6 [source_file: testcode]
+                NAME b 6 [source_file: testcode]
+            BLOCK 6 [source_file: testcode]
+                EXPR_RESULT 7 [source_file: testcode]
+                    ASSIGN 7 [source_file: testcode]
+                        GETELEM 7 [source_file: testcode]
+                            NAME a 7 [source_file: testcode]
+                            NUMBER 0.0 7 [source_file: testcode]
+                        NAME b 7 [source_file: testcode]
+
+
+Subtree1: BLOCK 1 [source_file: expected0]
+    EXPR_RESULT 2 [source_file: expected0]
+        CALL 2 [free_call: 1] [source_file: expected0]
+            NAME h 2 [source_file: expected0]
+            GETELEM 2 [source_file: expected0]
+                NAME arguments 2 [source_file: expected0]
+                NUMBER 0.0 2 [source_file: expected0]
+            THIS 2 [source_file: expected0]
+    EXPR_RESULT 3 [source_file: expected0]
+        CALL 3 [source_file: expected0]
+            GETPROP 3 [source_file: expected0]
+                NAME callback 3 [source_file: expected0]
+                STRING apply 3 [source_file: expected0]
+            THIS 3 [source_file: expected0]
+            GETELEM 3 [source_file: expected0]
+                NAME arguments 3 [source_file: expected0]
+                NUMBER 0.0 3 [source_file: expected0]
+
+
+Subtree2: BLOCK 1 [source_file: testcode]
+    VAR 2 [source_file: testcode]
+        NAME f 2 [source_file: testcode]
+            NAME callback 2 [source_file: testcode]
+    EXPR_RESULT 3 [source_file: testcode]
+        CALL 3 [free_call: 1] [source_file: testcode]
+            NAME h 3 [source_file: testcode]
+            GETELEM 3 [source_file: testcode]
+                NAME arguments 3 [source_file: testcode]
+                NUMBER 0.0 3 [source_file: testcode]
+            THIS 3 [source_file: testcode]
+    EXPR_RESULT 4 [source_file: testcode]
+        CALL 4 [source_file: testcode]
+            GETPROP 4 [source_file: testcode]
+                NAME f 4 [source_file: testcode]
+                STRING apply 4 [source_file: testcode]
+            THIS 4 [source_file: testcode]
+            GETELEM 4 [source_file: testcode]
+                NAME arguments 4 [source_file: testcode]
+                NUMBER 0.0 4 [source_file: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:957)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:477)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:403)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.InlineVariablesTest.testIssue378ArgumentsRead2(InlineVariablesTest.java:995)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.IntegrationTest::testAddFunctionProperties4
+junit.framework.AssertionFailedError: 
+Expected: function Foo(){}Foo.f=function(){Foo.i=new Foo};alert(Foo.f())
+Result: function Foo(){}(function(){var o=Foo;o.f=function(){o.i=new o}})();alert(Foo.f())
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: input0] [input_id: InputId: input0]
+        FUNCTION Foo 1 [source_file: input0]
+            NAME Foo 1 [source_file: input0]
+            PARAM_LIST 1 [source_file: input0]
+            BLOCK 1 [source_file: input0]
+        EXPR_RESULT 1 [source_file: input0]
+            ASSIGN 1 [source_file: input0]
+                GETPROP 1 [source_file: input0]
+                    NAME Foo 1 [source_file: input0]
+                    STRING f 1 [source_file: input0]
+                FUNCTION  1 [source_file: input0]
+                    NAME  1 [source_file: input0]
+                    PARAM_LIST 1 [source_file: input0]
+                    BLOCK 1 [source_file: input0]
+                        EXPR_RESULT 1 [source_file: input0]
+                            ASSIGN 1 [source_file: input0]
+                                GETPROP 1 [source_file: input0]
+                                    NAME Foo 1 [source_file: input0]
+                                    STRING i 1 [source_file: input0]
+                                NEW 1 [source_file: input0]
+                                    NAME Foo 1 [source_file: input0]
+        EXPR_RESULT 1 [source_file: input0]
+            CALL 1 [free_call: 1] [source_file: input0]
+                NAME alert 1 [source_file: input0]
+                CALL 1 [source_file: input0]
+                    GETPROP 1 [source_file: input0]
+                        NAME Foo 1 [source_file: input0]
+                        STRING f 1 [source_file: input0]
+
+
+Tree2:
+BLOCK [synthetic: 1] [change_time: 38]
+    SCRIPT 1 [synthetic: 1] [source_file: i0] [input_id: InputId: i0]
+        FUNCTION Foo 1 [source_file: i0]
+            NAME Foo 1 [source_file: i0]
+            PARAM_LIST 1 [source_file: i0]
+            BLOCK 1 [source_file: i0]
+        EXPR_RESULT 1 [source_file: i0]
+            CALL 1 [side_effect_flags: 24] [free_call: 1] [source_file: i0]
+                FUNCTION  1 [originalname: goog.addSingletonGetter] [source_file: i0]
+                    NAME  1 [source_file: i0]
+                    PARAM_LIST 1 [source_file: i0]
+                    BLOCK 1 [source_file: i0]
+                        VAR 1 [source_file: i0]
+                            NAME o 1 [source_file: i0]
+                                NAME Foo 1 [source_file: i0]
+                        EXPR_RESULT 1 [source_file: i0]
+                            ASSIGN 1 [source_file: i0]
+                                GETPROP 1 [source_file: i0]
+                                    NAME o 1 [source_file: i0]
+                                    STRING f 1 [source_file: i0]
+                                FUNCTION  1 [source_file: i0]
+                                    NAME  1 [source_file: i0]
+                                    PARAM_LIST 1 [source_file: i0]
+                                    BLOCK 1 [source_file: i0]
+                                        EXPR_RESULT 1 [source_file: i0]
+                                            ASSIGN 1 [source_file: i0]
+                                                GETPROP 1 [source_file: i0]
+                                                    NAME o 1 [source_file: i0]
+                                                    STRING i 1 [source_file: i0]
+                                                NEW 1 [source_file: i0]
+                                                    NAME o 1 [source_file: i0]
+        EXPR_RESULT 1 [source_file: i0]
+            CALL 1 [side_effect_flags: 8] [free_call: 1] [source_file: i0]
+                NAME alert 1 [source_file: i0]
+                CALL 1 [side_effect_flags: 24] [source_file: i0]
+                    GETPROP 1 [source_file: i0]
+                        NAME Foo 1 [source_file: i0]
+                        STRING f 1 [source_file: i0]
+
+
+Subtree1: ASSIGN 1 [source_file: input0]
+    GETPROP 1 [source_file: input0]
+        NAME Foo 1 [source_file: input0]
+        STRING f 1 [source_file: input0]
+    FUNCTION  1 [source_file: input0]
+        NAME  1 [source_file: input0]
+        PARAM_LIST 1 [source_file: input0]
+        BLOCK 1 [source_file: input0]
+            EXPR_RESULT 1 [source_file: input0]
+                ASSIGN 1 [source_file: input0]
+                    GETPROP 1 [source_file: input0]
+                        NAME Foo 1 [source_file: input0]
+                        STRING i 1 [source_file: input0]
+                    NEW 1 [source_file: input0]
+                        NAME Foo 1 [source_file: input0]
+
+
+Subtree2: CALL 1 [side_effect_flags: 24] [free_call: 1] [source_file: i0]
+    FUNCTION  1 [originalname: goog.addSingletonGetter] [source_file: i0]
+        NAME  1 [source_file: i0]
+        PARAM_LIST 1 [source_file: i0]
+        BLOCK 1 [source_file: i0]
+            VAR 1 [source_file: i0]
+                NAME o 1 [source_file: i0]
+                    NAME Foo 1 [source_file: i0]
+            EXPR_RESULT 1 [source_file: i0]
+                ASSIGN 1 [source_file: i0]
+                    GETPROP 1 [source_file: i0]
+                        NAME o 1 [source_file: i0]
+                        STRING f 1 [source_file: i0]
+                    FUNCTION  1 [source_file: i0]
+                        NAME  1 [source_file: i0]
+                        PARAM_LIST 1 [source_file: i0]
+                        BLOCK 1 [source_file: i0]
+                            EXPR_RESULT 1 [source_file: i0]
+                                ASSIGN 1 [source_file: i0]
+                                    GETPROP 1 [source_file: i0]
+                                        NAME o 1 [source_file: i0]
+                                        STRING i 1 [source_file: i0]
+                                    NEW 1 [source_file: i0]
+                                        NAME o 1 [source_file: i0]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.IntegrationTestCase.test(IntegrationTestCase.java:97)
+	at com.google.javascript.jscomp.IntegrationTestCase.test(IntegrationTestCase.java:79)
+	at com.google.javascript.jscomp.IntegrationTest.testAddFunctionProperties4(IntegrationTest.java:1984)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)

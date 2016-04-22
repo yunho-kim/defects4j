@@ -1,1 +1,1091 @@
-# Mutant id: 283
+--- com.google.javascript.jscomp.IntegrationTest::testIssue772
+junit.framework.AssertionFailedError: Expected no warnings or errors
+Errors: 
+Warnings: 
+JSC_TYPE_PARSE_ERROR. Bad type annotation. Unknown type c.MyType at i0 line 1 : 175 expected:<0> but was:<1>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:234)
+	at junit.framework.TestCase.assertEquals(TestCase.java:401)
+	at com.google.javascript.jscomp.IntegrationTestCase.test(IntegrationTestCase.java:86)
+	at com.google.javascript.jscomp.IntegrationTestCase.test(IntegrationTestCase.java:76)
+	at com.google.javascript.jscomp.IntegrationTest.testIssue772(IntegrationTest.java:1868)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testObjectJsDoc
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+309
+  Node(GETPROP): testcode:1:120
+goog.scope(function() {var x = goog.Timer;/** @type {{someKey: x}} */ types.actual;/** @type {{someKey: goog.Timer}} */ types.expected;});
+  Parent(EXPR_RESULT): testcode:1:120
+goog.scope(function() {var x = goog.Timer;/** @type {{someKey: x}} */ types.actual;/** @type {{someKey: goog.Timer}} */ types.expected;});
+
+	at com.google.javascript.rhino.Token.name(Token.java:283)
+	at com.google.javascript.rhino.Node.toString(Node.java:953)
+	at com.google.javascript.rhino.Node.toString(Node.java:944)
+	at com.google.javascript.rhino.Node.toString(Node.java:936)
+	at com.google.javascript.rhino.Node.toStringTreeHelper(Node.java:1033)
+	at com.google.javascript.rhino.Node.appendStringTree(Node.java:1025)
+	at com.google.javascript.rhino.Node.toStringTreeImpl(Node.java:1017)
+	at com.google.javascript.rhino.Node.toStringTree(Node.java:1011)
+	at com.google.javascript.rhino.Node.checkTreeEquals(Node.java:1430)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testObjectJsDoc(ScopedAliasesTest.java:333)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.IllegalStateException: 309
+	... 54 more
+--- com.google.javascript.jscomp.ScopedAliasesTest::testArrayJsDoc
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING Array 1 [source_file: testcode] [length: 5]
+    BLOCK
+        STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING Array 1 [source_file: testcode] [length: 5]
+    BLOCK
+        STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testArrayJsDoc(ScopedAliasesTest.java:325)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocSubType
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer.Enum 1 [source_file: testcode] [length: 15]
+
+
+Tree2:
+STRING x.Enum 1 [source_file: testcode] [length: 6]
+
+
+Subtree1: STRING goog.Timer.Enum 1 [source_file: testcode] [length: 15]
+
+
+Subtree2: STRING x.Enum 1 [source_file: testcode] [length: 6]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocSubType(ScopedAliasesTest.java:309)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocReturn
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocReturn(ScopedAliasesTest.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocThrows
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocThrows(ScopedAliasesTest.java:301)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocExtends
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+BANG 1 [source_file: testcode]
+    STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+BANG 1 [source_file: testcode]
+    STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocExtends(ScopedAliasesTest.java:261)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocTypedef
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocTypedef(ScopedAliasesTest.java:317)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testFunctionJsDoc
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+FUNCTION <invalid> 1 [source_file: testcode]
+    PARAM_LIST 1 [source_file: testcode]
+        STRING goog.Timer 1 [source_file: testcode] [length: 10]
+    VOID 1 [source_file: testcode]
+
+
+Tree2:
+FUNCTION <invalid> 1 [source_file: testcode]
+    PARAM_LIST 1 [source_file: testcode]
+        STRING x 1 [source_file: testcode] [length: 1]
+    VOID 1 [source_file: testcode]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testFunctionJsDoc(ScopedAliasesTest.java:354)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocEnum
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocEnum(ScopedAliasesTest.java:277)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocThis
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+BANG 1 [source_file: testcode]
+    STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+BANG 1 [source_file: testcode]
+    STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocThis(ScopedAliasesTest.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocType
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocType(ScopedAliasesTest.java:245)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocImplements
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+BANG 1 [source_file: testcode]
+    STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+BANG 1 [source_file: testcode]
+    STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocImplements(ScopedAliasesTest.java:269)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testForwardJsDoc
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING foo.Foo.Bar 4 [source_file: testcode] [length: 11]
+
+
+Tree2:
+STRING Foo.Bar 4 [source_file: testcode] [length: 7]
+
+
+Subtree1: STRING foo.Foo.Bar 4 [source_file: testcode] [length: 11]
+
+
+Subtree2: STRING Foo.Bar 4 [source_file: testcode] [length: 7]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testForwardJsDoc(ScopedAliasesTest.java:384)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testIssue772
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING a.b.c.MyType 1 [source_file: testcode] [length: 12]
+
+
+Tree2:
+STRING c.MyType 1 [source_file: testcode] [length: 8]
+
+
+Subtree1: STRING a.b.c.MyType 1 [source_file: testcode] [length: 12]
+
+
+Subtree2: STRING c.MyType 1 [source_file: testcode] [length: 8]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testIssue772(ScopedAliasesTest.java:407)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testJsDocParameter
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Tree2:
+STRING x 1 [source_file: testcode] [length: 1]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testJsDocParameter(ScopedAliasesTest.java:253)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.ScopedAliasesTest::testUnionJsDoc
+junit.framework.AssertionFailedError: Expected: <null> but was: Node tree inequality:
+Tree1:
+PIPE 1 [source_file: testcode]
+    STRING goog.Timer 1 [source_file: testcode] [length: 10]
+    STRING Object 1 [source_file: testcode] [length: 6]
+
+
+Tree2:
+PIPE 1 [source_file: testcode]
+    STRING x 1 [source_file: testcode] [length: 1]
+    STRING Object 1 [source_file: testcode] [length: 6]
+
+
+Subtree1: STRING goog.Timer 1 [source_file: testcode] [length: 10]
+
+
+Subtree2: STRING x 1 [source_file: testcode] [length: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.Assert.assertNull(Assert.java:268)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.visit(ScopedAliasesTest.java:654)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.ScopedAliasesTest$TypeVerifyingPass.process(ScopedAliasesTest.java:631)
+	at com.google.javascript.jscomp.ScopedAliasesTest.verifyTypes(ScopedAliasesTest.java:240)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testTypes(ScopedAliasesTest.java:235)
+	at com.google.javascript.jscomp.ScopedAliasesTest.testUnionJsDoc(ScopedAliasesTest.java:346)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
