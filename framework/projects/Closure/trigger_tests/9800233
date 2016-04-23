@@ -1,1 +1,1828 @@
-# Mutant id: 292
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineConditionallyDefinedConstant1
+junit.framework.AssertionFailedError: 
+Expected: if(x);if(y)f(2)
+Result: if(x)var ABC=2;if(y)f(ABC)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1 [empty_block: 1]
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NUMBER 2.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1
+                VAR 1
+                    NAME ABC 1 [is_constant_name: 1]
+                        NUMBER 2.0 1
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NAME ABC 1 [is_constant_name: 1]
+
+
+Subtree1: BLOCK 1 [empty_block: 1]
+
+
+Subtree2: BLOCK 1
+    VAR 1
+        NAME ABC 1 [is_constant_name: 1]
+            NUMBER 2.0 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineConditionallyDefinedConstant1(InlineVariablesConstantsTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineConditionallyDefinedConstant2
+junit.framework.AssertionFailedError: 
+Expected: if(x);else;if(y)f(2)
+Result: if(x);else var ABC=2;if(y)f(ABC)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1 [empty_block: 1]
+            BLOCK 1 [empty_block: 1]
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NUMBER 2.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1 [empty_block: 1]
+            BLOCK 1
+                VAR 1
+                    NAME ABC 1 [is_constant_name: 1]
+                        NUMBER 2.0 1
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NAME ABC 1 [is_constant_name: 1]
+
+
+Subtree1: BLOCK 1 [empty_block: 1]
+
+
+Subtree2: BLOCK 1
+    VAR 1
+        NAME ABC 1 [is_constant_name: 1]
+            NUMBER 2.0 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineConditionallyDefinedConstant2(InlineVariablesConstantsTest.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineConditionallyDefinedConstant3
+junit.framework.AssertionFailedError: 
+Expected: if(x);if(y)f(2)
+Result: if(x)var ABC=2;if(y)f(ABC)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NUMBER 2.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        IF 1
+            NAME x 1
+            BLOCK 1
+                VAR 1
+                    NAME ABC 1 [is_constant_name: 1]
+                        NUMBER 2.0 1
+        IF 1
+            NAME y 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME f 1
+                        NAME ABC 1 [is_constant_name: 1]
+
+
+Subtree1: BLOCK 1
+
+
+Subtree2: BLOCK 1
+    VAR 1
+        NAME ABC 1 [is_constant_name: 1]
+            NUMBER 2.0 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineConditionallyDefinedConstant3(InlineVariablesConstantsTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineVariablesConstants
+junit.framework.AssertionFailedError: 
+Expected: var x=2
+Result: var ABC=2;var x=ABC
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        VAR 1
+            NAME x 1
+                NUMBER 2.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME ABC 1 [is_constant_name: 1]
+                NUMBER 2.0 1
+        VAR 1
+            NAME x 1
+                NAME ABC 1 [is_constant_name: 1]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    VAR 1
+        NAME x 1
+            NUMBER 2.0 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME ABC 1 [is_constant_name: 1]
+            NUMBER 2.0 1
+    VAR 1
+        NAME x 1
+            NAME ABC 1 [is_constant_name: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineVariablesConstants(InlineVariablesConstantsTest.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineVariablesConstantsJsDocStyle
+junit.framework.AssertionFailedError: 
+Expected: var x=2
+Result: var abc=2;var x=abc
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        VAR 1
+            NAME x 1
+                NUMBER 2.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1 [jsdoc_info: JSDocInfo]
+            NAME abc 1 [is_constant_name: 1]
+                NUMBER 2.0 1
+        VAR 1
+            NAME x 1
+                NAME abc 1 [is_constant_name: 1]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    VAR 1
+        NAME x 1
+            NUMBER 2.0 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1 [jsdoc_info: JSDocInfo]
+        NAME abc 1 [is_constant_name: 1]
+            NUMBER 2.0 1
+    VAR 1
+        NAME x 1
+            NAME abc 1 [is_constant_name: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineVariablesConstantsJsDocStyle(InlineVariablesConstantsTest.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineVariablesConstantsWithInlineAllStringsOn
+junit.framework.AssertionFailedError: 
+Expected: foo("1234567890");foo("1234567890");foo("1234567890")
+Result: var AA="1234567890";foo(AA);foo(AA);foo(AA)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME AA 1 [is_constant_name: 1]
+                STRING 1234567890 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                NAME AA 1 [is_constant_name: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                NAME AA 1 [is_constant_name: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                NAME AA 1 [is_constant_name: 1]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME AA 1 [is_constant_name: 1]
+            STRING 1234567890 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            NAME AA 1 [is_constant_name: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            NAME AA 1 [is_constant_name: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            NAME AA 1 [is_constant_name: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineVariablesConstantsWithInlineAllStringsOn(InlineVariablesConstantsTest.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesConstantsTest::testInlineDefinedConstant
+junit.framework.AssertionFailedError: 
+Expected: foo("1234567890");foo("1234567890");foo("1234567890")
+Result: var aa="1234567890";foo(aa);foo(aa);foo(aa)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME foo 1
+                STRING 1234567890 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 4 [jsdoc_info: JSDocInfo]
+            NAME aa 4 [is_constant_name: 1]
+                STRING 1234567890 4
+        EXPR_RESULT 5
+            CALL 5
+                NAME foo 5
+                NAME aa 5 [is_constant_name: 1]
+        EXPR_RESULT 5
+            CALL 5
+                NAME foo 5
+                NAME aa 5 [is_constant_name: 1]
+        EXPR_RESULT 5
+            CALL 5
+                NAME foo 5
+                NAME aa 5 [is_constant_name: 1]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME foo 1
+            STRING 1234567890 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 4 [jsdoc_info: JSDocInfo]
+        NAME aa 4 [is_constant_name: 1]
+            STRING 1234567890 4
+    EXPR_RESULT 5
+        CALL 5
+            NAME foo 5
+            NAME aa 5 [is_constant_name: 1]
+    EXPR_RESULT 5
+        CALL 5
+            NAME foo 5
+            NAME aa 5 [is_constant_name: 1]
+    EXPR_RESULT 5
+        CALL 5
+            NAME foo 5
+            NAME aa 5 [is_constant_name: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesConstantsTest.testInlineDefinedConstant(InlineVariablesConstantsTest.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineFunctionAlias1b
+junit.framework.AssertionFailedError: 
+Expected: function f(x){}f;g();f();f()
+Result: function f(x){}f;var y=f;g();y();y()
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1
+            LP 1
+                NAME x 1
+            BLOCK 1
+        EMPTY 1
+        EXPR_RESULT 1
+            NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME g 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME f 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1
+            LP 1
+                NAME x 1
+            BLOCK 1
+        EMPTY 1
+        EXPR_RESULT 1
+            NAME f 1
+        VAR 1
+            NAME y 1
+                NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME g 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME y 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME y 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION  1 [sourcename: expected0]
+        NAME f 1
+        LP 1
+            NAME x 1
+        BLOCK 1
+    EMPTY 1
+    EXPR_RESULT 1
+        NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME f 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION  1 [sourcename: testcode]
+        NAME f 1
+        LP 1
+            NAME x 1
+        BLOCK 1
+    EMPTY 1
+    EXPR_RESULT 1
+        NAME f 1
+    VAR 1
+        NAME y 1
+            NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME y 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME y 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineFunctionAlias1b(InlineVariablesTest.java:774)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineFunctionAlias2b
+junit.framework.AssertionFailedError: 
+Expected: function f(x){}f;f;g();f();f()
+Result: function f(x){}f;var y;y=f;g();y();y()
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1
+            LP 1
+                NAME x 1
+            BLOCK 1
+        EMPTY 1
+        EXPR_RESULT 1
+            NAME f 1
+        EXPR_RESULT 1
+            NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME g 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME f 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1
+            LP 1
+                NAME x 1
+            BLOCK 1
+        EMPTY 1
+        EXPR_RESULT 1
+            NAME f 1
+        VAR 1
+            NAME y 1
+        EXPR_RESULT 1
+            ASSIGN 1
+                NAME y 1
+                NAME f 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME g 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME y 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME y 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION  1 [sourcename: expected0]
+        NAME f 1
+        LP 1
+            NAME x 1
+        BLOCK 1
+    EMPTY 1
+    EXPR_RESULT 1
+        NAME f 1
+    EXPR_RESULT 1
+        NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME f 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION  1 [sourcename: testcode]
+        NAME f 1
+        LP 1
+            NAME x 1
+        BLOCK 1
+    EMPTY 1
+    EXPR_RESULT 1
+        NAME f 1
+    VAR 1
+        NAME y 1
+    EXPR_RESULT 1
+        ASSIGN 1
+            NAME y 1
+            NAME f 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME y 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME y 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineFunctionAlias2b(InlineVariablesTest.java:798)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineAliases1b
+junit.framework.AssertionFailedError: 
+Expected: var x=this.foo();this.bar();x;this.baz(x)
+Result: var x=this.foo();this.bar();this.baz(x)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        VAR 1
+            NAME x 1
+                CALL 1
+                    GETPROP 1
+                        THIS 1
+                        STRING foo 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING bar 1
+        EXPR_RESULT 1
+            NAME x 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING baz 1
+                NAME x 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME x 1
+                CALL 1
+                    GETPROP 1
+                        THIS 1
+                        STRING foo 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING bar 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING baz 1
+                NAME x 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    VAR 1
+        NAME x 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING foo 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING bar 1
+    EXPR_RESULT 1
+        NAME x 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING baz 1
+            NAME x 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME x 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING foo 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING bar 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING baz 1
+            NAME x 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineAliases1b(InlineVariablesTest.java:558)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineAliases1d
+junit.framework.AssertionFailedError: 
+Expected: var x;x=this.foo();this.bar();x;this.baz(x)
+Result: var x;x=this.foo();this.bar();this.baz(x)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        VAR 1
+            NAME x 1
+        EXPR_RESULT 1
+            ASSIGN 1
+                NAME x 1
+                CALL 1
+                    GETPROP 1
+                        THIS 1
+                        STRING foo 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING bar 1
+        EXPR_RESULT 1
+            NAME x 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING baz 1
+                NAME x 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME x 1
+        EXPR_RESULT 1
+            ASSIGN 1
+                NAME x 1
+                CALL 1
+                    GETPROP 1
+                        THIS 1
+                        STRING foo 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING bar 1
+        EXPR_RESULT 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING baz 1
+                NAME x 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    VAR 1
+        NAME x 1
+    EXPR_RESULT 1
+        ASSIGN 1
+            NAME x 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING foo 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING bar 1
+    EXPR_RESULT 1
+        NAME x 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING baz 1
+            NAME x 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME x 1
+    EXPR_RESULT 1
+        ASSIGN 1
+            NAME x 1
+            CALL 1
+                GETPROP 1
+                    THIS 1
+                    STRING foo 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING bar 1
+    EXPR_RESULT 1
+        CALL 1
+            GETPROP 1
+                THIS 1
+                STRING baz 1
+            NAME x 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineAliases1d(InlineVariablesTest.java:568)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineConstantAliasWithNonConstant
+junit.framework.AssertionFailedError: 
+Expected: var XXX=new Foo;q(XXX);bar(XXX);baz(XXX)
+Result: var XXX=new Foo;q(XXX);var y=XXX;bar(y);baz(y)
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        VAR 1
+            NAME XXX 1 [is_constant_name: 1]
+                NEW 1
+                    NAME Foo 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME q 1
+                NAME XXX 1 [is_constant_name: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME bar 1
+                NAME XXX 1 [is_constant_name: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME baz 1
+                NAME XXX 1 [is_constant_name: 1]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME XXX 1 [is_constant_name: 1]
+                NEW 1
+                    NAME Foo 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME q 1
+                NAME XXX 1 [is_constant_name: 1]
+        VAR 1
+            NAME y 1
+                NAME XXX 1 [is_constant_name: 1]
+        EXPR_RESULT 1
+            CALL 1
+                NAME bar 1
+                NAME y 1
+        EXPR_RESULT 1
+            CALL 1
+                NAME baz 1
+                NAME y 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    VAR 1
+        NAME XXX 1 [is_constant_name: 1]
+            NEW 1
+                NAME Foo 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME q 1
+            NAME XXX 1 [is_constant_name: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME bar 1
+            NAME XXX 1 [is_constant_name: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME baz 1
+            NAME XXX 1 [is_constant_name: 1]
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME XXX 1 [is_constant_name: 1]
+            NEW 1
+                NAME Foo 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME q 1
+            NAME XXX 1 [is_constant_name: 1]
+    VAR 1
+        NAME y 1
+            NAME XXX 1 [is_constant_name: 1]
+    EXPR_RESULT 1
+        CALL 1
+            NAME bar 1
+            NAME y 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME baz 1
+            NAME y 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineConstantAliasWithNonConstant(InlineVariablesTest.java:499)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testCascadingInlines
+junit.framework.AssertionFailedError: 
+Expected: function f(){bar(4);baz(4)}
+Result: var XXX=4;function f(){var YYY=XXX;bar(YYY);baz(YYY)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1
+            LP 1
+            BLOCK 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME bar 1
+                        NUMBER 4.0 1
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME baz 1
+                        NUMBER 4.0 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        VAR 1
+            NAME XXX 1 [is_constant_name: 1]
+                NUMBER 4.0 1
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1
+            LP 1
+            BLOCK 1
+                VAR 1
+                    NAME YYY 1 [is_constant_name: 1]
+                        NAME XXX 1 [is_constant_name: 1]
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME bar 1
+                        NAME YYY 1 [is_constant_name: 1]
+                EXPR_RESULT 1
+                    CALL 1
+                        NAME baz 1
+                        NAME YYY 1 [is_constant_name: 1]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION  1 [sourcename: expected0]
+        NAME f 1
+        LP 1
+        BLOCK 1
+            EXPR_RESULT 1
+                CALL 1
+                    NAME bar 1
+                    NUMBER 4.0 1
+            EXPR_RESULT 1
+                CALL 1
+                    NAME baz 1
+                    NUMBER 4.0 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    VAR 1
+        NAME XXX 1 [is_constant_name: 1]
+            NUMBER 4.0 1
+    FUNCTION  1 [sourcename: testcode]
+        NAME f 1
+        LP 1
+        BLOCK 1
+            VAR 1
+                NAME YYY 1 [is_constant_name: 1]
+                    NAME XXX 1 [is_constant_name: 1]
+            EXPR_RESULT 1
+                CALL 1
+                    NAME bar 1
+                    NAME YYY 1 [is_constant_name: 1]
+            EXPR_RESULT 1
+                CALL 1
+                    NAME baz 1
+                    NAME YYY 1 [is_constant_name: 1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testCascadingInlines(InlineVariablesTest.java:504)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineConstants
+junit.framework.AssertionFailedError: 
+Expected: function foo(){return true}
+Result: function foo(){return XXX}var XXX=true
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME foo 1
+            LP 1
+            BLOCK 1
+                RETURN 1
+                    TRUE 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME foo 1
+            LP 1
+            BLOCK 1
+                RETURN 1
+                    NAME XXX 1 [is_constant_name: 1]
+        VAR 1
+            NAME XXX 1 [is_constant_name: 1]
+                TRUE 1
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION  1 [sourcename: expected0]
+        NAME foo 1
+        LP 1
+        BLOCK 1
+            RETURN 1
+                TRUE 1
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION  1 [sourcename: testcode]
+        NAME foo 1
+        LP 1
+        BLOCK 1
+            RETURN 1
+                NAME XXX 1 [is_constant_name: 1]
+    VAR 1
+        NAME XXX 1 [is_constant_name: 1]
+            TRUE 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineConstants(InlineVariablesTest.java:480)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineCatchAlias1
+junit.framework.AssertionFailedError: 
+Expected: try{}catch(e){g();e;e}
+Result: try{}catch(e){var y=e;g();y;y}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        TRY 1
+            BLOCK 1
+            BLOCK 1
+                CATCH 1
+                    NAME e 1
+                    EMPTY 1
+                    BLOCK 1
+                        EXPR_RESULT 1
+                            CALL 1
+                                NAME g 1
+                        EXPR_RESULT 1
+                            NAME e 1
+                        EXPR_RESULT 1
+                            NAME e 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        TRY 1
+            BLOCK 1
+            BLOCK 1
+                CATCH 1
+                    NAME e 1
+                    EMPTY 1
+                    BLOCK 1
+                        VAR 1
+                            NAME y 1
+                                NAME e 1
+                        EXPR_RESULT 1
+                            CALL 1
+                                NAME g 1
+                        EXPR_RESULT 1
+                            NAME y 1
+                        EXPR_RESULT 1
+                            NAME y 1
+
+
+Subtree1: BLOCK 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        NAME e 1
+    EXPR_RESULT 1
+        NAME e 1
+
+
+Subtree2: BLOCK 1
+    VAR 1
+        NAME y 1
+            NAME e 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        NAME y 1
+    EXPR_RESULT 1
+        NAME y 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineCatchAlias1(InlineVariablesTest.java:811)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.InlineVariablesTest::testInlineCatchAlias2
+junit.framework.AssertionFailedError: 
+Expected: try{}catch(e){e;g();e;e}
+Result: try{}catch(e){var y;y=e;g();y;y}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        TRY 1
+            BLOCK 1
+            BLOCK 1
+                CATCH 1
+                    NAME e 1
+                    EMPTY 1
+                    BLOCK 1
+                        EXPR_RESULT 1
+                            NAME e 1
+                        EXPR_RESULT 1
+                            CALL 1
+                                NAME g 1
+                        EXPR_RESULT 1
+                            NAME e 1
+                        EXPR_RESULT 1
+                            NAME e 1
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        TRY 1
+            BLOCK 1
+            BLOCK 1
+                CATCH 1
+                    NAME e 1
+                    EMPTY 1
+                    BLOCK 1
+                        VAR 1
+                            NAME y 1
+                        EXPR_RESULT 1
+                            ASSIGN 1
+                                NAME y 1
+                                NAME e 1
+                        EXPR_RESULT 1
+                            CALL 1
+                                NAME g 1
+                        EXPR_RESULT 1
+                            NAME y 1
+                        EXPR_RESULT 1
+                            NAME y 1
+
+
+Subtree1: BLOCK 1
+    EXPR_RESULT 1
+        NAME e 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        NAME e 1
+    EXPR_RESULT 1
+        NAME e 1
+
+
+Subtree2: BLOCK 1
+    VAR 1
+        NAME y 1
+    EXPR_RESULT 1
+        ASSIGN 1
+            NAME y 1
+            NAME e 1
+    EXPR_RESULT 1
+        CALL 1
+            NAME g 1
+    EXPR_RESULT 1
+        NAME y 1
+    EXPR_RESULT 1
+        NAME y 1
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:777)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:372)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:301)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:270)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:258)
+	at com.google.javascript.jscomp.InlineVariablesTest.testInlineCatchAlias2(InlineVariablesTest.java:827)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)

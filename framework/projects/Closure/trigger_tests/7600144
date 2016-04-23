@@ -1,1 +1,1624 @@
-# Mutant id: 203
+--- com.google.javascript.jscomp.CommandLineRunnerTest::testIssue297
+junit.framework.AssertionFailedError: 
+Expected: function f(b){var a;return(a=b.id)&&(a=parseInt(a.substr(1)))&&a>0}
+Result: function f(a){return a.id&&parseInt((void 0).substr(1))&&!1}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: input0] [synthetic: 1]
+        FUNCTION  1 [sourcename: input0]
+            NAME f 1 [sourcename: input0]
+            LP 1 [sourcename: input0]
+                NAME b 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+                VAR 1 [sourcename: input0]
+                    NAME a 1 [sourcename: input0]
+                RETURN 1 [sourcename: input0]
+                    AND 1 [sourcename: input0] [parenthesized: true]
+                        ASSIGN 1 [sourcename: input0] [parenthesized: true]
+                            NAME a 1 [sourcename: input0]
+                            GETPROP 1 [sourcename: input0]
+                                NAME b 1 [sourcename: input0]
+                                STRING id 1 [sourcename: input0]
+                        AND 1 [sourcename: input0]
+                            ASSIGN 1 [sourcename: input0] [parenthesized: true]
+                                NAME a 1 [sourcename: input0]
+                                CALL 1 [sourcename: input0] [free_call: 1]
+                                    NAME parseInt 1 [sourcename: input0]
+                                    CALL 1 [sourcename: input0]
+                                        GETPROP 1 [sourcename: input0]
+                                            NAME a 1 [sourcename: input0]
+                                            STRING substr 1 [sourcename: input0]
+                                        NUMBER 1.0 1 [sourcename: input0]
+                            GT 1 [sourcename: input0]
+                                NAME a 1 [sourcename: input0]
+                                NUMBER 0.0 1 [sourcename: input0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: input0] [synthetic: 1]
+        FUNCTION  1 [sourcename: input0]
+            NAME f 1 [sourcename: input0]
+            LP 1 [sourcename: input0]
+                NAME a 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+                RETURN 1 [sourcename: input0]
+                    AND 1 [sourcename: input0] [parenthesized: true]
+                        GETPROP 1 [sourcename: input0]
+                            NAME a 1 [sourcename: input0]
+                            STRING id 1 [sourcename: input0]
+                        AND 1 [sourcename: input0]
+                            CALL 1 [sourcename: input0] [free_call: 1]
+                                NAME parseInt 1 [sourcename: input0]
+                                CALL 1 [sourcename: input0]
+                                    GETPROP 1 [sourcename: input0]
+                                        VOID 1 [sourcename: input0]
+                                            NUMBER 0.0 1 [sourcename: input0]
+                                        STRING substr 1 [sourcename: input0]
+                                    NUMBER 1.0 1 [sourcename: input0]
+                            NOT 1 [sourcename: input0]
+                                NUMBER 1.0 1 [sourcename: input0]
+
+
+Subtree1: NAME b 1 [sourcename: input0]
+
+
+Subtree2: NAME a 1 [sourcename: input0]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:750)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:721)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:713)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.testIssue297(CommandLineRunnerTest.java:290)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testDeadButAlivePartiallyWithinTheExpression
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var x;x=100,print(x),101}
+Result: function FUNC(param1,param2){var x;100,print(x),101}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME x 1 [sourcename: expected0]
+                EXPR_RESULT 1 [sourcename: expected0]
+                    COMMA 1 [sourcename: expected0]
+                        COMMA 1 [sourcename: expected0]
+                            ASSIGN 1 [sourcename: expected0]
+                                NAME x 1 [sourcename: expected0]
+                                NUMBER 100.0 1 [sourcename: expected0]
+                            CALL 1 [sourcename: expected0] [free_call: 1]
+                                NAME print 1 [sourcename: expected0]
+                                NAME x 1 [sourcename: expected0]
+                        NUMBER 101.0 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME x 1 [sourcename: testcode]
+                EXPR_RESULT 1 [sourcename: testcode]
+                    COMMA 1 [sourcename: testcode]
+                        COMMA 1 [sourcename: testcode]
+                            NUMBER 100.0 1 [sourcename: testcode]
+                            CALL 1 [sourcename: testcode] [free_call: 1]
+                                NAME print 1 [sourcename: testcode]
+                                NAME x 1 [sourcename: testcode]
+                        NUMBER 101.0 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0]
+    NAME x 1 [sourcename: expected0]
+    NUMBER 100.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 100.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testDeadButAlivePartiallyWithinTheExpression(DeadAssignmentsEliminationTest.java:230)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testAssignAndReadInCondition
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a,b;if((a=1)&&(b=a))b}
+Result: function FUNC(param1,param2){var a,b;if(1&&(b=a))b}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                    NAME b 1 [sourcename: expected0]
+                IF 1 [sourcename: expected0]
+                    AND 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME a 1 [sourcename: expected0]
+                            NUMBER 1.0 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME b 1 [sourcename: expected0]
+                            NAME a 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+                        EXPR_RESULT 1 [sourcename: expected0]
+                            NAME b 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                    NAME b 1 [sourcename: testcode]
+                IF 1 [sourcename: testcode]
+                    AND 1 [sourcename: testcode]
+                        NUMBER 1.0 1 [sourcename: testcode]
+                        ASSIGN 1 [sourcename: testcode] [parenthesized: true]
+                            NAME b 1 [sourcename: testcode]
+                            NAME a 1 [sourcename: testcode]
+                    BLOCK 1 [sourcename: testcode]
+                        EXPR_RESULT 1 [sourcename: testcode]
+                            NAME b 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:341)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testAssignAndReadInCondition(DeadAssignmentsEliminationTest.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testInExpression2
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a;a=1;if(2||(a=3)||a);}
+Result: function FUNC(param1,param2){var a;a=1;if(2||3||a);}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                EXPR_RESULT 1 [sourcename: expected0]
+                    ASSIGN 1 [sourcename: expected0]
+                        NAME a 1 [sourcename: expected0]
+                        NUMBER 1.0 1 [sourcename: expected0]
+                IF 1 [sourcename: expected0]
+                    OR 1 [sourcename: expected0]
+                        NUMBER 2.0 1 [sourcename: expected0] [parenthesized: true]
+                        OR 1 [sourcename: expected0]
+                            ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                                NAME a 1 [sourcename: expected0]
+                                NUMBER 3.0 1 [sourcename: expected0]
+                            NAME a 1 [sourcename: expected0] [parenthesized: true]
+                    BLOCK 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                EXPR_RESULT 1 [sourcename: testcode]
+                    ASSIGN 1 [sourcename: testcode]
+                        NAME a 1 [sourcename: testcode]
+                        NUMBER 1.0 1 [sourcename: testcode]
+                IF 1 [sourcename: testcode]
+                    OR 1 [sourcename: testcode]
+                        NUMBER 2.0 1 [sourcename: testcode]
+                        OR 1 [sourcename: testcode]
+                            NUMBER 3.0 1 [sourcename: testcode]
+                            NAME a 1 [sourcename: testcode] [parenthesized: true]
+                    BLOCK 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 3.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 3.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testInExpression2(DeadAssignmentsEliminationTest.java:459)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIncDecInSubExpressions
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a;a=1,a++,print(a)}
+Result: function FUNC(param1,param2){var a;1,a++,print(a)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                EXPR_RESULT 1 [sourcename: expected0]
+                    COMMA 1 [sourcename: expected0]
+                        COMMA 1 [sourcename: expected0]
+                            ASSIGN 1 [sourcename: expected0]
+                                NAME a 1 [sourcename: expected0]
+                                NUMBER 1.0 1 [sourcename: expected0]
+                            INC 1 [sourcename: expected0] [incrdecr: 1]
+                                NAME a 1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0] [free_call: 1]
+                            NAME print 1 [sourcename: expected0]
+                            NAME a 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                EXPR_RESULT 1 [sourcename: testcode]
+                    COMMA 1 [sourcename: testcode]
+                        COMMA 1 [sourcename: testcode]
+                            NUMBER 1.0 1 [sourcename: testcode]
+                            INC 1 [sourcename: testcode] [incrdecr: 1]
+                                NAME a 1 [sourcename: testcode]
+                        CALL 1 [sourcename: testcode] [free_call: 1]
+                            NAME print 1 [sourcename: testcode]
+                            NAME a 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:341)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIncDecInSubExpressions(DeadAssignmentsEliminationTest.java:283)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testMutipleDeadAssignmentsButAlivePartiallyWithinTheExpression
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var x;1,2,3,4,x=5,print(x),x=0,print(x),101}
+Result: function FUNC(param1,param2){var x;1,2,3,4,5,print(x),0,print(x),101}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME x 1 [sourcename: expected0]
+                EXPR_RESULT 1 [sourcename: expected0]
+                    COMMA 1 [sourcename: expected0]
+                        COMMA 1 [sourcename: expected0]
+                            COMMA 1 [sourcename: expected0]
+                                COMMA 1 [sourcename: expected0]
+                                    COMMA 1 [sourcename: expected0]
+                                        COMMA 1 [sourcename: expected0]
+                                            COMMA 1 [sourcename: expected0]
+                                                COMMA 1 [sourcename: expected0]
+                                                    NUMBER 1.0 1 [sourcename: expected0]
+                                                    NUMBER 2.0 1 [sourcename: expected0]
+                                                NUMBER 3.0 1 [sourcename: expected0]
+                                            NUMBER 4.0 1 [sourcename: expected0]
+                                        ASSIGN 1 [sourcename: expected0]
+                                            NAME x 1 [sourcename: expected0]
+                                            NUMBER 5.0 1 [sourcename: expected0]
+                                    CALL 1 [sourcename: expected0] [free_call: 1]
+                                        NAME print 1 [sourcename: expected0]
+                                        NAME x 1 [sourcename: expected0]
+                                ASSIGN 1 [sourcename: expected0]
+                                    NAME x 1 [sourcename: expected0]
+                                    NUMBER 0.0 1 [sourcename: expected0]
+                            CALL 1 [sourcename: expected0] [free_call: 1]
+                                NAME print 1 [sourcename: expected0]
+                                NAME x 1 [sourcename: expected0]
+                        NUMBER 101.0 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME x 1 [sourcename: testcode]
+                EXPR_RESULT 1 [sourcename: testcode]
+                    COMMA 1 [sourcename: testcode]
+                        COMMA 1 [sourcename: testcode]
+                            COMMA 1 [sourcename: testcode]
+                                COMMA 1 [sourcename: testcode]
+                                    COMMA 1 [sourcename: testcode]
+                                        COMMA 1 [sourcename: testcode]
+                                            COMMA 1 [sourcename: testcode]
+                                                COMMA 1 [sourcename: testcode]
+                                                    NUMBER 1.0 1 [sourcename: testcode]
+                                                    NUMBER 2.0 1 [sourcename: testcode]
+                                                NUMBER 3.0 1 [sourcename: testcode]
+                                            NUMBER 4.0 1 [sourcename: testcode]
+                                        NUMBER 5.0 1 [sourcename: testcode]
+                                    CALL 1 [sourcename: testcode] [free_call: 1]
+                                        NAME print 1 [sourcename: testcode]
+                                        NAME x 1 [sourcename: testcode]
+                                NUMBER 0.0 1 [sourcename: testcode]
+                            CALL 1 [sourcename: testcode] [free_call: 1]
+                                NAME print 1 [sourcename: testcode]
+                                NAME x 1 [sourcename: testcode]
+                        NUMBER 101.0 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0]
+    NAME x 1 [sourcename: expected0]
+    NUMBER 5.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 5.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testMutipleDeadAssignmentsButAlivePartiallyWithinTheExpression(DeadAssignmentsEliminationTest.java:239)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297a
+junit.framework.AssertionFailedError: 
+Expected: function f(p){var x;return(x=p.id)&&(x=parseInt(x.substr(1)))&&x>0}f("")
+Result: function f(p){var x;return p.id&&parseInt(x.substr(1))&&x>0}f("")
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME p 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME x 1 [sourcename: expected0]
+                RETURN 1 [sourcename: expected0]
+                    AND 1 [sourcename: expected0] [parenthesized: true]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME x 1 [sourcename: expected0]
+                            GETPROP 1 [sourcename: expected0]
+                                NAME p 1 [sourcename: expected0]
+                                STRING id 1 [sourcename: expected0]
+                        AND 1 [sourcename: expected0]
+                            ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                                NAME x 1 [sourcename: expected0]
+                                CALL 1 [sourcename: expected0] [free_call: 1]
+                                    NAME parseInt 1 [sourcename: expected0]
+                                    CALL 1 [sourcename: expected0]
+                                        GETPROP 1 [sourcename: expected0]
+                                            NAME x 1 [sourcename: expected0]
+                                            STRING substr 1 [sourcename: expected0]
+                                        NUMBER 1.0 1 [sourcename: expected0]
+                            GT 1 [sourcename: expected0]
+                                NAME x 1 [sourcename: expected0]
+                                NUMBER 0.0 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            CALL 1 [sourcename: expected0] [free_call: 1]
+                NAME f 1 [sourcename: expected0]
+                STRING  1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME p 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME x 1 [sourcename: testcode]
+                RETURN 1 [sourcename: testcode]
+                    AND 1 [sourcename: testcode] [parenthesized: true]
+                        GETPROP 1 [sourcename: testcode]
+                            NAME p 1 [sourcename: testcode]
+                            STRING id 1 [sourcename: testcode]
+                        AND 1 [sourcename: testcode]
+                            CALL 1 [sourcename: testcode] [free_call: 1]
+                                NAME parseInt 1 [sourcename: testcode]
+                                CALL 1 [sourcename: testcode]
+                                    GETPROP 1 [sourcename: testcode]
+                                        NAME x 1 [sourcename: testcode]
+                                        STRING substr 1 [sourcename: testcode]
+                                    NUMBER 1.0 1 [sourcename: testcode]
+                            GT 1 [sourcename: testcode]
+                                NAME x 1 [sourcename: testcode]
+                                NUMBER 0.0 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+        EXPR_RESULT 1 [sourcename: testcode]
+            CALL 1 [sourcename: testcode] [free_call: 1]
+                NAME f 1 [sourcename: testcode]
+                STRING  1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME x 1 [sourcename: expected0]
+    GETPROP 1 [sourcename: expected0]
+        NAME p 1 [sourcename: expected0]
+        STRING id 1 [sourcename: expected0]
+
+
+Subtree2: GETPROP 1 [sourcename: testcode]
+    NAME p 1 [sourcename: testcode]
+    STRING id 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:524)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297a(DeadAssignmentsEliminationTest.java:368)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297b
+junit.framework.AssertionFailedError: 
+Expected: function f(){var x;return(x="")&&x.substr(1)}
+Result: function f(){var x;return""&&x.substr(1)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME x 1 [sourcename: expected0]
+                RETURN 1 [sourcename: expected0]
+                    AND 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME x 1 [sourcename: expected0]
+                            STRING  1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0] [parenthesized: true]
+                            GETPROP 1 [sourcename: expected0]
+                                NAME x 1 [sourcename: expected0]
+                                STRING substr 1 [sourcename: expected0]
+                            NUMBER 1.0 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME x 1 [sourcename: testcode]
+                RETURN 1 [sourcename: testcode]
+                    AND 1 [sourcename: testcode]
+                        STRING  1 [sourcename: testcode]
+                        CALL 1 [sourcename: testcode]
+                            GETPROP 1 [sourcename: testcode]
+                                NAME x 1 [sourcename: testcode]
+                                STRING substr 1 [sourcename: testcode]
+                            NUMBER 1.0 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME x 1 [sourcename: expected0]
+    STRING  1 [sourcename: expected0]
+
+
+Subtree2: STRING  1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297b(DeadAssignmentsEliminationTest.java:375)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297c
+junit.framework.AssertionFailedError: 
+Expected: function f(){var x;return(x=1)&&f(x)}
+Result: function f(){var x;return 1&&f(x)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME x 1 [sourcename: expected0]
+                RETURN 1 [sourcename: expected0]
+                    AND 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME x 1 [sourcename: expected0]
+                            NUMBER 1.0 1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0] [free_call: 1]
+                            NAME f 1 [sourcename: expected0]
+                            NAME x 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME x 1 [sourcename: testcode]
+                RETURN 1 [sourcename: testcode]
+                    AND 1 [sourcename: testcode]
+                        NUMBER 1.0 1 [sourcename: testcode]
+                        CALL 1 [sourcename: testcode] [free_call: 1]
+                            NAME f 1 [sourcename: testcode]
+                            NAME x 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME x 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297c(DeadAssignmentsEliminationTest.java:386)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297d
+junit.framework.AssertionFailedError: 
+Expected: function f(a){return(a=1)&&f(a)}
+Result: function f(a){return 1&&f(a)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME a 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                RETURN 1 [sourcename: expected0]
+                    AND 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME a 1 [sourcename: expected0]
+                            NUMBER 1.0 1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0] [parenthesized: true] [free_call: 1]
+                            NAME f 1 [sourcename: expected0]
+                            NAME a 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME a 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                RETURN 1 [sourcename: testcode]
+                    AND 1 [sourcename: testcode]
+                        NUMBER 1.0 1 [sourcename: testcode]
+                        CALL 1 [sourcename: testcode] [free_call: 1]
+                            NAME f 1 [sourcename: testcode]
+                            NAME a 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297d(DeadAssignmentsEliminationTest.java:397)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297e
+junit.framework.AssertionFailedError: 
+Expected: function f(a){return(a=1)-g(a)}
+Result: function f(a){return 1-g(a)}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME a 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                RETURN 1 [sourcename: expected0]
+                    SUB 1 [sourcename: expected0]
+                        ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                            NAME a 1 [sourcename: expected0]
+                            NUMBER 1.0 1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0] [parenthesized: true] [free_call: 1]
+                            NAME g 1 [sourcename: expected0]
+                            NAME a 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME a 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                RETURN 1 [sourcename: testcode]
+                    SUB 1 [sourcename: testcode]
+                        NUMBER 1.0 1 [sourcename: testcode]
+                        CALL 1 [sourcename: testcode] [free_call: 1]
+                            NAME g 1 [sourcename: testcode]
+                            NAME a 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297e(DeadAssignmentsEliminationTest.java:406)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue297f
+junit.framework.AssertionFailedError: 
+Expected: function f(a){h((a=1)-g(a))}
+Result: function f(a){h(1-g(a))}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME f 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME a 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                EXPR_RESULT 1 [sourcename: expected0]
+                    CALL 1 [sourcename: expected0] [free_call: 1]
+                        NAME h 1 [sourcename: expected0]
+                        SUB 1 [sourcename: expected0]
+                            ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+                                NAME a 1 [sourcename: expected0]
+                                NUMBER 1.0 1 [sourcename: expected0]
+                            CALL 1 [sourcename: expected0] [parenthesized: true] [free_call: 1]
+                                NAME g 1 [sourcename: expected0]
+                                NAME a 1 [sourcename: expected0]
+        EMPTY 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME f 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME a 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                EXPR_RESULT 1 [sourcename: testcode]
+                    CALL 1 [sourcename: testcode] [free_call: 1]
+                        NAME h 1 [sourcename: testcode]
+                        SUB 1 [sourcename: testcode]
+                            NUMBER 1.0 1 [sourcename: testcode]
+                            CALL 1 [sourcename: testcode] [free_call: 1]
+                                NAME g 1 [sourcename: testcode]
+                                NAME a 1 [sourcename: testcode]
+        EMPTY 1 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 1 [sourcename: expected0] [parenthesized: true]
+    NAME a 1 [sourcename: expected0]
+    NUMBER 1.0 1 [sourcename: expected0]
+
+
+Subtree2: NUMBER 1.0 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue297f(DeadAssignmentsEliminationTest.java:415)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue384b
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a,b;f(b=true)||f(b=false)?a=b:a=null;return a}
+Result: function FUNC(param1,param2){var a,b;f(true)||f(false)?a=b:a=null;return a}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                    NAME b 1 [sourcename: expected0]
+                EXPR_RESULT 2 [sourcename: expected0]
+                    HOOK 2 [sourcename: expected0]
+                        OR 2 [sourcename: expected0] [parenthesized: true]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    TRUE 2 [sourcename: expected0]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    FALSE 2 [sourcename: expected0]
+                        ASSIGN 2 [sourcename: expected0] [parenthesized: true]
+                            NAME a 2 [sourcename: expected0]
+                            NAME b 2 [sourcename: expected0]
+                        ASSIGN 2 [sourcename: expected0] [parenthesized: true]
+                            NAME a 2 [sourcename: expected0]
+                            NULL 2 [sourcename: expected0]
+                RETURN 3 [sourcename: expected0]
+                    NAME a 3 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                    NAME b 1 [sourcename: testcode]
+                EXPR_RESULT 2 [sourcename: testcode]
+                    HOOK 2 [sourcename: testcode]
+                        OR 2 [sourcename: testcode] [parenthesized: true]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                TRUE 2 [sourcename: testcode]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                FALSE 2 [sourcename: testcode]
+                        ASSIGN 2 [sourcename: testcode] [parenthesized: true]
+                            NAME a 2 [sourcename: testcode]
+                            NAME b 2 [sourcename: testcode]
+                        ASSIGN 2 [sourcename: testcode] [parenthesized: true]
+                            NAME a 2 [sourcename: testcode]
+                            NULL 2 [sourcename: testcode]
+                RETURN 3 [sourcename: testcode]
+                    NAME a 3 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 2 [sourcename: expected0]
+    NAME b 2 [sourcename: expected0]
+    TRUE 2 [sourcename: expected0]
+
+
+Subtree2: TRUE 2 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:341)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue384b(DeadAssignmentsEliminationTest.java:501)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue384c
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a,b;(a?f(b=true):f(b=false))&&(a=b);return a}
+Result: function FUNC(param1,param2){var a,b;(a?f(true):f(false))&&(a=b);return a}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                    NAME b 1 [sourcename: expected0]
+                EXPR_RESULT 2 [sourcename: expected0]
+                    AND 2 [sourcename: expected0]
+                        HOOK 2 [sourcename: expected0] [parenthesized: true]
+                            NAME a 2 [sourcename: expected0]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    TRUE 2 [sourcename: expected0]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    FALSE 2 [sourcename: expected0]
+                        ASSIGN 2 [sourcename: expected0] [parenthesized: true]
+                            NAME a 2 [sourcename: expected0]
+                            NAME b 2 [sourcename: expected0]
+                RETURN 3 [sourcename: expected0]
+                    NAME a 3 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                    NAME b 1 [sourcename: testcode]
+                EXPR_RESULT 2 [sourcename: testcode]
+                    AND 2 [sourcename: testcode]
+                        HOOK 2 [sourcename: testcode] [parenthesized: true]
+                            NAME a 2 [sourcename: testcode]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                TRUE 2 [sourcename: testcode]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                FALSE 2 [sourcename: testcode]
+                        ASSIGN 2 [sourcename: testcode] [parenthesized: true]
+                            NAME a 2 [sourcename: testcode]
+                            NAME b 2 [sourcename: testcode]
+                RETURN 3 [sourcename: testcode]
+                    NAME a 3 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 2 [sourcename: expected0]
+    NAME b 2 [sourcename: expected0]
+    TRUE 2 [sourcename: expected0]
+
+
+Subtree2: TRUE 2 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:341)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue384c(DeadAssignmentsEliminationTest.java:508)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DeadAssignmentsEliminationTest::testIssue384d
+junit.framework.AssertionFailedError: 
+Expected: function FUNC(param1,param2){var a,b;(f(b=true)||f(b=false))&&(a=b);return a}
+Result: function FUNC(param1,param2){var a,b;(f(true)||f(false))&&(a=b);return a}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION  1 [sourcename: expected0]
+            NAME FUNC 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+                NAME param1 1 [sourcename: expected0]
+                NAME param2 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+                VAR 1 [sourcename: expected0]
+                    NAME a 1 [sourcename: expected0]
+                    NAME b 1 [sourcename: expected0]
+                EXPR_RESULT 2 [sourcename: expected0]
+                    AND 2 [sourcename: expected0]
+                        OR 2 [sourcename: expected0] [parenthesized: true]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    TRUE 2 [sourcename: expected0]
+                            CALL 2 [sourcename: expected0] [free_call: 1]
+                                NAME f 2 [sourcename: expected0]
+                                ASSIGN 2 [sourcename: expected0]
+                                    NAME b 2 [sourcename: expected0]
+                                    FALSE 2 [sourcename: expected0]
+                        ASSIGN 2 [sourcename: expected0] [parenthesized: true]
+                            NAME a 2 [sourcename: expected0]
+                            NAME b 2 [sourcename: expected0]
+                RETURN 3 [sourcename: expected0]
+                    NAME a 3 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION  1 [sourcename: testcode]
+            NAME FUNC 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+                NAME param1 1 [sourcename: testcode]
+                NAME param2 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+                VAR 1 [sourcename: testcode]
+                    NAME a 1 [sourcename: testcode]
+                    NAME b 1 [sourcename: testcode]
+                EXPR_RESULT 2 [sourcename: testcode]
+                    AND 2 [sourcename: testcode]
+                        OR 2 [sourcename: testcode] [parenthesized: true]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                TRUE 2 [sourcename: testcode]
+                            CALL 2 [sourcename: testcode] [free_call: 1]
+                                NAME f 2 [sourcename: testcode]
+                                FALSE 2 [sourcename: testcode]
+                        ASSIGN 2 [sourcename: testcode] [parenthesized: true]
+                            NAME a 2 [sourcename: testcode]
+                            NAME b 2 [sourcename: testcode]
+                RETURN 3 [sourcename: testcode]
+                    NAME a 3 [sourcename: testcode]
+
+
+Subtree1: ASSIGN 2 [sourcename: expected0]
+    NAME b 2 [sourcename: expected0]
+    TRUE 2 [sourcename: expected0]
+
+
+Subtree2: TRUE 2 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:843)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:410)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:335)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:304)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:292)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:345)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.inFunction(DeadAssignmentsEliminationTest.java:341)
+	at com.google.javascript.jscomp.DeadAssignmentsEliminationTest.testIssue384d(DeadAssignmentsEliminationTest.java:515)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)

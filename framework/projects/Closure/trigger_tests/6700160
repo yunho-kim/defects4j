@@ -1,1 +1,2689 @@
-# Mutant id: 201
+--- com.google.javascript.jscomp.CommandLineRunnerTest::testReflectedMethods
+junit.framework.AssertionFailedError: 
+Expected: function a(){}a.prototype.a=function(e,d){alert(d)};var b=goog.c.b(a,{a:1}),c;for(c in b)b[c].call(b);window.Foo=a
+Result: function Foo(){}Foo.prototype.handle=function(x$$1,y){alert(y)};var x=goog.reflect.object(Foo,{handle:1});var i;for(i in x)x[i].call(x);window["Foo"]=Foo
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: input0] [synthetic: 1]
+        FUNCTION a 1 [sourcename: input0]
+            NAME a 1 [sourcename: input0]
+            LP 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+        EXPR_RESULT 1 [sourcename: input0]
+            ASSIGN 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        NAME a 1 [sourcename: input0]
+                        STRING prototype 1 [sourcename: input0]
+                    STRING a 1 [sourcename: input0]
+                FUNCTION  1 [sourcename: input0]
+                    NAME  1 [sourcename: input0]
+                    LP 1 [sourcename: input0]
+                        NAME e 1 [sourcename: input0]
+                        NAME d 1 [sourcename: input0]
+                    BLOCK 1 [sourcename: input0]
+                        EXPR_RESULT 1 [sourcename: input0]
+                            CALL 1 [sourcename: input0] [free_call: 1]
+                                NAME alert 1 [sourcename: input0]
+                                NAME d 1 [sourcename: input0]
+        VAR 1 [sourcename: input0]
+            NAME b 1 [sourcename: input0]
+                CALL 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        GETPROP 1 [sourcename: input0]
+                            NAME goog 1 [sourcename: input0]
+                            STRING c 1 [sourcename: input0]
+                        STRING b 1 [sourcename: input0]
+                    NAME a 1 [sourcename: input0]
+                    OBJECTLIT 1 [sourcename: input0]
+                        STRING a 1 [sourcename: input0]
+                            NUMBER 1.0 1 [sourcename: input0]
+            NAME c 1 [sourcename: input0]
+        FOR 1 [sourcename: input0]
+            NAME c 1 [sourcename: input0]
+            NAME b 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+                EXPR_RESULT 1 [sourcename: input0]
+                    CALL 1 [sourcename: input0]
+                        GETPROP 1 [sourcename: input0]
+                            GETELEM 1 [sourcename: input0]
+                                NAME b 1 [sourcename: input0]
+                                NAME c 1 [sourcename: input0]
+                            STRING call 1 [sourcename: input0]
+                        NAME b 1 [sourcename: input0]
+        EXPR_RESULT 1 [sourcename: input0]
+            ASSIGN 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    NAME window 1 [sourcename: input0]
+                    STRING Foo 1 [sourcename: input0]
+                NAME a 1 [sourcename: input0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: input0] [synthetic: 1]
+        FUNCTION Foo 1 [sourcename: input0] [jsdoc_info: JSDocInfo]
+            NAME Foo 1 [sourcename: input0]
+            LP 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+        EXPR_RESULT 1 [sourcename: input0]
+            ASSIGN 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        NAME Foo 1 [sourcename: input0]
+                        STRING prototype 1 [sourcename: input0]
+                    STRING handle 1 [sourcename: input0]
+                FUNCTION  1 [sourcename: input0]
+                    NAME  1 [sourcename: input0]
+                    LP 1 [sourcename: input0]
+                        NAME x$$1 1 [sourcename: input0]
+                        NAME y 1 [sourcename: input0]
+                    BLOCK 1 [sourcename: input0]
+                        EXPR_RESULT 1 [sourcename: input0]
+                            CALL 1 [sourcename: input0] [free_call: 1]
+                                NAME alert 1 [sourcename: input0]
+                                NAME y 1 [sourcename: input0]
+        VAR 1 [sourcename: input0]
+            NAME x 1 [sourcename: input0]
+                CALL 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        GETPROP 1 [sourcename: input0]
+                            NAME goog 1 [sourcename: input0]
+                            STRING reflect 1 [sourcename: input0]
+                        STRING object 1 [sourcename: input0]
+                    NAME Foo 1 [sourcename: input0]
+                    OBJECTLIT 1 [sourcename: input0]
+                        STRING handle 1 [sourcename: input0]
+                            NUMBER 1.0 1 [sourcename: input0]
+        VAR 1 [sourcename: input0]
+            NAME i 1 [sourcename: input0]
+        FOR 1 [sourcename: input0]
+            NAME i 1 [sourcename: input0]
+            NAME x 1 [sourcename: input0]
+            BLOCK 1 [sourcename: input0]
+                EXPR_RESULT 1 [sourcename: input0]
+                    CALL 1 [sourcename: input0]
+                        GETPROP 1 [sourcename: input0]
+                            GETELEM 1 [sourcename: input0]
+                                NAME x 1 [sourcename: input0]
+                                NAME i 1 [sourcename: input0]
+                            STRING call 1 [sourcename: input0]
+                        NAME x 1 [sourcename: input0]
+        EXPR_RESULT 1 [sourcename: input0]
+            ASSIGN 1 [sourcename: input0]
+                GETELEM 1 [sourcename: input0]
+                    NAME window 1 [sourcename: input0]
+                    STRING Foo 1 [sourcename: input0]
+                NAME Foo 1 [sourcename: input0]
+
+
+Subtree1: SCRIPT 1 [sourcename: input0] [synthetic: 1]
+    FUNCTION a 1 [sourcename: input0]
+        NAME a 1 [sourcename: input0]
+        LP 1 [sourcename: input0]
+        BLOCK 1 [sourcename: input0]
+    EXPR_RESULT 1 [sourcename: input0]
+        ASSIGN 1 [sourcename: input0]
+            GETPROP 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    NAME a 1 [sourcename: input0]
+                    STRING prototype 1 [sourcename: input0]
+                STRING a 1 [sourcename: input0]
+            FUNCTION  1 [sourcename: input0]
+                NAME  1 [sourcename: input0]
+                LP 1 [sourcename: input0]
+                    NAME e 1 [sourcename: input0]
+                    NAME d 1 [sourcename: input0]
+                BLOCK 1 [sourcename: input0]
+                    EXPR_RESULT 1 [sourcename: input0]
+                        CALL 1 [sourcename: input0] [free_call: 1]
+                            NAME alert 1 [sourcename: input0]
+                            NAME d 1 [sourcename: input0]
+    VAR 1 [sourcename: input0]
+        NAME b 1 [sourcename: input0]
+            CALL 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        NAME goog 1 [sourcename: input0]
+                        STRING c 1 [sourcename: input0]
+                    STRING b 1 [sourcename: input0]
+                NAME a 1 [sourcename: input0]
+                OBJECTLIT 1 [sourcename: input0]
+                    STRING a 1 [sourcename: input0]
+                        NUMBER 1.0 1 [sourcename: input0]
+        NAME c 1 [sourcename: input0]
+    FOR 1 [sourcename: input0]
+        NAME c 1 [sourcename: input0]
+        NAME b 1 [sourcename: input0]
+        BLOCK 1 [sourcename: input0]
+            EXPR_RESULT 1 [sourcename: input0]
+                CALL 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        GETELEM 1 [sourcename: input0]
+                            NAME b 1 [sourcename: input0]
+                            NAME c 1 [sourcename: input0]
+                        STRING call 1 [sourcename: input0]
+                    NAME b 1 [sourcename: input0]
+    EXPR_RESULT 1 [sourcename: input0]
+        ASSIGN 1 [sourcename: input0]
+            GETPROP 1 [sourcename: input0]
+                NAME window 1 [sourcename: input0]
+                STRING Foo 1 [sourcename: input0]
+            NAME a 1 [sourcename: input0]
+
+
+Subtree2: SCRIPT 1 [sourcename: input0] [synthetic: 1]
+    FUNCTION Foo 1 [sourcename: input0] [jsdoc_info: JSDocInfo]
+        NAME Foo 1 [sourcename: input0]
+        LP 1 [sourcename: input0]
+        BLOCK 1 [sourcename: input0]
+    EXPR_RESULT 1 [sourcename: input0]
+        ASSIGN 1 [sourcename: input0]
+            GETPROP 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    NAME Foo 1 [sourcename: input0]
+                    STRING prototype 1 [sourcename: input0]
+                STRING handle 1 [sourcename: input0]
+            FUNCTION  1 [sourcename: input0]
+                NAME  1 [sourcename: input0]
+                LP 1 [sourcename: input0]
+                    NAME x$$1 1 [sourcename: input0]
+                    NAME y 1 [sourcename: input0]
+                BLOCK 1 [sourcename: input0]
+                    EXPR_RESULT 1 [sourcename: input0]
+                        CALL 1 [sourcename: input0] [free_call: 1]
+                            NAME alert 1 [sourcename: input0]
+                            NAME y 1 [sourcename: input0]
+    VAR 1 [sourcename: input0]
+        NAME x 1 [sourcename: input0]
+            CALL 1 [sourcename: input0]
+                GETPROP 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        NAME goog 1 [sourcename: input0]
+                        STRING reflect 1 [sourcename: input0]
+                    STRING object 1 [sourcename: input0]
+                NAME Foo 1 [sourcename: input0]
+                OBJECTLIT 1 [sourcename: input0]
+                    STRING handle 1 [sourcename: input0]
+                        NUMBER 1.0 1 [sourcename: input0]
+    VAR 1 [sourcename: input0]
+        NAME i 1 [sourcename: input0]
+    FOR 1 [sourcename: input0]
+        NAME i 1 [sourcename: input0]
+        NAME x 1 [sourcename: input0]
+        BLOCK 1 [sourcename: input0]
+            EXPR_RESULT 1 [sourcename: input0]
+                CALL 1 [sourcename: input0]
+                    GETPROP 1 [sourcename: input0]
+                        GETELEM 1 [sourcename: input0]
+                            NAME x 1 [sourcename: input0]
+                            NAME i 1 [sourcename: input0]
+                        STRING call 1 [sourcename: input0]
+                    NAME x 1 [sourcename: input0]
+    EXPR_RESULT 1 [sourcename: input0]
+        ASSIGN 1 [sourcename: input0]
+            GETELEM 1 [sourcename: input0]
+                NAME window 1 [sourcename: input0]
+                STRING Foo 1 [sourcename: input0]
+            NAME Foo 1 [sourcename: input0]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:838)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:809)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.test(CommandLineRunnerTest.java:801)
+	at com.google.javascript.jscomp.CommandLineRunnerTest.testReflectedMethods(CommandLineRunnerTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:78
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:78
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testInnerFunctionClosureVariableReads(CrossModuleMethodMotionTest.java:416)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 59 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:60
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:60
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testNoClosureVariableReads1(CrossModuleMethodMotionTest.java:379)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:58
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:58
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testNoClosureVariableReads2(CrossModuleMethodMotionTest.java:398)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i1:1:1
+[source unknown]
+  Parent(EXPR_RESULT): i1:1:0
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testGlobalFunctionsInGraph(CrossModuleMethodMotionTest.java:268)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 50 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:74
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:74
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:673)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:655)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testClosureVariableReads1(CrossModuleMethodMotionTest.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 60 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:134
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:134
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testClosureVariableReads2(CrossModuleMethodMotionTest.java:299)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 65 more
+--- com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): i0:1:136
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:136
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.CrossModuleMethodMotion.process(CrossModuleMethodMotion.java:88)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.CrossModuleMethodMotionTest.testClosureVariableReads3(CrossModuleMethodMotionTest.java:338)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 65 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing3
+junit.framework.AssertionFailedError: 
+Expected: function e(){}e.prototype.method1=function(){};e.prototype.method2=function(){};e.prototype["alias1"]=e.prototype.method1;e.prototype["alias2"]=e.prototype.method2
+Result: function e(){}e.prototype["alias1"]=e.prototype.method1;e.prototype["alias2"]=e.prototype.method2
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION e 1 [sourcename: expected0]
+            NAME e 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method1 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method2 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETELEM 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING alias1 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method1 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETELEM 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING alias2 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method2 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION e 1 [sourcename: testcode]
+            NAME e 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+        EXPR_RESULT 1 [sourcename: testcode]
+            ASSIGN 1 [sourcename: testcode]
+                GETELEM 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING alias1 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING method1 1 [sourcename: testcode]
+        EXPR_RESULT 1 [sourcename: testcode]
+            ASSIGN 1 [sourcename: testcode]
+                GETELEM 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING alias2 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING method2 1 [sourcename: testcode]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION e 1 [sourcename: expected0]
+        NAME e 1 [sourcename: expected0]
+        LP 1 [sourcename: expected0]
+        BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method1 1 [sourcename: expected0]
+            FUNCTION  1 [sourcename: expected0]
+                NAME  1 [sourcename: expected0]
+                LP 1 [sourcename: expected0]
+                BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method2 1 [sourcename: expected0]
+            FUNCTION  1 [sourcename: expected0]
+                NAME  1 [sourcename: expected0]
+                LP 1 [sourcename: expected0]
+                BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETELEM 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING alias1 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method1 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETELEM 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING alias2 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method2 1 [sourcename: expected0]
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION e 1 [sourcename: testcode]
+        NAME e 1 [sourcename: testcode]
+        LP 1 [sourcename: testcode]
+        BLOCK 1 [sourcename: testcode]
+    EXPR_RESULT 1 [sourcename: testcode]
+        ASSIGN 1 [sourcename: testcode]
+            GETELEM 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING alias1 1 [sourcename: testcode]
+            GETPROP 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING method1 1 [sourcename: testcode]
+    EXPR_RESULT 1 [sourcename: testcode]
+        ASSIGN 1 [sourcename: testcode]
+            GETELEM 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING alias2 1 [sourcename: testcode]
+            GETPROP 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING method2 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:862)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testAliasing3(RemoveUnusedPrototypePropertiesTest.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing5
+junit.framework.AssertionFailedError: 
+Expected: function e(){}e.prototype.method1=function(){this.method2()};e.prototype.method2=function(){};e.prototype["alias1"]=e.prototype.method1
+Result: function e(){}e.prototype["alias1"]=e.prototype.method1
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION e 1 [sourcename: expected0]
+            NAME e 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method1 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+                        EXPR_RESULT 1 [sourcename: expected0]
+                            CALL 1 [sourcename: expected0]
+                                GETPROP 1 [sourcename: expected0]
+                                    THIS 1 [sourcename: expected0]
+                                    STRING method2 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method2 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETELEM 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING alias1 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method1 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION e 1 [sourcename: testcode]
+            NAME e 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+        EXPR_RESULT 1 [sourcename: testcode]
+            ASSIGN 1 [sourcename: testcode]
+                GETELEM 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING alias1 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING method1 1 [sourcename: testcode]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION e 1 [sourcename: expected0]
+        NAME e 1 [sourcename: expected0]
+        LP 1 [sourcename: expected0]
+        BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method1 1 [sourcename: expected0]
+            FUNCTION  1 [sourcename: expected0]
+                NAME  1 [sourcename: expected0]
+                LP 1 [sourcename: expected0]
+                BLOCK 1 [sourcename: expected0]
+                    EXPR_RESULT 1 [sourcename: expected0]
+                        CALL 1 [sourcename: expected0]
+                            GETPROP 1 [sourcename: expected0]
+                                THIS 1 [sourcename: expected0]
+                                STRING method2 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method2 1 [sourcename: expected0]
+            FUNCTION  1 [sourcename: expected0]
+                NAME  1 [sourcename: expected0]
+                LP 1 [sourcename: expected0]
+                BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETELEM 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING alias1 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method1 1 [sourcename: expected0]
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION e 1 [sourcename: testcode]
+        NAME e 1 [sourcename: testcode]
+        LP 1 [sourcename: testcode]
+        BLOCK 1 [sourcename: testcode]
+    EXPR_RESULT 1 [sourcename: testcode]
+        ASSIGN 1 [sourcename: testcode]
+            GETELEM 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING alias1 1 [sourcename: testcode]
+            GETPROP 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING method1 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:862)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testAliasing5(RemoveUnusedPrototypePropertiesTest.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+junit.framework.AssertionFailedError: 
+Expected: function e(){}e.prototype["alias1"]=e.prototype.method1=function(){this.method2()};e.prototype.method2=function(){}
+Result: function e(){}e.prototype["alias1"]=e.prototype.method1=function(){this.method2()}
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+        FUNCTION e 1 [sourcename: expected0]
+            NAME e 1 [sourcename: expected0]
+            LP 1 [sourcename: expected0]
+            BLOCK 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETELEM 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING alias1 1 [sourcename: expected0]
+                ASSIGN 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        GETPROP 1 [sourcename: expected0]
+                            NAME e 1 [sourcename: expected0]
+                            STRING prototype 1 [sourcename: expected0]
+                        STRING method1 1 [sourcename: expected0]
+                    FUNCTION  1 [sourcename: expected0]
+                        NAME  1 [sourcename: expected0]
+                        LP 1 [sourcename: expected0]
+                        BLOCK 1 [sourcename: expected0]
+                            EXPR_RESULT 1 [sourcename: expected0]
+                                CALL 1 [sourcename: expected0]
+                                    GETPROP 1 [sourcename: expected0]
+                                        THIS 1 [sourcename: expected0]
+                                        STRING method2 1 [sourcename: expected0]
+        EXPR_RESULT 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method2 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+        FUNCTION e 1 [sourcename: testcode]
+            NAME e 1 [sourcename: testcode]
+            LP 1 [sourcename: testcode]
+            BLOCK 1 [sourcename: testcode]
+        EXPR_RESULT 1 [sourcename: testcode]
+            ASSIGN 1 [sourcename: testcode]
+                GETELEM 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING alias1 1 [sourcename: testcode]
+                ASSIGN 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        GETPROP 1 [sourcename: testcode]
+                            NAME e 1 [sourcename: testcode]
+                            STRING prototype 1 [sourcename: testcode]
+                        STRING method1 1 [sourcename: testcode]
+                    FUNCTION  1 [sourcename: testcode]
+                        NAME  1 [sourcename: testcode]
+                        LP 1 [sourcename: testcode]
+                        BLOCK 1 [sourcename: testcode]
+                            EXPR_RESULT 1 [sourcename: testcode]
+                                CALL 1 [sourcename: testcode]
+                                    GETPROP 1 [sourcename: testcode]
+                                        THIS 1 [sourcename: testcode]
+                                        STRING method2 1 [sourcename: testcode]
+
+
+Subtree1: SCRIPT 1 [sourcename: expected0] [synthetic: 1]
+    FUNCTION e 1 [sourcename: expected0]
+        NAME e 1 [sourcename: expected0]
+        LP 1 [sourcename: expected0]
+        BLOCK 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETELEM 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING alias1 1 [sourcename: expected0]
+            ASSIGN 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    GETPROP 1 [sourcename: expected0]
+                        NAME e 1 [sourcename: expected0]
+                        STRING prototype 1 [sourcename: expected0]
+                    STRING method1 1 [sourcename: expected0]
+                FUNCTION  1 [sourcename: expected0]
+                    NAME  1 [sourcename: expected0]
+                    LP 1 [sourcename: expected0]
+                    BLOCK 1 [sourcename: expected0]
+                        EXPR_RESULT 1 [sourcename: expected0]
+                            CALL 1 [sourcename: expected0]
+                                GETPROP 1 [sourcename: expected0]
+                                    THIS 1 [sourcename: expected0]
+                                    STRING method2 1 [sourcename: expected0]
+    EXPR_RESULT 1 [sourcename: expected0]
+        ASSIGN 1 [sourcename: expected0]
+            GETPROP 1 [sourcename: expected0]
+                GETPROP 1 [sourcename: expected0]
+                    NAME e 1 [sourcename: expected0]
+                    STRING prototype 1 [sourcename: expected0]
+                STRING method2 1 [sourcename: expected0]
+            FUNCTION  1 [sourcename: expected0]
+                NAME  1 [sourcename: expected0]
+                LP 1 [sourcename: expected0]
+                BLOCK 1 [sourcename: expected0]
+
+
+Subtree2: SCRIPT 1 [sourcename: testcode] [synthetic: 1]
+    FUNCTION e 1 [sourcename: testcode]
+        NAME e 1 [sourcename: testcode]
+        LP 1 [sourcename: testcode]
+        BLOCK 1 [sourcename: testcode]
+    EXPR_RESULT 1 [sourcename: testcode]
+        ASSIGN 1 [sourcename: testcode]
+            GETELEM 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    NAME e 1 [sourcename: testcode]
+                    STRING prototype 1 [sourcename: testcode]
+                STRING alias1 1 [sourcename: testcode]
+            ASSIGN 1 [sourcename: testcode]
+                GETPROP 1 [sourcename: testcode]
+                    GETPROP 1 [sourcename: testcode]
+                        NAME e 1 [sourcename: testcode]
+                        STRING prototype 1 [sourcename: testcode]
+                    STRING method1 1 [sourcename: testcode]
+                FUNCTION  1 [sourcename: testcode]
+                    NAME  1 [sourcename: testcode]
+                    LP 1 [sourcename: testcode]
+                    BLOCK 1 [sourcename: testcode]
+                        EXPR_RESULT 1 [sourcename: testcode]
+                            CALL 1 [sourcename: testcode]
+                                GETPROP 1 [sourcename: testcode]
+                                    THIS 1 [sourcename: testcode]
+                                    STRING method2 1 [sourcename: testcode]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:862)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:537)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testAliasing7(RemoveUnusedPrototypePropertiesTest.java:189)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGetterBaseline
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:85
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:84
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGetterBaseline(RemoveUnusedPrototypePropertiesTest.java:424)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:62
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:61
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph(RemoveUnusedPrototypePropertiesTest.java:345)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGetter1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:73
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:72
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGetter1(RemoveUnusedPrototypePropertiesTest.java:440)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGetter2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:93
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:92
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGetter2(RemoveUnusedPrototypePropertiesTest.java:469)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:62
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:61
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:537)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph2(RemoveUnusedPrototypePropertiesTest.java:360)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 56 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph3
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:62
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:61
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph3(RemoveUnusedPrototypePropertiesTest.java:368)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph4
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:62
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:61
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph4(RemoveUnusedPrototypePropertiesTest.java:379)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:130
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:129
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph5(RemoveUnusedPrototypePropertiesTest.java:387)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph6
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:130
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:129
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:537)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testGlobalFunctionsInGraph6(RemoveUnusedPrototypePropertiesTest.java:407)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 56 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertiesDefinedWithGetElem
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+ADD 1 [sourcename: testcode] is not a string node
+  Node(ASSIGN): testcode:1:39
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:18
+[source unknown]
+
+	at com.google.javascript.rhino.Node.getString(Node.java:897)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:207)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:537)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testPropertiesDefinedWithGetElem(RemoveUnusedPrototypePropertiesTest.java:313)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.UnsupportedOperationException: ADD 1 [sourcename: testcode] is not a string node
+	... 51 more
+--- com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testStatementRestriction
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): testcode:1:73
+[source unknown]
+  Parent(EXPR_RESULT): testcode:1:72
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest.testStatementRestriction(RemoveUnusedPrototypePropertiesTest.java:196)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 50 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeCascadedInline
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:25
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:20
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeCascadedInline(SpecializeModuleTest.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_inline
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:19
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:14
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testDontSpecializeAliasedFunctions_inline(SpecializeModuleTest.java:309)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeInlineWithMultipleDependents
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:25
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:20
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeInlineWithMultipleDependents(SpecializeModuleTest.java:157)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:78
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:72
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeDevirtualizePrototypeMethods(SpecializeModuleTest.java:366)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeInlineWithNamespaces
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:36
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:31
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeInlineWithNamespaces(SpecializeModuleTest.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeInline
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:25
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:20
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeInline(SpecializeModuleTest.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeLocalNonAnonymousFunctions
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:48
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:43
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testDontSpecializeLocalNonAnonymousFunctions(SpecializeModuleTest.java:236)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testAddDummyVarsForRemovedFunctions
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:25
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:20
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testAddDummyVarsForRemovedFunctions(SpecializeModuleTest.java:257)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 57 more
+--- com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeInlineWithRegularFunctions
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(CALL): i0:1:19
+[source unknown]
+  Parent(EXPR_RESULT): i0:1:14
+[source unknown]
+
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.isPrototypePropertyAssign(AnalyzePrototypeProperties.java:318)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties$ProcessProperties.shouldTraverse(AnalyzePrototypeProperties.java:206)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:445)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:502)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:449)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:457)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:249)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:422)
+	at com.google.javascript.jscomp.AnalyzePrototypeProperties.process(AnalyzePrototypeProperties.java:151)
+	at com.google.javascript.jscomp.RemoveUnusedPrototypeProperties.process(RemoveUnusedPrototypeProperties.java:72)
+	at com.google.javascript.jscomp.SpecializeModule.process(SpecializeModule.java:158)
+	at com.google.javascript.jscomp.SpecializeModuleTest$4.process(SpecializeModuleTest.java:71)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:765)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:692)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:528)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:509)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:496)
+	at com.google.javascript.jscomp.SpecializeModuleTest.testSpecializeInlineWithRegularFunctions(SpecializeModuleTest.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.NullPointerException
+	... 55 more

@@ -1,1 +1,1014 @@
-# Mutant id: 150
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInvalidInlineArguments1
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME z): :1:44
+[source unknown]
+  Parent(GETELEM): :1:44
+[source unknown]
+
+  Node(EXPR_RESULT): :1:44
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION f): testcode:1:0
+function f(x, y) { x = 1; var z = arguments;z[0] = 2; z[1] = 3; print(x)}
+  Parent(SCRIPT): testcode:1:0
+function f(x, y) { x = 1; var z = arguments;z[0] = 2; z[1] = 3; print(x)}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:360)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:329)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.testSame(CompilerTestCase.java:549)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testInvalidInlineArguments1(FlowSensitiveInlineVariablesTest.java:404)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME z): :1:44
+[source unknown]
+  Parent(GETELEM): :1:44
+[source unknown]
+
+  Node(EXPR_RESULT): :1:44
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 63 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME z): :1:44
+[source unknown]
+  Parent(GETELEM): :1:44
+[source unknown]
+
+	... 63 more
+Caused by: java.lang.NullPointerException
+	... 63 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testNoInlineGetProp2
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:52
+[source unknown]
+  Parent(CALL): :1:46
+[source unknown]
+
+  Node(EXPR_RESULT): :1:46
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = 1 * a.b.c; j.c = 1; print(x);}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = 1 * a.b.c; j.c = 1; print(x);}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testNoInlineGetProp2(FlowSensitiveInlineVariablesTest.java:278)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:52
+[source unknown]
+  Parent(CALL): :1:46
+[source unknown]
+
+  Node(EXPR_RESULT): :1:46
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:52
+[source unknown]
+  Parent(CALL): :1:46
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testNoInlineConstructors
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:42
+[source unknown]
+  Parent(GETPROP): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = new Iterator(); x.next();}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = new Iterator(); x.next();}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testNoInlineConstructors(FlowSensitiveInlineVariablesTest.java:294)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:42
+[source unknown]
+  Parent(GETPROP): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 63 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:42
+[source unknown]
+  Parent(GETPROP): :1:42
+[source unknown]
+
+	... 63 more
+Caused by: java.lang.NullPointerException
+	... 63 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineConstructorCallsIntoLoop
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:70
+[source unknown]
+  Parent(GETPROP): :1:70
+[source unknown]
+
+  Node(EXPR_RESULT): :1:66
+[source unknown]
+  Parent(BLOCK): :1:65
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = new Iterator();for(i = 0; i < 10; i++) {j = x.next()}}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = new Iterator();for(i = 0; i < 10; i++) {j = x.next()}}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testInlineConstructorCallsIntoLoop(FlowSensitiveInlineVariablesTest.java:314)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:70
+[source unknown]
+  Parent(GETPROP): :1:70
+[source unknown]
+
+  Node(EXPR_RESULT): :1:66
+[source unknown]
+  Parent(BLOCK): :1:65
+[source unknown]
+
+	... 66 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:70
+[source unknown]
+  Parent(GETPROP): :1:70
+[source unknown]
+
+	... 66 more
+Caused by: java.lang.NullPointerException
+	... 66 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testNoInlineGetProp
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = a.b.c; j.c = 1; print(x);}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = a.b.c; j.c = 1; print(x);}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testNoInlineGetProp(FlowSensitiveInlineVariablesTest.java:274)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpression7
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:50
+[source unknown]
+  Parent(CALL): :1:44
+[source unknown]
+
+  Node(EXPR_RESULT): :1:44
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = foo() + 1; bar(); print(x)}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = foo() + 1; bar(); print(x)}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testInlineExpression7(FlowSensitiveInlineVariablesTest.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:50
+[source unknown]
+  Parent(CALL): :1:44
+[source unknown]
+
+  Node(EXPR_RESULT): :1:44
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:50
+[source unknown]
+  Parent(CALL): :1:44
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions12
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:45
+[source unknown]
+  Parent(CALL): :1:39
+[source unknown]
+
+  Node(EXPR_RESULT): :1:39
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = 10; x = c++; print(x)}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = 10; x = c++; print(x)}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testInlineExpressions12(FlowSensitiveInlineVariablesTest.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:45
+[source unknown]
+  Parent(CALL): :1:39
+[source unknown]
+
+  Node(EXPR_RESULT): :1:39
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:45
+[source unknown]
+  Parent(CALL): :1:39
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testNoInlineGetEle
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = a[i]; a[j] = 2; print(x); }
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = a[i]; a[j] = 2; print(x); }
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.noInline(FlowSensitiveInlineVariablesTest.java:439)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testNoInlineGetEle(FlowSensitiveInlineVariablesTest.java:289)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+  Node(EXPR_RESULT): :1:42
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:48
+[source unknown]
+  Parent(CALL): :1:42
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more
+--- com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue698
+java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:143
+[source unknown]
+  Parent(ADD): :1:143
+[source unknown]
+
+  Node(EXPR_RESULT): :1:139
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+  Node(FUNCTION _func): testcode:1:0
+function _func() {var x = ''; unknown.length < 2 && (unknown='0' + unknown);x = x + unknown; unknown.length < 3 && (unknown='0' + unknown);x = x + unknown; return x;}
+  Parent(SCRIPT): testcode:1:0
+function _func() {var x = ''; unknown.length < 2 && (unknown='0' + unknown);x = x + unknown; unknown.length < 3 && (unknown='0' + unknown);x = x + unknown; return x;}
+
+	at com.google.javascript.jscomp.MustBeReachingVariableDef.dependsOnOuterScopeVars(MustBeReachingVariableDef.java:440)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates$1.visit(FlowSensitiveInlineVariables.java:210)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:455)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables$GatherCandiates.visit(FlowSensitiveInlineVariables.java:218)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:504)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverse(NodeTraversal.java:277)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.enterScope(FlowSensitiveInlineVariables.java:139)
+	at com.google.javascript.jscomp.NodeTraversal.pushScope(NodeTraversal.java:567)
+	at com.google.javascript.jscomp.NodeTraversal.traverseFunction(NodeTraversal.java:525)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:489)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseBranch(NodeTraversal.java:497)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:304)
+	at com.google.javascript.jscomp.NodeTraversal.traverseRoots(NodeTraversal.java:285)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariables.process(FlowSensitiveInlineVariables.java:157)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest$1.process(FlowSensitiveInlineVariablesTest.java:45)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:776)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:434)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:398)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:376)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.inline(FlowSensitiveInlineVariablesTest.java:443)
+	at com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest.testIssue698(FlowSensitiveInlineVariablesTest.java:423)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:143
+[source unknown]
+  Parent(ADD): :1:143
+[source unknown]
+
+  Node(EXPR_RESULT): :1:139
+[source unknown]
+  Parent(BLOCK): :1:17
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.RuntimeException: INTERNAL COMPILER ERROR.
+Please report this problem.
+null
+  Node(NAME x): :1:143
+[source unknown]
+  Parent(ADD): :1:143
+[source unknown]
+
+	... 62 more
+Caused by: java.lang.NullPointerException
+	... 62 more

@@ -1,1 +1,741 @@
-# Mutant id: 108
+--- com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType2
+junit.framework.ComparisonFailure: expected:<{[a=[[Foo.prototype]]]}> but was:<{[]}>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at junit.framework.TestCase.assertEquals(TestCase.java:269)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testSets(DisambiguatePropertiesTest.java:1240)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testOneType2(DisambiguatePropertiesTest.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType3
+junit.framework.ComparisonFailure: expected:<{[a=[[Foo.prototype]]]}> but was:<{[]}>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at junit.framework.TestCase.assertEquals(TestCase.java:269)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testSets(DisambiguatePropertiesTest.java:1240)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testOneType3(DisambiguatePropertiesTest.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes2
+junit.framework.AssertionFailedError: 
+Expected: function Foo(){}Foo.prototype={Foo_prototype$a:0};var F=new Foo;F.Foo_prototype$a=0;function Bar(){}Bar.prototype={Bar_prototype$a:0};var B=new Bar;B.Bar_prototype$a=0
+Result: function Foo(){}Foo.prototype={a:0};var F=new Foo;F.a=0;function Bar(){}Bar.prototype={a:0};var B=new Bar;B.a=0
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION Foo 1 [source_file: expected0]
+            NAME Foo 1 [source_file: expected0]
+            LP 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                GETPROP 1 [source_file: expected0]
+                    NAME Foo 1 [source_file: expected0]
+                    STRING prototype 1 [source_file: expected0]
+                OBJECTLIT 1 [source_file: expected0]
+                    STRING Foo_prototype$a 1 [source_file: expected0]
+                        NUMBER 0.0 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME F 1 [source_file: expected0]
+                NEW 1 [source_file: expected0]
+                    NAME Foo 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                GETPROP 1 [source_file: expected0]
+                    NAME F 1 [source_file: expected0]
+                    STRING Foo_prototype$a 1 [source_file: expected0]
+                NUMBER 0.0 1 [source_file: expected0]
+        FUNCTION Bar 1 [source_file: expected0]
+            NAME Bar 1 [source_file: expected0]
+            LP 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                GETPROP 1 [source_file: expected0]
+                    NAME Bar 1 [source_file: expected0]
+                    STRING prototype 1 [source_file: expected0]
+                OBJECTLIT 1 [source_file: expected0]
+                    STRING Bar_prototype$a 1 [source_file: expected0]
+                        NUMBER 0.0 1 [source_file: expected0]
+        VAR 1 [source_file: expected0]
+            NAME B 1 [source_file: expected0]
+                NEW 1 [source_file: expected0]
+                    NAME Bar 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                GETPROP 1 [source_file: expected0]
+                    NAME B 1 [source_file: expected0]
+                    STRING Bar_prototype$a 1 [source_file: expected0]
+                NUMBER 0.0 1 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION Foo 1 [jsdoc_info: JSDocInfo] [source_file: testcode] : function (new:Foo): undefined
+            NAME Foo 1 [source_file: testcode] : function (new:Foo): undefined
+            LP 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+        EXPR_RESULT 2 [source_file: testcode]
+            ASSIGN 2 [source_file: testcode] : {a: number}
+                GETPROP 2 [source_file: testcode] : {a: number}
+                    NAME Foo 2 [source_file: testcode] : function (new:Foo): undefined
+                    STRING prototype 2 [source_file: testcode] : string
+                OBJECTLIT 2 [source_file: testcode] : {a: number}
+                    STRING a 2 [source_file: testcode] : number
+                        NUMBER 0.0 2 [source_file: testcode] : number
+        VAR 3 [jsdoc_info: JSDocInfo] [source_file: testcode] : (Foo|null)
+            NAME F 3 [source_file: testcode] : Foo
+                NEW 3 [source_file: testcode] : Foo
+                    NAME Foo 3 [source_file: testcode] : function (new:Foo): undefined
+        EXPR_RESULT 4 [source_file: testcode]
+            ASSIGN 4 [source_file: testcode] : number
+                GETPROP 4 [source_file: testcode] : number
+                    NAME F 4 [source_file: testcode] : (Foo|null)
+                    STRING a 4 [source_file: testcode] : string
+                NUMBER 0.0 4 [source_file: testcode] : number
+        FUNCTION Bar 4 [jsdoc_info: JSDocInfo] [source_file: testcode] : function (new:Bar): undefined
+            NAME Bar 4 [source_file: testcode] : function (new:Bar): undefined
+            LP 4 [source_file: testcode]
+            BLOCK 4 [source_file: testcode]
+        EXPR_RESULT 5 [source_file: testcode]
+            ASSIGN 5 [source_file: testcode] : {a: number}
+                GETPROP 5 [source_file: testcode] : {a: number}
+                    NAME Bar 5 [source_file: testcode] : function (new:Bar): undefined
+                    STRING prototype 5 [source_file: testcode] : string
+                OBJECTLIT 5 [source_file: testcode] : {a: number}
+                    STRING a 5 [source_file: testcode] : number
+                        NUMBER 0.0 5 [source_file: testcode] : number
+        VAR 6 [jsdoc_info: JSDocInfo] [source_file: testcode] : (Bar|null)
+            NAME B 6 [source_file: testcode] : Bar
+                NEW 6 [source_file: testcode] : Bar
+                    NAME Bar 6 [source_file: testcode] : function (new:Bar): undefined
+        EXPR_RESULT 7 [source_file: testcode]
+            ASSIGN 7 [source_file: testcode] : number
+                GETPROP 7 [source_file: testcode] : number
+                    NAME B 7 [source_file: testcode] : (Bar|null)
+                    STRING a 7 [source_file: testcode] : string
+                NUMBER 0.0 7 [source_file: testcode] : number
+
+
+Subtree1: STRING Foo_prototype$a 1 [source_file: expected0]
+    NUMBER 0.0 1 [source_file: expected0]
+
+
+Subtree2: STRING a 2 [source_file: testcode] : number
+    NUMBER 0.0 2 [source_file: testcode] : number
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:862)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testSets(DisambiguatePropertiesTest.java:1239)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testTwoTypes2(DisambiguatePropertiesTest.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes3
+junit.framework.AssertionFailedError: 
+Expected: function Foo(){}Foo.prototype={get Foo_prototype$a(){return 0},set Foo_prototype$a(b){}};var F=new Foo;F.Foo_prototype$a=0;function Bar(){}Bar.prototype={get Bar_prototype$a(){return 0},set Bar_prototype$a(b){}};var B=new Bar;B.Bar_prototype$a=0
+Result: function Foo(){}Foo.prototype={get a(){return 0},set a(b){}};var F=new Foo;F.a=0;function Bar(){}Bar.prototype={get a(){return 0},set a(b){}};var B=new Bar;B.a=0
+Node tree inequality:
+Tree1:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: expected0] [input_id: InputId: expected0]
+        FUNCTION Foo 1 [source_file: expected0]
+            NAME Foo 1 [source_file: expected0]
+            LP 1 [source_file: expected0]
+            BLOCK 1 [source_file: expected0]
+        EXPR_RESULT 1 [source_file: expected0]
+            ASSIGN 1 [source_file: expected0]
+                GETPROP 1 [source_file: expected0]
+                    NAME Foo 1 [source_file: expected0]
+                    STRING prototype 1 [source_file: expected0]
+                OBJECTLIT 1 [source_file: expected0]
+                    GET Foo_prototype$a 1 [source_file: expected0]
+                        FUNCTION  1 [source_file: expected0]
+                            NAME  1 [source_file: expected0]
+                            LP 1 [source_file: expected0]
+                            BLOCK 1 [source_file: expected0]
+                                RETURN 1 [source_file: expected0]
+                                    NUMBER 0.0 1 [source_file: expected0]
+                    SET Foo_prototype$a 1 [source_file: expected0]
+                        FUNCTION  1 [source_file: expected0]
+                            NAME  1 [source_file: expected0]
+                            LP 1 [source_file: expected0]
+                                NAME b 1 [source_file: expected0]
+                            BLOCK 1 [source_file: expected0]
+        VAR 2 [source_file: expected0]
+            NAME F 2 [source_file: expected0]
+                NEW 2 [source_file: expected0]
+                    NAME Foo 2 [source_file: expected0]
+        EXPR_RESULT 2 [source_file: expected0]
+            ASSIGN 2 [source_file: expected0]
+                GETPROP 2 [source_file: expected0]
+                    NAME F 2 [source_file: expected0]
+                    STRING Foo_prototype$a 2 [source_file: expected0]
+                NUMBER 0.0 2 [source_file: expected0]
+        FUNCTION Bar 2 [source_file: expected0]
+            NAME Bar 2 [source_file: expected0]
+            LP 2 [source_file: expected0]
+            BLOCK 2 [source_file: expected0]
+        EXPR_RESULT 2 [source_file: expected0]
+            ASSIGN 2 [source_file: expected0]
+                GETPROP 2 [source_file: expected0]
+                    NAME Bar 2 [source_file: expected0]
+                    STRING prototype 2 [source_file: expected0]
+                OBJECTLIT 2 [source_file: expected0]
+                    GET Bar_prototype$a 2 [source_file: expected0]
+                        FUNCTION  2 [source_file: expected0]
+                            NAME  2 [source_file: expected0]
+                            LP 2 [source_file: expected0]
+                            BLOCK 2 [source_file: expected0]
+                                RETURN 2 [source_file: expected0]
+                                    NUMBER 0.0 2 [source_file: expected0]
+                    SET Bar_prototype$a 2 [source_file: expected0]
+                        FUNCTION  2 [source_file: expected0]
+                            NAME  2 [source_file: expected0]
+                            LP 2 [source_file: expected0]
+                                NAME b 2 [source_file: expected0]
+                            BLOCK 2 [source_file: expected0]
+        VAR 3 [source_file: expected0]
+            NAME B 3 [source_file: expected0]
+                NEW 3 [source_file: expected0]
+                    NAME Bar 3 [source_file: expected0]
+        EXPR_RESULT 3 [source_file: expected0]
+            ASSIGN 3 [source_file: expected0]
+                GETPROP 3 [source_file: expected0]
+                    NAME B 3 [source_file: expected0]
+                    STRING Bar_prototype$a 3 [source_file: expected0]
+                NUMBER 0.0 3 [source_file: expected0]
+
+
+Tree2:
+BLOCK [synthetic: 1]
+    SCRIPT 1 [synthetic: 1] [source_file: testcode] [input_id: InputId: testcode]
+        FUNCTION Foo 1 [jsdoc_info: JSDocInfo] [source_file: testcode] : function (new:Foo): undefined
+            NAME Foo 1 [source_file: testcode] : function (new:Foo): undefined
+            LP 1 [source_file: testcode]
+            BLOCK 1 [source_file: testcode]
+        EXPR_RESULT 2 [source_file: testcode]
+            ASSIGN 2 [source_file: testcode] : {a: ?}
+                GETPROP 2 [source_file: testcode] : {a: ?}
+                    NAME Foo 2 [source_file: testcode] : function (new:Foo): undefined
+                    STRING prototype 2 [source_file: testcode] : string
+                OBJECTLIT 2 [source_file: testcode] : {a: ?}
+                    GET a 2 [source_file: testcode] : ?
+                        FUNCTION  2 [source_file: testcode] : function (this:Foo): ?
+                            NAME  2 [source_file: testcode]
+                            LP 2 [source_file: testcode]
+                            BLOCK 2 [source_file: testcode]
+                                RETURN 2 [source_file: testcode]
+                                    NUMBER 0.0 2 [source_file: testcode] : number
+                    SET a 2 [source_file: testcode] : ?
+                        FUNCTION  2 [source_file: testcode] : function (this:Foo, ?): undefined
+                            NAME  2 [source_file: testcode]
+                            LP 2 [source_file: testcode]
+                                NAME b 2 [source_file: testcode] : ?
+                            BLOCK 2 [source_file: testcode]
+        VAR 4 [jsdoc_info: JSDocInfo] [source_file: testcode] : (Foo|null)
+            NAME F 4 [source_file: testcode] : Foo
+                NEW 4 [source_file: testcode] : Foo
+                    NAME Foo 4 [source_file: testcode] : function (new:Foo): undefined
+        EXPR_RESULT 5 [source_file: testcode]
+            ASSIGN 5 [source_file: testcode] : number
+                GETPROP 5 [source_file: testcode] : number
+                    NAME F 5 [source_file: testcode] : (Foo|null)
+                    STRING a 5 [source_file: testcode] : string
+                NUMBER 0.0 5 [source_file: testcode] : number
+        FUNCTION Bar 5 [jsdoc_info: JSDocInfo] [source_file: testcode] : function (new:Bar): undefined
+            NAME Bar 5 [source_file: testcode] : function (new:Bar): undefined
+            LP 5 [source_file: testcode]
+            BLOCK 5 [source_file: testcode]
+        EXPR_RESULT 6 [source_file: testcode]
+            ASSIGN 6 [source_file: testcode] : {a: ?}
+                GETPROP 6 [source_file: testcode] : {a: ?}
+                    NAME Bar 6 [source_file: testcode] : function (new:Bar): undefined
+                    STRING prototype 6 [source_file: testcode] : string
+                OBJECTLIT 6 [source_file: testcode] : {a: ?}
+                    GET a 6 [source_file: testcode] : ?
+                        FUNCTION  6 [source_file: testcode] : function (this:Bar): ?
+                            NAME  6 [source_file: testcode]
+                            LP 6 [source_file: testcode]
+                            BLOCK 6 [source_file: testcode]
+                                RETURN 6 [source_file: testcode]
+                                    NUMBER 0.0 6 [source_file: testcode] : number
+                    SET a 6 [source_file: testcode] : ?
+                        FUNCTION  6 [source_file: testcode] : function (this:Bar, ?): undefined
+                            NAME  6 [source_file: testcode]
+                            LP 6 [source_file: testcode]
+                                NAME b 6 [source_file: testcode] : ?
+                            BLOCK 6 [source_file: testcode]
+        VAR 8 [jsdoc_info: JSDocInfo] [source_file: testcode] : (Bar|null)
+            NAME B 8 [source_file: testcode] : Bar
+                NEW 8 [source_file: testcode] : Bar
+                    NAME Bar 8 [source_file: testcode] : function (new:Bar): undefined
+        EXPR_RESULT 9 [source_file: testcode]
+            ASSIGN 9 [source_file: testcode] : number
+                GETPROP 9 [source_file: testcode] : number
+                    NAME B 9 [source_file: testcode] : (Bar|null)
+                    STRING a 9 [source_file: testcode] : string
+                NUMBER 0.0 9 [source_file: testcode] : number
+
+
+Subtree1: GET Foo_prototype$a 1 [source_file: expected0]
+    FUNCTION  1 [source_file: expected0]
+        NAME  1 [source_file: expected0]
+        LP 1 [source_file: expected0]
+        BLOCK 1 [source_file: expected0]
+            RETURN 1 [source_file: expected0]
+                NUMBER 0.0 1 [source_file: expected0]
+
+
+Subtree2: GET a 2 [source_file: testcode] : ?
+    FUNCTION  2 [source_file: testcode] : function (this:Foo): ?
+        NAME  2 [source_file: testcode]
+        LP 2 [source_file: testcode]
+        BLOCK 2 [source_file: testcode]
+            RETURN 2 [source_file: testcode]
+                NUMBER 0.0 2 [source_file: testcode] : number
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertNull(Assert.java:277)
+	at junit.framework.TestCase.assertNull(TestCase.java:447)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:862)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:423)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:348)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:317)
+	at com.google.javascript.jscomp.CompilerTestCase.test(CompilerTestCase.java:305)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testSets(DisambiguatePropertiesTest.java:1239)
+	at com.google.javascript.jscomp.DisambiguatePropertiesTest.testTwoTypes3(DisambiguatePropertiesTest.java:204)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypeCheckTest::testIssue537a
+junit.framework.ComparisonFailure: expected:<Function [Foo.prototype].method: called with...> but was:<Function [this].method: called with...>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at junit.framework.TestCase.assertEquals(TestCase.java:269)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9230)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9209)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9150)
+	at com.google.javascript.jscomp.TypeCheckTest.testIssue537a(TypeCheckTest.java:5264)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypeCheckTest::testIssue537b
+junit.framework.ComparisonFailure: expected:<Function [Bar.prototype].baz: called with 1 ...> but was:<Function [this].baz: called with 1 ...>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at junit.framework.TestCase.assertEquals(TestCase.java:269)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9230)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9209)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9150)
+	at com.google.javascript.jscomp.TypeCheckTest.testIssue537b(TypeCheckTest.java:5287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypeCheckTest::testAnonymousPrototype1
+junit.framework.ComparisonFailure: expected:<Function [ns.Foo.prototype].bar: called with 2 ...> but was:<Function [this].bar: called with 2 ...>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at junit.framework.TestCase.assertEquals(TestCase.java:269)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9230)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9209)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9150)
+	at com.google.javascript.jscomp.TypeCheckTest.testAnonymousPrototype1(TypeCheckTest.java:6402)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypeCheckTest::testAnonymousPrototype2
+junit.framework.AssertionFailedError: expected a warning
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.TestCase.assertTrue(TestCase.java:192)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9229)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9209)
+	at com.google.javascript.jscomp.TypeCheckTest.testTypes(TypeCheckTest.java:9150)
+	at com.google.javascript.jscomp.TypeCheckTest.testAnonymousPrototype2(TypeCheckTest.java:6416)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testAddMethodsPrototypeTwoWays
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at junit.framework.TestCase.assertTrue(TestCase.java:201)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testAddMethodsPrototypeTwoWays(TypedScopeCreatorTest.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction2
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at junit.framework.TestCase.assertTrue(TestCase.java:201)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testMethodBeforeFunction2(TypedScopeCreatorTest.java:409)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+--- com.google.javascript.jscomp.TypedScopeCreatorTest::testPropertyOnUnknownSuperClass2
+junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at junit.framework.TestCase.assertTrue(TestCase.java:201)
+	at com.google.javascript.jscomp.TypedScopeCreatorTest.testPropertyOnUnknownSuperClass2(TypedScopeCreatorTest.java:376)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:520)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1478)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:860)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:1968)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute1(JUnitTask.java:812)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:2271)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:392)
+	at org.apache.tools.ant.Target.performTasks(Target.java:413)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:811)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
