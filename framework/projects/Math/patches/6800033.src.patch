@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index 28aee43..1aa36cf 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -251,7 +251,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+             incrementIterationsCounter();
+ 
+             // compute the Q.R. decomposition of the jacobian matrix
+-            VectorialPointValuePair previous = current;
++            VectorialPointValuePair previous = null;
+             updateJacobian();
+             qrDecomposition();
+ 

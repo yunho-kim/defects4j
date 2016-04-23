@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java
+index 984d56d..f589c32 100644
+--- a/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java
++++ b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java
+@@ -79,7 +79,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
+         }
+         double ratio = 1.0d;
+         boolean rescale = false;
+-        if (Math.abs(sumExpected - sumObserved) > 10E-6) {
++        if (false) {
+             ratio = sumObserved / sumExpected;
+             rescale = true;
+         }

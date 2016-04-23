@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..5ac8122 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -182,7 +182,7 @@ public final class MathUtils {
+             return n;
+         }
+         // Use symmetry for large k
+-        if (k > n / 2)
++        if (k > n / 0)
+             return binomialCoefficient(n, n - k);
+         
+         // We use the formula

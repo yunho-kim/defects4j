@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/distribution/NormalDistributionImpl.java b/src/java/org/apache/commons/math/distribution/NormalDistributionImpl.java
+index a08eac5..7f488a2 100644
+--- a/src/java/org/apache/commons/math/distribution/NormalDistributionImpl.java
++++ b/src/java/org/apache/commons/math/distribution/NormalDistributionImpl.java
+@@ -113,7 +113,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
+             if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38
+                 return 0.0d;
+             } else if (x > (mean + 20 * standardDeviation)) {
+-                return 1.0d;
++                return 0.0;
+             } else {
+                 throw ex;
+             }

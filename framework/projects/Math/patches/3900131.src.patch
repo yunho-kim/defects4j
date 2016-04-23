@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java b/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
+index d2bbf67..46a3ced 100644
+--- a/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
++++ b/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
+@@ -253,7 +253,7 @@ public abstract class EmbeddedRungeKuttaIntegrator
+             }
+         } else {
+             if (stepStart + stepSize <= t) {
+-                stepSize = t - stepStart;
++                stepSize = t % stepStart;
+             }
+         }
+ 

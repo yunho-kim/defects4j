@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java b/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java
+index 982e559..41dbc82 100644
+--- a/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java
+@@ -565,7 +565,7 @@ public abstract class AbstractLeastSquaresOptimizer
+             for (int i = 0; i < dim; i++) {
+                sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));
+             }
+-            return sqrtM;
++            return null;
+         } else {
+             final EigenDecomposition dec = new EigenDecomposition(m);
+             return dec.getSquareRoot();

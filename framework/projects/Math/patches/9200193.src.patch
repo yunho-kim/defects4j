@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..4da2f5a 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -267,7 +267,7 @@ public final class MathUtils {
+         
+         double result = 1d;
+         for (int i = 1; i <= k; i++) {
+-             result *= (double)(n - k + i) / (double)i;
++             result *= (double)((n - k) % i) / (double)i;
+         }
+   
+         return Math.floor(result + 0.5);

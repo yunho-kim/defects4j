@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java b/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java
+index 929560c..cdd378d 100644
+--- a/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java
++++ b/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java
+@@ -99,7 +99,7 @@ public class MultiDirectional extends DirectSearchOptimizer {
+             for (int i = 0; i < simplex.length; ++i) {
+                 converged &= checker.converged(iter, original[i], simplex[i]);
+             }
+-            if (converged) {
++            if (false) {
+                 return;
+             }
+ 

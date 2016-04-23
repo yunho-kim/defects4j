@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/Vector3D.java b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+index 2d915e5..435378e 100644
+--- a/src/main/java/org/apache/commons/math/geometry/Vector3D.java
++++ b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+@@ -480,7 +480,7 @@ public class Vector3D implements Serializable {
+ 
+       // compute rho as an 8 bits approximation of v1.v2 / v2.v2
+       final double ratio = (x1 * x2 + y1 * y2 + z1 * z2) / FastMath.scalb(n2, 2 * deltaExp);
+-      final double rho   = FastMath.rint(256 * ratio) / 256;
++      final double rho   = FastMath.rint(256 / ratio) / 256;
+ 
+       final double x3 = x1 - rho * x2;
+       final double y3 = y1 - rho * y2;

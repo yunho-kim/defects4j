@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index 28aee43..ae0a488 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -425,7 +425,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+                          (preRed <= costRelativeTolerance) &&
+                          (ratio <= 2.0)) ||
+                         (delta <= parRelativeTolerance * xNorm)) {
+-                        return current;
++                        return null;
+                     }
+                 }
+ 

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..53d0c75 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -248,7 +248,7 @@ public final class MathUtils {
+             throw new IllegalArgumentException(
+                 "must have n >= k for binomial coefficient (n,k)");
+         }
+-        if (n < 0) {
++        if (n <= 0) {
+             throw new IllegalArgumentException(
+                 "must have n >= 0 for binomial coefficient (n,k)");
+         }

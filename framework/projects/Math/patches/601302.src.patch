@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/GaussNewtonOptimizer.java b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/GaussNewtonOptimizer.java
+index 844ed22..cbb8219 100644
+--- a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/GaussNewtonOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/GaussNewtonOptimizer.java
+@@ -156,7 +156,7 @@ public class GaussNewtonOptimizer extends AbstractLeastSquaresOptimizer {
+ 
+             // Check convergence.
+             if (previous != null) {
+-                converged = checker.converged(getIterations(), previous, current);
++                
+                 if (converged) {
+                     setCost(computeCost(currentResiduals));
+                     return current;

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+index 3fc328d..c72af61 100644
+--- a/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
++++ b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -905,7 +905,7 @@ public class EigenDecompositionImpl implements EigenDecomposition {
+                     double previousEMin = work[4 * i0 + 3];
+                     for (int i = 4 * i0; i < 4 * n0 - 16; i += 4) {
+                         if ((work[i + 3] <= TOLERANCE_2 * work[i]) ||
+-                            (work[i + 2] <= TOLERANCE_2 * sigma)) {
++                            (work[i - 2] <= TOLERANCE_2 * sigma)) {
+                             // insert a split
+                             work[i + 2]  = -sigma;
+                             split        = i / 4;

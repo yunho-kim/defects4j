@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java b/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java
+index ada0a8f..60ddd2c 100644
+--- a/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java
++++ b/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java
+@@ -357,7 +357,7 @@ public class Rotation implements Serializable {
+       k = v2Su2.crossProduct(v3Su3);;
+       c = k.dotProduct(u2.crossProduct(u3));;
+ 
+-      if (c <= 0) {
++      if (c < 0) {
+         // the (q1, q2, q3) vector is aligned with everything
+         // this is really the identity rotation
+         q0 = 1.0;

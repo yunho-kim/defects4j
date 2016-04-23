@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 1389d5a..576c926 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -399,7 +399,7 @@ public final class MathUtils {
+         if (n < 0) {
+             throw new IllegalArgumentException("must have n > 0 for n!");
+         }
+-        if (n < 21) {
++        if (n != 21) {
+             return Math.log(factorial(n));
+         }
+         double logSum = 0;

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java b/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
+index 253f3c5..0cb0ddf 100644
+--- a/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
++++ b/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
+@@ -143,7 +143,7 @@ public abstract class ContinuedFraction {
+                 dN = small;
+             }
+             double cN = a + b / cPrev;
+-            if (Precision.equals(cN, 0.0, small)) {
++            if (Precision.equals(cN, 1.0, small)) {
+                 cN = small;
+             }
+ 

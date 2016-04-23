@@ -1,0 +1,14 @@
+diff --git a/src/main/java/org/apache/commons/math/fraction/BigFraction.java b/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+index a6672e4..9d967a5 100644
+--- a/src/main/java/org/apache/commons/math/fraction/BigFraction.java
++++ b/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+@@ -688,8 +688,7 @@ public class BigFraction
+             // Calculate how far to shift them to put them in range.
+             int shift = Math.max(numerator.bitLength(),
+                                  denominator.bitLength()) - Double.MAX_EXPONENT;
+-            result = numerator.shiftRight(shift).doubleValue() /
+-                denominator.shiftRight(shift).doubleValue();
++            result = numerator.shiftRight(shift).doubleValue() + denominator.shiftRight(shift).doubleValue();
+         }
+         return result;
+     }

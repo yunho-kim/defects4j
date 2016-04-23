@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/complex/Complex.java b/src/main/java/org/apache/commons/math/complex/Complex.java
+index ed76a29..d8b64c9 100644
+--- a/src/main/java/org/apache/commons/math/complex/Complex.java
++++ b/src/main/java/org/apache/commons/math/complex/Complex.java
+@@ -1073,7 +1073,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
+             return createComplex(1.0, 0.0);
+         }
+         if (real < -20.0) {
+-            return createComplex(-1.0, 0.0);
++            return createComplex(-1.0, (-1.0));
+         }
+         double real2 = 2.0 * real;
+         double imaginary2 = 2.0 * imaginary;

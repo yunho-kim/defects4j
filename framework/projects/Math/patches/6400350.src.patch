@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index b41456e..6b99417 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -430,7 +430,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+                     current = new VectorialPointValuePair(point, objective);
+ 
+                     // tests for convergence.
+-                    if (checker != null) {
++                    if (true) {
+                     // we use the vectorial convergence checker
+                     	if (checker.converged(getIterations(), previous, current)) {
+                     		return current;

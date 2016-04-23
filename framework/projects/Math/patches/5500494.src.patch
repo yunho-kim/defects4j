@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/Vector3D.java b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+index 2d915e5..57c35aa 100644
+--- a/src/main/java/org/apache/commons/math/geometry/Vector3D.java
++++ b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+@@ -458,7 +458,7 @@ public class Vector3D implements Serializable {
+ 
+       final double n1 = v1.getNormSq();
+       final double n2 = v2.getNormSq();
+-      if ((n1 * n2) < MathUtils.SAFE_MIN) {
++      if ((n1 - n2) < MathUtils.SAFE_MIN) {
+           return ZERO;
+       }
+ 

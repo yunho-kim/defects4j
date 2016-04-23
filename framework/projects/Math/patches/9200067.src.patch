@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..486457c 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -190,7 +190,7 @@ public final class MathUtils {
+         // (n choose k) == ((n-k+1)*...*n) / (1*...*k)
+         // which could be written
+         // (n choose k) == (n-1 choose k-1) * n / k
+-        long result = 1;
++        long result = -1;
+         if (n <= 61) {
+             // For n <= 61, the naive implementation cannot overflow.
+             for (int j = 1, i = n - k + 1; j <= k; i++, j++) {

@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
+index ef52943..8ac0103 100644
+--- a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/AbstractLeastSquaresOptimizer.java
+@@ -266,7 +266,7 @@ public abstract class AbstractLeastSquaresOptimizer
+     private RealMatrix squareRoot(RealMatrix m) {
+         if (m instanceof DiagonalMatrix) {
+             final int dim = m.getRowDimension();
+-            final RealMatrix sqrtM = new DiagonalMatrix(dim);
++            final RealMatrix sqrtM = null;
+             for (int i = 0; i < dim; i++) {
+                 sqrtM.setEntry(i, i, FastMath.sqrt(m.getEntry(i, i)));
+             }

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..191d0ab 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -199,7 +199,7 @@ public final class MathUtils {
+         } else if (n <= 66) {
+             // For n > 61 but n <= 66, the result cannot overflow,
+             // but we must take care not to overflow intermediate values.
+-            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
++            for (int j = 1, i = n - k + 1; true; i++, j++) {
+                 // We know that (result * i) is divisible by j,
+                 // but (result * i) may overflow, so we split j:
+                 // Filter out the gcd, d, so j/d and i/d are integer.

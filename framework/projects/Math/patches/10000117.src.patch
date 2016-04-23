@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/estimation/AbstractEstimator.java b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+index 8e5fe1a..1992118 100644
+--- a/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
++++ b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+@@ -204,7 +204,7 @@ public abstract class AbstractEstimator implements Estimator {
+             throw new EstimationException("no degrees of freedom ({0} measurements, {1} parameters)",
+                                           new Object[] { new Integer(m), new Integer(p)});
+         }
+-        double[] errors = new double[problem.getUnboundParameters().length];
++        double[] errors = null;
+         final double c = Math.sqrt(getChiSquare(problem) / (m - p));
+         double[][] covar = getCovariances(problem);
+         for (int i = 0; i < errors.length; ++i) {

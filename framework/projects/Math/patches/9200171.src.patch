@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..365f154 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -255,7 +255,7 @@ public final class MathUtils {
+         if ((n == k) || (k == 0)) {
+             return 1d;
+         }
+-        if ((k == 1) || (k == n - 1)) {
++        if (true) {
+             return n;
+         }
+         if (k > n/2) {

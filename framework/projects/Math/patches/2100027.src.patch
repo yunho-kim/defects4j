@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/linear/RectangularCholeskyDecomposition.java b/src/main/java/org/apache/commons/math3/linear/RectangularCholeskyDecomposition.java
+index aba7b98..420b26d 100644
+--- a/src/main/java/org/apache/commons/math3/linear/RectangularCholeskyDecomposition.java
++++ b/src/main/java/org/apache/commons/math3/linear/RectangularCholeskyDecomposition.java
+@@ -92,7 +92,7 @@ public class RectangularCholeskyDecomposition {
+                 index[swapR]          = tmpIndex;
+                 final double[] tmpRow = b[r];
+                 b[r]                  = b[swapR];
+-                b[swapR]              = tmpRow;
++                
+             }
+ 
+             // check diagonal element

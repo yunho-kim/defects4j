@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..fbcb9b8 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -265,7 +265,7 @@ public final class MathUtils {
+             return binomialCoefficient(n,k);
+         }
+         
+-        double result = 1d;
++        double result = (-1.0);
+         for (int i = 1; i <= k; i++) {
+              result *= (double)(n - k + i) / (double)i;
+         }

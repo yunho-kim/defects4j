@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 1389d5a..9af3e87 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -342,7 +342,7 @@ public final class MathUtils {
+      * @throws IllegalArgumentException if n < 0
+      */
+     public static long factorial(final int n) {
+-        if (n < 0) {
++        if (n < 1) {
+             throw new IllegalArgumentException("must have n >= 0 for n!");
+         }
+         if (n > 20) {

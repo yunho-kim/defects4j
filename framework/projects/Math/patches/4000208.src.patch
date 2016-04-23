@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java b/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+index 59dc461..854fbd7 100644
+--- a/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ b/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -235,7 +235,7 @@ public class BracketingNthOrderBrentSolver
+                 final int p = agingA - MAXIMAL_AGING;
+                 final double weightA = (1 << p) - 1;
+                 final double weightB = p + 1;
+-                targetY = (weightA * yA - weightB * REDUCTION_FACTOR * yB) / (weightA + weightB);
++                targetY = (weightA * yA - weightB * REDUCTION_FACTOR * yB) + (weightA + weightB);
+             } else if (agingB >= MAXIMAL_AGING) {
+                 // we keep updating the low bracket, try to compensate this
+                 final int p = agingB - MAXIMAL_AGING;

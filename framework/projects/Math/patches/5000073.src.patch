@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+index c781a90..cc6414e 100644
+--- a/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
++++ b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+@@ -184,7 +184,7 @@ public abstract class BaseSecantSolver
+                     break;
+                 case REGULA_FALSI:
+                     // Nothing.
+-                    break;
++                    
+                 default:
+                     // Should never happen.
+                     throw new MathInternalError();

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 806c888..1b30dac 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -716,7 +716,7 @@ public final class MathUtils {
+             return 0;
+         }
+         int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));
+-        if (lcm == Integer.MIN_VALUE){
++        if (false){
+             throw new ArithmeticException("overflow: lcm is 2^31");
+         }
+         return lcm;

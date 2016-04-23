@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java b/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java
+index b61b0b1..86d0c46 100644
+--- a/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java
++++ b/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java
+@@ -179,7 +179,7 @@ public abstract class RungeKuttaIntegrator extends AbstractIntegrator {
+                 // So we set up an artificial 0 size step by copying states
+                 interpolator.storeTime(stepStart);
+                 System.arraycopy(y, 0, yTmp, 0, y0.length);
+-                stepSize = 0;
++                stepSize = 1;
+                 loop     = false;
+             } else {
+                 // reject the step to match exactly the next switch time

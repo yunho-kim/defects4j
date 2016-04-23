@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/PowellOptimizer.java b/src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/PowellOptimizer.java
+index afe8d2f..ebff03d 100644
+--- a/src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/PowellOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optim/nonlinear/scalar/noderiv/PowellOptimizer.java
+@@ -189,7 +189,7 @@ public class PowellOptimizer
+         double fVal = computeObjectiveValue(x);
+         double[] x1 = x.clone();
+         while (true) {
+-            incrementIterationCount();
++            
+ 
+             double fX = fVal;
+             double fX2 = 0;

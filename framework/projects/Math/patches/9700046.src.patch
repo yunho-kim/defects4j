@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/analysis/BrentSolver.java b/src/java/org/apache/commons/math/analysis/BrentSolver.java
+index 57f64a9..47cddb5 100644
+--- a/src/java/org/apache/commons/math/analysis/BrentSolver.java
++++ b/src/java/org/apache/commons/math/analysis/BrentSolver.java
+@@ -142,7 +142,7 @@ public class BrentSolver extends UnivariateRealSolverImpl {
+                 ret = min;
+             } else if (Math.abs(yMax) <= functionValueAccuracy) {
+                 setResult(max, 0);
+-                ret = max;
++                
+             } else {
+                 // neither value is close to zero and min and max do not bracket root.
+                 throw new IllegalArgumentException

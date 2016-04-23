@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index 28aee43..b43e16a 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -245,7 +245,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+         // outer loop
+         lmPar = 0;
+         boolean firstIteration = true;
+-        VectorialPointValuePair current = new VectorialPointValuePair(point, objective);
++        VectorialPointValuePair current = null;
+         while (true) {
+ 
+             incrementIterationsCounter();

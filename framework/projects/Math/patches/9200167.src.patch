@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..680a8d1 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -253,7 +253,7 @@ public final class MathUtils {
+                 "must have n >= 0 for binomial coefficient (n,k)");
+         }
+         if ((n == k) || (k == 0)) {
+-            return 1d;
++            return 0.0;
+         }
+         if ((k == 1) || (k == n - 1)) {
+             return n;

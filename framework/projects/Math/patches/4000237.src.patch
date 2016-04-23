@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java b/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+index 59dc461..0ac7f29 100644
+--- a/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ b/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -241,7 +241,7 @@ public class BracketingNthOrderBrentSolver
+                 final int p = agingB - MAXIMAL_AGING;
+                 final double weightA = p + 1;
+                 final double weightB = (1 << p) - 1;
+-                targetY = (weightB * yB - weightA * REDUCTION_FACTOR * yA) / (weightA + weightB);
++                targetY = (weightB * yB * (weightA * REDUCTION_FACTOR * yA)) / (weightA + weightB);
+             } else {
+                 // bracketing is balanced, try to find the root itself
+                 targetY = 0;

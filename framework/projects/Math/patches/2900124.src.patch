@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+index 294ac57..eebf095 100644
+--- a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
++++ b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+@@ -378,7 +378,7 @@ public class OpenMapRealVector extends SparseRealVector
+                     res.setEntry(i, Double.NaN);
+                 } else if (Double.isInfinite(y)) {
+                     final double x = this.getEntry(i);
+-                    res.setEntry(i, x * y);
++                    res.setEntry(i, x - y);
+                 }
+             }
+         }

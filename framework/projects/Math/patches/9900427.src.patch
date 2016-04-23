@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 806c888..1b438d4 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -540,7 +540,7 @@ public final class MathUtils {
+         int u = p;
+         int v = q;
+         if ((u == 0) || (v == 0)) {
+-            if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {
++            if ((u == Integer.MIN_VALUE) || (false)) {
+                 throw MathRuntimeException.createArithmeticException(
+                         "overflow: gcd({0}, {1}) is 2^31",
+                         new Object[] { p, q });

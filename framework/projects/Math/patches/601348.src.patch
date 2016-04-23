@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+index 4016131..4e546d6 100644
+--- a/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/jacobian/LevenbergMarquardtOptimizer.java
+@@ -321,7 +321,7 @@ public class LevenbergMarquardtOptimizer
+         boolean firstIteration = true;
+         final ConvergenceChecker<PointVectorValuePair> checker = getConvergenceChecker();
+         while (true) {
+-            incrementIterationCount();
++            
+ 
+             final PointVectorValuePair previous = current;
+ 

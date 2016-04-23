@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+index e418c08..f4b7fb2 100644
+--- a/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
++++ b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+@@ -264,7 +264,7 @@ public class SingularValueDecompositionImpl implements SingularValueDecompositio
+                         }
+                     } else {
+                         for (int j = 0; j < p; ++j) {
+-                            wi[j] = mi * ei0[j] / singularValues[j];
++                            
+                         }
+                     }
+                 }

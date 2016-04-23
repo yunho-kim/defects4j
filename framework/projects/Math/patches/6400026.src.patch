@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index b41456e..4c66d28 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -256,7 +256,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+         double[] oldX    = new double[cols];
+         double[] oldRes  = new double[rows];
+         double[] oldObj  = new double[rows];
+-        double[] qtf     = new double[rows];
++        double[] qtf     = null;
+         double[] work1   = new double[cols];
+         double[] work2   = new double[cols];
+         double[] work3   = new double[cols];

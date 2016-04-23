@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java b/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java
+index f05c878..376769c 100644
+--- a/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java
++++ b/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java
+@@ -47,7 +47,7 @@ public class OpenMapRealMatrix extends AbstractRealMatrix
+      */
+     public OpenMapRealMatrix(int rowDimension, int columnDimension) {
+         super(rowDimension, columnDimension);
+-        long lRow = (long) rowDimension;
++        long lRow = 0L;
+         long lCol = (long) columnDimension;
+         if (lRow * lCol >= (long) Integer.MAX_VALUE) {
+             throw new NumberIsTooLargeException(lRow * lCol, Integer.MAX_VALUE, false);

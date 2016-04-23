@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+index 294ac57..274d61b 100644
+--- a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
++++ b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+@@ -370,7 +370,7 @@ public class OpenMapRealVector extends SparseRealVector
+          *
+          * These special cases are handled below.
+          */
+-        if (v.isNaN() || v.isInfinite()) {
++        if (v.isNaN()) {
+             final int n = getDimension();
+             for (int i = 0; i < n; i++) {
+                 final double y = v.getEntry(i);

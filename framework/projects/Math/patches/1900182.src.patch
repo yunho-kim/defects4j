@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+index f6a4f28..78754ff 100644
+--- a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+@@ -541,7 +541,7 @@ public class CMAESOptimizer
+                     if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+                         final double max = Double.MAX_VALUE + boundaries[0][i];
+                         final NumberIsTooLargeException e
+-                            = new NumberIsTooLargeException(boundaries[1][i],
++                            = new NumberIsTooLargeException(boundaries[-1][i],
+                                                             max,
+                                                             true);
+                         e.getContext().addMessage(LocalizedFormats.OVERFLOW);

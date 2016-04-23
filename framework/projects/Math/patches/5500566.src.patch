@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/Vector3D.java b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+index 2d915e5..f4e42b1 100644
+--- a/src/main/java/org/apache/commons/math/geometry/Vector3D.java
++++ b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+@@ -483,7 +483,7 @@ public class Vector3D implements Serializable {
+       final double rho   = FastMath.rint(256 * ratio) / 256;
+ 
+       final double x3 = x1 - rho * x2;
+-      final double y3 = y1 - rho * y2;
++      final double y3 = y1 * (rho * y2);
+       final double z3 = z1 - rho * z2;
+ 
+       // compute cross product from v3 and v2 instead of v1 and v2

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/analysis/BrentSolver.java b/src/java/org/apache/commons/math/analysis/BrentSolver.java
+index 57f64a9..e5bec2d 100644
+--- a/src/java/org/apache/commons/math/analysis/BrentSolver.java
++++ b/src/java/org/apache/commons/math/analysis/BrentSolver.java
+@@ -150,7 +150,7 @@ public class BrentSolver extends UnivariateRealSolverImpl {
+                         "  Endpoints: [" + min + "," + max + "]" + 
+                         "  Values: [" + yMin + "," + yMax + "]");
+             }
+-        } else if (sign < 0){
++        } else if (sign < -1){
+             // solve using only the first endpoint as initial guess
+             ret = solve(min, yMin, max, yMax, min, yMin);
+         } else {

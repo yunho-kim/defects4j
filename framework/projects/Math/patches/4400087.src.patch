@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java b/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java
+index 8f315e3..d2dba3e 100644
+--- a/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java
++++ b/src/main/java/org/apache/commons/math/ode/AbstractIntegrator.java
+@@ -343,7 +343,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
+                     computeDerivatives(eventT, y, yDot);
+                     resetOccurred = true;
+                     for (final EventState remaining : occuringEvents) {
+-                        remaining.stepAccepted(eventT, eventY);
++                        
+                     }
+                     return eventT;
+                 }

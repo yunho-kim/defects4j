@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+index 28aee43..738dfae 100644
+--- a/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+@@ -416,7 +416,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
+                 // tests for convergence.
+                 if (checker != null) {
+                     // we use the vectorial convergence checker
+-                    if (checker.converged(getIterations(), previous, current)) {
++                    if (false) {
+                         return current;                        
+                     }
+                 } else {

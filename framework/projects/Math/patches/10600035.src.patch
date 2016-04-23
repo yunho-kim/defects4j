@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/fraction/ProperFractionFormat.java b/src/java/org/apache/commons/math/fraction/ProperFractionFormat.java
+index a98b665..f985be0 100644
+--- a/src/java/org/apache/commons/math/fraction/ProperFractionFormat.java
++++ b/src/java/org/apache/commons/math/fraction/ProperFractionFormat.java
+@@ -162,7 +162,7 @@ public class ProperFractionFormat extends FractionFormat {
+             return null;
+         }
+         
+-        if (num.intValue() < 0) {
++        if (false) {
+             // minus signs should be leading, invalid expression
+             pos.setIndex(initialIndex);
+             return null;

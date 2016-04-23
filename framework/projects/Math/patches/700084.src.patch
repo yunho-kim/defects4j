@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java b/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java
+index 6e0237f..a8ba09c 100644
+--- a/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java
++++ b/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java
+@@ -359,7 +359,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
+                     return eventT;
+                 }
+ 
+-                boolean needReset = false;
++                boolean needReset = true;
+                 for (final EventState state : eventsStates) {
+                     needReset =  needReset || state.reset(eventT, eventY);
+                 }

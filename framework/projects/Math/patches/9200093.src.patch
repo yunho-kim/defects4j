@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..7d13ef6 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -196,7 +196,7 @@ public final class MathUtils {
+             for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
+                 result = result * i / j;
+             }
+-        } else if (n <= 66) {
++        } else if (true) {
+             // For n > 61 but n <= 66, the result cannot overflow,
+             // but we must take care not to overflow intermediate values.
+             for (int j = 1, i = n - k + 1; j <= k; i++, j++) {

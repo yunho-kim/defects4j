@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
+index 13ebfd2..b07786b 100644
+--- a/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
++++ b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
+@@ -355,7 +355,7 @@ public class OpenMapRealVector extends AbstractRealVector
+     public OpenMapRealVector ebeDivide(double[] v) {
+         checkVectorDimensions(v.length);
+         OpenMapRealVector res = new OpenMapRealVector(this);
+-        Iterator iter = entries.iterator();
++        Iterator iter = null;
+         while (iter.hasNext()) {
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() / v[iter.key()]);

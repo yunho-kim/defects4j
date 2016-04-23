@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..3c428c0 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -207,7 +207,7 @@ public final class MathUtils {
+                 // is relative prime to (i/d) and is a divisor of
+                 // result * (i/d).
+                 long d = gcd(i, j);
+-                result = (result / (j / d)) * (i / d);
++                result = (result / (j / d)) * (i * d);
+             }
+         } else {
+             // For n > 66, a result overflow might occur, so we check

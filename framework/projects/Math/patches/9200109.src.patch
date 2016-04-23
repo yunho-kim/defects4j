@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..58f869d 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -206,7 +206,7 @@ public final class MathUtils {
+                 // result is divisible by (j/d) because (j/d)
+                 // is relative prime to (i/d) and is a divisor of
+                 // result * (i/d).
+-                long d = gcd(i, j);
++                long d = 0;
+                 result = (result / (j / d)) * (i / d);
+             }
+         } else {

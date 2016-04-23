@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..fbb06a2 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -215,7 +215,7 @@ public final class MathUtils {
+             // unnecessary.
+             for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
+                 long d = gcd(i, j);
+-                result = mulAndCheck((result / (j / d)), (i / d));
++                result = mulAndCheck((result - (j / d)), (i / d));
+             }
+         }
+         return result;

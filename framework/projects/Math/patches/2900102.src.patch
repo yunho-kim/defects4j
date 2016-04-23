@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+index 294ac57..e55f79d 100644
+--- a/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
++++ b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+@@ -348,7 +348,7 @@ public class OpenMapRealVector extends SparseRealVector
+          */
+         final int n = getDimension();
+         for (int i = 0; i < n; i++) {
+-            res.setEntry(i, this.getEntry(i) / v.getEntry(i));
++            res.setEntry(i, this.getEntry(i) - v.getEntry(i));
+         }
+         return res;
+     }

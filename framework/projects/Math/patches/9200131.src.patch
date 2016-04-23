@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..befc16c 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -213,7 +213,7 @@ public final class MathUtils {
+             // For n > 66, a result overflow might occur, so we check
+             // the multiplication, taking care to not overflow
+             // unnecessary.
+-            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
++            for (int j = 1, i = n + k + 1; j <= k; i++, j++) {
+                 long d = gcd(i, j);
+                 result = mulAndCheck((result / (j / d)), (i / d));
+             }

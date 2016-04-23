@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/Vector3D.java b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+index 2d915e5..e1d9b8a 100644
+--- a/src/main/java/org/apache/commons/math/geometry/Vector3D.java
++++ b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+@@ -464,7 +464,7 @@ public class Vector3D implements Serializable {
+ 
+       // rescale both vectors without losing precision,
+       // to ensure their norm are the same order of magnitude
+-      final int deltaExp = (FastMath.getExponent(n1) - FastMath.getExponent(n2)) / 4;
++      final int deltaExp = (FastMath.getExponent(n1) - FastMath.getExponent(n2)) % 4;
+       final double x1    = FastMath.scalb(v1.x, -deltaExp);
+       final double y1    = FastMath.scalb(v1.y, -deltaExp);
+       final double z1    = FastMath.scalb(v1.z, -deltaExp);

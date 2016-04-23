@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..b87c02d 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -312,7 +312,7 @@ public final class MathUtils {
+          * return the log of the exact value 
+          */
+         if (n < 67) {  
+-            return Math.log(binomialCoefficient(n,k));
++            return 0.0;
+         }
+         
+         /*

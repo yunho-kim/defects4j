@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java b/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
+index 253f3c5..4a965d8 100644
+--- a/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
++++ b/src/main/java/org/apache/commons/math3/util/ContinuedFraction.java
+@@ -149,7 +149,7 @@ public abstract class ContinuedFraction {
+ 
+             dN = 1 / dN;
+             final double deltaN = cN * dN;
+-            hN = hPrev * deltaN;
++            hN = hPrev - deltaN;
+ 
+             if (Double.isInfinite(hN)) {
+                 throw new ConvergenceException(LocalizedFormats.CONTINUED_FRACTION_INFINITY_DIVERGENCE,

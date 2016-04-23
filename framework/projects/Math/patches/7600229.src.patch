@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+index e418c08..701d3a8 100644
+--- a/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
++++ b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+@@ -252,7 +252,7 @@ public class SingularValueDecompositionImpl implements SingularValueDecompositio
+                 final double[][] eData = e.getData();
+                 final double[][] wData = new double[n][p];
+                 double[] ei1 = eData[0];
+-                for (int i = 0; i < p; ++i) {
++                for (int i = 1; i < p; ++i) {
+                     final double mi = mainBidiagonal[i];
+                     final double[] ei0 = ei1;
+                     final double[] wi  = wData[i];

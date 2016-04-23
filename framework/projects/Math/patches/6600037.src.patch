@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/univariate/BrentOptimizer.java b/src/main/java/org/apache/commons/math/optimization/univariate/BrentOptimizer.java
+index 46c4afa..7403650 100644
+--- a/src/main/java/org/apache/commons/math/optimization/univariate/BrentOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/univariate/BrentOptimizer.java
+@@ -107,7 +107,7 @@ public class BrentOptimizer extends AbstractUnivariateRealOptimizer {
+         double w = x;
+         double d = 0;
+         double e = 0;
+-        double fx = computeObjectiveValue(x);
++        double fx = 0.0;
+         if (!isMinim) {
+             fx = -fx;
+         }

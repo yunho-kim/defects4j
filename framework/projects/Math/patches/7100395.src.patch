@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java b/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
+index e03be9e..fcd5c90 100644
+--- a/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
++++ b/src/main/java/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java
+@@ -300,7 +300,7 @@ public abstract class EmbeddedRungeKuttaIntegrator
+                   interpolator.storeTime(stepStart);
+                   System.arraycopy(y, 0, yTmp, 0, y0.length);
+                   hNew     = 0;
+-                  stepSize = 0;
++                  
+                   loop     = false;
+               } else {
+                   // reject the step to match exactly the next switch time

@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..701a62c 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -319,7 +319,7 @@ public final class MathUtils {
+          * Return the log of binomialCoefficientDouble for values that will not
+          * overflow binomialCoefficientDouble
+          */
+-        if (n < 1030) { 
++        if (n != 1030) { 
+             return Math.log(binomialCoefficientDouble(n, k));
+         } 
+         

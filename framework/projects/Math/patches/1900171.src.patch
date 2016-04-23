@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+index f6a4f28..d3483f7 100644
+--- a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+@@ -537,7 +537,7 @@ public class CMAESOptimizer
+                 boundaries[1] = uB;
+ 
+                 // Abort early if the normalization will overflow (cf. "encode" method).
+-                for (int i = 0; i < lB.length; i++) {
++                for (int i = 0; i <= lB.length; i++) {
+                     if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+                         final double max = Double.MAX_VALUE + boundaries[0][i];
+                         final NumberIsTooLargeException e

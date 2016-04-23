@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/geometry/Vector3D.java b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+index 2d915e5..41e20cb 100644
+--- a/src/main/java/org/apache/commons/math/geometry/Vector3D.java
++++ b/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+@@ -469,7 +469,7 @@ public class Vector3D implements Serializable {
+       final double y1    = FastMath.scalb(v1.y, -deltaExp);
+       final double z1    = FastMath.scalb(v1.z, -deltaExp);
+       final double x2    = FastMath.scalb(v2.x,  deltaExp);
+-      final double y2    = FastMath.scalb(v2.y,  deltaExp);
++      final double y2    = 0.0;
+       final double z2    = FastMath.scalb(v2.z,  deltaExp);
+ 
+       // we reduce cancellation errors by preconditioning,

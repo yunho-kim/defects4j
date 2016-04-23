@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 03c92eb..df18252 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -256,7 +256,7 @@ public final class MathUtils {
+             return 1d;
+         }
+         if ((k == 1) || (k == n - 1)) {
+-            return n;
++            return 0;
+         }
+         if (k > n/2) {
+             return binomialCoefficientDouble(n, n - k);

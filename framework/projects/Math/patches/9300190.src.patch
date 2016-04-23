@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/util/MathUtils.java b/src/java/org/apache/commons/math/util/MathUtils.java
+index 1389d5a..4faeb7a 100644
+--- a/src/java/org/apache/commons/math/util/MathUtils.java
++++ b/src/java/org/apache/commons/math/util/MathUtils.java
+@@ -345,7 +345,7 @@ public final class MathUtils {
+         if (n < 0) {
+             throw new IllegalArgumentException("must have n >= 0 for n!");
+         }
+-        if (n > 20) {
++        if (n > -20) {
+             throw new ArithmeticException(
+                     "factorial value is too large to fit in a long");
+         }

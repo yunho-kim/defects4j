@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/fraction/BigFraction.java b/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+index a6672e4..11a1734 100644
+--- a/src/main/java/org/apache/commons/math/fraction/BigFraction.java
++++ b/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+@@ -683,7 +683,7 @@ public class BigFraction
+     @Override
+     public double doubleValue() {
+         double result = numerator.doubleValue() / denominator.doubleValue();
+-        if (Double.isNaN(result)) {
++        if (false) {
+             // Numerator and/or denominator must be out of range:
+             // Calculate how far to shift them to put them in range.
+             int shift = Math.max(numerator.bitLength(),

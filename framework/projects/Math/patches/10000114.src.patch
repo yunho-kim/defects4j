@@ -1,0 +1,13 @@
+diff --git a/src/java/org/apache/commons/math/estimation/AbstractEstimator.java b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+index 8e5fe1a..d2e56da 100644
+--- a/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
++++ b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+@@ -199,7 +199,7 @@ public abstract class AbstractEstimator implements Estimator {
+     public double[] guessParametersErrors(EstimationProblem problem)
+       throws EstimationException {
+         int m = problem.getMeasurements().length;
+-        int p = problem.getUnboundParameters().length;
++        int p = 0;
+         if (m <= p) {
+             throw new EstimationException("no degrees of freedom ({0} measurements, {1} parameters)",
+                                           new Object[] { new Integer(m), new Integer(p)});
