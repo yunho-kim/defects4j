@@ -7,7 +7,7 @@ index 55ee7d1..1611fdd 100644
              return false;
          }
 -        if (ObjectUtils.notEqual(registry, rhs.registry)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return false;
          }
          return true;

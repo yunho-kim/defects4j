@@ -7,7 +7,7 @@ index 03c92eb..138efc9 100644
          // (n choose k) == (n-1 choose k-1) * n / k
          long result = 1;
 -        if (n <= 61) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              // For n <= 61, the naive implementation cannot overflow.
              for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
                  result = result * i / j;

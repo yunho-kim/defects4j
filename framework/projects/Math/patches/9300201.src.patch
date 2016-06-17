@@ -7,7 +7,7 @@ index 1389d5a..21f4091 100644
              throw new IllegalArgumentException("must have n >= 0 for n!");
          }
 -        if (n < 21) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return factorial(n);
          }
          return Math.floor(Math.exp(factorialLog(n)) + 0.5);

@@ -9,7 +9,7 @@ index cadb536..a0cb2fd 100644
 -      if (length == 0 ||
 -          Character.isIdentifierIgnorable(s.charAt(0)) ||
 -          !Character.isJavaIdentifierStart(s.charAt(0))) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          return false;
        }
  

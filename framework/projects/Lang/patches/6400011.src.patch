@@ -7,7 +7,7 @@ index 419a0ea..6a834e9 100644
          }
          if (other.getClass() != this.getClass()) {
 -            if (other.getClass().getName().equals(this.getClass().getName())) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  return iValue - getValueInOtherClassLoader(other);
              }
              throw new ClassCastException(

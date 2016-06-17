@@ -7,7 +7,7 @@ index df71405..9f8a91d 100644
       */
      public static int gcd(int u, int v) {
 -        if ((u == 0) || (v == 0)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return (Math.abs(u) + Math.abs(v));
          }
          // keep u and v negative, as negative integers range down to

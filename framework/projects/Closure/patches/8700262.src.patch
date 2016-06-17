@@ -7,7 +7,7 @@ index 6c4ee4a..e8780ee 100644
        if (n.hasOneChild()) {
          Node maybeExpr = n.getFirstChild();
 -        if (maybeExpr.getType() == Token.EXPR_RESULT) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            // IE has a bug where event handlers behave differently when
            // their return value is used vs. when their return value is in
            // an EXPR_RESULT. It's pretty freaking weird. See:

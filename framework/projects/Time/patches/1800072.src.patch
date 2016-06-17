@@ -7,7 +7,7 @@ index 0a19aa6..dce6302 100644
                  (year, monthOfYear, 28,
                   hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
 -            if (instant >= iCutoverMillis) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  throw ex;
              }
          }

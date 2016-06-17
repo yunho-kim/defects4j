@@ -7,7 +7,7 @@ index c97e091..92b7cf6 100644
  
    static Double getStringNumberValue(String rawJsString) {
 -    if (rawJsString.contains("\u000b")) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        // vertical tab is not always whitespace
        return null;
      }

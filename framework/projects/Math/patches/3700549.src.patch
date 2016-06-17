@@ -7,7 +7,7 @@ index ed76a29..153afb8 100644
              return createComplex(1.0, 0.0);
          }
 -        if (real < -20.0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return createComplex(-1.0, 0.0);
          }
          double real2 = 2.0 * real;

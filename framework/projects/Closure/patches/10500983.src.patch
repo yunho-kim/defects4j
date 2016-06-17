@@ -7,7 +7,7 @@ index 657ee0a..d2b5872 100644
      while (elem != null) {
        if (NodeUtil.isImmutableValue(elem)) {
 -        if (sb == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            sb = new StringBuilder();
          } else {
            sb.append(joinString);

@@ -7,7 +7,7 @@ index e20d788..074ff73 100644
      // Copy over any old parameters that aren't in the param list.
      if (!isVarArgs) {
 -      while (oldParameterType != null && !isVarArgs) {
-+      while (false) {
++      while (Boolean.parseBoolean("false")) {
          builder.newParameterFromNode(oldParameterType);
          oldParameterType = oldParameterType.getNext();
        }

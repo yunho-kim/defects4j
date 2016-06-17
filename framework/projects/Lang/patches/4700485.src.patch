@@ -7,7 +7,7 @@ index fd135fd..3b12dd5 100644
              ensureCapacity(size + width);
              String str = (obj == null ? getNullText() : obj.toString());
 -            if (str == null) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  str = "";
              }
              int strLen = str.length();

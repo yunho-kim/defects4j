@@ -7,7 +7,7 @@ index 9f7e890..4bedcfc 100644
              s.remove(new IDKey(value));
              synchronized (HashCodeBuilder.class) {
 -                if (s.isEmpty()) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      REGISTRY.remove();
                  }
              }

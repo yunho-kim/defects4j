@@ -7,7 +7,7 @@ index 57f64a9..188b0c7 100644
                          "  Values: [" + yMin + "," + yMax + "]");
              }
 -        } else if (sign < 0){
-+        } else if (false){
++        } else if (Boolean.parseBoolean("false")){
              // solve using only the first endpoint as initial guess
              ret = solve(min, yMin, max, yMax, min, yMin);
          } else {

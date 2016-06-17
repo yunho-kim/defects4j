@@ -8,7 +8,7 @@ index 8bc7bda..0328437 100644
                  return rValueInfo.getType().evaluate(scope, typeRegistry);
 -              } else if (rValue.getJSType() != null
 -                  && !rValue.getJSType().isUnknownType()) {
-+              } else if (false) {
++              } else if (Boolean.parseBoolean("false")) {
                  // If rValue's type was already computed during scope creation,
                  // then we can safely use that.
                  return rValue.getJSType();

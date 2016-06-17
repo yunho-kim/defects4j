@@ -7,7 +7,7 @@ index 47b8e8a..5b59780 100644
            // issue 668: Don't inline singleton getter methods
            // calls as this confused class removing logic.
 -          if (convention.getSingletonGetterClassName(callNode) != null) {
-+          if (true) {
++          if (Boolean.parseBoolean("true")) {
              return false;
            }
          }

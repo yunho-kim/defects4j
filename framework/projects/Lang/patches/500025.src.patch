@@ -7,7 +7,7 @@ index a7a6051..52c065d 100644
              final char ch1 = str.charAt(1);
              final char ch2 = str.charAt(2);
 -            if (!Character.isUpperCase(ch1) || !Character.isUpperCase(ch2)) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  throw new IllegalArgumentException("Invalid locale format: " + str);
              }
              if (len == 3) {

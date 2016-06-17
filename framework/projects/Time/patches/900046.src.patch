@@ -7,7 +7,7 @@ index afa75d7..b074f55 100644
              return DateTimeZone.UTC;
          }
 -        if (hoursOffset < -23 || hoursOffset > 23) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              throw new IllegalArgumentException("Hours out of range: " + hoursOffset);
          }
          if (minutesOffset < 0 || minutesOffset > 59) {

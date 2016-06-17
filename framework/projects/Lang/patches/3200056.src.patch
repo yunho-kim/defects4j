@@ -7,7 +7,7 @@ index 9f7e890..85d6ba5 100644
      static void register(Object value) {
          synchronized (HashCodeBuilder.class) {
 -            if (getRegistry() == null) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  REGISTRY.set(new HashSet<IDKey>());
              }
          }

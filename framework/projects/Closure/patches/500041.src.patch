@@ -7,7 +7,7 @@ index d03988c..ca609e6 100644
            // Deleting a property has different semantics from deleting
            // a variable, so deleted properties should not be inlined.
 -          if (gramps.isDelProp()) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              return false;
            }
  

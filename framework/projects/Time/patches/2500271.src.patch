@@ -7,7 +7,7 @@ index 81f5872..8140aeb 100644
                  int offsetPrev = getOffset(prev);
                  int diff = offsetPrev - offsetLocal;
 -                if (instantAdjusted - prev <= diff) {
-+                if (true) {
++                if (Boolean.parseBoolean("true")) {
                      return offsetPrev;
                  }
              }

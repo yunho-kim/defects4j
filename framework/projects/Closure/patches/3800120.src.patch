@@ -7,7 +7,7 @@ index 3522e89..1ba3a63 100644
      char prev = getLastChar();
      boolean negativeZero = isNegativeZero(x);
 -    if ((x < 0 || negativeZero) && prev == '-') {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        add(" ");
      }
  

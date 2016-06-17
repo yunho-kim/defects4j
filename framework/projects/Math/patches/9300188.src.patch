@@ -7,7 +7,7 @@ index 1389d5a..5b8959e 100644
       */
      public static long factorial(final int n) {
 -        if (n < 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new IllegalArgumentException("must have n >= 0 for n!");
          }
          if (n > 20) {

@@ -7,7 +7,7 @@ index 8db8abf..3667b9b 100644
  
          // has target class been reached?
 -        if (toClass.equals(cls)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return typeVarAssigns;
          }
  

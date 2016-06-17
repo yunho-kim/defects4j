@@ -7,7 +7,7 @@ index c46ee7d..95fc392 100644
      reachingUses.analyze();
      for (Candidate c : candidates) {
 -      if (c.canInline(t.getScope())) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          c.inlineVariable();
  
          // If definition c has dependencies, then inlining it may have

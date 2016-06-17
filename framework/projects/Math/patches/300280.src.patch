@@ -7,7 +7,7 @@ index 8f83d96..62f9326 100644
          }
  
 -        if (len == 1) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              // Revert to scalar multiplication.
              return a[0] * b[0];
          }

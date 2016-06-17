@@ -7,7 +7,7 @@ index 9aa8602..c7eb930 100644
       */
      public void addMonths(final int months) {
 -        if (months != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              setMillis(getChronology().months().add(getMillis(), months));
          }
      }

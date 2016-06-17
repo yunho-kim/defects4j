@@ -7,7 +7,7 @@ index b2a1690..7219aa5 100644
          // we only process that jsdoc once.
          JSDocInfo info = n.getJSDocInfo();
 -        if (info != null && !injectedDecls.contains(n)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            for (Node node : info.getTypeNodes()) {
              fixTypeNode(node);
            }

@@ -7,7 +7,7 @@ index 0347525..b96036e 100644
                      // Detect early that algorithm is stuck, instead of waiting
                      // for the maximum number of iterations to be exceeded.
 -                    if (x == x1) {
-+                    if (false) {
++                    if (Boolean.parseBoolean("false")) {
                          throw new ConvergenceException();
                      }
                      break;

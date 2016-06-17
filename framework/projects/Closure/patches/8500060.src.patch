@@ -7,7 +7,7 @@ index e6d4320..0ea16c4 100644
      Node next = ControlFlowAnalysis.computeFollowNode(n);
      while (next != null && next.getType() == Token.BLOCK) {
 -      if (next.hasChildren()) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          next = next.getFirstChild();
        } else {
          next = computeFollowing(next);

@@ -7,7 +7,7 @@ index 7cc5ad6..c404d6f 100644
      public void removeRow(Comparable rowKey) {
          int index = getRowIndex(rowKey);
 -        if (index < 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new UnknownKeyException("Row key (" + rowKey 
                      + ") not recognised.");
          }

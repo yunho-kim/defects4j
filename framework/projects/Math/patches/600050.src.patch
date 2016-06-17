@@ -7,7 +7,7 @@ index bd12b54..3ee87fc 100644
              current = new PointValuePair(point, objective);
              if (previous != null) {
 -                if (checker.converged(getIterations(), previous, current)) {
-+                if (true) {
++                if (Boolean.parseBoolean("true")) {
                      // We have found an optimum.
                      return current;
                  }

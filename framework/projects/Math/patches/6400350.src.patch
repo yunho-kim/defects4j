@@ -7,7 +7,7 @@ index b41456e..6b99417 100644
  
                      // tests for convergence.
 -                    if (checker != null) {
-+                    if (true) {
++                    if (Boolean.parseBoolean("true")) {
                      // we use the vectorial convergence checker
                      	if (checker.converged(getIterations(), previous, current)) {
                      		return current;

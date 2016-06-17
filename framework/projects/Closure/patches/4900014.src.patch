@@ -7,7 +7,7 @@ index 0fcb778..8a02840 100644
      }
  
 -    if (declarationRoot.getType() != Token.FUNCTION) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        // Add the block declarations
        findDeclaredNames(declarationRoot, null, renamer);
      }

@@ -7,7 +7,7 @@ index 137765c..038d28f 100644
          }
  
 -        if (divisor.isZero) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return isZero ? NaN : INF;
          }
  

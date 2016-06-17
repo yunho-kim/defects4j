@@ -7,7 +7,7 @@ index 984d56d..48f40f2 100644
          double dev = 0.0d;
          for (int i = 0; i < observed.length; i++) {
 -            if (rescale) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  dev = ((double) observed[i] - ratio * expected[i]);
                  sumSq += dev * dev / (ratio * expected[i]);
              } else {

@@ -7,7 +7,7 @@ index ea9e96a..a79ddc5 100644
          // compute the intersection on infinite line
          Vector2D v2D = line1.intersection(line2);
 -        if (v2D == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return null;
          }
  

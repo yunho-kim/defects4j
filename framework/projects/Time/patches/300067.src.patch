@@ -7,7 +7,7 @@ index 9aa8602..e3827a8 100644
       */
      public void addYears(final int years) {
 -        if (years != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              setMillis(getChronology().years().add(getMillis(), years));
          }
      }

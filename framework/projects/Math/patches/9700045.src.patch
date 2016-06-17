@@ -7,7 +7,7 @@ index 57f64a9..0410a45 100644
                  setResult(min, 0);
                  ret = min;
 -            } else if (Math.abs(yMax) <= functionValueAccuracy) {
-+            } else if (true) {
++            } else if (Boolean.parseBoolean("true")) {
                  setResult(max, 0);
                  ret = max;
              } else {

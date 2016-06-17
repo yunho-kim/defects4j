@@ -7,7 +7,7 @@ index 6ff5e36..1d9013f 100644
          // BAR X
          Number meanValue = dataset.getMeanValue(row, column);
 -        if (meanValue == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return;
          }
  

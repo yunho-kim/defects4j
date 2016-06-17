@@ -7,7 +7,7 @@ index c248002..132c666 100644
                aliasVar.getInitialValue().getQualifiedName();
            transformation.addAlias(name, qualifiedName);
 -        } else if (v.isBleedingFunction()) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
            // Bleeding functions already get a BAD_PARAMETERS error, so just
            // do nothing.
          } else if (parent.getType() == Token.LP) {

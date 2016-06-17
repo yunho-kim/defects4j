@@ -7,7 +7,7 @@ index e75deca..cab39fa 100644
              throw new IllegalArgumentException("The date must not be null");
          }
 -        if (date.getTime() < 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              // handle years in era BC
              GregorianCalendar cal = new GregorianCalendar();
              cal.setTime(date);

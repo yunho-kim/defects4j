@@ -7,7 +7,7 @@ index 9aa8602..e096193 100644
              throw new IllegalArgumentException("Field must not be null");
          }
 -        if (amount != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              setMillis(type.getField(getChronology()).add(getMillis(), amount));
          }
      }

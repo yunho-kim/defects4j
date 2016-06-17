@@ -7,7 +7,7 @@ index aaab0d6..44b4d1b 100644
            // AND/OR, be conservative only consider the READs
            // of the second operand.
 -          if (n.getNext() != null) {
-+          if (true) {
++          if (Boolean.parseBoolean("true")) {
              state = isVariableReadBeforeKill(
                  n.getNext(), variable);
              if (state == VariableLiveness.KILL) {

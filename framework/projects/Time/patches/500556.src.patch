@@ -7,7 +7,7 @@ index 5ea67a7..102117e 100644
                  totalMonths = totalMonths - normalizedMonths;
              }
 -            if (totalMonths != 0) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  throw new UnsupportedOperationException("Unable to normalize as PeriodType is missing either years or months but period has a month/year amount: " + toString());
              }
          }

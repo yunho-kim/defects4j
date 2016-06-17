@@ -7,7 +7,7 @@ index 9d2f97a..2380e83 100644
    private int getNormalizedNodeType(Node n) {
      int type = n.getType();
 -    if (type == Token.NOT) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        TernaryValue value = NodeUtil.getPureBooleanValue(n);
        switch (value) {
          case TRUE:

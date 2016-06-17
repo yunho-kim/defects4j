@@ -7,7 +7,7 @@ index 79c13f0..5c6a342 100644
          // truncate milliseconds
          int millisecs = val.get(Calendar.MILLISECOND);
 -        if (!round || millisecs < 500) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              time = time - millisecs;
              if (field == Calendar.SECOND) {
                  done = true;

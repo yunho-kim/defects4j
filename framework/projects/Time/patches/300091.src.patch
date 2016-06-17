@@ -7,7 +7,7 @@ index 9aa8602..c43da8b 100644
       */
      public void addDays(final int days) {
 -        if (days != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              setMillis(getChronology().days().add(getMillis(), days));
          }
      }

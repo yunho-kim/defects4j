@@ -7,7 +7,7 @@ index 3347689..f50f9b2 100644
       */
      public Fraction reduce() {
 -        if (numerator == 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return equals(ZERO) ? this : ZERO;
          }
          int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);

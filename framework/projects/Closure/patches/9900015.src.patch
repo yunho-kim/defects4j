@@ -11,7 +11,7 @@ index 5108686..bee8aa7 100644
 -           jsDoc.isInterface() ||
 -           jsDoc.hasThisType() ||
 -           jsDoc.isOverride())) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          return false;
        }
  

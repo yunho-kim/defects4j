@@ -7,7 +7,7 @@ index 6ff2771..7a78d0d 100644
              if (i > 0) {
                  if (loopUnitField.isSupported() == false) {
 -                    if (lastUnitField.isSupported()) {
-+                    if (true) {
++                    if (Boolean.parseBoolean("true")) {
                          throw new IllegalArgumentException("Types array must be in order largest-smallest: " +
                                          types[i - 1].getName() + " < " + loopType.getName());
                      } else {

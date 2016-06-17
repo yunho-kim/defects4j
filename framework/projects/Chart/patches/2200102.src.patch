@@ -7,7 +7,7 @@ index 7cc5ad6..036064a 100644
              KeyedObjects rowData = (KeyedObjects) iterator.next();
              int i = rowData.getIndex(columnKey);
 -            if (i >= 0) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  rowData.removeValue(i);
              }
          }

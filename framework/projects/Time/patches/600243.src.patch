@@ -7,7 +7,7 @@ index d1556f5..8598c4d 100644
                          if (iConvertByWeekyear) {
                              int wyear = iGregorianChronology.weekyear().get(instant);
 -                            if (wyear <= 0) {
-+                            if (true) {
++                            if (Boolean.parseBoolean("true")) {
                                  instant = iGregorianChronology.weekyear().add(instant, -1);
                              }
                          } else {

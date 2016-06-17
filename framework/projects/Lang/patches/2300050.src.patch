@@ -7,7 +7,7 @@ index 55ee7d1..cf0e33b 100644
              return false;
          }
 -        if (ObjectUtils.notEqual(getClass(), obj.getClass())) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            return false;
          }
          ExtendedMessageFormat rhs = (ExtendedMessageFormat)obj;

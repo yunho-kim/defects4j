@@ -7,7 +7,7 @@ index 28e52ee..6c9ab51 100644
        LabelInfo li = getLabelInfo(name);
        // This is a label...
 -      if (li.referenced || !removeUnused) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          String newName = getNameForId(li.id);
          if (!name.equals(newName)) {
            // ... and it is used, give it the short name.

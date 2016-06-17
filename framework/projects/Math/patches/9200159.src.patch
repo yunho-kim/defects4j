@@ -7,7 +7,7 @@ index 03c92eb..aa66711 100644
       */
      public static double binomialCoefficientDouble(final int n, final int k) {
 -        if (n < k) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new IllegalArgumentException(
                  "must have n >= k for binomial coefficient (n,k)");
          }

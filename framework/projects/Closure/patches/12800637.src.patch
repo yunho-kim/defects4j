@@ -7,7 +7,7 @@ index 1dc33b7..5a368c0 100644
    static boolean isSimpleNumber(String s) {
      int len = s.length();
 -    if (len == 0) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        return false;
      }
      for (int index = 0; index < len; index++) {

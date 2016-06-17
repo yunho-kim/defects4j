@@ -7,7 +7,7 @@ index cb81694..da35b6d 100644
              DefaultKeyedValues rowData = (DefaultKeyedValues) iterator.next();
              int index = rowData.getIndex(columnKey);
 -            if (index >= 0) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  rowData.removeValue(columnKey);
              }
          }

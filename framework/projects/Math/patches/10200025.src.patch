@@ -7,7 +7,7 @@ index 984d56d..f589c32 100644
          double ratio = 1.0d;
          boolean rescale = false;
 -        if (Math.abs(sumExpected - sumObserved) > 10E-6) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              ratio = sumObserved / sumExpected;
              rescale = true;
          }

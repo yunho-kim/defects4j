@@ -7,7 +7,7 @@ index 294ac57..085b9a9 100644
                  if (Double.isNaN(y)) {
                      res.setEntry(i, Double.NaN);
 -                } else if (Double.isInfinite(y)) {
-+                } else if (false) {
++                } else if (Boolean.parseBoolean("false")) {
                      final double x = this.getEntry(i);
                      res.setEntry(i, x * y);
                  }

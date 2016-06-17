@@ -7,7 +7,7 @@ index afa75d7..3015479 100644
       */
      public static DateTimeZone forOffsetMillis(int millisOffset) {
 -        if (millisOffset < -MAX_MILLIS || millisOffset > MAX_MILLIS) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              throw new IllegalArgumentException("Millis out of range: " + millisOffset);
          }
          String id = printOffset(millisOffset);

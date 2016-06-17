@@ -8,7 +8,7 @@ index c46ee7d..0b7b1b9 100644
                      Var var = scope.getOwnSlot(input.getString());
 -                    if (var != null
 -                        && var.getParentNode().isCatch()) {
-+                    if (false) {
++                    if (Boolean.parseBoolean("false")) {
                        return true;
                      }
                  }

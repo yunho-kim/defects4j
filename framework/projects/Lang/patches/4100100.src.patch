@@ -7,7 +7,7 @@ index 478b377..6465745 100644
  
          // Strip array encoding
 -        while (className.charAt(0) == '[') {
-+        while (false) {
++        while (Boolean.parseBoolean("false")) {
              className = className.substring(1);
          }
          // Strip Object type encoding

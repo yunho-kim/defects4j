@@ -7,7 +7,7 @@ index 60a1b3a..e2241af 100644
              final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
              final double entry = tableau.getEntry(i, col);
 -            if (MathUtils.compareTo(entry, 0, epsilon) > 0) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  final double ratio = rhs / entry;
                  if (ratio < minRatio) {
                      minRatio = ratio;

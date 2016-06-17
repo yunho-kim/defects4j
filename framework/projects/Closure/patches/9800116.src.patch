@@ -7,7 +7,7 @@ index da4ed3e..4a72ce4 100644
          if (block.isFunction) {
            break;
 -        } else if (block.isLoop) {
-+        } else if (true) {
++        } else if (Boolean.parseBoolean("true")) {
            return false;
          }
        }

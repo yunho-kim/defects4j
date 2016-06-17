@@ -7,7 +7,7 @@ index d1caaa8..c01f485 100644
          }
  
 -        if (locale == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              locale = Locale.getDefault();
          }
  

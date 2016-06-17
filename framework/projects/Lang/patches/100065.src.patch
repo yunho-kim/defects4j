@@ -7,7 +7,7 @@ index 70b8d64..a6254a5 100644
              for(int i = pfxLen; i < str.length(); i++) {
                  firstSigDigit = str.charAt(i);
 -                if (firstSigDigit == '0') { // count leading zeroes
-+                if (false) { // count leading zeroes
++                if (Boolean.parseBoolean("false")) { // count leading zeroes
                      pfxLen++;
                  } else {
                      break;

@@ -7,7 +7,7 @@ index 81f5872..8e1af6b 100644
                  }
              }
 -        } else if (offsetLocal > 0) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
              long prev = previousTransition(instantAdjusted);
              if (prev < instantAdjusted) {
                  int offsetPrev = getOffset(prev);

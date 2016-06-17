@@ -155,7 +155,7 @@ index 0d8f7f4..5fd1b0b 100644
                      writer.write(';');
                      i++;
 -                } else if (c > 0x7F) { 
-+                } else if (false) { 
++                } else if (Boolean.parseBoolean("false")) { 
                      writer.write("&#");
                      writer.write(Integer.toString(c, 10));
                      writer.write(';');

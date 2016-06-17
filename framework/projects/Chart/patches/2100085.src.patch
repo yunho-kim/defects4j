@@ -8,7 +8,7 @@ index a973da9..1ec05e0 100644
                          if (!Double.isNaN(maxv)) {
 -                            if (maxv > this.maximumRangeValue || Double.isNaN(
 -                                    this.maximumRangeValue)) {
-+                            if (true) {
++                            if (Boolean.parseBoolean("true")) {
                                  this.maximumRangeValue = maxv;
                                  this.maximumRangeValueRow = r;
                                  this.maximumRangeValueColumn = c;

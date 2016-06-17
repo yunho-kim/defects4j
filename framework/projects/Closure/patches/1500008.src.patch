@@ -7,7 +7,7 @@ index 20196bf..5b9b84e 100644
          }
  
 -        if (n.isDelProp()) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            return true;
          }
  

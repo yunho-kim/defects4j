@@ -7,7 +7,7 @@ index 06988ab..c27c8fa 100644
      // avoid triggering the warnings built into the resolution via properties.
      boolean resolved = resolveViaRegistry(t, enclosing);
 -    if (detectInheritanceCycle()) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        handleTypeCycle(t);
      }
  

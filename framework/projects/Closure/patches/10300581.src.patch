@@ -7,7 +7,7 @@ index ca5edbd..589a324 100644
        // If the property does not exist on the referenced type but the original
        // type is an object type, see if any subtype has the property.
 -      if (foundType == null) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          ObjectType maybeType = ObjectType.cast(
              registry.getGreatestSubtypeWithProperty(type, field));
          // getGreatestSubtypeWithProperty does not guarantee that the property

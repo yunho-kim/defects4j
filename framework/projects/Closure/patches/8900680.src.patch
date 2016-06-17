@@ -7,7 +7,7 @@ index ddccf0d..3e31e5b 100644
      Node greatGreatGramps = greatGramps.getParent();
  
 -    if (rvalue != null && rvalue.getType() == Token.FUNCTION) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        checkForHosedThisReferences(rvalue, refName.docInfo, refName);
      }
  

@@ -8,7 +8,7 @@ index d98be4a..1523d0f 100644
        // Check if the sources need to be re-ordered.
 -      if (options.dependencyOptions.needsManagement() &&
 -          options.closurePass) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          for (CompilerInput input : inputs) {
            // Forward-declare all the provided types, so that they
            // are not flagged even if they are dropped from the process.

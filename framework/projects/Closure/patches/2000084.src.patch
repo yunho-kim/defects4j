@@ -8,7 +8,7 @@ index 86521bd..470cd4c 100644
        Node value = callTarget.getNext();
 -      if (value != null && value.getNext() == null &&
 -          NodeUtil.isImmutableValue(value)) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          Node addition = IR.add(
              IR.string("").srcref(callTarget),
              value.detachFromParent());

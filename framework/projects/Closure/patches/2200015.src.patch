@@ -7,7 +7,7 @@ index 722d225..292cae2 100644
      // these cases when we visit the child, and the peephole passes will
      // fix up the tree in more clever ways when these are removed.
 -    if (n.isExprResult() || n.isBlock()) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        return;
      }
  

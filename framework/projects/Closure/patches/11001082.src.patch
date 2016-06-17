@@ -7,7 +7,7 @@ index fbd46d3..3cea8b8 100644
            // Parameters of the scope function also get a BAD_PARAMETERS
            // error.
 -        } else if (isVar || isFunctionDecl) {
-+        } else if (true) {
++        } else if (Boolean.parseBoolean("true")) {
            boolean isHoisted = NodeUtil.isHoistedFunctionDeclaration(parent);
            Node grandparent = parent.getParent();
            Node value = v.getInitialValue() != null ?

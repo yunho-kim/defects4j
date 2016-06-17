@@ -8,7 +8,7 @@ index bd12b54..10a6465 100644
              // Compute conjugate search direction.
 -            if (getIterations() % n == 0 ||
 -                beta < 0) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  // Break conjugation: reset search direction.
                  searchDirection = steepestDescent.clone();
              } else {

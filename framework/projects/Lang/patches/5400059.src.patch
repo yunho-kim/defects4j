@@ -7,7 +7,7 @@ index 9607953..d204c9b 100644
              }
              char ch3 = str.charAt(3);
 -            if (ch3 == '_') {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  return new Locale(str.substring(0, 2), "", str.substring(4));
              }
              char ch4 = str.charAt(4);

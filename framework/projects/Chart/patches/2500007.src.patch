@@ -7,7 +7,7 @@ index 6ff5e36..4e1e86d 100644
          // standard deviation lines
          Number n = dataset.getStdDevValue(row, column);
 -        if (n != null) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              double valueDelta = n.doubleValue();
              double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() 
                      + valueDelta, dataArea, yAxisLocation);

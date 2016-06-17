@@ -7,7 +7,7 @@ index b26e11e..c430c75 100644
          XYDataItem overwritten = null;
          int index = indexOf(x);
 -        if (index >= 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              XYDataItem existing = (XYDataItem) this.data.get(index);
              try {
                  overwritten = (XYDataItem) existing.clone();

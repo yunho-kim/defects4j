@@ -7,7 +7,7 @@ index d2bbf67..8f18809 100644
              }
          } else {
 -            if (stepStart + stepSize <= t) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  stepSize = t - stepStart;
              }
          }

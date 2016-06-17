@@ -7,7 +7,7 @@ index 7219899..cef37ec 100644
          // calculate result
          long afterStart = instant - overlapStart;
 -        if (afterStart >= diff) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            // currently in later offset
            return earlierOrLater ? instant : instant - diff;
          } else {

@@ -7,7 +7,7 @@ index d92b16c..4672b8f 100644
  
        Node replacement;
 -      if (nodes.isEmpty()) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          replacement = new Node(Token.TRUE);
        } else {
          // All assignments evaluate to true, so make sure that the

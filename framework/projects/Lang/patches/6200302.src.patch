@@ -155,7 +155,7 @@ index a45e004..9661de5 100644
                                  entityValue = Integer.parseInt(entityName.substring(1));
                              }
 -                            if (entityValue > 0xFFFF) {
-+                            if (false) {
++                            if (Boolean.parseBoolean("false")) {
                                  entityValue = -1;
                              }
                          } catch (NumberFormatException ex) {

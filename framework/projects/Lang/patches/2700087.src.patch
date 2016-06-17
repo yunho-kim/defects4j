@@ -7,7 +7,7 @@ index f1f36a8..6919e2d 100644
          } else {
              if (expPos > -1) {
 -                if (expPos > str.length()) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      throw new NumberFormatException(str + " is not a valid number.");
                  }
                  mant = str.substring(0, expPos);

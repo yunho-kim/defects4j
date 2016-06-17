@@ -7,7 +7,7 @@ index 6536d1d..b229cf5 100644
                  }
                  
 -                if (r != null) {
-+                if (true) {
++                if (Boolean.parseBoolean("true")) {
                      Collection c = r.getAnnotations();
                      Iterator i = c.iterator();
                      while (i.hasNext()) {

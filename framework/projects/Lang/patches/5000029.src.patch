@@ -7,7 +7,7 @@ index d1caaa8..7774aae 100644
              key = new Pair(key, timeZone);
          }
 -        if (locale == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              locale = Locale.getDefault();
          }
          key = new Pair(key, locale);

@@ -7,7 +7,7 @@ index f9ce42e..55bc492 100644
  
        // Functions in the "Math" namespace have no side effects.
 -      if (nameNode.getFirstChild().getType() == Token.NAME) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          String namespaceName = nameNode.getFirstChild().getString();
          if (namespaceName.equals("Math")) {
            return false;

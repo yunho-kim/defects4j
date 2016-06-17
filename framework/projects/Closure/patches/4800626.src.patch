@@ -8,7 +8,7 @@ index 09aba12..599b16a 100644
            inferred = false;
 -        } else if (!scope.isDeclared(qName, false) &&
 -                   n.isUnscopedQualifiedName()) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
            inferred = false;
          }
        }

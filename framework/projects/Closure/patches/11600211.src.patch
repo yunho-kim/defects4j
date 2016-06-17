@@ -7,7 +7,7 @@ index accf4c5..b7a844a 100644
  
      boolean hasSideEffects = false;  // empty function case
 -    if (block.hasChildren()) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        Preconditions.checkState(block.hasOneChild());
        Node stmt = block.getFirstChild();
        if (stmt.isReturn()) {

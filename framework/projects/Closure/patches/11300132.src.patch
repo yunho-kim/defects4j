@@ -7,7 +7,7 @@ index 85cee7c..36ed01b 100644
        // allow broken requires to be preserved by the first run to
        // let them be caught in the subsequent run.
 -      if (provided != null || requiresLevel.isOn()) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          parent.detachFromParent();
          compiler.reportCodeChange();
        }

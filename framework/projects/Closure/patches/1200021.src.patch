@@ -7,7 +7,7 @@ index 8361ac9..92827a6 100644
      List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);
      for (DiGraphEdge<Node, Branch> edge : branchEdges) {
 -      if (edge.getValue() == Branch.ON_EX) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          return true;
        }
      }

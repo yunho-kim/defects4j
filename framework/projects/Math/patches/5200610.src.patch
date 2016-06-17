@@ -7,7 +7,7 @@ index ada0a8f..3c28801 100644
        c = k.dotProduct(u2.crossProduct(u3));;
  
 -      if (c <= 0) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          // the (q1, q2, q3) vector is aligned with everything
          // this is really the identity rotation
          q0 = 1.0;

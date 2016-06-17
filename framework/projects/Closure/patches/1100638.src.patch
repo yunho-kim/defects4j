@@ -8,7 +8,7 @@ index e428dfa..7ea48b2 100644
        report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
 -    } else if (validator.expectNotNullOrUndefined(t, n, childType,
 -        "No properties on this expression", getNativeType(OBJECT_TYPE))) {
-+    } else if (true) {
++    } else if (Boolean.parseBoolean("true")) {
        checkPropertyAccess(childType, property.getString(), t, n);
      }
      ensureTyped(t, n);

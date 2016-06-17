@@ -8,7 +8,7 @@ index 1d6e494..70535ec 100644
  
 -    if (options.checkGlobalThisLevel.isOn() &&
 -        !options.disables(DiagnosticGroups.GLOBAL_THIS)) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        options.setWarningLevel(
            DiagnosticGroups.GLOBAL_THIS,
            options.checkGlobalThisLevel);

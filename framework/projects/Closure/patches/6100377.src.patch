@@ -7,7 +7,7 @@ index f9ce42e..229d5a8 100644
        if (nameNode.getFirstChild().getType() == Token.NAME) {
          String namespaceName = nameNode.getFirstChild().getString();
 -        if (namespaceName.equals("Math")) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            return false;
          }
        }

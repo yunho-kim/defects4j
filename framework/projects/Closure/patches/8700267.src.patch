@@ -7,7 +7,7 @@ index 6c4ee4a..9713843 100644
              // We only have to worry about methods with an implicit 'this'
              // param, or this doesn't happen.
 -            if (calledFn.getType() == Token.GETELEM) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                return false;
              } else if (calledFn.getType() == Token.GETPROP &&
                         calledFn.getLastChild().getString().startsWith("on")) {

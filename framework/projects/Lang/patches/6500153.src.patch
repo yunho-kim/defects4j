@@ -7,7 +7,7 @@ index 79c13f0..3912347 100644
          // truncate seconds
          int seconds = val.get(Calendar.SECOND);
 -        if (!done && (!round || seconds < 30)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              time = time - (seconds * 1000L);
              if (field == Calendar.MINUTE) {
                  done = true;

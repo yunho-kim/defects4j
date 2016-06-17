@@ -7,7 +7,7 @@ index 589f673..fc52618 100644
        @Override
        public void visit(NodeTraversal t, Node n, Node parent) {
 -        if (n.isName()) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            Var dep = jsScope.getVar(n.getString());
            if (dep == null) {
              def.unknownDependencies = true;

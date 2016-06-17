@@ -8,7 +8,7 @@ index 6c4ee4a..050820c 100644
                return false;
 -            } else if (calledFn.getType() == Token.GETPROP &&
 -                       calledFn.getLastChild().getString().startsWith("on")) {
-+            } else if (false) {
++            } else if (Boolean.parseBoolean("false")) {
                return false;
              }
            }

@@ -7,7 +7,7 @@ index aad7b65..5b6c7bb 100644
          // compute the intersection on infinite line
          Vector3D v1D = line.intersection(subLine.line);
 -        if (v1D == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return null;
          }
  

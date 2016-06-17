@@ -7,7 +7,7 @@ index 6c4ee4a..f1bc8bb 100644
            // We try to detect this case, and not fold EXPR_RESULTs
            // into other expressions.
 -          if (maybeExpr.getFirstChild().getType() == Token.CALL) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              Node calledFn = maybeExpr.getFirstChild().getFirstChild();
  
              // We only have to worry about methods with an implicit 'this'

@@ -7,7 +7,7 @@ index 589f673..75542f7 100644
          if (n.isName()) {
            Var dep = jsScope.getVar(n.getString());
 -          if (dep == null) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              def.unknownDependencies = true;
            } else {
              def.depends.add(dep);

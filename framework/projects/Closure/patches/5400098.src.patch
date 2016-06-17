@@ -7,7 +7,7 @@ index a87be07..46a2fff 100644
      this.prototype.setOwnerFunction(this);
  
 -    if (oldPrototype != null) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        // Disassociating the old prototype makes this easier to debug--
        // we don't have to worry about two prototypes running around.
        oldPrototype.setOwnerFunction(null);
