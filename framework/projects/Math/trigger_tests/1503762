@@ -3103,7 +3103,7 @@ junit.framework.AssertionFailedError: while integrating monomial x**1 with a 30-
 	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
 	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
 --- org.apache.commons.math3.stat.descriptive.summary.ProductTest::testWeightedConsistency
-junit.framework.AssertionFailedError: expected:<-4.675217357299084E16> but was:<4.6752173572990848E16>
+junit.framework.AssertionFailedError: expected:<-2.726411528158555E20> but was:<2.7264115281585563E20>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:743)
 	at org.junit.Assert.assertEquals(Assert.java:494)
