@@ -7,7 +7,7 @@ index 7cc5ad6..6517c93 100644
          }
          
 -        if (allNull) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              for (int item = 0, itemCount = this.rows.size(); item < itemCount; 
                   item++) {
                  row = (KeyedObjects) this.rows.get(item);

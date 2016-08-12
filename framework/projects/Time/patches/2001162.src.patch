@@ -7,7 +7,7 @@ index ebb4b08..532a47d 100644
                  }
              }
 -            if (best != null) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  bucket.setZone(DateTimeZone.forID(best));
                  return position + best.length();
              }

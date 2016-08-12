@@ -155,7 +155,7 @@ index a45e004..73455c0 100644
                                      }
                                  }
 -                                if (entityValue > 0xFFFF) {
-+                                if (false) {
++                                if (Boolean.parseBoolean("false")) {
                                      entityValue = -1;
                                  }
                              } catch (NumberFormatException e) {

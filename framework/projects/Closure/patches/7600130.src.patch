@@ -7,7 +7,7 @@ index aaab0d6..718390a 100644
            // branch, otherwise it is a conditional branch and the
            // other branch can be ignored.
 -          if (n.getNext() != null && n.getNext().getNext() != null) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              state = checkHookBranchReadBeforeKill(
                  n.getNext(), n.getNext().getNext(), variable);
            }

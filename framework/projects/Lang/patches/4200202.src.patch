@@ -155,7 +155,7 @@ index 0d8f7f4..a037703 100644
              String entityName = this.entityName(c);
              if (entityName == null) {
 -                if (c >= 0x010000 && i < len - 1) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      writer.write("&#");
                      writer.write(Integer.toString(c, 10));
                      writer.write(';');

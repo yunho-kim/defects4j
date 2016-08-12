@@ -7,7 +7,7 @@ index 51da48e..4eedfd5 100644
                  break;
              case 'y': // year (number)
 -                if (tokenLen == 2) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      rule = TwoDigitYearField.INSTANCE;
                  } else {
                      rule = selectNumberRule(Calendar.YEAR, tokenLen < 4 ? 4 : tokenLen);

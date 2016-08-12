@@ -7,7 +7,7 @@ index c248002..176fceb 100644
            // Bleeding functions already get a BAD_PARAMETERS error, so just
            // do nothing.
 -        } else if (parent.getType() == Token.LP) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
            // Parameters of the scope function also get a BAD_PARAMETERS
            // error.
          } else {

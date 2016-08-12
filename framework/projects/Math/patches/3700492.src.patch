@@ -7,7 +7,7 @@ index ed76a29..9550c55 100644
       */
      public Complex tan() {
 -        if (isNaN || Double.isInfinite(real)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return NaN;
          }
          if (imaginary > 20.0) {

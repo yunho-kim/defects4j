@@ -10,7 +10,7 @@ index a87be07..527530f 100644
 -        isNativeObjectType() ||
 -        baseType.isFunctionPrototypeType() ||
 -        !(baseType instanceof PrototypeObjectType)) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
  
        baseType = new PrototypeObjectType(
            registry, this.getReferenceName() + ".prototype", baseType);

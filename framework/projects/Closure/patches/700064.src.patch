@@ -7,7 +7,7 @@ index fa7d47d..48f5c40 100644
        if (value.equals("function")) {
          JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);
 -        if (resultEqualsValue) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            // Objects are restricted to "Function", subtypes are left
            return ctorType.getGreatestSubtype(type);
          } else {

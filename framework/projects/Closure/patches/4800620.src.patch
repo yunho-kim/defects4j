@@ -7,7 +7,7 @@ index 09aba12..b4902f1 100644
        }
  
 -      if (inferred && rhsValue != null && rhsValue.isFunction()) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          // Determining declaration for #2
          if (info != null) {
            inferred = false;

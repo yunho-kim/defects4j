@@ -9,7 +9,7 @@ index 91008e4..e40689c 100644
 -        if (maybeLends != null &&
 -            maybeLends.getLendsName() != null &&
 -            maybeLends.getLendsName().endsWith(".prototype")) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            return false;
          }
        }

@@ -7,7 +7,7 @@ index c93a073..c6b1ceb 100644
                assignedToUnknownValue = true;
              }
 -            if (assign.maybeAliased) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                maybeEscaped = true;
              }
            }

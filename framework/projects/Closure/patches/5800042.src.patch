@@ -7,7 +7,7 @@ index e107faa..769a317 100644
              lhs = lhs.getLastChild();
            }
 -          if (NodeUtil.isName(lhs)) {
-+          if (true) {
++          if (Boolean.parseBoolean("true")) {
              addToSetIfLocal(lhs, kill);
              addToSetIfLocal(lhs, gen);
            } else {

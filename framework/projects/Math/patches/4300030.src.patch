@@ -7,7 +7,7 @@ index da987cd..7541795 100644
              varianceImpl.increment(value);
          }
 -        if (geoMeanImpl != geoMean) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              geoMeanImpl.increment(value);
          }
          n++;

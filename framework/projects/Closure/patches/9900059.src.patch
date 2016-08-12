@@ -8,7 +8,7 @@ index 5108686..450561d 100644
            Node llhs = lhs.getFirstChild();
 -          if (llhs.getType() == Token.GETPROP &&
 -              llhs.getLastChild().getString().equals("prototype")) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              return false;
            }
          }

@@ -7,7 +7,7 @@ index de14c04..4dc3e9b 100644
      if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
        FunctionType fnType = type.toMaybeFunctionType();
 -      if (fnType != null && fnType.hasInstanceType()) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          visitParameterList(t, n, fnType);
          ensureTyped(t, n, fnType.getInstanceType());
        } else {

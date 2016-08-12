@@ -7,7 +7,7 @@ index d16d447..99f9967 100644
              endIndex = endIndex - 1;    // so this is last item BEFORE end
          }
 -        if ((endIndex < 0)  || (endIndex < startIndex)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              emptyRange = true;
          }
          if (emptyRange) {

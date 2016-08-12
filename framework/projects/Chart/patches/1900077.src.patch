@@ -7,7 +7,7 @@ index ec31907..ff77e5e 100644
       */
      public int getDomainAxisIndex(CategoryAxis axis) {
 -        if (axis == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new IllegalArgumentException("Null 'axis' argument.");
          }
          return this.domainAxes.indexOf(axis);

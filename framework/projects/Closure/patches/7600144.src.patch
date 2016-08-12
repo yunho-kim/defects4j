@@ -7,7 +7,7 @@ index aaab0d6..7f5cde7 100644
    private VariableLiveness isVariableReadBeforeKill(
        Node n, String variable) {
 -    if (ControlFlowGraph.isEnteringNewCfgNode(n)) { // Not a FUNCTION
-+    if (true) { // Not a FUNCTION
++    if (Boolean.parseBoolean("true")) { // Not a FUNCTION
        return VariableLiveness.MAYBE_LIVE;
      }
  

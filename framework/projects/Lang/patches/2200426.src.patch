@@ -7,7 +7,7 @@ index bf15a49..75a59a3 100644
      private static int greatestCommonDivisor(int u, int v) {
          // From Commons Math:
 -        if ((u == 0) || (v == 0)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {
                  throw new ArithmeticException("overflow: gcd is 2^31");
              }

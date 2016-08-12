@@ -8,7 +8,7 @@ index f86625f..4990ed1 100644
  
 -      if (!name.inExterns && name.globalSets == 1 && name.localSets == 0 &&
 -          name.aliasingGets > 0) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          // {@code name} meets condition (b). Find all of its local aliases
          // and try to inline them.
          List<Ref> refs = Lists.newArrayList(name.getRefs());

@@ -7,7 +7,7 @@ index 89e6739..7d25936 100644
                // abbreviation, such as EST in Australia [1716305]
                // we handle this by appending "-Summer", cf ZoneInfoCompiler
 -              if (setEn[2].equals(setEn[4])) {
-+              if (true) {
++              if (Boolean.parseBoolean("true")) {
                    byNameKeyCache.put(setEn[4] + "-Summer", new String[] {setLoc[4], setLoc[3]});
                } else {
                    byNameKeyCache.put(setEn[4], new String[] {setLoc[4], setLoc[3]});

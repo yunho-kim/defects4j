@@ -7,7 +7,7 @@ index a799057..5926554 100644
  
          if (start == 0 && end == 0) {
 -            if (chars != null) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  end = chars.length;
              } else {
                  if (!letters && !numbers) {

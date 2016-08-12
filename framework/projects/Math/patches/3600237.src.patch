@@ -7,7 +7,7 @@ index a6672e4..11a1734 100644
      public double doubleValue() {
          double result = numerator.doubleValue() / denominator.doubleValue();
 -        if (Double.isNaN(result)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              // Numerator and/or denominator must be out of range:
              // Calculate how far to shift them to put them in range.
              int shift = Math.max(numerator.bitLength(),

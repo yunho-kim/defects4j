@@ -7,7 +7,7 @@ index bf15a49..1d15582 100644
          }
          //if either operand is abs 1, return 1:
 -        if (Math.abs(u) == 1 || Math.abs(v) == 1) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return 1;
          }
          // keep u and v negative, as negative integers range down to

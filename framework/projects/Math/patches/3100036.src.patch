@@ -7,7 +7,7 @@ index 253f3c5..26dbdd2 100644
              }
              double cN = a + b / cPrev;
 -            if (Precision.equals(cN, 0.0, small)) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  cN = small;
              }
  

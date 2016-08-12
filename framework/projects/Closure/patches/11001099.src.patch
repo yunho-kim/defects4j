@@ -7,7 +7,7 @@ index fbd46d3..5915857 100644
              grandparent.replaceChild(parent, varNode);
            } else {
 -            if (value != null) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                // If this is a VAR, we can just detach the expression and
                // the tree will still be valid.
                value.detachFromParent();

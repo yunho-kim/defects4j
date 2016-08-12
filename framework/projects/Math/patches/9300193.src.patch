@@ -7,7 +7,7 @@ index 1389d5a..b2171ab 100644
              throw new IllegalArgumentException("must have n >= 0 for n!");
          }
 -        if (n > 20) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new ArithmeticException(
                      "factorial value is too large to fit in a long");
          }

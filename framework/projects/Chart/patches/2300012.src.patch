@@ -7,7 +7,7 @@ index d2b24c6..90c341b 100644
          }
          MinMaxCategoryRenderer that = (MinMaxCategoryRenderer) obj;
 -        if (this.plotLines != that.plotLines) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return false;
          }
          if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {

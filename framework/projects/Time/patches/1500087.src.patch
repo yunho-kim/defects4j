@@ -7,7 +7,7 @@ index 1e045b2..5ce5892 100644
          switch (val2) {
              case -1:
 -                if (val1 == Long.MIN_VALUE) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      throw new ArithmeticException("Multiplication overflows a long: " + val1 + " * " + val2);
                  }
                  return -val1;

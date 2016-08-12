@@ -7,7 +7,7 @@ index fb6be1e..aef0ac9 100644
      ObjectType constraintObj =
          ObjectType.cast(constraint.restrictByNotNullOrUndefined());
 -    if (constraintObj != null) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        type.matchConstraint(constraintObj);
      }
    }

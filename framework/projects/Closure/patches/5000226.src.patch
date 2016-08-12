@@ -8,7 +8,7 @@ index afaf85a..1141d94 100644
  
 -    if (right != null && right.getType() == Token.STRING
 -        && ",".equals(right.getString())) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        // "," is the default, it doesn't need to be explicit
        n.removeChild(right);
        reportCodeChange();

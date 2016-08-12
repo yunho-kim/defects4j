@@ -7,7 +7,7 @@ index b05fbc4..139e2b6 100644
        // If there are no parameters left in the list, then the while loop
        // above implies that this must be a var_args function.
 -      if (parameters.hasNext()) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          parameter = parameters.next();
        }
        argument = arguments.next();

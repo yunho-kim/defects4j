@@ -7,7 +7,7 @@ index 5d831f7..14399c6 100644
                      index));
          }
 -        if (markers == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return false;
          }
          boolean removed = markers.remove(marker);

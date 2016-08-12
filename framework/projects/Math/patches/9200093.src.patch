@@ -7,7 +7,7 @@ index 03c92eb..7d13ef6 100644
                  result = result * i / j;
              }
 -        } else if (n <= 66) {
-+        } else if (true) {
++        } else if (Boolean.parseBoolean("true")) {
              // For n > 61 but n <= 66, the result cannot overflow,
              // but we must take care not to overflow intermediate values.
              for (int j = 1, i = n - k + 1; j <= k; i++, j++) {

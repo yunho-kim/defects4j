@@ -7,7 +7,7 @@ index de1d1c2..f313354 100644
      // the name for them.
      JSType maybeTypeOfThis = safeResolve(typeOfThis, t, scope);
 -    if (maybeTypeOfThis != null) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        maybeTypeOfThis = maybeTypeOfThis.restrictByNotNullOrUndefined();
      }
      if (maybeTypeOfThis instanceof ObjectType) {

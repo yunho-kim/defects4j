@@ -7,7 +7,7 @@ index b26e11e..7f4f723 100644
              throw new IllegalArgumentException("Null 'x' argument.");
          }
 -        if (this.allowDuplicateXValues) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              add(x, y);
              return null;
          }

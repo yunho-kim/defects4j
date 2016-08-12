@@ -7,7 +7,7 @@ index a08eac5..e4450d2 100644
              if (x < (mean - 20 * standardDeviation)) { // JDK 1.5 blows at 38
                  return 0.0d;
 -            } else if (x > (mean + 20 * standardDeviation)) {
-+            } else if (false) {
++            } else if (Boolean.parseBoolean("false")) {
                  return 1.0d;
              } else {
                  throw ex;

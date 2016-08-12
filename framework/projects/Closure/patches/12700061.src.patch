@@ -7,7 +7,7 @@ index e6d88a8..7e3fc12 100644
        if (parent == null || parent.isFunction()) {
          return false;
 -      } else if (NodeUtil.isTryFinallyNode(parent, child)) {
-+      } else if (true) {
++      } else if (Boolean.parseBoolean("true")) {
          return true;
        } else {
          return inFinally(parent.getParent(), parent);

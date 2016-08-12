@@ -7,7 +7,7 @@ index b5a3c1b..a378d83 100644
          if (functionName.equals(qualifiedName)) {
            Node target = callee.getNext();
 -          if (target != null && target.getType() == Token.STRING) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              className = target.getString();
            }
          }

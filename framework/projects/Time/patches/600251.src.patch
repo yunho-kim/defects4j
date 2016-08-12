@@ -7,7 +7,7 @@ index d1556f5..059f536 100644
                          } else {
                              int year = iGregorianChronology.year().get(instant);
 -                            if (year <= 0) {
-+                            if (true) {
++                            if (Boolean.parseBoolean("true")) {
                                  instant = iGregorianChronology.year().add(instant, -1);
                              }
                          }

@@ -7,7 +7,7 @@ index da4ed3e..43f8bdb 100644
          if (block.isFunction) {
            break;
 -        } else if (block.isLoop) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
            return false;
          }
        }

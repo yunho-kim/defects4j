@@ -9,7 +9,7 @@ index 4472638..844fd7c 100644
 -      if (n != null && NodeUtil.isVarOrSimpleAssignLhs(n, assign)
 -          && n.getType() == Token.GETPROP
 -          && assign.getParent().getType() == Token.EXPR_RESULT) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          // We want to exclude the assignment itself from the usage list
          boolean isChainedProperty =
              n.getFirstChild().getType() == Token.GETPROP;

@@ -7,7 +7,7 @@ index fbd46d3..be270bc 100644
            // First, we need to free up the function expression (EXPR)
            // to be used in another expression.
 -          if (isFunctionDecl) {
-+          if (true) {
++          if (Boolean.parseBoolean("true")) {
              // Replace "function NAME() { ... }" with "var NAME;".
              Node existingName = v.getNameNode();
  

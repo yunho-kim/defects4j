@@ -7,7 +7,7 @@ index 327b2ae..6d7a278 100644
          for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
              final double entry = tableau.getEntry(0, i);
 -            if (Precision.compareTo(entry, 0d, epsilon) > 0) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  columnsToDrop.add(i);
              }
          }

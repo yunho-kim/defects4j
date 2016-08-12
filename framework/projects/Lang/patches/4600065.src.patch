@@ -7,7 +7,7 @@ index d4f98ec..132b658 100644
                          break;
                      case '/' :
 -                        if (escapeForwardSlash) {
-+                        if (false) {
++                        if (Boolean.parseBoolean("false")) {
                              out.write('\\');
                          }
                          out.write('/');

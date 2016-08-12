@@ -7,7 +7,7 @@ index c6b70c5..c170928 100644
      @Override
      Node processForInLoop(ForInLoop loopNode) {
 -      if (loopNode.isForEach()) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          errorReporter.error(
              "unsupported language extension: for each",
              sourceName,

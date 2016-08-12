@@ -8,7 +8,7 @@ index 7192408..1e6369b 100644
      int lineBaseOffset = 1;
 -    if (generator instanceof SourceMapGeneratorV1
 -        || generator instanceof SourceMapGeneratorV2) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        lineBaseOffset = 0;
      }
  

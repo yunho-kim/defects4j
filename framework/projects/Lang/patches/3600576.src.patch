@@ -7,7 +7,7 @@ index 0d30b22..c7c782e 100644
              }
              if (chars[i] == '.') {
 -                if (hasDecPoint || hasExp) {
-+                if (true) {
++                if (Boolean.parseBoolean("true")) {
                      // two decimal points or dec in exponent
                      return false;
                  }

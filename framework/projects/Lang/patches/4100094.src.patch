@@ -7,7 +7,7 @@ index 478b377..d89ea52 100644
       */
      public static String getPackageName(String className) {
 -        if (className == null || className.length() == 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return StringUtils.EMPTY;
          }
  

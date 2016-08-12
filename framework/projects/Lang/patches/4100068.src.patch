@@ -7,7 +7,7 @@ index 478b377..76fa7a4 100644
          }
  
 -        if (reverseAbbreviationMap.containsKey(className)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              className = reverseAbbreviationMap.get(className);
          }
  

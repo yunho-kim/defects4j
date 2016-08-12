@@ -7,7 +7,7 @@ index 03c92eb..365f154 100644
              return 1d;
          }
 -        if ((k == 1) || (k == n - 1)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return n;
          }
          if (k > n/2) {

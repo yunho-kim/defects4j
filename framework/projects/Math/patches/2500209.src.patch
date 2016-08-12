@@ -7,7 +7,7 @@ index c7af9ae..57b11ee 100644
                  a = 0.5 * (yMax - yMin);
              } else {
 -                if (c2 == 0) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      // In some ill-conditioned cases (cf. MATH-844), the guesser
                      // procedure cannot produce sensible results.
                      throw new MathIllegalStateException(LocalizedFormats.ZERO_DENOMINATOR);

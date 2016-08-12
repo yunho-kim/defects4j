@@ -7,7 +7,7 @@ index 7219899..ae5770d 100644
          long offsetBefore = getOffset(instantBefore);
          long offsetAfter = getOffset(instantAfter);
 -        if (offsetBefore <= offsetAfter) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return instant;  // not an overlap (less than is a gap, equal is normal case)
          }
          

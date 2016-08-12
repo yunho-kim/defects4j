@@ -7,7 +7,7 @@ index accf4c5..490ef3f 100644
        if (fnParam != null) {
          if (cArg != null) {
 -          if (hasSideEffects && NodeUtil.canBeSideEffected(cArg)) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              return CanInlineResult.NO;
            }
  

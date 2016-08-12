@@ -7,7 +7,7 @@ index cfdccbe..f083757 100644
            boolean isEOC = token == JsDocToken.EOC;
            if (!isEOC) {
 -            if (lineStartChar != -1 && option == WhitespaceOption.PRESERVE) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                int numSpaces = stream.getCharno() - lineStartChar;
                for (int i = 0; i < numSpaces; i++) {
                  builder.append(' ');

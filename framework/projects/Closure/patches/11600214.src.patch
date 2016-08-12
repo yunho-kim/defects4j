@@ -7,7 +7,7 @@ index accf4c5..1310aab 100644
        Preconditions.checkState(block.hasOneChild());
        Node stmt = block.getFirstChild();
 -      if (stmt.isReturn()) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          hasSideEffects = NodeUtil.mayHaveSideEffects(
              stmt.getFirstChild(), compiler);
        }

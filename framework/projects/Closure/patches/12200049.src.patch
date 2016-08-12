@@ -7,7 +7,7 @@ index 936af02..a6e302b 100644
    private void handleBlockComment(Comment comment) {
      Pattern p = Pattern.compile("(/|(\n[ \t]*))\\*[ \t]*@[a-zA-Z]");
 -    if (p.matcher(comment.getValue()).find()) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        errorReporter.warning(
            SUSPICIOUS_COMMENT_WARNING,
            sourceName,

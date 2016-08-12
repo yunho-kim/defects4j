@@ -7,7 +7,7 @@ index 657ee0a..bec1038 100644
      }
  
 -    if (sb != null) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        // + 2 for the quotes.
        foldedSize += sb.length() + 2;
        arrayFoldedChildren.add(Node.newString(sb.toString()));

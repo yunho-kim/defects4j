@@ -7,7 +7,7 @@ index d96c916..52c486b 100644
                // variables that are still part of the objective function
                coefficients[i] = 0;
 -          } else if (basicRows.contains(basicRow)) {
-+          } else if (false) {
++          } else if (Boolean.parseBoolean("false")) {
                // if multiple variables can take a given value
                // then we choose the first and set the rest equal to 0
                coefficients[i] = 0 - (restrictToNonNegative ? 0 : mostNegative);

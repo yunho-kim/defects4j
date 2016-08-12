@@ -7,7 +7,7 @@ index fbd46d3..5ef04e9 100644
                  newDecl.getFirstChild().getFirstChild(), n, name);
  
 -            if (isHoisted) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                grandparent.addChildToFront(newDecl);
              } else {
                grandparent.addChildBefore(newDecl, varNode);

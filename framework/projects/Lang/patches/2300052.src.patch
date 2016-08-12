@@ -7,7 +7,7 @@ index 55ee7d1..916e376 100644
          }
          ExtendedMessageFormat rhs = (ExtendedMessageFormat)obj;
 -        if (ObjectUtils.notEqual(toPattern, rhs.toPattern)) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return false;
          }
          if (ObjectUtils.notEqual(registry, rhs.registry)) {

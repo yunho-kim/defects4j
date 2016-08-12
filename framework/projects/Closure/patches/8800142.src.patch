@@ -7,7 +7,7 @@ index 879056f..da80981 100644
          Node rhs = n.getNext();
          VariableLiveness state = isVariableReadBeforeKill(rhs, variable);
 -        if (state == VariableLiveness.READ) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            return state;
          }
          return VariableLiveness.KILL;

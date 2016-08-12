@@ -7,7 +7,7 @@ index 0d30b22..b0ce3a6 100644
              dec = null;
          }
 -        if (!Character.isDigit(lastChar) && lastChar != '.') {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              if (expPos > -1 && expPos < str.length() - 1) {
                  exp = str.substring(expPos + 1, str.length() - 1);
              } else {

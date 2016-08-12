@@ -7,7 +7,7 @@ index 0af61d0..696f392 100644
             block != null; block = block.getParent()) {
          if (block.isFunction) {
 -          if (ref.getSymbol().getScope() != ref.scope) {
-+          if (true) {
++          if (Boolean.parseBoolean("true")) {
              return false;
            }
            break;

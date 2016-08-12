@@ -7,7 +7,7 @@ index 81a7d89..94bad9c 100644
    public void matchConstraint(ObjectType constraintObj) {
      // We only want to match contraints on anonymous types.
 -    if (hasReferenceName()) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        return;
      }
  

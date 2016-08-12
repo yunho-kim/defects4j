@@ -7,7 +7,7 @@ index e418c08..06fc299 100644
                      final double[] ei0 = ei1;
                      final double[] wi  = wData[i];
 -                    if (i < m - 1) {
-+                    if (false) {
++                    if (Boolean.parseBoolean("false")) {
                          ei1 = eData[i + 1];
                          final double si = secondaryBidiagonal[i];
                          for (int j = 0; j < p; ++j) {

@@ -7,7 +7,7 @@ index 07761aa..80e09d1 100644
        if (name == null) {
          int functionType = functionNode.getFunctionType();
 -        if (functionType != FunctionNode.FUNCTION_EXPRESSION) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
            errorReporter.error(
              "unnamed function statement",
              sourceName,

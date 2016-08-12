@@ -7,7 +7,7 @@ index 6a3e9e0..9cc15c8 100644
      }
      Node n = first;
 -    if (n == null) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        throw new RuntimeException("node is not a child");
      }
  

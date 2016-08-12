@@ -7,7 +7,7 @@ index a7a6051..9078fc9 100644
          final char ch0 = str.charAt(0);
          if (ch0 == '_') {
 -            if (len < 3) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  throw new IllegalArgumentException("Invalid locale format: " + str);
              }
              final char ch1 = str.charAt(1);

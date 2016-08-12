@@ -7,7 +7,7 @@ index d2bbf67..d11194e 100644
  
          stepSize = hNew;
 -        if (forward) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              if (stepStart + stepSize >= t) {
                  stepSize = t - stepStart;
              }

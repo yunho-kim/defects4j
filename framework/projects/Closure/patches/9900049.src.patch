@@ -7,7 +7,7 @@ index 5108686..b0b051f 100644
          // Only traverse the right side if it's not an assignment to a prototype
          // property or subproperty.
 -        if (NodeUtil.isGet(lhs)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            if (lhs.getType() == Token.GETPROP &&
                lhs.getLastChild().getString().equals("prototype")) {
              return false;

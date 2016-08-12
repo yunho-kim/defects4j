@@ -9,7 +9,7 @@ index f57ae14..43fac86 100644
 -    if (type.isFunctionPrototypeType() ||
 -        (type.toObjectType() != null &&
 -         type.toObjectType().getConstructor() != null)) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        return type.toString();
      }
  

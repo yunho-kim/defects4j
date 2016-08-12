@@ -7,7 +7,7 @@ index ca5edbd..bef71fc 100644
          // is defined on the returned type, it just indicates that it might be,
          // so we have to double check.
 -        if (maybeType != null && maybeType.hasOwnProperty(field)) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            foundType = maybeType;
          }
        }

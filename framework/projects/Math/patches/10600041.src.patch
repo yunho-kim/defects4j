@@ -7,7 +7,7 @@ index a98b665..4e1a710 100644
          }
          
 -        if (den.intValue() < 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              // minus signs must be leading, invalid
              pos.setIndex(initialIndex);
              return null;

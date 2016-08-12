@@ -8,7 +8,7 @@ index 3fc328d..e76652e 100644
                      for (int i = 4 * i0; i < 4 * n0 - 16; i += 4) {
 -                        if ((work[i + 3] <= TOLERANCE_2 * work[i]) ||
 -                            (work[i + 2] <= TOLERANCE_2 * sigma)) {
-+                        if (true) {
++                        if (Boolean.parseBoolean("true")) {
                              // insert a split
                              work[i + 2]  = -sigma;
                              split        = i / 4;

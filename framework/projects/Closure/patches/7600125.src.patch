@@ -7,7 +7,7 @@ index aaab0d6..e45c2b3 100644
              state = isVariableReadBeforeKill(
                  n.getNext(), variable);
 -            if (state == VariableLiveness.KILL) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                state = VariableLiveness.MAYBE_LIVE;
              }
            }

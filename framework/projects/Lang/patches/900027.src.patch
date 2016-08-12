@@ -7,7 +7,7 @@ index 38857c7..118e8ca 100644
              currentStrategy= nextStrategy;
          }
 -        if (patternMatcher.regionStart() != patternMatcher.regionEnd()) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              throw new IllegalArgumentException("Failed to parse \""+pattern+"\" ; gave up at index "+patternMatcher.regionStart());
          }
          if(currentStrategy.addRegex(this, regex)) {

@@ -7,7 +7,7 @@ index b0d114e..626b286 100644
          Integer row = null;
          for (int i = getNumObjectiveFunctions(); i < getHeight(); i++) {
 -            if (MathUtils.equals(getEntry(i, col), 1.0, epsilon) && (row == null)) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  row = i;
              } else if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
                  return null;

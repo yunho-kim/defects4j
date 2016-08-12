@@ -7,7 +7,7 @@ index c115e10..dbb2cb0 100644
     */
    private Node parseContextTypeExpression(JsDocToken token) {
 -    if (token == JsDocToken.QMARK) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        return newNode(Token.QMARK);
      } else {
        return parseBasicTypeExpression(token);

@@ -7,7 +7,7 @@ index 81f5872..c319752 100644
          } else if (offsetLocal > 0) {
              long prev = previousTransition(instantAdjusted);
 -            if (prev < instantAdjusted) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  int offsetPrev = getOffset(prev);
                  int diff = offsetPrev - offsetLocal;
                  if (instantAdjusted - prev <= diff) {

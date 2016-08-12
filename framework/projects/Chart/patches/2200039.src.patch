@@ -7,7 +7,7 @@ index 7cc5ad6..795493a 100644
          KeyedObjects rowData = (KeyedObjects) this.rows.get(row);
          int index = rowData.getIndex(columnKey);
 -        if (index >= 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return rowData.getObject(index);
          }
          else {

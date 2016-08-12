@@ -7,7 +7,7 @@ index 806c888..1b30dac 100644
          }
          int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));
 -        if (lcm == Integer.MIN_VALUE){
-+        if (false){
++        if (Boolean.parseBoolean("false")){
              throw new ArithmeticException("overflow: lcm is 2^31");
          }
          return lcm;

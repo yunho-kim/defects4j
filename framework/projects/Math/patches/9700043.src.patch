@@ -7,7 +7,7 @@ index 57f64a9..1116f47 100644
          if (sign > 0) {
              // check if either value is close to a zero
 -            if (Math.abs(yMin) <= functionValueAccuracy) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  setResult(min, 0);
                  ret = min;
              } else if (Math.abs(yMax) <= functionValueAccuracy) {

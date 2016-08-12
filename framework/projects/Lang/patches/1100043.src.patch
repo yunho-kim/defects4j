@@ -7,7 +7,7 @@ index 9dfee22..ea1e34f 100644
              }
          } else {
 -            if (end <= start) {
-+            if (true) {
++            if (Boolean.parseBoolean("true")) {
                  throw new IllegalArgumentException("Parameter end (" + end + ") must be greater than start (" + start + ")");
              }
          }

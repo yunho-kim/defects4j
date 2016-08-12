@@ -7,7 +7,7 @@ index 8023324..18e0f09 100644
        // For example: "return foo;"
        append(" ");
 -    } else if (c == '/' && getLastChar() == '/') {
-+    } else if (false) {
++    } else if (Boolean.parseBoolean("false")) {
        // Do not allow a forward slash to appear after a DIV.
        // For example,
        // REGEXP DIV REGEXP

@@ -7,7 +7,7 @@ index 8268339..e248f7d 100644
  
        // If this is aliased, then its properties can't be collapsed either.
 -      if (aliasingGets > 0) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          return false;
        }
  

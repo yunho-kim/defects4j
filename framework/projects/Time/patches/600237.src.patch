@@ -7,7 +7,7 @@ index d1556f5..152a7f3 100644
                      // Only adjust if gap fully crossed.
                      if (instant + iGapDuration < iCutover) {
 -                        if (iConvertByWeekyear) {
-+                        if (false) {
++                        if (Boolean.parseBoolean("false")) {
                              int wyear = iGregorianChronology.weekyear().get(instant);
                              if (wyear <= 0) {
                                  instant = iGregorianChronology.weekyear().add(instant, -1);

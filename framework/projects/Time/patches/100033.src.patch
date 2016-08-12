@@ -7,7 +7,7 @@ index 6ff2771..b6f5ecf 100644
              DurationField loopUnitField = loopType.getDurationType().getField(iChronology);
              if (i > 0) {
 -                if (loopUnitField.isSupported() == false) {
-+                if (false) {
++                if (Boolean.parseBoolean("false")) {
                      if (lastUnitField.isSupported()) {
                          throw new IllegalArgumentException("Types array must be in order largest-smallest: " +
                                          types[i - 1].getName() + " < " + loopType.getName());

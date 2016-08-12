@@ -7,7 +7,7 @@ index 9aa8602..32393fb 100644
       */
      public void addWeeks(final int weeks) {
 -        if (weeks != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              setMillis(getChronology().weeks().add(getMillis(), weeks));
          }
      }

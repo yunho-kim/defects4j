@@ -7,7 +7,7 @@ index f9943a1..049ee9e 100644
            if (info != null &&
                info.getLendsName() != null) {
 -            if (lentObjectLiterals == null) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                lentObjectLiterals = Lists.newArrayList();
              }
              lentObjectLiterals.add(n);

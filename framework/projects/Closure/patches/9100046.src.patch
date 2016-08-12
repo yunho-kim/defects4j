@@ -7,7 +7,7 @@ index 91008e4..bda5833 100644
        // Don't traverse functions that are getting lent to a prototype.
        Node gramps = parent.getParent();
 -      if (NodeUtil.isObjectLitKey(parent, gramps)) {
-+      if (false) {
++      if (Boolean.parseBoolean("false")) {
          JSDocInfo maybeLends = gramps.getJSDocInfo();
          if (maybeLends != null &&
              maybeLends.getLendsName() != null &&

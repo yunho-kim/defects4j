@@ -7,7 +7,7 @@ index 06988ab..814d145 100644
  
      resolveViaProperties(t, enclosing);
 -    if (detectInheritanceCycle()) {
-+    if (true) {
++    if (Boolean.parseBoolean("true")) {
        handleTypeCycle(t);
      }
  

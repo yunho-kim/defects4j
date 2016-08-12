@@ -9,7 +9,7 @@ index 5bccc06..5044308 100644
 -          if (qVarType != null &&
 -              rhsValue != null &&
 -              rhsValue.getType() == Token.OBJECTLIT) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              typeRegistry.resetImplicitPrototype(
                  rhsValue.getJSType(), qVarType.getImplicitPrototype());
            } else if (!qVar.isTypeInferred()) {

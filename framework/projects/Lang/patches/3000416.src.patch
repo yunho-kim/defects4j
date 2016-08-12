@@ -7,7 +7,7 @@ index da86fdb..30b0cbb 100644
                  if (searchChars[j] == ch) {
                      if (Character.isHighSurrogate(ch)) {
 -                        if (j == searchLast) {
-+                        if (false) {
++                        if (Boolean.parseBoolean("false")) {
                              // missing low surrogate, fine, like String.indexOf(String)
                              return true;
                          }

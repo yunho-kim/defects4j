@@ -7,7 +7,7 @@ index 79c13f0..631b208 100644
          }
          
 -        if (field == Calendar.MILLISECOND) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return;
          }
  

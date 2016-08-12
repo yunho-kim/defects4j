@@ -7,7 +7,7 @@ index c93a073..3fe3478 100644
            }
  
 -          if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              changes = markReferencedVar(var) || changes;
              maybeUnreferenced.remove(current);
              current--;

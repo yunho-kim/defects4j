@@ -7,7 +7,7 @@ index ed76a29..80127fd 100644
              return NaN;
          }
 -        if (imaginary > 20.0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return createComplex(0.0, 1.0);
          }
          if (imaginary < -20.0) {

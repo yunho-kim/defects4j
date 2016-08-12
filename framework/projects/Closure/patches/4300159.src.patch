@@ -8,7 +8,7 @@ index f9943a1..136dbd6 100644
            JSDocInfo info = n.getJSDocInfo();
 -          if (info != null &&
 -              info.getLendsName() != null) {
-+          if (false) {
++          if (Boolean.parseBoolean("false")) {
              if (lentObjectLiterals == null) {
                lentObjectLiterals = Lists.newArrayList();
              }

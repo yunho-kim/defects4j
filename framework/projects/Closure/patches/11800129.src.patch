@@ -7,7 +7,7 @@ index 01293c9..86aaaf0 100644
            child = child.getNext()) {
          // Maybe STRING, GET, SET
 -        if (child.isQuotedString()) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            continue;
          }
  

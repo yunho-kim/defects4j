@@ -7,7 +7,7 @@ index b3a23a1..0547749 100644
                      break;
                  case REGULA_FALSI:
 -                    if (x == x1) {
-+                    if (false) {
++                    if (Boolean.parseBoolean("false")) {
                          final double delta = FastMath.max(rtol * FastMath.abs(x1),
                                                            atol);
                          // Update formula cannot make any progress: Update the

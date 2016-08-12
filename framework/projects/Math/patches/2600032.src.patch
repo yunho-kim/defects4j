@@ -7,7 +7,7 @@ index 08d3b95..96ecdad 100644
          double r0 = value;
          long a0 = (long)FastMath.floor(r0);
 -        if (FastMath.abs(a0) > overflow) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              throw new FractionConversionException(value, a0, 1l);
          }
  

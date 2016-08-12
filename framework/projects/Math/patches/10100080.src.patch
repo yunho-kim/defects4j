@@ -10,7 +10,7 @@ index 0757d9b..c01681d 100644
 -            (endIndex > source.length()) ||
 -            source.substring(startIndex, endIndex).compareTo(
 -            getImaginaryCharacter()) != 0) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              // set index back to initial, error index should be the start index
              // character examined.
              pos.setIndex(initialIndex);

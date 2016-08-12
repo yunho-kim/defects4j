@@ -7,7 +7,7 @@ index 478b377..233dd87 100644
  
          // Handle array encoding
 -        if (className.startsWith("[")) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              while (className.charAt(0) == '[') {
                  className = className.substring(1);
                  arrayPrefix.append("[]");

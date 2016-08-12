@@ -7,7 +7,7 @@ index 294ac57..ca234c9 100644
              for (int i = 0; i < n; i++) {
                  final double y = v.getEntry(i);
 -                if (Double.isNaN(y)) {
-+                if (true) {
++                if (Boolean.parseBoolean("true")) {
                      res.setEntry(i, Double.NaN);
                  } else if (Double.isInfinite(y)) {
                      final double x = this.getEntry(i);

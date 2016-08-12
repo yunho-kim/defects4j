@@ -7,7 +7,7 @@ index da4ed3e..00e8c38 100644
        for (BasicBlock block = ref.getBasicBlock();
             block != null; block = block.getParent()) {
 -        if (block.isFunction) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            break;
          } else if (block.isLoop) {
            return false;

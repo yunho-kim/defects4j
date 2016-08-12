@@ -8,7 +8,7 @@ index c248002..4821211 100644
          Node parent = n.getParent();
 -        if (parent.isVar() &&
 -            n.hasChildren() && n.getFirstChild().isQualifiedName()) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
            String name = n.getString();
            Var aliasVar = scope.getVar(name);
            aliases.put(name, aliasVar);

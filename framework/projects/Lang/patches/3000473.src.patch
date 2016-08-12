@@ -7,7 +7,7 @@ index da86fdb..05843d2 100644
                  if (searchChars[j] == ch) {
                      if (i < csLast && j < searchLast && Character.isHighSurrogate(ch)) {
 -                        if (searchChars[j + 1] == cs.charAt(i + 1)) {
-+                        if (false) {
++                        if (Boolean.parseBoolean("false")) {
                              continue outer;
                          }
                      } else {

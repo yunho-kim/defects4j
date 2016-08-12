@@ -7,7 +7,7 @@ index ab58c78..ef22079 100644
          throws NullArgumentException {
          MathUtils.checkNotNull(rhs);
 -        if (isNaN || rhs.isNaN) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return NaN;
          }
          return createComplex(real + rhs.getReal(),

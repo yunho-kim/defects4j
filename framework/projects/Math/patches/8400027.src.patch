@@ -7,7 +7,7 @@ index 929560c..cdd378d 100644
                  converged &= checker.converged(iter, original[i], simplex[i]);
              }
 -            if (converged) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  return;
              }
  

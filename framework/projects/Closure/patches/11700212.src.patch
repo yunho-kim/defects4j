@@ -7,7 +7,7 @@ index f57ae14..4dcbd9b 100644
    String getReadableJSTypeName(Node n, boolean dereference) {
      JSType type = getJSType(n);
 -    if (dereference) {
-+    if (false) {
++    if (Boolean.parseBoolean("false")) {
        ObjectType dereferenced = type.dereference();
        if (dereferenced != null) {
          type = dereferenced;

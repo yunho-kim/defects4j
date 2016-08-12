@@ -7,7 +7,7 @@ index 47ea27a..f5c8415 100644
        // it's probably not worth the effort.
        Preconditions.checkNotNull(declaration);
 -      if (declaration.getTwin() != null) {
-+      if (true) {
++      if (Boolean.parseBoolean("true")) {
          return false;
        }
  
