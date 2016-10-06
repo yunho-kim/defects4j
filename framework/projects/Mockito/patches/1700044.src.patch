@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/creation/MockSettingsImpl.java b/src/org/mockito/internal/creation/MockSettingsImpl.java
+index 5285d90..b5ecb46 100644
+--- a/src/org/mockito/internal/creation/MockSettingsImpl.java
++++ b/src/org/mockito/internal/creation/MockSettingsImpl.java
+@@ -21,7 +21,7 @@ public class MockSettingsImpl implements MockSettings {
+ 
+     public MockSettings serializable() {
+         this.serializable = true;
+-        return this;
++        return null;
+     }
+ 
+     public MockSettings extraInterfaces(Class<?>... extraInterfaces) {

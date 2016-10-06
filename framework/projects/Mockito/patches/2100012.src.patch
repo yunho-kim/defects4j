@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+index 9f0201a..0b8eeb2 100644
+--- a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
++++ b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+@@ -47,7 +47,7 @@ public class ConstructorInstantiator implements Instantiator {
+                 return false;
+             }
+         }
+-        return true;
++        return false;
+     }
+ 
+     private static <T> T noArgConstructor(Class<T> cls) {

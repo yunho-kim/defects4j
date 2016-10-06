@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/util/reflection/GenericMaster.java b/src/org/mockito/internal/util/reflection/GenericMaster.java
+index 4df9f7a..6aa2ddd 100644
+--- a/src/org/mockito/internal/util/reflection/GenericMaster.java
++++ b/src/org/mockito/internal/util/reflection/GenericMaster.java
+@@ -21,7 +21,7 @@ public class GenericMaster {
+                 return (Class) actual;
+             } else if (actual instanceof ParameterizedType) {
+                 //in case of nested generics we don't go deep
+-                return (Class) ((ParameterizedType) actual).getRawType();
++                return null;
+             }
+         }
+         

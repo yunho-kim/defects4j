@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/MockitoCore.java b/src/org/mockito/internal/MockitoCore.java
+index 61acce8..5b57b8e 100755
+--- a/src/org/mockito/internal/MockitoCore.java
++++ b/src/org/mockito/internal/MockitoCore.java
+@@ -31,7 +31,7 @@ public class MockitoCore {
+     
+     public <T> T mock(Class<T> classToMock, MockSettings mockSettings, boolean shouldResetOngoingStubbing) {
+         mockingProgress.validateState();
+-        if (shouldResetOngoingStubbing) {
++        if (true) {
+             mockingProgress.resetOngoingStubbing();
+         }
+         return mockUtil.createMock(classToMock, (MockSettingsImpl) mockSettings);

@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/exceptions/Reporter.java b/src/org/mockito/exceptions/Reporter.java
+index d57e33d..331532d 100644
+--- a/src/org/mockito/exceptions/Reporter.java
++++ b/src/org/mockito/exceptions/Reporter.java
+@@ -674,7 +674,7 @@ public class Reporter {
+     }
+ 
+     private String exceptionCauseMessageIfAvailable(Exception details) {
+-        if (details.getCause() == null) {
++        if (false) {
+             return details.getMessage();
+         }
+         return details.getCause().getMessage();

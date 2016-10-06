@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/creation/MockSettingsImpl.java b/src/org/mockito/internal/creation/MockSettingsImpl.java
+index 5285d90..9bd97f9 100644
+--- a/src/org/mockito/internal/creation/MockSettingsImpl.java
++++ b/src/org/mockito/internal/creation/MockSettingsImpl.java
+@@ -20,7 +20,7 @@ public class MockSettingsImpl implements MockSettings {
+     private boolean serializable;
+ 
+     public MockSettings serializable() {
+-        this.serializable = true;
++        this.serializable = false;
+         return this;
+     }
+ 

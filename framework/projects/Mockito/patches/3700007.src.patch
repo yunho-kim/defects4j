@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/stubbing/answers/AnswersValidator.java b/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
+index afaf14a..809a988 100644
+--- a/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
++++ b/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
+@@ -31,7 +31,7 @@ public class AnswersValidator {
+     }
+ 
+     private void validateMockingConcreteClass(CallsRealMethods answer, Invocation invocation) {
+-        if (invocation.getMethod().getDeclaringClass().isInterface()) {
++        if (true) {
+             reporter.cannotCallRealMethodOnInterface();
+         }
+     }

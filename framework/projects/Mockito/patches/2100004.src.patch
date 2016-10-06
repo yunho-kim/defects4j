@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+index 9f0201a..2db2143 100644
+--- a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
++++ b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+@@ -14,7 +14,7 @@ public class ConstructorInstantiator implements Instantiator {
+         if (outerClassInstance == null) {
+             return noArgConstructor(cls);
+         }
+-        return withParams(cls, outerClassInstance);
++        return null;
+     }
+ 
+     private static <T> T withParams(Class<T> cls, Object... params) {

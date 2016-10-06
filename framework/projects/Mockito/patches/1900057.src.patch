@@ -1,0 +1,12 @@
+diff --git a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+index abc5d67..d2e73e7 100644
+--- a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
++++ b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+@@ -56,6 +56,6 @@ public class NameBasedCandidateFilter implements MockCandidateFilter {
+ 				}
+ 			}
+ 		}
+-		return next.filterCandidate(mocks, field, fields, fieldInstance);
++		return null;
+ 	}
+ }

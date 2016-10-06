@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/Matchers.java b/src/org/mockito/Matchers.java
+index d6893af..8ac5e7c 100644
+--- a/src/org/mockito/Matchers.java
++++ b/src/org/mockito/Matchers.java
+@@ -424,7 +424,7 @@ public class Matchers {
+      * @return empty Map.
+      */
+     public static <K, V>  Map<K, V> anyMapOf(Class<K> keyClazz, Class<V> valueClazz) {
+-        return anyMap();
++        return null;
+     }
+     
+     /**

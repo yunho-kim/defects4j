@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/stubbing/answers/AnswersValidator.java b/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
+index afaf14a..1db4d1d 100644
+--- a/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
++++ b/src/org/mockito/internal/stubbing/answers/AnswersValidator.java
+@@ -26,7 +26,7 @@ public class AnswersValidator {
+         }
+         
+         if (answer instanceof CallsRealMethods) {
+-            validateMockingConcreteClass((CallsRealMethods) answer, invocation);
++            
+         }
+     }
+ 

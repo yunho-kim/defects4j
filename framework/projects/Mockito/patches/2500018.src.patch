@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+index 918c42a..ac47cdb 100644
+--- a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
++++ b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+@@ -86,7 +86,7 @@ public class ReturnsDeepStubs implements Answer<Object>, Serializable {
+ 
+     private MockSettings withSettingsUsing(GenericMetadataSupport returnTypeGenericMetadata) {
+         MockSettings mockSettings =
+-                returnTypeGenericMetadata.rawExtraInterfaces().length > 0 ?
++                false ?
+                 withSettings().extraInterfaces(returnTypeGenericMetadata.rawExtraInterfaces())
+                 : withSettings();
+ 

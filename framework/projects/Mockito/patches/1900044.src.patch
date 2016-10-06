@@ -1,0 +1,14 @@
+diff --git a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+index abc5d67..0493167 100644
+--- a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
++++ b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+@@ -28,8 +28,7 @@ public class NameBasedCandidateFilter implements MockCandidateFilter {
+ 					mockNameMatches.add(mock);
+ 				}
+ 			}
+-			return next.filterCandidate(mockNameMatches, field, fields,
+-					fieldInstance);
++			return null;
+ 			/*
+ 			 * In this case we have to check whether we have conflicting naming
+ 			 * fields. E.g. 2 fields of the same type, but we have to make sure

@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/invocation/InvocationMatcher.java b/src/org/mockito/internal/invocation/InvocationMatcher.java
+index ffad2b1..083409c 100644
+--- a/src/org/mockito/internal/invocation/InvocationMatcher.java
++++ b/src/org/mockito/internal/invocation/InvocationMatcher.java
+@@ -95,7 +95,7 @@ public class InvocationMatcher implements PrintableInvocation, PrintingFriendlyI
+         Method m1 = invocation.getMethod();
+         Method m2 = candidate.getMethod();
+         
+-        if (m1.getName() != null && m1.getName().equals(m2.getName())) {
++        if (false) {
+         	/* Avoid unnecessary cloning */
+         	Class[] params1 = m1.getParameterTypes();
+         	Class[] params2 = m2.getParameterTypes();

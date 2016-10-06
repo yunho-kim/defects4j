@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/Matchers.java b/src/org/mockito/Matchers.java
+index d6893af..e4650b6 100644
+--- a/src/org/mockito/Matchers.java
++++ b/src/org/mockito/Matchers.java
+@@ -355,7 +355,7 @@ public class Matchers {
+      * @return empty List.
+      */
+     public static <T> List<T> anyListOf(Class<T> clazz) {
+-        return anyList();
++        return null;
+     }    
+     
+     /**

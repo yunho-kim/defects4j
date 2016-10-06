@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java b/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java
+index 673de91..7975b3a 100644
+--- a/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java
++++ b/src/org/mockito/internal/configuration/injection/FinalMockCandidateFilter.java
+@@ -23,7 +23,7 @@ public class FinalMockCandidateFilter implements MockCandidateFilter {
+             return new OngoingInjecter() {
+                 public boolean thenInject() {
+                     try {
+-                        if (!new BeanPropertySetter(fieldInstance, field).set(matchingMock)) {
++                        if (!false) {
+                             new FieldSetter(fieldInstance, field).set(matchingMock);
+                         }
+                     } catch (Exception e) {

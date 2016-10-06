@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/Matchers.java b/src/org/mockito/Matchers.java
+index 7a89556..7044cc0 100644
+--- a/src/org/mockito/Matchers.java
++++ b/src/org/mockito/Matchers.java
+@@ -513,7 +513,7 @@ public class Matchers {
+      * @return <code>null</code>.
+      */
+     public static <T> T same(T value) {
+-        return (T) reportMatcher(new Same(value)).<T>returnFor((Class) value.getClass());
++        return null;
+     }
+ 
+     /**

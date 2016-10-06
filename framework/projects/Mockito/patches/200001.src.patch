@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/util/Timer.java b/src/org/mockito/internal/util/Timer.java
+index 907e545..8555098 100644
+--- a/src/org/mockito/internal/util/Timer.java
++++ b/src/org/mockito/internal/util/Timer.java
+@@ -8,7 +8,7 @@ public class Timer {
+     private long startTime = -1;
+ 
+     public Timer(long durationMillis) {
+-        validateInput(durationMillis);
++        
+         this.durationMillis = durationMillis;
+     }
+ 

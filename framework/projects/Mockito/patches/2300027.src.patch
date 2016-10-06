@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+index b18dd3b..ed99a01 100644
+--- a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
++++ b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+@@ -128,7 +128,7 @@ public class ReturnsDeepStubs implements Answer<Object>, Serializable {
+             public Object answer(InvocationOnMock invocation) throws Throwable {
+                 return mock;
+             }
+-        }, false);
++        }, true);
+ 
+         return mock;
+     }

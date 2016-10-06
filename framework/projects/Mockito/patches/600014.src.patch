@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/Matchers.java b/src/org/mockito/Matchers.java
+index d6893af..612ebdb 100644
+--- a/src/org/mockito/Matchers.java
++++ b/src/org/mockito/Matchers.java
+@@ -321,7 +321,7 @@ public class Matchers {
+      * @return empty String ("")
+      */
+     public static String anyString() {
+-        return reportMatcher(new InstanceOf(String.class)).returnString();
++        return null;
+     }
+     
+     /**

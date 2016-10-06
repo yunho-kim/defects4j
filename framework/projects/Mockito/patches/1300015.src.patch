@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/MockHandler.java b/src/org/mockito/internal/MockHandler.java
+index 8962ceb..aa095ff 100644
+--- a/src/org/mockito/internal/MockHandler.java
++++ b/src/org/mockito/internal/MockHandler.java
+@@ -81,7 +81,7 @@ public class MockHandler<T> implements MockitoInvocationHandler, MockHandlerInte
+             } else {
+                 // this means there is an invocation on a different mock. Re-adding verification mode 
+                 // - see VerifyingWithAnExtraCallToADifferentMockTest (bug 138)
+-                mockingProgress.verificationStarted(verificationMode);
++                
+             }
+         }
+         

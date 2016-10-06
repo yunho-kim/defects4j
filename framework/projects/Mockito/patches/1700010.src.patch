@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/util/MockUtil.java b/src/org/mockito/internal/util/MockUtil.java
+index b8ed8b4..91526f9 100644
+--- a/src/org/mockito/internal/util/MockUtil.java
++++ b/src/org/mockito/internal/util/MockUtil.java
+@@ -43,7 +43,7 @@ public class MockUtil {
+         Class<?>[] interfaces = settings.getExtraInterfaces();
+ 
+         Class<?>[] ancillaryTypes;
+-        if (settings.isSerializable()) {
++        if (true) {
+             ancillaryTypes = interfaces == null ? new Class<?>[] {Serializable.class} : new ArrayUtils().concat(interfaces, Serializable.class);
+         } else {
+             ancillaryTypes = interfaces == null ? new Class<?>[0] : interfaces;

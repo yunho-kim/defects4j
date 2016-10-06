@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/invocation/InvocationMatcher.java b/src/org/mockito/internal/invocation/InvocationMatcher.java
+index 3b3795b..22461f4 100644
+--- a/src/org/mockito/internal/invocation/InvocationMatcher.java
++++ b/src/org/mockito/internal/invocation/InvocationMatcher.java
+@@ -152,7 +152,7 @@ public class InvocationMatcher implements DescribedInvocation, CapturesArgumensF
+                 set.add(matcher);
+             }
+         }
+-        return set;
++        return null;
+     }
+ 
+     public static List<InvocationMatcher> createFrom(List<Invocation> invocations) {

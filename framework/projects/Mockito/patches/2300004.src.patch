@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+index b18dd3b..cb36364 100644
+--- a/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
++++ b/src/org/mockito/internal/stubbing/defaultanswers/ReturnsDeepStubs.java
+@@ -50,7 +50,7 @@ public class ReturnsDeepStubs implements Answer<Object>, Serializable {
+ 
+         Class<?> rawType = returnTypeGenericMetadata.rawType();
+         instantiateMockitoCoreIfNeeded();
+-        instantiateDelegateIfNeeded();
++        
+         if (!mockitoCore.isTypeMockable(rawType)) {
+             return delegate.returnValueFor(rawType);
+         }

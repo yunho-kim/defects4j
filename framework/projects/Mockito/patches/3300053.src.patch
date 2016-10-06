@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/invocation/InvocationMatcher.java b/src/org/mockito/internal/invocation/InvocationMatcher.java
+index ffad2b1..774af2f 100644
+--- a/src/org/mockito/internal/invocation/InvocationMatcher.java
++++ b/src/org/mockito/internal/invocation/InvocationMatcher.java
+@@ -107,7 +107,7 @@ public class InvocationMatcher implements PrintableInvocation, PrintingFriendlyI
+         	    return true;
+         	}
+         }
+-        return false;
++        return true;
+     }
+     
+     public Location getLocation() {

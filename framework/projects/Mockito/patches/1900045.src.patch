@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+index abc5d67..861aad2 100644
+--- a/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
++++ b/src/org/mockito/internal/configuration/injection/filter/NameBasedCandidateFilter.java
+@@ -39,7 +39,7 @@ public class NameBasedCandidateFilter implements MockCandidateFilter {
+ 			 * whenever we find a field that does match its name with the mock
+ 			 * name, we should take that field instead.
+ 			 */
+-		} else if (mocks.size() == 1) {
++		} else if (mocks.size() == 0) {
+ 			String mockName = mockUtil.getMockName(mocks.iterator().next())
+ 					.toString();
+ 

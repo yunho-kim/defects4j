@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+index 9f0201a..b62cc46 100644
+--- a/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
++++ b/src/org/mockito/internal/creation/instance/ConstructorInstantiator.java
+@@ -42,7 +42,7 @@ public class ConstructorInstantiator implements Instantiator {
+         if (params.length != types.length) {
+             return false;
+         }
+-        for (int i = 0; i < params.length; i++) {
++        for (int i = 0; i <= params.length; i++) {
+             if (!types[i].isInstance(params[i])) {
+                 return false;
+             }

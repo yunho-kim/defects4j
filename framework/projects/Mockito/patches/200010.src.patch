@@ -1,0 +1,13 @@
+diff --git a/src/org/mockito/internal/util/Timer.java b/src/org/mockito/internal/util/Timer.java
+index 907e545..0191e9e 100644
+--- a/src/org/mockito/internal/util/Timer.java
++++ b/src/org/mockito/internal/util/Timer.java
+@@ -28,7 +28,7 @@ public class Timer {
+     }
+ 
+     private void validateInput(long durationMillis) {
+-        if (durationMillis < 0) {
++        if (durationMillis < -1) {
+             new Reporter().cannotCreateTimerWithNegativeDurationTime(durationMillis);
+         }
+     }
