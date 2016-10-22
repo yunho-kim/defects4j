@@ -63,6 +63,13 @@ sub _post_checkout {
     #
     # Post-checkout tasks include, for instance, providing proper build files,
     # fixing compilation errors, etc.
+
+    # Fix Mockito's test runners
+    my $id = $vcs->lookup_revision_id($revision);
+    my $mockito_junit_runner_patch_file = "$SCRIPT_DIR/projects/$PID/mockito_test_runners.patch";
+    if ($id == 16 || $id == 17 || ($id >= 34 && $id <= 38)) {
+        $vcs->apply_patch($work_dir, "$mockito_junit_runner_patch_file") or confess("Couldn't apply patch ($mockito_junit_runner_patch_file): $!");
+    }
 }
 
 #
@@ -138,6 +145,19 @@ sub _build_dir_map {
     }
     close IN;
     $self->{_dir_map}=$cache;
+}
+
+sub _ant_call {
+    @_ >= 2 or die $ARG_ERROR;
+    my ($self, $target, $option_str, $log_file) =  @_;
+
+    # By default gradle uses $HOME/.gradle, which causes problems when multiple
+    # instances of gradle run at the same time.
+    #
+    # TODO: Extract all exported environment variables into a user-visible
+    # config file.
+    $ENV{'GRADLE_USER_HOME'} = "$self->{prog_root}/.gradle_local_home";
+    return $self->SUPER::_ant_call($target, $option_str, $log_file);
 }
 
 1;

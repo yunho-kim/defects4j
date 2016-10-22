@@ -324,7 +324,9 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
         <delete file="${d4j.workdir}/${d4j.file.cobertura.ser}"/>
         <cobertura-instrument failOnError="true" toDir="${d4j.dir.classes.instrumented}" datafile="${d4j.workdir}/${d4j.file.cobertura.ser}">
             <fileset dir="${classes.dir}" includes="${d4j.classes.instrument}" />
-            <auxClasspath path="${cobertura.aux.classpath}" />
+            <auxClasspath>
+                <path refid="compile.classpath" />
+            </auxClasspath>
         </cobertura-instrument>
         <!-- Backup instrumented classes and empty data file -->
         <copy file="${d4j.workdir}/${d4j.properties}" todir="${d4j.dir.classes.instrumented}" overwrite="true"/>
@@ -341,7 +343,7 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
 <!--
     Update list of all manual tests to only include relevant tests
 -->
-    <target name="update.all.tests" if="d4j.relevant.tests.only">
+    <target name="update.all.tests" if="${d4j.relevant.tests.only}">
         <!-- TODO: Conversions in Ant a rather cumbersome and hacky. Also, the
                    build file should not rely on the current directory structure
               => D4J should provide properly filtered files in the working directory-->
