@@ -7,7 +7,7 @@ index abc5d67..8b4e62f 100644
  			 * name, we should take that field instead.
  			 */
 -		} else if (mocks.size() == 1) {
-+		} else if (false) {
++		} else if (Boolean.parseBoolean("false")) {
  			String mockName = mockUtil.getMockName(mocks.iterator().next())
  					.toString();
  

@@ -7,7 +7,7 @@ index a21671a..ebb043e 100644
              }
  
 -            if(entityValue > 0xFFFF) {
-+            if(false) {
++            if(Boolean.parseBoolean("false")) {
                  char[] chrs = Character.toChars(entityValue);
                  out.write(chrs[0]);
                  out.write(chrs[1]);

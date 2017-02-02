@@ -7,7 +7,7 @@ index 9f0201a..ff6615d 100644
  
      private static boolean paramsMatch(Class<?>[] types, Object[] params) {
 -        if (params.length != types.length) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              return false;
          }
          for (int i = 0; i < params.length; i++) {

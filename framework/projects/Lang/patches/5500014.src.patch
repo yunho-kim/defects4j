@@ -7,7 +7,7 @@ index 0f0786a..ed0b89c 100644
              throw new IllegalStateException("Stopwatch is not running. ");
          }
 -        if(this.runningState == STATE_RUNNING) {
-+        if(false) {
++        if(Boolean.parseBoolean("false")) {
              stopTime = System.currentTimeMillis();
          }
          this.runningState = STATE_STOPPED;

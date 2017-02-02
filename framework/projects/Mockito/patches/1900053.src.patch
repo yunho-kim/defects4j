@@ -9,7 +9,7 @@ index abc5d67..6acf214 100644
 -				if (!otherField.equals(field)
 -						&& otherField.getType().equals(field.getType())
 -						&& otherField.getName().equals(mockName)) {
-+				if (false) {
++				if (Boolean.parseBoolean("false")) {
  
  					return new OngoingInjecter() {
  						public Object thenInject() {

@@ -7,7 +7,7 @@ index 5e9b795..c78ab35 100644
  
      public Object callRealMethod() throws Throwable {
 -        if (this.getMethod().getDeclaringClass().isInterface()) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              new Reporter().cannotCallRealMethodOnInterface();
          }
          return realMethod.invoke(mock, rawArguments);

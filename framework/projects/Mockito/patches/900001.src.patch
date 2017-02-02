@@ -7,7 +7,7 @@ index 8fb0cae..0d30279 100644
  
      public Object answer(InvocationOnMock invocation) throws Throwable {
 -    	if (Modifier.isAbstract(invocation.getMethod().getModifiers())) {
-+    	if (false) {
++    	if (Boolean.parseBoolean("false")) {
      		return new GloballyConfiguredAnswer().answer(invocation);
      	}
          return invocation.callRealMethod();

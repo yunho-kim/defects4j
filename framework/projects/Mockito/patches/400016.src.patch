@@ -7,7 +7,7 @@ index d57e33d..331532d 100644
  
      private String exceptionCauseMessageIfAvailable(Exception details) {
 -        if (details.getCause() == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              return details.getMessage();
          }
          return details.getCause().getMessage();

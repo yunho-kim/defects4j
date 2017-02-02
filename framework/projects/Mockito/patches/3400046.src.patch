@@ -7,7 +7,7 @@ index f15b9d4..fef213f 100644
          int k = 0;
          for (Matcher m : matchers) {
 -            if (m instanceof CapturesArguments && i.getArguments().length > k) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  ((CapturesArguments) m).captureFrom(i.getArguments()[k]);
              }
              k++;

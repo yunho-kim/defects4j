@@ -7,7 +7,7 @@ index 907e545..822b4fb 100644
  
      private void validateInput(long durationMillis) {
 -        if (durationMillis < 0) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              new Reporter().cannotCreateTimerWithNegativeDurationTime(durationMillis);
          }
      }

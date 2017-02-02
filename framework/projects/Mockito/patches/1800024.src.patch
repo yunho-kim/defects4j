@@ -7,7 +7,7 @@ index 11304af..37afcc2 100644
              //new instances are used instead of Collections.emptyList(), etc.
              //to avoid UnsupportedOperationException if code under test modifies returned collection
 -        } else if (type == Iterable.class) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
              return new ArrayList<Object>(0);
          } else if (type == Collection.class) {
              return new LinkedList<Object>();
