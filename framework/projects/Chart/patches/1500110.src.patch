@@ -1,0 +1,13 @@
+diff --git a/source/org/jfree/chart/plot/PiePlot.java b/source/org/jfree/chart/plot/PiePlot.java
+index 7c3cd04..f6d7e74 100644
+--- a/source/org/jfree/chart/plot/PiePlot.java
++++ b/source/org/jfree/chart/plot/PiePlot.java
+@@ -2051,7 +2051,7 @@ public class PiePlot extends Plot implements Cloneable, Serializable {
+      
+         PiePlotState state = new PiePlotState(info);
+         state.setPassesRequired(2);
+-        if (this.dataset != null) {
++        if (Boolean.parseBoolean("true")) {
+             state.setTotal(DatasetUtilities.calculatePieDatasetTotal(
+                     plot.getDataset()));
+         }
