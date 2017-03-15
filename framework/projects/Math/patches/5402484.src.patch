@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/dfp/Dfp.java b/src/main/java/org/apache/commons/math/dfp/Dfp.java
+index 54aabc4..1607edd 100644
+--- a/src/main/java/org/apache/commons/math/dfp/Dfp.java
++++ b/src/main/java/org/apache/commons/math/dfp/Dfp.java
+@@ -2321,7 +2321,7 @@ public class Dfp implements FieldElement<Dfp> {
+         boolean negate = false;
+         int cmp0 = compare(this, getZero());
+         if (cmp0 == 0) {
+-            return sign < 0 ? -0.0 : +0.0;
++            return sign != 0 ? -0.0 : +0.0;
+         } else if (cmp0 < 0) {
+             y = negate();
+             negate = true;

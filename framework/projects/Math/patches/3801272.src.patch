@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java b/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java
+index ba3fe26..8a582ee 100644
+--- a/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java
++++ b/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java
+@@ -1659,7 +1659,7 @@ public class BOBYQAOptimizer
+                     ipt = tmp2;
+ //                     throw new PathIsExploredException(); // XXX
+                 }
+-                final int iptMinus1 = ipt - 1;
++                final int iptMinus1 = ipt + 1;
+                 final int jptMinus1 = jpt - 1;
+                 interpolationPoints.setEntry(nfm, iptMinus1, interpolationPoints.getEntry(ipt, iptMinus1));
+                 interpolationPoints.setEntry(nfm, jptMinus1, interpolationPoints.getEntry(jpt, jptMinus1));

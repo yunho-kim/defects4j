@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/dfp/Dfp.java b/src/main/java/org/apache/commons/math3/dfp/Dfp.java
+index 3a91982..71705b4 100644
+--- a/src/main/java/org/apache/commons/math3/dfp/Dfp.java
++++ b/src/main/java/org/apache/commons/math3/dfp/Dfp.java
+@@ -1600,7 +1600,7 @@ public class Dfp implements FieldElement<Dfp> {
+      * @return product of this and x
+      */
+     public Dfp multiply(final int x) {
+-        if (x >= 0 && x < RADIX) {
++        if (x >= -1 && x < RADIX) {
+             return multiplyFast(x);
+         } else {
+             return multiply(newInstance(x));
