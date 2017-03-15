@@ -7,7 +7,7 @@ index 54aabc4..b4b9f91 100644
          if (cmp0 == 0) {
              return sign < 0 ? -0.0 : +0.0;
 -        } else if (cmp0 < 0) {
-+        } else if (false) {
++        } else if (Boolean.parseBoolean("false")) {
              y = negate();
              negate = true;
          }
