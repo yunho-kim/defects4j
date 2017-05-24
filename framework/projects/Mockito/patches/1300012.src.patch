@@ -7,7 +7,7 @@ index 8962ceb..600e92f 100644
              //We need to check if verification was started on the correct mock 
              // - see VerifyingWithAnExtraCallToADifferentMockTest (bug 138)
 -            if (((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {                
-+            if (false) {                
++            if (Boolean.parseBoolean("false")) {                
                  VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
                  verificationMode.verify(data);
                  return null;

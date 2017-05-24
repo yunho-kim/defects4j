@@ -7,7 +7,7 @@ index b8ed8b4..fd64dd7 100644
  
          Class<?>[] ancillaryTypes;
 -        if (settings.isSerializable()) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              ancillaryTypes = interfaces == null ? new Class<?>[] {Serializable.class} : new ArrayUtils().concat(interfaces, Serializable.class);
          } else {
              ancillaryTypes = interfaces == null ? new Class<?>[0] : interfaces;

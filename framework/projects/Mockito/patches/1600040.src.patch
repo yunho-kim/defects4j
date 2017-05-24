@@ -7,7 +7,7 @@ index 61acce8..5b57b8e 100755
      public <T> T mock(Class<T> classToMock, MockSettings mockSettings, boolean shouldResetOngoingStubbing) {
          mockingProgress.validateState();
 -        if (shouldResetOngoingStubbing) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              mockingProgress.resetOngoingStubbing();
          }
          return mockUtil.createMock(classToMock, (MockSettingsImpl) mockSettings);

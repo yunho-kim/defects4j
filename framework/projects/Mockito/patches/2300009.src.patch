@@ -7,7 +7,7 @@ index b18dd3b..8271d6d 100644
  
      private synchronized void instantiateMockitoCoreIfNeeded() {
 -        if (mockitoCore == null) {
-+        if (false) {
++        if (Boolean.parseBoolean("false")) {
              mockitoCore = new MockitoCore();
          }
      }

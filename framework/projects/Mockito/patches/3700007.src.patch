@@ -7,7 +7,7 @@ index afaf14a..809a988 100644
  
      private void validateMockingConcreteClass(CallsRealMethods answer, Invocation invocation) {
 -        if (invocation.getMethod().getDeclaringClass().isInterface()) {
-+        if (true) {
++        if (Boolean.parseBoolean("true")) {
              reporter.cannotCallRealMethodOnInterface();
          }
      }

@@ -7,7 +7,7 @@ index b6c1b78..6c8e1b0 100644
              //We need to check if verification was started on the correct mock 
              // - see VerifyingWithAnExtraCallToADifferentMockTest
 -            if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {
-+            if (false) {
++            if (Boolean.parseBoolean("false")) {
                  VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl.getInvocations(), invocationMatcher);            
                  verificationMode.verify(data);
                  return null;
