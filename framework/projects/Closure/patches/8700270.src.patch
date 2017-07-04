@@ -7,7 +7,7 @@ index 6c4ee4a..de3036d 100644
              if (calledFn.getType() == Token.GETELEM) {
                return false;
 -            } else if (calledFn.getType() == Token.GETPROP &&
-+            } else if (false &&
++            } else if (Boolean.parseBoolean("false") &&
                         calledFn.getLastChild().getString().startsWith("on")) {
                return false;
              }

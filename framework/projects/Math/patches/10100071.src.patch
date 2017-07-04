@@ -7,7 +7,7 @@ index 0757d9b..c09bdbe 100644
          startIndex = pos.getIndex();
          int endIndex = startIndex + n;
 -        if ((startIndex >= source.length()) ||
-+        if ((true) ||
++        if ((Boolean.parseBoolean("true")) ||
              (endIndex > source.length()) ||
              source.substring(startIndex, endIndex).compareTo(
              getImaginaryCharacter()) != 0) {

@@ -7,7 +7,7 @@ index 4c84735..cd62400 100644
      //
      // See http://code.google.com/p/closure-compiler/issues/detail?id=253
 -    if (!removeGlobals) {
-+    if (!false) {
++    if (!Boolean.parseBoolean("false")) {
        return;
      }
  

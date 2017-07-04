@@ -7,7 +7,7 @@ index da4ed3e..cbb339e 100644
          this.isLoop = pType == Token.DO ||
              pType == Token.WHILE ||
 -            pType == Token.FOR;
-+            false;
++            Boolean.parseBoolean("false");
        } else {
          this.isLoop = false;
        }

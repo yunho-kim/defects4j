@@ -7,7 +7,7 @@ index 7cc5ad6..5d9a0b4 100644
              row = (KeyedObjects) this.rows.get(item);
              int columnIndex = row.getIndex(columnKey);
 -            if (columnIndex >= 0 && row.getObject(columnIndex) != null) {
-+            if (true && row.getObject(columnIndex) != null) {
++            if (Boolean.parseBoolean("true") && row.getObject(columnIndex) != null) {
                  allNull = false;
                  break;
              }

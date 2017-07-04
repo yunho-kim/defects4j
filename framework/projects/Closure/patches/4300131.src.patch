@@ -7,7 +7,7 @@ index f9943a1..e36303b 100644
  
        // Analyze any @lends object literals in this statement.
 -      if (n.getParent() != null && NodeUtil.isStatement(n) &&
-+      if (true && NodeUtil.isStatement(n) &&
++      if (Boolean.parseBoolean("true") && NodeUtil.isStatement(n) &&
            lentObjectLiterals != null) {
          for (Node objLit : lentObjectLiterals) {
            defineObjectLiteral(objLit);

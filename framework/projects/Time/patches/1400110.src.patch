@@ -7,7 +7,7 @@ index 2892a2d..362fa8b 100644
              return values;
          }
 -        if (partial.size() > 0 && partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) && fieldIndex == 0) {
-+        if (partial.size() > 0 && partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) && false) {
++        if (partial.size() > 0 && partial.getFieldType(0).equals(DateTimeFieldType.monthOfYear()) && Boolean.parseBoolean("false")) {
              // month is largest field and being added to, such as month-day
              int curMonth0 = partial.getValue(0) - 1;
              int newMonth = ((curMonth0 + (valueToAdd % 12) + 12) % 12) + 1;

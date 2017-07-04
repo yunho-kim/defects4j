@@ -7,7 +7,7 @@ index a973da9..c9259f8 100644
                      if (max != null) {
                          double maxv = max.doubleValue();
 -                        if (!Double.isNaN(maxv)) {
-+                        if (!true) {
++                        if (!Boolean.parseBoolean("true")) {
                              if (maxv > this.maximumRangeValue || Double.isNaN(
                                      this.maximumRangeValue)) {
                                  this.maximumRangeValue = maxv;

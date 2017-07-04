@@ -8,7 +8,7 @@ index cadb536..f6e73c0 100644
  
 -      if (length == 0 ||
 -          Character.isIdentifierIgnorable(s.charAt(0)) ||
-+      if (true ||
++      if (Boolean.parseBoolean("true") ||
            !Character.isJavaIdentifierStart(s.charAt(0))) {
          return false;
        }

@@ -7,7 +7,7 @@ index 3d4c238..4444409 100644
              int end = start;
              // Note that this supports character codes without a ; on the end
 -            while(end < seqEnd && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
-+            while(false && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
++            while(Boolean.parseBoolean("false") && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
                                      (input.charAt(end) >= 'a' && input.charAt(end) <= 'f') ||
                                      (input.charAt(end) >= 'A' && input.charAt(end) <= 'F') ) )
              {

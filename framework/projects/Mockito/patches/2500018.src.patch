@@ -7,7 +7,7 @@ index 918c42a..ac47cdb 100644
      private MockSettings withSettingsUsing(GenericMetadataSupport returnTypeGenericMetadata) {
          MockSettings mockSettings =
 -                returnTypeGenericMetadata.rawExtraInterfaces().length > 0 ?
-+                false ?
++                Boolean.parseBoolean("false") ?
                  withSettings().extraInterfaces(returnTypeGenericMetadata.rawExtraInterfaces())
                  : withSettings();
  

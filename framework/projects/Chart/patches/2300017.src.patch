@@ -7,7 +7,7 @@ index d2b24c6..7b7ea8a 100644
              return false;
          }
 -        if (!this.groupStroke.equals(that.groupStroke)) {
-+        if (!false) {
++        if (!Boolean.parseBoolean("false")) {
              return false;
          }
          return super.equals(obj);

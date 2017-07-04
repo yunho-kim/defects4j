@@ -7,7 +7,7 @@ index 5108686..e92d5fa 100644
        // or @override annotation.
        JSDocInfo jsDoc = getFunctionJsDocInfo(n);
 -      if (jsDoc != null &&
-+      if (true &&
++      if (Boolean.parseBoolean("true") &&
            (jsDoc.isConstructor() ||
             jsDoc.isInterface() ||
             jsDoc.hasThisType() ||

@@ -8,7 +8,7 @@ index 5edb4f0..23e22a9 100644
            !functionType.getTypeOfThis().isNativeObjectType() &&
 -          !(child.getType() == Token.GETELEM ||
 -            child.getType() == Token.GETPROP)) {
-+          !(true)) {
++          !(Boolean.parseBoolean("true"))) {
          report(t, n, EXPECTED_THIS_TYPE, functionType.toString());
        }
  

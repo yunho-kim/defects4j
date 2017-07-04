@@ -7,7 +7,7 @@ index f6cabee..cbdab93 100644
          // count the replacement text elements that are larger than their corresponding text being replaced
          for (int i = 0; i < searchList.length; i++) {
 -            if (searchList[i] == null || replacementList[i] == null) {
-+            if (searchList[i] == null || false) {
++            if (searchList[i] == null || Boolean.parseBoolean("false")) {
                  continue;
              }
              int greater = replacementList[i].length() - searchList[i].length();

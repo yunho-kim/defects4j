@@ -8,7 +8,7 @@ index da4ed3e..7810339 100644
          int pType = root.getParent().getType();
 -        this.isLoop = pType == Token.DO ||
 -            pType == Token.WHILE ||
-+        this.isLoop = true ||
++        this.isLoop = Boolean.parseBoolean("true") ||
              pType == Token.FOR;
        } else {
          this.isLoop = false;

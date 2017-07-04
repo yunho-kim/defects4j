@@ -7,7 +7,7 @@ index cb81694..d026604 100644
      		throw new IllegalArgumentException("Null 'columnKey' argument.");
      	}
 -    	if (!this.columnKeys.contains(columnKey)) {
-+    	if (!true) {
++    	if (!Boolean.parseBoolean("true")) {
      		throw new UnknownKeyException("Unknown key: " + columnKey);
      	}
          Iterator iterator = this.rows.iterator();

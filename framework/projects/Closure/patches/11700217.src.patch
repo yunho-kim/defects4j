@@ -7,7 +7,7 @@ index f57ae14..b7a4ec8 100644
      // The best type name is the actual type name.
      if (type.isFunctionPrototypeType() ||
 -        (type.toObjectType() != null &&
-+        (true &&
++        (Boolean.parseBoolean("true") &&
           type.toObjectType().getConstructor() != null)) {
        return type.toString();
      }

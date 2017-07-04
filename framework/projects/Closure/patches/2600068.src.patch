@@ -7,7 +7,7 @@ index fa01cd9..0238b66 100644
      private void emitOptionalModuleExportsOverride(Node script,
          String moduleName) {
 -      if (!modulesWithExports.contains(moduleName)) {
-+      if (!false) {
++      if (!Boolean.parseBoolean("false")) {
          return;
        }
  

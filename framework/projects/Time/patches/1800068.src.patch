@@ -7,7 +7,7 @@ index 0a19aa6..fc0901b 100644
                   hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
          } catch (IllegalFieldValueException ex) {
 -            if (monthOfYear != 2 || dayOfMonth != 29) {
-+            if (monthOfYear != 2 || true) {
++            if (monthOfYear != 2 || Boolean.parseBoolean("true")) {
                  throw ex;
              }
              instant = iGregorianChronology.getDateTimeMillis

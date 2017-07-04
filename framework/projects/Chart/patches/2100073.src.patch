@@ -7,7 +7,7 @@ index a973da9..1de0311 100644
                      if (min != null) {
                          double minv = min.doubleValue();
 -                        if (!Double.isNaN(minv)) {
-+                        if (!true) {
++                        if (!Boolean.parseBoolean("true")) {
                              if (minv < this.minimumRangeValue || Double.isNaN(
                                      this.minimumRangeValue)) {
                                  this.minimumRangeValue = minv;

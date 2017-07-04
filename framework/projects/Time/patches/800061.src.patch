@@ -7,7 +7,7 @@ index a127604..a46cb9b 100644
              throw new IllegalArgumentException("Minutes out of range: " + minutesOffset);
          }
 -        if (hoursOffset > 0 && minutesOffset < 0) {
-+        if (false && minutesOffset < 0) {
++        if (Boolean.parseBoolean("false") && minutesOffset < 0) {
              throw new IllegalArgumentException("Positive hours must not have negative minutes: " + minutesOffset);
          }
          int offset = 0;

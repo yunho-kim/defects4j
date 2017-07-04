@@ -7,7 +7,7 @@ index 7219899..6d831ae 100644
          long overlapStart = transition - diff;
          long overlapEnd = transition + diff;
 -        if (instant < overlapStart || instant >= overlapEnd) {
-+        if (instant < overlapStart || true) {
++        if (instant < overlapStart || Boolean.parseBoolean("true")) {
            return instant;  // not an overlap
          }
          

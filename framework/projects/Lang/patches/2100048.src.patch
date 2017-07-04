@@ -7,7 +7,7 @@ index 52a4436..d659d0c 100644
                  cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
                  cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&
 -                cal1.getClass() == cal2.getClass());
-+                false);
++                Boolean.parseBoolean("false"));
      }
  
      //-----------------------------------------------------------------------

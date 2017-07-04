@@ -8,7 +8,7 @@ index a87be07..b47087f 100644
      // In the second case, we just use the anonymous object as the prototype.
 -    if (baseType.hasReferenceName() ||
 -        isNativeObjectType() ||
-+    if (true ||
++    if (Boolean.parseBoolean("true") ||
          baseType.isFunctionPrototypeType() ||
          !(baseType instanceof PrototypeObjectType)) {
  

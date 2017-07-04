@@ -7,7 +7,7 @@ index ff09646..b6f29ed 100644
                          // about bracketing
                          final double epsilon = (forward ? 0.25 : -0.25) * convergence;
 -                        for (int k = 0; (k < 4) && (ga * gb > 0); ++k) {
-+                        for (int k = 0; (false) && (ga * gb > 0); ++k) {
++                        for (int k = 0; (Boolean.parseBoolean("false")) && (ga * gb > 0); ++k) {
                              ta += epsilon;
                              interpolator.setInterpolatedTime(ta);
                              ga = handler.g(ta, interpolator.getInterpolatedState());

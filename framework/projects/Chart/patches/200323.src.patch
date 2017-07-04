@@ -7,7 +7,7 @@ index 548d684..fd27b27 100644
                      double lvalue = ixyd.getStartYValue(series, item);
                      double uvalue = ixyd.getEndYValue(series, item);
 -                    if (!Double.isNaN(value)) {
-+                    if (!false) {
++                    if (!Boolean.parseBoolean("false")) {
                          minimum = Math.min(minimum, value);
                          maximum = Math.max(maximum, value);
                      }

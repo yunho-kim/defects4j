@@ -7,7 +7,7 @@ index 9dc84c6..850f6b2 100644
          if (x < 0) {
              // y is an even integer in this case
 -            if (y >= TWO_POWER_53 || y <= -TWO_POWER_53) {
-+            if (true || y <= -TWO_POWER_53) {
++            if (Boolean.parseBoolean("true") || y <= -TWO_POWER_53) {
                  return pow(-x, y);
              }
  

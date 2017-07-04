@@ -7,7 +7,7 @@ index 3a66750..ae3346a 100644
      }
  
 -    if ((long) x == x && !isNegativeZero(x)) {
-+    if (false && !isNegativeZero(x)) {
++    if (Boolean.parseBoolean("false") && !isNegativeZero(x)) {
        long value = (long) x;
        long mantissa = value;
        int exp = 0;

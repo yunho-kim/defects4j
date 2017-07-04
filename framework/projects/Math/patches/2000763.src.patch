@@ -7,7 +7,7 @@ index b54cb37..d35b332 100644
           */
          public double[] repairAndDecode(final double[] x) {
 -            return boundaries != null && isRepairMode ?
-+            return false ?
++            return Boolean.parseBoolean("false") ?
                  decode(repair(x)) :
                  decode(x);
          }

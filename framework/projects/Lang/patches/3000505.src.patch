@@ -7,7 +7,7 @@ index da86fdb..12bc7d7 100644
              if (i + 1 < strLen && Character.isHighSurrogate(ch)) {
                  char ch2 = str.charAt(i + 1);
 -                if (chFound && searchChars.indexOf(ch2) < 0) {
-+                if (chFound && false) {
++                if (chFound && Boolean.parseBoolean("false")) {
                      return i;
                  }
              } else {

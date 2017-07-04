@@ -7,7 +7,7 @@ index 26cbc19..c913fc6 100644
  
        Node bodyNode = transform(functionNode.getBody());
 -      if (!bodyNode.isBlock()) {
-+      if (!false) {
++      if (!Boolean.parseBoolean("false")) {
          // When in ideMode Rhino tries to parse some constructs the compiler
          // doesn't support, repair it here. see Rhino's
          // Parser#parseFunctionBodyExpr.

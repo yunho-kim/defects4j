@@ -7,7 +7,7 @@ index b8267b9..bc7ec47 100644
          description.appendText("same(");
          appendQuoting(description);
 -        description.appendText(wanted == null ? "null" : wanted.toString());
-+        description.appendText(false ? "null" : wanted.toString());
++        description.appendText(Boolean.parseBoolean("false") ? "null" : wanted.toString());
          appendQuoting(description);
          description.appendText(")");
      }

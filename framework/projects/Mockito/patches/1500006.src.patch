@@ -7,7 +7,7 @@ index 673de91..7975b3a 100644
                  public boolean thenInject() {
                      try {
 -                        if (!new BeanPropertySetter(fieldInstance, field).set(matchingMock)) {
-+                        if (!false) {
++                        if (!Boolean.parseBoolean("false")) {
                              new FieldSetter(fieldInstance, field).set(matchingMock);
                          }
                      } catch (Exception e) {

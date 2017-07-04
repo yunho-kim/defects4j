@@ -10,7 +10,7 @@ index 5c9df61..5f5a359 100644
 -          !staleVars.contains(v) &&
 -          referenceInfo.isWellDefined() &&
 -          referenceInfo.isAssignedOnceInLifetime() &&
-+      if (false &&
++      if (Boolean.parseBoolean("false") &&
            // Inlining the variable based solely on well-defined and assigned
            // once is *NOT* correct. We relax the correctness requirement if
            // the variable is declared constant.

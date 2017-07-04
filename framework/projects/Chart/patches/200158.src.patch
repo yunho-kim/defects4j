@@ -7,7 +7,7 @@ index 548d684..45371cd 100644
                      lvalue = intervalXYData.getStartXValue(series, item);
                      uvalue = intervalXYData.getEndXValue(series, item);
 -                    if (!Double.isNaN(value)) {
-+                    if (!true) {
++                    if (!Boolean.parseBoolean("true")) {
                          minimum = Math.min(minimum, value);
                          maximum = Math.max(maximum, value);
                      }

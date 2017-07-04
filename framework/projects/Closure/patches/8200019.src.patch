@@ -8,7 +8,7 @@ index 51f2ce2..a6a91c7 100644
      return isNoType() || isNoObjectType() || isNoResolvedType() ||
 -        (registry.getNativeFunctionType(
 -             JSTypeNative.LEAST_FUNCTION_TYPE) == this);
-+        (false);
++        (Boolean.parseBoolean("false"));
    }
  
    public boolean isNumberObjectType() {

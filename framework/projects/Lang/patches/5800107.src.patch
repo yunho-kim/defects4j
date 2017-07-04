@@ -8,7 +8,7 @@ index eb74e72..5175704 100644
                  case 'L' :
 -                    if (dec == null
 -                        && exp == null
-+                    if (false
++                    if (Boolean.parseBoolean("false")
                          && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {
                          try {
                              return createLong(numeric);

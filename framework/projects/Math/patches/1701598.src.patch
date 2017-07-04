@@ -7,7 +7,7 @@ index 3a91982..857c48a 100644
       */
      public Dfp multiply(final int x) {
 -        if (x >= 0 && x < RADIX) {
-+        if (true && x < RADIX) {
++        if (Boolean.parseBoolean("true") && x < RADIX) {
              return multiplyFast(x);
          } else {
              return multiply(newInstance(x));

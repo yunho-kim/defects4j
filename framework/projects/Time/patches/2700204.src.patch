@@ -7,7 +7,7 @@ index f7c7738..5759b29 100644
          if (size >= 2 && elementPairs.get(0) instanceof Separator) {
              Separator sep = (Separator) elementPairs.get(0);
 -            if (sep.iAfterParser == null && sep.iAfterPrinter == null) {
-+            if (sep.iAfterParser == null && false) {
++            if (sep.iAfterParser == null && Boolean.parseBoolean("false")) {
                  PeriodFormatter f = toFormatter(elementPairs.subList(2, size), notPrinter, notParser);
                  sep = sep.finish(f.getPrinter(), f.getParser());
                  return new PeriodFormatter(sep, sep);

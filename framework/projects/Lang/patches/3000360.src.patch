@@ -7,7 +7,7 @@ index da86fdb..a709b79 100644
              for (int j = 0; j < searchLen; j++) {
                  if (searchChars[j] == ch) {
 -                    if (i < csLast && j < searchLast && Character.isHighSurrogate(ch)) {
-+                    if (false && Character.isHighSurrogate(ch)) {
++                    if (Boolean.parseBoolean("false") && Character.isHighSurrogate(ch)) {
                          // ch is a supplementary character
                          if (searchChars[j + 1] == cs.charAt(i + 1)) {
                              return i;

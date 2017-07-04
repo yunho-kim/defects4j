@@ -7,7 +7,7 @@ index 9f0201a..16940dc 100644
          }
          for (int i = 0; i < params.length; i++) {
 -            if (!types[i].isInstance(params[i])) {
-+            if (!false) {
++            if (!Boolean.parseBoolean("false")) {
                  return false;
              }
          }

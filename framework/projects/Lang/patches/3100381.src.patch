@@ -7,7 +7,7 @@ index 4aac02d..d2a7d0f 100644
  			for (int j = 0; j < searchLength; j++) {
  				if (searchChars[j] == ch) {
 -					if (i < csLastIndex && j < searchLastIndex && ch >= Character.MIN_HIGH_SURROGATE && ch <= Character.MAX_HIGH_SURROGATE) {
-+					if (false && ch >= Character.MIN_HIGH_SURROGATE && ch <= Character.MAX_HIGH_SURROGATE) {
++					if (Boolean.parseBoolean("false") && ch >= Character.MIN_HIGH_SURROGATE && ch <= Character.MAX_HIGH_SURROGATE) {
  						// ch is a supplementary character
  						if (searchChars[j + 1] == cs.charAt(i + 1)) {
  							return true;

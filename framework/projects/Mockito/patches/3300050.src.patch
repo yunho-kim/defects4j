@@ -7,7 +7,7 @@ index ffad2b1..7ac257d 100644
          	if (params1.length == params2.length) {
          	    for (int i = 0; i < params1.length; i++) {
 -        		if (params1[i] != params2[i])
-+        		if (true)
++        		if (Boolean.parseBoolean("true"))
          		    return false;
          	    }
          	    return true;

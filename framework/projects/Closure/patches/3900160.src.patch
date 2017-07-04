@@ -7,7 +7,7 @@ index f4b537d..c5e9733 100644
  
          ++i;
 -        if (!forAnnotations && i == MAX_PRETTY_PRINTED_PROPERTIES) {
-+        if (!forAnnotations && false) {
++        if (!forAnnotations && Boolean.parseBoolean("false")) {
            sb.append(", ...");
            break;
          }

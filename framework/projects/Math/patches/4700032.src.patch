@@ -7,7 +7,7 @@ index 137765c..3319c95 100644
          isInfinite = !isNaN &&
              (Double.isInfinite(real) || Double.isInfinite(imaginary));
 -        isZero = real == 0 && imaginary == 0;
-+        isZero = false && imaginary == 0;
++        isZero = Boolean.parseBoolean("false") && imaginary == 0;
      }
  
      /**

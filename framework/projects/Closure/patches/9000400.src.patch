@@ -8,7 +8,7 @@ index 3394fa6..bd786b3 100644
        // union types can also be object types, etc.
 -      if (!type.restrictByNotNullOrUndefined().isSubtype(
 -              typeRegistry.getNativeType(OBJECT_TYPE))) {
-+      if (!true) {
++      if (!Boolean.parseBoolean("true")) {
          reportWarning(THIS_TYPE_NON_OBJECT, type.toString());
          return false;
        }

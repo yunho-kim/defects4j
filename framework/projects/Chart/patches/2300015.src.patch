@@ -7,7 +7,7 @@ index d2b24c6..5c188c4 100644
              return false;
          }
 -        if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {
-+        if (!true) {
++        if (!Boolean.parseBoolean("true")) {
              return false;
          }
          if (!this.groupStroke.equals(that.groupStroke)) {

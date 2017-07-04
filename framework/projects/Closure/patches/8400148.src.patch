@@ -7,7 +7,7 @@ index d2a4e5d..ab1f4b9 100644
        Node assign = processInfixExpression(assignmentNode);
        Node target = assign.getFirstChild();
 -      if (!validAssignmentTarget(target)) {
-+      if (!false) {
++      if (!Boolean.parseBoolean("false")) {
          errorReporter.error(
            "invalid assignment target",
            sourceName,

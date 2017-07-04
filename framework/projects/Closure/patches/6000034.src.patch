@@ -7,7 +7,7 @@ index 43a296f..007176e 100644
  
        case Token.VOID:
 -        if (!mayHaveSideEffects(n.getFirstChild())) {
-+        if (!false) {
++        if (!Boolean.parseBoolean("false")) {
            return TernaryValue.FALSE;
          }
          break;

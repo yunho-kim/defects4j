@@ -7,7 +7,7 @@ index c5ca8cd..ae30abe 100644
              throw new NumberFormatException("\"\" is not a valid number.");
          }
 -        if (val.length() == 1 && !Character.isDigit(val.charAt(0))) {
-+        if (false && !Character.isDigit(val.charAt(0))) {
++        if (Boolean.parseBoolean("false") && !Character.isDigit(val.charAt(0))) {
              throw new NumberFormatException(val + " is not a valid number.");
          }
          if (val.startsWith("--")) {

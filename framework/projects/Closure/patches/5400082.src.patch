@@ -9,7 +9,7 @@ index a87be07..ad2c4da 100644
 -    if (baseType.hasReferenceName() ||
 -        isNativeObjectType() ||
 -        baseType.isFunctionPrototypeType() ||
-+    if (true ||
++    if (Boolean.parseBoolean("true") ||
          !(baseType instanceof PrototypeObjectType)) {
  
        baseType = new PrototypeObjectType(

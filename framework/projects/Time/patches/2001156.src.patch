@@ -7,7 +7,7 @@ index ebb4b08..d925ac8 100644
              for (String id : ALL_IDS) {
                  if (str.startsWith(id)) {
 -                	if (best == null || id.length() > best.length()) {
-+                	if (false || id.length() > best.length()) {
++                	if (Boolean.parseBoolean("false") || id.length() > best.length()) {
                  		best = id;
                  	}
                  }

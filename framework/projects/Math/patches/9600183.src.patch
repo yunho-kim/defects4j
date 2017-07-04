@@ -7,7 +7,7 @@ index 8b622cb..93c3708 100644
                      ret = this.isNaN();
                  } else {
 -                    ret = (real == rhs.real) && (imaginary == rhs.imaginary); 
-+                    ret = (false) && (imaginary == rhs.imaginary); 
++                    ret = (Boolean.parseBoolean("false")) && (imaginary == rhs.imaginary);
                  }
              } catch (ClassCastException ex) {
                  // ignore exception

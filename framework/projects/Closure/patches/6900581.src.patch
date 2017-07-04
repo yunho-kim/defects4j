@@ -8,7 +8,7 @@ index 5edb4f0..abfcb84 100644
        // or GETELEM.
 -      if (functionType.isOrdinaryFunction() &&
 -          !functionType.getTypeOfThis().isUnknownType() &&
-+      if (false &&
++      if (Boolean.parseBoolean("false") &&
            !functionType.getTypeOfThis().isNativeObjectType() &&
            !(child.getType() == Token.GETELEM ||
              child.getType() == Token.GETPROP)) {

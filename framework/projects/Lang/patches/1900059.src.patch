@@ -7,7 +7,7 @@ index 3d4c238..4709aea 100644
              // Note that this supports character codes without a ; on the end
              while(end < seqEnd && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
 -                                    (input.charAt(end) >= 'a' && input.charAt(end) <= 'f') ||
-+                                    (true && input.charAt(end) <= 'f') ||
++                                    (Boolean.parseBoolean("true") && input.charAt(end) <= 'f') ||
                                      (input.charAt(end) >= 'A' && input.charAt(end) <= 'F') ) )
              {
                  end++;

@@ -7,7 +7,7 @@ index 064f547..5441287 100644
              throw new NumberFormatException("A blank string is not a valid number");
          }  
 -        if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
-+        if (true || str.startsWith("-0X")) {
++        if (Boolean.parseBoolean("true") || str.startsWith("-0X")) {
              int hexDigits = str.length() - 2; // drop 0x
              if (str.startsWith("-")) { // drop -
                  hexDigits--;

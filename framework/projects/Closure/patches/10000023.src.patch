@@ -7,7 +7,7 @@ index 1b6c93f..ba441f8 100644
        if (!(pType == Token.BLOCK ||
              pType == Token.SCRIPT ||
 -            pType == Token.NAME ||
-+            false ||
++            Boolean.parseBoolean("false") ||
              pType == Token.ASSIGN)) {
          return false;
        }

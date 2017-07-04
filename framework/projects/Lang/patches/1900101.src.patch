@@ -7,7 +7,7 @@ index 3d4c238..b50198f 100644
              }
  
 -            boolean semiNext = (end != seqEnd) && (input.charAt(end) == ';');
-+            boolean semiNext = (end != seqEnd) && (false);
++            boolean semiNext = (end != seqEnd) && (Boolean.parseBoolean("false"));
  
              return 2 + (end - start) + (isHex ? 1 : 0) + (semiNext ? 1 : 0);
          }

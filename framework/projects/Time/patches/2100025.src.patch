@@ -7,7 +7,7 @@ index 89e6739..c2a3d89 100644
              String[] setEn = null;
              for (String[] strings : zoneStringsEn) {
 -              if (strings != null && strings.length == 5 && id.equals(strings[0])) {
-+              if (strings != null && false && id.equals(strings[0])) {
++              if (strings != null && Boolean.parseBoolean("false") && id.equals(strings[0])) {
                  setEn = strings;
                  break;
                }

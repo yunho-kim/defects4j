@@ -7,7 +7,7 @@ index 91008e4..cb2a6c5 100644
        if (NodeUtil.isObjectLitKey(parent, gramps)) {
          JSDocInfo maybeLends = gramps.getJSDocInfo();
 -        if (maybeLends != null &&
-+        if (true &&
++        if (Boolean.parseBoolean("true") &&
              maybeLends.getLendsName() != null &&
              maybeLends.getLendsName().endsWith(".prototype")) {
            return false;

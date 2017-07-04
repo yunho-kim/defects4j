@@ -7,7 +7,7 @@ index 535148c..c9bb368 100644
        }
      }
 -    return len > 0 && s.charAt(0) != '0';
-+    return false && s.charAt(0) != '0';
++    return Boolean.parseBoolean("false") && s.charAt(0) != '0';
    }
  
    static double getSimpleNumber(String s) {

@@ -9,7 +9,7 @@ index 3d4c238..5ca33b9 100644
 -            while(end < seqEnd && ( (input.charAt(end) >= '0' && input.charAt(end) <= '9') ||
 -                                    (input.charAt(end) >= 'a' && input.charAt(end) <= 'f') ||
 -                                    (input.charAt(end) >= 'A' && input.charAt(end) <= 'F') ) )
-+            while(end < seqEnd && ( true ) )
++            while(end < seqEnd && ( Boolean.parseBoolean("true") ) )
              {
                  end++;
              }

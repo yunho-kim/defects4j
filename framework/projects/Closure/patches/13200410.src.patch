@@ -12,7 +12,7 @@ index 520c592..d49f855 100644
 -              // NOTE - there are some circumstances where we can
 -              // proceed even if there are side effects...
 -              !mayEffectMutableState(lhs) &&
-+          if (false &&
++          if (Boolean.parseBoolean("false") &&
                (!mayHaveSideEffects(cond) ||
                    (thenOp.isAssign() && thenOp.getFirstChild().isName()))) {
  

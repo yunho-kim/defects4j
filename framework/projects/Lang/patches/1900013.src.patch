@@ -7,7 +7,7 @@ index 3d4c238..d34320a 100644
          int seqEnd = input.length();
          // Uses -2 to ensure there is something after the &#
 -        if(input.charAt(index) == '&' && index < seqEnd - 2 && input.charAt(index + 1) == '#') {
-+        if(false && input.charAt(index + 1) == '#') {
++        if(Boolean.parseBoolean("false") && input.charAt(index + 1) == '#') {
              int start = index + 2;
              boolean isHex = false;
  

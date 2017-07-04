@@ -7,7 +7,7 @@ index 51f2ce2..996daa0 100644
  
    public final boolean isEmptyType() {
 -    return isNoType() || isNoObjectType() || isNoResolvedType() ||
-+    return true ||
++    return Boolean.parseBoolean("true") ||
          (registry.getNativeFunctionType(
               JSTypeNative.LEAST_FUNCTION_TYPE) == this);
    }

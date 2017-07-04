@@ -7,7 +7,7 @@ index 8bc7bda..787ba8c 100644
                  // If rValue has a type-cast, we use the type in the type-cast.
                  return rValueInfo.getType().evaluate(scope, typeRegistry);
 -              } else if (rValue.getJSType() != null
-+              } else if (true
++              } else if (Boolean.parseBoolean("true")
                    && !rValue.getJSType().isUnknownType()) {
                  // If rValue's type was already computed during scope creation,
                  // then we can safely use that.

@@ -9,7 +9,7 @@ index 5c9df61..5734c31 100644
 -      if (!maybeModifiedArguments &&
 -          !staleVars.contains(v) &&
 -          referenceInfo.isWellDefined() &&
-+      if (false &&
++      if (Boolean.parseBoolean("false") &&
            referenceInfo.isAssignedOnceInLifetime() &&
            // Inlining the variable based solely on well-defined and assigned
            // once is *NOT* correct. We relax the correctness requirement if

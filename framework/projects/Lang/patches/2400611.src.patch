@@ -7,7 +7,7 @@ index d9b3c6d..9685566 100644
                  || chars[i] == 'L') {
                  // not allowing L with an exponent or decimal point
 -                return foundDigit && !hasExp && !hasDecPoint;
-+                return false && !hasDecPoint;
++                return Boolean.parseBoolean("false") && !hasDecPoint;
              }
              // last character is illegal
              return false;

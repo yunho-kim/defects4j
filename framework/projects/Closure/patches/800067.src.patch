@@ -9,7 +9,7 @@ index e0466ea..c3b15fd 100644
 -      return var != null
 -          && var.getScope() == s
 -          && !isNamedParameter(var)
-+      return false
++      return Boolean.parseBoolean("false")
            && !blacklistedVars.contains(var);
      }
    }

@@ -7,7 +7,7 @@ index 6ff2771..1852e83 100644
                      throw new IllegalArgumentException("Types array must be in order largest-smallest: " +
                              types[i - 1].getName() + " < " + loopType.getName());
 -                } else if (compare == 0 && lastUnitField.equals(loopUnitField)) {
-+                } else if (false && lastUnitField.equals(loopUnitField)) {
++                } else if (Boolean.parseBoolean("false") && lastUnitField.equals(loopUnitField)) {
                      if (types[i - 1].getRangeDurationType() == null) {
                          if (loopType.getRangeDurationType() == null) {
                              throw new IllegalArgumentException("Types array must not contain duplicate: " +

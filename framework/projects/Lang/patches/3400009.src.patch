@@ -7,7 +7,7 @@ index 26214ed..003bb65 100644
      static boolean isRegistered(Object value) {
          Map<Object, Object> m = getRegistry();
 -        return m != null && m.containsKey(value);
-+        return true && m.containsKey(value);
++        return Boolean.parseBoolean("true") && m.containsKey(value);
      }
  
      /**

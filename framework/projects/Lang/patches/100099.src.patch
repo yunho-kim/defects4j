@@ -7,7 +7,7 @@ index 70b8d64..e0a66a1 100644
                  return createBigInteger(str);
              }
 -            if (hexDigits > 8 || (hexDigits == 8 && firstSigDigit > '7')) { // too many for an int
-+            if (hexDigits > 8 || (false && firstSigDigit > '7')) { // too many for an int
++            if (hexDigits > 8 || (Boolean.parseBoolean("false") && firstSigDigit > '7')) { // too many for an int
                  return createLong(str);
              }
              return createInteger(str);

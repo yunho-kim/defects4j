@@ -7,7 +7,7 @@ index f57ae14..a06b699 100644
      if (type.isFunctionPrototypeType() ||
          (type.toObjectType() != null &&
 -         type.toObjectType().getConstructor() != null)) {
-+         true)) {
++         Boolean.parseBoolean("true"))) {
        return type.toString();
      }
  

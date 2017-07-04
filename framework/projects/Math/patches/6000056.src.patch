@@ -7,7 +7,7 @@ index 0d7ce7d..e3227eb 100644
          final double dev = x - mean;
          if (FastMath.abs(dev) > 40 * standardDeviation) { 
 -            return dev < 0 ? 0.0d : 1.0d;
-+            return false ? 0.0d : 1.0d;
++            return Boolean.parseBoolean("false") ? 0.0d : 1.0d;
          }
          return 0.5 * (1.0 + Erf.erf((dev) /
                      (standardDeviation * FastMath.sqrt(2.0))));

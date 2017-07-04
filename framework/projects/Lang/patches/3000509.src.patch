@@ -7,7 +7,7 @@ index da86fdb..b9464de 100644
                  }
              } else {
 -                if (!chFound) {
-+                if (!false) {
++                if (!Boolean.parseBoolean("false")) {
                      return i;
                  }
              }

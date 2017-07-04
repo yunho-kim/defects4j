@@ -7,7 +7,7 @@ index f86625f..8d04d66 100644
        }
  
 -      if (!name.inExterns && name.globalSets == 1 && name.localSets == 0 &&
-+      if (false && name.localSets == 0 &&
++      if (Boolean.parseBoolean("false") && name.localSets == 0 &&
            name.aliasingGets > 0) {
          // {@code name} meets condition (b). Find all of its local aliases
          // and try to inline them.

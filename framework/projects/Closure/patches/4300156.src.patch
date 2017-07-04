@@ -7,7 +7,7 @@ index f9943a1..5c44b13 100644
          case Token.OBJECTLIT:
            JSDocInfo info = n.getJSDocInfo();
 -          if (info != null &&
-+          if (true &&
++          if (Boolean.parseBoolean("true") &&
                info.getLendsName() != null) {
              if (lentObjectLiterals == null) {
                lentObjectLiterals = Lists.newArrayList();

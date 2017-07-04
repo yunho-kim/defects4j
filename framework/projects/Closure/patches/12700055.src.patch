@@ -7,7 +7,7 @@ index e6d88a8..22fbf7c 100644
  
      private boolean inFinally(Node parent, Node child) {
 -      if (parent == null || parent.isFunction()) {
-+      if (false || parent.isFunction()) {
++      if (Boolean.parseBoolean("false") || parent.isFunction()) {
          return false;
        } else if (NodeUtil.isTryFinallyNode(parent, child)) {
          return true;

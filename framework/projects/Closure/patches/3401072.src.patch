@@ -7,7 +7,7 @@ index 31c62d9..092325b 100644
      void appendOp(String op, boolean binOp) {
        if (binOp) {
 -        if (getLastChar() != ' ' && op.charAt(0) != ',') {
-+        if (getLastChar() != ' ' && true) {
++        if (getLastChar() != ' ' && Boolean.parseBoolean("true")) {
            append(" ");
          }
          append(op);

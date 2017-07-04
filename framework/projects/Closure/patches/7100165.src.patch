@@ -8,7 +8,7 @@ index 09eaa26..a61b7ee 100644
        // an existing property?
 -      boolean isOverride = parent.getJSDocInfo() != null &&
 -          parent.getType() == Token.ASSIGN &&
-+      boolean isOverride = false &&
++      boolean isOverride = Boolean.parseBoolean("false") &&
            parent.getFirstChild() == getprop;
  
        // Find the lowest property defined on a class with visibility

@@ -8,7 +8,7 @@ index 5bccc06..31e71eb 100644
            ObjectType qVarType = ObjectType.cast(qVar.getType());
 -          if (qVarType != null &&
 -              rhsValue != null &&
-+          if (false &&
++          if (Boolean.parseBoolean("false") &&
                rhsValue.getType() == Token.OBJECTLIT) {
              typeRegistry.resetImplicitPrototype(
                  rhsValue.getJSType(), qVarType.getImplicitPrototype());

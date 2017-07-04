@@ -7,7 +7,7 @@ index e6d4320..cb8c8a2 100644
    private Node computeFollowing(Node n) {
      Node next = ControlFlowAnalysis.computeFollowNode(n);
 -    while (next != null && next.getType() == Token.BLOCK) {
-+    while (next != null && false) {
++    while (next != null && Boolean.parseBoolean("false")) {
        if (next.hasChildren()) {
          next = next.getFirstChild();
        } else {

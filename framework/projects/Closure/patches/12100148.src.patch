@@ -8,7 +8,7 @@ index 5c9df61..16dfd45 100644
            // the variable is declared constant.
 -          (isInlineableDeclaredConstant(v, referenceInfo) ||
 -           referenceInfo.isOnlyAssignmentSameScopeAsDeclaration())) {
-+          (true)) {
++          (Boolean.parseBoolean("true"))) {
          List<Reference> refs = referenceInfo.references;
          for (int i = 1 /* start from a read */; i < refs.size(); i++) {
            Node nameNode = refs.get(i).getNode();

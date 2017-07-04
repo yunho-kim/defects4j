@@ -10,7 +10,7 @@ index 1b6c93f..759a7d4 100644
 -            pType == Token.SCRIPT ||
 -            pType == Token.NAME ||
 -            pType == Token.ASSIGN)) {
-+      if (!(true)) {
++      if (!(Boolean.parseBoolean("true"))) {
          return false;
        }
      }

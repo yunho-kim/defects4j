@@ -7,7 +7,7 @@ index e6d88a8..780bc00 100644
              Node fallThrough = computeFollowing(n);
              Node nextCfgNode = outEdges.get(0).getDestination().getValue();
 -            if (nextCfgNode == fallThrough && !inFinally(n.getParent(), n)) {
-+            if (false && !inFinally(n.getParent(), n)) {
++            if (Boolean.parseBoolean("false") && !inFinally(n.getParent(), n)) {
                removeNode(n);
              }
            }

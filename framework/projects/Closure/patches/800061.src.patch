@@ -7,7 +7,7 @@ index e0466ea..6d530bd 100644
  
        Var var = s.getVar(lhs.getString());
 -      return var != null
-+      return true
++      return Boolean.parseBoolean("true")
            && var.getScope() == s
            && !isNamedParameter(var)
            && !blacklistedVars.contains(var);

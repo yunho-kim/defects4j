@@ -7,7 +7,7 @@ index 03c92eb..4afaeca 100644
          if (n <= 61) {
              // For n <= 61, the naive implementation cannot overflow.
 -            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
-+            for (int j = 1, i = n - k + 1; true; i++, j++) {
++            for (int j = 1, i = n - k + 1; Boolean.parseBoolean("true"); i++, j++) {
                  result = result * i / j;
              }
          } else if (n <= 66) {

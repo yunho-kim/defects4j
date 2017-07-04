@@ -7,7 +7,7 @@ index 722d225..0c786ff 100644
      // This no-op statement was there so that JSDoc information could
      // be attached to the name. This check should not complain about it.
 -    if (n.isQualifiedName() && n.getJSDocInfo() != null) {
-+    if (n.isQualifiedName() && true) {
++    if (n.isQualifiedName() && Boolean.parseBoolean("true")) {
        return;
      }
  

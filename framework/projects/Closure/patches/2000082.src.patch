@@ -7,7 +7,7 @@ index 86521bd..39a10f2 100644
        // http://code.google.com/p/closure-compiler/issues/detail?id=759
        Node value = callTarget.getNext();
 -      if (value != null && value.getNext() == null &&
-+      if (false &&
++      if (Boolean.parseBoolean("false") &&
            NodeUtil.isImmutableValue(value)) {
          Node addition = IR.add(
              IR.string("").srcref(callTarget),

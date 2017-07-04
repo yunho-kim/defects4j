@@ -7,7 +7,7 @@ index 520c592..e46850b 100644
                !mayEffectMutableState(lhs) &&
                (!mayHaveSideEffects(cond) ||
 -                  (thenOp.isAssign() && thenOp.getFirstChild().isName()))) {
-+                  (false))) {
++                  (Boolean.parseBoolean("false")))) {
  
              n.removeChild(cond);
              Node assignName = thenOp.removeFirstChild();

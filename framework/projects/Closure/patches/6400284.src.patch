@@ -7,7 +7,7 @@ index 45d88ba..fa498ed 100644
      builder.setSourceMapDetailLevel(options.sourceMapDetailLevel);
      builder.setTagAsStrict(firstOutput &&
 -        options.getLanguageOut() == LanguageMode.ECMASCRIPT5_STRICT);
-+        false);
++        Boolean.parseBoolean("false"));
      builder.setLineLengthThreshold(options.lineLengthThreshold);
  
      Charset charset = options.outputCharset != null ?

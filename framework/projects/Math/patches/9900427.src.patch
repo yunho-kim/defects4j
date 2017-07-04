@@ -7,7 +7,7 @@ index 806c888..1b438d4 100644
          int v = q;
          if ((u == 0) || (v == 0)) {
 -            if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {
-+            if ((u == Integer.MIN_VALUE) || (false)) {
++            if ((u == Integer.MIN_VALUE) || (Boolean.parseBoolean("false"))) {
                  throw MathRuntimeException.createArithmeticException(
                          "overflow: gcd({0}, {1}) is 2^31",
                          new Object[] { p, q });

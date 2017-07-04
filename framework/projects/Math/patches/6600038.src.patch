@@ -7,7 +7,7 @@ index 46c4afa..a92005f 100644
          double e = 0;
          double fx = computeObjectiveValue(x);
 -        if (!isMinim) {
-+        if (!false) {
++        if (!Boolean.parseBoolean("false")) {
              fx = -fx;
          }
          double fv = fx;

@@ -8,7 +8,7 @@ index 5c9df61..ba8f30a 100644
        // the next pass.)
 -      if (!maybeModifiedArguments &&
 -          !staleVars.contains(v) &&
-+      if (false &&
++      if (Boolean.parseBoolean("false") &&
            referenceInfo.isWellDefined() &&
            referenceInfo.isAssignedOnceInLifetime() &&
            // Inlining the variable based solely on well-defined and assigned

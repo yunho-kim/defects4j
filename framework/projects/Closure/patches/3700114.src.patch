@@ -7,7 +7,7 @@ index 435b4a8..e9de6d8 100644
  
      // Body
 -    Preconditions.checkState(body.getNext() == null &&
-+    Preconditions.checkState(false &&
++    Preconditions.checkState(Boolean.parseBoolean("false") &&
              body.isBlock(), body);
      traverseBranch(body, n);
  

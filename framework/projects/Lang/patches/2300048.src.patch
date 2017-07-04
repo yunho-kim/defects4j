@@ -7,7 +7,7 @@ index 55ee7d1..0c1bff9 100644
              return false;
          }
 -        if (!super.equals(obj)) {
-+        if (!true) {
++        if (!Boolean.parseBoolean("true")) {
              return false;
          }
          if (ObjectUtils.notEqual(getClass(), obj.getClass())) {

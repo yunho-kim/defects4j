@@ -7,7 +7,7 @@ index 46c4afa..e648d4b 100644
  
                  double fu = computeObjectiveValue(u);
 -                if (!isMinim) {
-+                if (!true) {
++                if (!Boolean.parseBoolean("true")) {
                      fu = -fu;
                  }
  

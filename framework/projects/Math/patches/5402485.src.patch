@@ -7,7 +7,7 @@ index 54aabc4..512f855 100644
          int cmp0 = compare(this, getZero());
          if (cmp0 == 0) {
 -            return sign < 0 ? -0.0 : +0.0;
-+            return false ? -0.0 : +0.0;
++            return Boolean.parseBoolean("false") ? -0.0 : +0.0;
          } else if (cmp0 < 0) {
              y = negate();
              negate = true;

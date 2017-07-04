@@ -8,7 +8,7 @@ index 1b6c93f..fdbcc10 100644
        int pType = parent.getType();
 -      if (!(pType == Token.BLOCK ||
 -            pType == Token.SCRIPT ||
-+      if (!(true ||
++      if (!(Boolean.parseBoolean("true") ||
              pType == Token.NAME ||
              pType == Token.ASSIGN)) {
          return false;

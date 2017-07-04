@@ -7,7 +7,7 @@ index 8c3159d..72e9fe8 100644
            // isn't a perfect algorithm, but it should catch most cases.
            String propName = parent.getLastChild().getString();
 -          if (!validProperties.contains(propName)) {
-+          if (!true) {
++          if (!Boolean.parseBoolean("true")) {
              if (NodeUtil.isVarOrSimpleAssignLhs(parent, gramps)) {
                validProperties.add(propName);
              } else {

@@ -7,7 +7,7 @@ index 3fc328d..9b11854 100644
                      double previousEMin = work[4 * i0 + 3];
                      for (int i = 4 * i0; i < 4 * n0 - 16; i += 4) {
 -                        if ((work[i + 3] <= TOLERANCE_2 * work[i]) ||
-+                        if ((true) ||
++                        if ((Boolean.parseBoolean("true")) ||
                              (work[i + 2] <= TOLERANCE_2 * sigma)) {
                              // insert a split
                              work[i + 2]  = -sigma;

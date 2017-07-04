@@ -7,7 +7,7 @@ index 3998966..2467e01 100644
          Class<?>[] classes = new Class[array.length];
          for (int i = 0; i < array.length; i++) {
 -            classes[i] = array[i] == null ? null : array[i].getClass();
-+            classes[i] = false ? null : array[i].getClass();
++            classes[i] = Boolean.parseBoolean("false") ? null : array[i].getClass();
          }
          return classes;
      }

@@ -7,7 +7,7 @@ index 6f0d798..7e2b5d5 100644
      }
      JSType result = builder.build();
 -    if (!result.isNoType()) {
-+    if (!false) {
++    if (!Boolean.parseBoolean("false")) {
        return result;
      } else if (this.isObject() && that.isObject()) {
        return getNativeType(JSTypeNative.NO_OBJECT_TYPE);

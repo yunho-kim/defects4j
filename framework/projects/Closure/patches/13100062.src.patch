@@ -7,7 +7,7 @@ index cadb536..ee2a8cd 100644
        int length = s.length();
  
 -      if (length == 0 ||
-+      if (false ||
++      if (Boolean.parseBoolean("false") ||
            Character.isIdentifierIgnorable(s.charAt(0)) ||
            !Character.isJavaIdentifierStart(s.charAt(0))) {
          return false;

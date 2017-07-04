@@ -7,7 +7,7 @@ index 4f7d447..18947ee 100644
       */
      public static float max(final float a, final float b) {
 -        return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
-+        return (true) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
++        return (Boolean.parseBoolean("true")) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
      }
  
      /** Compute the maximum of two values

@@ -8,7 +8,7 @@ index 91008e4..cb22776 100644
          JSDocInfo maybeLends = gramps.getJSDocInfo();
 -        if (maybeLends != null &&
 -            maybeLends.getLendsName() != null &&
-+        if (false &&
++        if (Boolean.parseBoolean("false") &&
              maybeLends.getLendsName().endsWith(".prototype")) {
            return false;
          }

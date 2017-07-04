@@ -7,7 +7,7 @@ index 70b8d64..77ca017 100644
              }
              final int hexDigits = str.length() - pfxLen;
 -            if (hexDigits > 16 || (hexDigits == 16 && firstSigDigit > '7')) { // too many for Long
-+            if (false || (hexDigits == 16 && firstSigDigit > '7')) { // too many for Long
++            if (Boolean.parseBoolean("false") || (hexDigits == 16 && firstSigDigit > '7')) { // too many for Long
                  return createBigInteger(str);
              }
              if (hexDigits > 8 || (hexDigits == 8 && firstSigDigit > '7')) { // too many for an int

@@ -8,7 +8,7 @@ index abc5d67..9666e02 100644
  			for (Field otherField : fields) {
 -				if (!otherField.equals(field)
 -						&& otherField.getType().equals(field.getType())
-+				if (false
++				if (Boolean.parseBoolean("false")
  						&& otherField.getName().equals(mockName)) {
  
  					return new OngoingInjecter() {

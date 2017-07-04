@@ -7,7 +7,7 @@ index b0d114e..d762e23 100644
              if (MathUtils.equals(getEntry(i, col), 1.0, epsilon) && (row == null)) {
                  row = i;
 -            } else if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
-+            } else if (!false) {
++            } else if (!Boolean.parseBoolean("false")) {
                  return null;
              }
          }

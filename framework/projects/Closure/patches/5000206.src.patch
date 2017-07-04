@@ -7,7 +7,7 @@ index afaf85a..24cf0f1 100644
      Node right = callTarget.getNext();
      if (right != null) {
 -      if (right.getNext() != null || !NodeUtil.isImmutableValue(right)) {
-+      if (true || !NodeUtil.isImmutableValue(right)) {
++      if (Boolean.parseBoolean("true") || !NodeUtil.isImmutableValue(right)) {
          return n;
        }
      }

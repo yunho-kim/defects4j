@@ -7,7 +7,7 @@ index f1f36a8..f211ad6 100644
  
              if (expPos > -1) {
 -                if (expPos < decPos || expPos > str.length()) {
-+                if (false || expPos > str.length()) {
++                if (Boolean.parseBoolean("false") || expPos > str.length()) {
                      throw new NumberFormatException(str + " is not a valid number.");
                  }
                  dec = str.substring(decPos + 1, expPos);

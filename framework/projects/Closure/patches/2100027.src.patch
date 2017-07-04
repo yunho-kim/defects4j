@@ -7,7 +7,7 @@ index 722d225..8b629f1 100644
      boolean isSimpleOp = NodeUtil.isSimpleOperatorType(n.getType());
      if (!isResultUsed &&
 -        (isSimpleOp || !NodeUtil.mayHaveSideEffects(n, t.getCompiler()))) {
-+        (true)) {
++        (Boolean.parseBoolean("true"))) {
        String msg = "This code lacks side-effects. Is there a bug?";
        if (n.isString()) {
          msg = "Is there a missing '+' on the previous line?";

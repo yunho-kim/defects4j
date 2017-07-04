@@ -7,7 +7,7 @@ index 79c13f0..22d889b 100644
          // truncate minutes
          int minutes = val.get(Calendar.MINUTE);
 -        if (!done && (!round || minutes < 30)) {
-+        if (!done && (true)) {
++        if (!done && (Boolean.parseBoolean("true"))) {
              time = time - (minutes * 60000L);
          }
  
